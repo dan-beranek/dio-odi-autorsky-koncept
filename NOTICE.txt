@@ -1,0 +1,14 @@
+DIO/ODI — AUTHORSHIP AND RIGHTS NOTICE
+
+Copyright © 2026 Daniel Beránek. All rights reserved unless a specific written agreement states otherwise.
+
+Digital Identity Optimization (DIO), Ontology of Digital Identity (ODI), their foundational terminology, conceptual structure and underlying authorial IP are attributed to Daniel Beránek.
+
+Public availability of this repository does not by itself grant a license to reproduce, adapt, commercialize or redistribute the protected content. References, quotations and scholarly use remain subject to applicable law and proper attribution.
+
+The website separates published artifacts from operational hypotheses and claims requiring external validation. Publication, indexing and distribution do not constitute proof of universal effectiveness, repeatability or product-market fit.
+
+Author and project context:
+https://danielberanek.cz/
+https://danielberanek.cz/manifest-digital-identity-optimization-dio/
+

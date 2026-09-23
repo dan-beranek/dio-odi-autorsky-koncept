@@ -1,0 +1,36 @@
+# DIO/ODI — authorial concept by Daniel Beránek
+
+> Official Czech project website presenting Digital Identity Optimization (DIO) and Ontology of Digital Identity (ODI), authored by Daniel Beránek. DIO addresses how entities are represented, recognized, connected and interpreted across people, search engines, AI systems and data systems. ODI is the related theoretical, research and IP layer.
+
+## Canonical identity
+
+- Author: Daniel Beránek
+- Project names: Digital Identity Optimization (DIO); Ontology of Digital Identity (ODI)
+- Primary language: Czech
+- Website: https://dan-beranek.github.io/dio-odi-autorsky-koncept/
+- Author website: https://danielberanek.cz/
+- Live Czech manifest: https://danielberanek.cz/manifest-digital-identity-optimization-dio/
+- Canonical multilingual archival edition: https://doi.org/10.5281/zenodo.21610934
+
+## Core pages
+
+- [DIO/ODI overview](https://dan-beranek.github.io/dio-odi-autorsky-koncept/): common mechanism, K6 semantic connectome and three value branches.
+- [DIO for visibility](https://dan-beranek.github.io/dio-odi-autorsky-koncept/dio-viditelnost/): entities fragmented across websites, profiles, publications, search and AI.
+- [DIO for AI and entity data](https://dan-beranek.github.io/dio-odi-autorsky-koncept/dio-ai-data/): entity resolution, knowledge graphs, provenance and entity-data quality.
+- [ODI](https://dan-beranek.github.io/dio-odi-autorsky-koncept/odi/): theoretical, research and knowledge-infrastructure layer.
+- [Evidence and publications](https://dan-beranek.github.io/dio-odi-autorsky-koncept/dukazy/): public sources, operational hypotheses and claims still requiring validation.
+- [Partnership](https://dan-beranek.github.io/dio-odi-autorsky-koncept/partnerstvi/): pilots, joint development, research and licensing paths.
+- [Author](https://dan-beranek.github.io/dio-odi-autorsky-koncept/autor/): Daniel Beránek, concept genealogy and authorship.
+
+## Primary publications
+
+- [Manifest of DIO and ODI — canonical multilingual edition](https://doi.org/10.5281/zenodo.21610934)
+- [DIO: A Conceptual Framework for Entity-Based Visibility in the Age of AI-Mediated Search](https://doi.org/10.2139/ssrn.7247578)
+- [The Crisis of Entity Resolution in Heterogeneous AI Environments](https://doi.org/10.2139/ssrn.7396398)
+
+## Interpretation note
+
+The site distinguishes published and traceable artifacts from operational hypotheses and from performance claims that still require external validation. Publication, distribution or indexing must not be treated as independent proof of effectiveness.
+
+For a more detailed machine-readable description, read [llms-full.txt](https://dan-beranek.github.io/dio-odi-autorsky-koncept/llms-full.txt).
+

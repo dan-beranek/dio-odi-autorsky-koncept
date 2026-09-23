@@ -1,0 +1,13 @@
+/* TEAM */
+Author: Daniel Beránek
+Role: Author of Digital Identity Optimization (DIO) and Ontology of Digital Identity (ODI)
+Location: Brno, Czech Republic
+Website: https://danielberanek.cz/
+
+/* SITE */
+Name: DIO/ODI – autorský koncept Daniela Beránka
+Language: Czech
+Technology: Semantic HTML, CSS, vanilla JavaScript, GitHub Pages
+Published: 2026
+Repository: https://github.com/dan-beranek/dio-odi-autorsky-koncept
+

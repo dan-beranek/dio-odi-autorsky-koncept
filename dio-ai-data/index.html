@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DIO pro AI a entitní data | DIO/ODI</title>
+  <meta name="description" content="Technický a výzkumný pilot DIO pro entity resolution, knowledge graphy, RAG, provenance a konzistenci entitních dat.">
+  <meta name="theme-color" content="#080b12">
+  <link rel="alternate" type="text/plain" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/llms.txt" title="LLM context"><link rel="canonical" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/dio-ai-data/"><link rel="icon" href="/dio-odi-autorsky-koncept/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/dio-odi-autorsky-koncept/assets/site.css"><script src="/dio-odi-autorsky-koncept/assets/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#obsah">Přejít na obsah</a>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="/dio-odi-autorsky-koncept/" aria-label="DIO/ODI – domů"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><line x1="20" y1="7" x2="33" y2="16"/><line x1="20" y1="7" x2="7" y2="16"/><line x1="7" y1="16" x2="12" y2="31"/><line x1="12" y1="31" x2="28" y2="31"/><line x1="28" y1="31" x2="33" y2="16"/><line x1="20" y1="20" x2="20" y2="7"/><line x1="20" y1="20" x2="33" y2="16"/><line x1="20" y1="20" x2="28" y2="31"/><line x1="20" y1="20" x2="12" y2="31"/><line x1="20" y1="20" x2="7" y2="16"/><circle cx="20" cy="7" r="3"/><circle cx="33" cy="16" r="3"/><circle cx="28" cy="31" r="3"/><circle cx="12" cy="31" r="3"/><circle cx="7" cy="16" r="3"/><circle class="core" cx="20" cy="20" r="4"/></svg><span>DIO/ODI</span></a>
+    <nav class="main-nav" aria-label="Hlavní navigace"><a href="/dio-odi-autorsky-koncept/dio-viditelnost/">DIO pro viditelnost</a><a aria-current="page" href="/dio-odi-autorsky-koncept/dio-ai-data/">DIO pro AI a data</a><a href="/dio-odi-autorsky-koncept/odi/">ODI</a><a href="/dio-odi-autorsky-koncept/dukazy/">Důkazy</a><a href="/dio-odi-autorsky-koncept/autor/">Autor</a><a class="nav-cta" href="/dio-odi-autorsky-koncept/partnerstvi/">Partnerství</a></nav>
+    <button class="menu-toggle" type="button" aria-label="Otevřít navigaci" aria-controls="mobile-nav" aria-expanded="false"><span></span></button>
+  </div><nav class="mobile-nav" id="mobile-nav" aria-label="Mobilní navigace"><a href="/dio-odi-autorsky-koncept/dio-viditelnost/">DIO pro viditelnost</a><a aria-current="page" href="/dio-odi-autorsky-koncept/dio-ai-data/">DIO pro AI a data</a><a href="/dio-odi-autorsky-koncept/odi/">ODI</a><a href="/dio-odi-autorsky-koncept/partnerstvi/">Partnerství</a><a href="/dio-odi-autorsky-koncept/dukazy/">Důkazy</a><a href="/dio-odi-autorsky-koncept/autor/">Autor</a></nav></header>
+
+  <main id="obsah">
+    <section class="page-hero"><div class="shell page-hero-grid">
+      <div><span class="route-id">02 · DIO pro AI a entitní data</span><h1>Stejná entita. Různé systémy. <span class="blue">Rozdílné rekonstrukce.</span></h1><p class="page-intro">DIO přenáší práci s digitální identitou do prostředí entity resolution, knowledge graphů, RAG, enterprise dat a znalostních produktů. Aktuální nabídkou je technický nebo výzkumný pilot a společný vývoj — nikoli hotový software.</p></div>
+      <aside><p class="meta">Pro koho</p><p>AI a datové týmy, specialisté entity resolution, správci enterprise dat, tvůrci knowledge graphů, RAG systémů a poskytovatelé dat či znalostních produktů.</p><div class="hero-actions"><a class="button" href="#pilot">Navrhnout rámec pilotu ↓</a></div></aside>
+    </div></section>
+
+    <section class="section"><div class="shell">
+      <div class="section-head reveal"><div><p class="eyebrow">Technický problém</p><h2>Chyba identity nevzniká jen v jednom atributu.</h2></div><p>Vzniká v konfiguraci hranic, aliasů, atributů, vztahů, zdrojů a nejistoty. DIO sleduje, zda z nich různé systémy dokážou sestavit navzájem slučitelný obraz téže entity.</p></div>
+      <div class="grid-3 reveal">
+        <article class="card"><span class="meta">Hranice entity</span><h3>Co ještě patří k jednomu uzlu?</h3><p>Organizace, značka, produktová řada, pobočka nebo osoba mohou být nesprávně sloučeny či rozděleny.</p></article>
+        <article class="card"><span class="meta">Aliasy</span><h3>Které názvy označují totéž?</h3><p>Zkratky, přepisy, historické názvy a jazykové varianty musí být spojeny bez ztráty rozdílů.</p></article>
+        <article class="card"><span class="meta">Atributy</span><h3>Který údaj platí — a kdy?</h3><p>Rozpory mezi zdroji vyžadují časový, kontextový a provenienční rámec, ne náhodnou preferenci.</p></article>
+        <article class="card"><span class="meta">Vztahy</span><h3>Kdo vytvořil, vlastní nebo zastupuje co?</h3><p>Chybná hrana může změnit identitu stejně zásadně jako chybná hodnota uzlu.</p></article>
+        <article class="card"><span class="meta">Provenience</span><h3>Odkud tvrzení pochází?</h3><p>Důvěra v rekonstrukci závisí na dohledatelnosti zdroje, jeho roli a aktuálnosti.</p></article>
+        <article class="card"><span class="meta">Míra jistoty</span><h3>Co systém ví a co jen odvozuje?</h3><p>Nejistota má být viditelná a řízená; falešná přesnost pouze přesouvá chybu do další vrstvy.</p></article>
+      </div>
+    </div></section>
+
+    <section class="section section-dark"><div class="shell mechanism reveal">
+      <div><p class="eyebrow">DIO perspektiva</p><h2>Entity charter místo neurčitého „vyčistěte data“.</h2><p class="lead">Pilot vymezí, jakou entitu systém rozhoduje, z jakých reprezentací, podle kterých vztahů a s jakou důvěrou. Teprve potom má smysl měřit změnu.</p></div>
+      <div><div class="mechanism-path"><div class="mechanism-row"><span class="dot"></span><span>Identifikační pravidla</span><small>hranice · aliasy</small></div><div class="mechanism-row"><span class="dot"></span><span>Důkazní pravidla</span><small>zdroj · čas · role</small></div><div class="mechanism-row"><span class="dot"></span><span>Vztahová pravidla</span><small>typ · směr · kontext</small></div><div class="mechanism-row"><span class="dot"></span><span>Politika nejistoty</span><small>jistota · konflikt · abstence</small></div></div><div class="mechanism-result"><span class="meta">Výsledek</span><strong>Auditovatelná rekonstrukce entity</strong></div></div>
+    </div></section>
+
+    <section class="section section-white" id="pilot"><div class="shell">
+      <div class="section-head reveal"><div><p class="eyebrow">Technický nebo výzkumný pilot</p><h2>Malý případ, explicitní pravidla, předem určené hodnocení.</h2></div><p>Cílem není připojit DIO jako nový obecný framework ke každému systému. Cílem je ověřit, zda jeho operační jádro zlepšuje rozhodnutí v jednom přesně vymezeném entitním problému.</p></div>
+      <div class="steps reveal">
+        <div class="step"><strong>Vymezení entity</strong><p>Typ entity, hranice, identity sousedních uzlů, aliasy a podmínky, za nichž má systém rozlišit nebo sloučit záznamy.</p></div>
+        <div class="step"><strong>Baseline</strong><p>Současné vstupy, zdroje, vztahy, pravidla, konflikty a pozorované chybové vzorce.</p></div>
+        <div class="step"><strong>Mapa reprezentací</strong><p>Vztah mezi tím, co se o entitě tvrdí, kde to vzniká, jak se to přenáší a jak to cílový systém interpretuje.</p></div>
+        <div class="step"><strong>Intervence</strong><p>Úprava vybraných pravidel, datových vazeb, zdrojové hierarchie, kontextu nebo způsobu práce s nejistotou.</p></div>
+        <div class="step"><strong>Evaluace</strong><p>Porovnání pre/post, kontrolní případy, chybová analýza, přenositelnost a rozhodnutí o opakování nebo zúžení.</p></div>
+      </div>
+    </div></section>
+
+    <section class="section"><div class="shell">
+      <div class="section-head reveal"><div><p class="eyebrow">Co se může měřit</p><h2>Metrika musí odpovídat konkrétnímu rozhodnutí systému.</h2></div><p>Výběr ukazatelů je součástí pilotu. Bez přístupu k cílovému prostředí nelze předem tvrdit, že jedna sada metrik bude správná pro všechny aplikace.</p></div>
+      <div class="grid-4 reveal">
+        <article class="card"><span class="meta">Rozlišení</span><h3>Méně chybných sloučení a rozdělení</h3><p>Precision, recall či doménově vhodná chybová matice nad předem označenými případy.</p></article>
+        <article class="card"><span class="meta">Konzistence</span><h3>Méně rozporů napříč zdroji</h3><p>Podíl atributů a vztahů s doloženým řešením konfliktu a časovým kontextem.</p></article>
+        <article class="card"><span class="meta">Dohledatelnost</span><h3>Více závěrů s proveniencí</h3><p>Schopnost vystopovat tvrzení k původu a vysvětlit, proč dostalo určitou váhu.</p></article>
+        <article class="card"><span class="meta">Užitečnost</span><h3>Lepší navazující rozhodnutí</h3><p>Zda změna identity snižuje ruční opravy, riziko nebo čas potřebný pro konkrétní úlohu.</p></article>
+      </div>
+    </div></section>
+
+    <section class="section section-dark"><div class="shell">
+      <div class="section-head reveal"><div><p class="eyebrow">Hranice současné nabídky</p><h2>Metodické jádro existuje. Produktová forma se musí ověřit.</h2></div><p>Web neslibuje dashboard, API ani automatizovaný monitoring, které dosud nejsou hotové. Tyto formy mají smysl teprve tehdy, když pilot ukáže opakovatelný problém a stabilní rozhodovací logiku.</p></div>
+      <div class="grid-3 reveal">
+        <article class="card"><span class="meta">Dnes</span><h3>Pilot a společný vývoj</h3><p>Vymezení problému, baseline, entitní a důkazní model, intervence a evaluace.</p></article>
+        <article class="card"><span class="meta">Možný další krok</span><h3>Diagnostika a monitoring</h3><p>Opakovatelná kontrola konkrétních poruch identity v jasně vymezeném prostředí.</p></article>
+        <article class="card"><span class="meta">Rozvojová možnost</span><h3>API, integrace nebo licence</h3><p>Technické začlenění ověřených pravidel do existující datové infrastruktury partnera.</p></article>
+      </div>
+    </div></section>
+
+    <section class="section section-white"><div class="shell split reveal"><div><p class="eyebrow">Vhodný co-development partner</p><h2>Má data, problém a místo, kde lze pozorovat rozhodnutí.</h2></div><div><ul class="plain-list"><li>Konkrétní entitní use case a známé chybové případy</li><li>Přístup k relevantním zdrojům a doménovým expertům</li><li>Technickou kapacitu realizovat malou intervenci</li><li>Ochotu sdílet negativní i nejednoznačné výsledky</li><li>Jasné podmínky pro data, důvěrnost a výsledná práva</li></ul></div></div></section>
+
+    <section class="section section-blue"><div class="shell cta-block reveal"><div><p class="eyebrow">DIO pro AI a data</p><h2>Navrhněte jeden entitní problém, který stojí za přesnější rozhodnutí.</h2></div><div><p>První dialog má vymezit systém, entitu, chybový vzorec, dostupná data, možný zásah a způsob, jak poznat užitečnou změnu.</p><div class="cta-actions"><a class="button" href="/dio-odi-autorsky-koncept/partnerstvi/#nabidka">Navrhnout technický nebo datový pilot →</a><a class="button button-secondary" href="/dio-odi-autorsky-koncept/odi/">Prozkoumat teoretickou vrstvu</a></div></div></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="shell footer-main"><div><p class="footer-label">DIO/ODI</p><h2>Identita jako optimalizační objekt.</h2><p>Autorský koncept Daniela Beránka pro tržní viditelnost, AI a entitní data a znalostní infrastrukturu.</p></div><div><p class="footer-label">Větve</p><ul class="footer-links"><li><a href="/dio-odi-autorsky-koncept/dio-viditelnost/">DIO pro viditelnost</a></li><li><a href="/dio-odi-autorsky-koncept/dio-ai-data/">DIO pro AI a data</a></li><li><a href="/dio-odi-autorsky-koncept/odi/">ODI</a></li></ul></div><div><p class="footer-label">Projekt</p><ul class="footer-links"><li><a href="/dio-odi-autorsky-koncept/partnerstvi/">Partnerství</a></li><li><a href="/dio-odi-autorsky-koncept/dukazy/">Důkazy</a></li><li><a href="/dio-odi-autorsky-koncept/autor/">Autor</a></li><li><a href="https://danielberanek.cz/manifest-digital-identity-optimization-dio/" target="_blank" rel="noopener noreferrer">Manifest <span aria-hidden="true">↗</span></a></li></ul></div></div><div class="shell footer-bottom"><span>© 2026 Daniel Beránek · DIO/ODI</span><span>Autorské IP · Brno</span></div></footer>
+</body>
+</html>
