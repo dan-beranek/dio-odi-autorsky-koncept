@@ -6,8 +6,7 @@ Website: https://danielberanek.cz/
 
 /* SITE */
 Name: DIO/ODI – autorský koncept Daniela Beránka
-Language: Czech
+Languages: Czech (default), English
 Technology: Semantic HTML, CSS, vanilla JavaScript, GitHub Pages
 Published: 2026
 Repository: https://github.com/dan-beranek/dio-odi-autorsky-koncept
-

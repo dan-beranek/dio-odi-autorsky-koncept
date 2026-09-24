@@ -24,6 +24,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+      - name: Build bilingual pages and validate source
+        run: |
+          node scripts/build-site.mjs
+          node scripts/validate-site.mjs
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload static site
@@ -46,10 +50,17 @@ jobs:
             "partnerstvi/"
             "dukazy/"
             "autor/"
+            "en/"
+            "en/ai-visibility/"
+            "en/entity-resolution/"
+            "en/ontology-of-digital-identity/"
+            "en/partnerships/"
+            "en/evidence/"
+            "en/author/"
             "assets/site.css"
             "assets/site.js"
+            "assets/dio-odi-social-v1.png"
             "favicon.svg"
-            "robots.txt"
             "sitemap.xml"
             "llms.txt"
             "llms-full.txt"
@@ -58,7 +69,7 @@ jobs:
           )
 
           for path in "${paths[@]}"; do
-            curl \
+            status="$(curl \
               --fail \
               --location \
               --silent \
@@ -67,7 +78,9 @@ jobs:
               --retry-delay 3 \
               --retry-all-errors \
               --output /dev/null \
-              "${SITE_URL}${path}"
+              --write-out '%{http_code}' \
+              "${SITE_URL}${path}")"
+            test "${status}" = "200"
           done
 
           curl \
@@ -77,3 +90,11 @@ jobs:
             --show-error \
             "${SITE_URL}llms.txt" \
             | grep --fixed-strings "DIO/ODI — authorial concept by Daniel Beránek"
+
+          curl \
+            --fail \
+            --location \
+            --silent \
+            --show-error \
+            "${SITE_URL}en/" \
+            | grep --fixed-strings "DIO/ODI: Author-Led IP – AI Visibility &amp; Entity Resolution"

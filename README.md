@@ -1,6 +1,6 @@
 # DIO/ODI – autorský koncept Daniela Beránka
 
-Veřejný, statický web představující Digital Identity Optimization (DIO) a Ontology of Digital Identity (ODI), jejich společný mechanismus, tři realizační větve, publikační základ a možnosti partnerství.
+Veřejný, statický a plně dvojjazyčný web představující Digital Identity Optimization (DIO) a Ontology of Digital Identity (ODI), jejich společný mechanismus, tři realizační větve, publikační základ a možnosti partnerství.
 
 ## Veřejný web
 
@@ -17,8 +17,12 @@ Po aktivaci GitHub Pages bude web dostupný na:
 - `partnerstvi/` – formy spolupráce a pilotů
 - `dukazy/` – publikace, důkazní stav a validační agenda
 - `autor/` – Daniel Beránek, geneze konceptu a autorská vrstva
+- `en/` – anglický rozcestník a šest anglických protějšků českých podstránek
+- `assets/dio-odi-social-v1.png` – univerzální social-preview obrázek 1200 × 630 px
 - `llms.txt` a `llms-full.txt` – stručný a rozšířený kontext pro AI systémy
-- `robots.txt`, `sitemap.xml`, `humans.txt` – strojově čitelné doprovodné soubory
+- `sitemap.xml` a `humans.txt` – strojově čitelné doprovodné soubory
+- `scripts/build-site.mjs` – reprodukovatelná lokalizace, metadata a společné rozhraní
+- `scripts/validate-site.mjs` – kontrola všech 14 stránek, metadat, sitemap a sociálního obrázku
 
 ## Primární zdroje
 
@@ -29,7 +33,14 @@ Po aktivaci GitHub Pages bude web dostupný na:
 
 ## Lokální spuštění
 
-Web nepotřebuje sestavení ani závislosti. Z nadřazené složky spusťte například:
+Web nemá externí závislosti. Po obsahové úpravě lze z kořene repozitáře znovu vygenerovat statické HTML a spustit kontrolu:
+
+```bash
+node scripts/build-site.mjs
+node scripts/validate-site.mjs
+```
+
+Pro lokální náhled spusťte z nadřazené složky například:
 
 ```bash
 python3 -m http.server 8000
@@ -50,4 +61,3 @@ Repozitář dokumentuje veřejnou podobu autorského konceptu a jeho zdrojovou s
 ## Autorství a práva
 
 © 2026 Daniel Beránek. DIO/ODI, jeho základní terminologie a autorské IP zůstávají Danielu Beránkovi, pokud konkrétní dohoda neurčí jinak. Podrobnosti uvádí `NOTICE.txt`.
-

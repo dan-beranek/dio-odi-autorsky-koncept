@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entity Resolution &amp; Knowledge Graphs for AI | DIO</title>
+  <meta name="description" content="DIO for entity resolution, knowledge graphs, RAG and provenance. A technical pilot for more reliable entity reconstruction across data and AI systems.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="theme-color" content="#080b12">
+  <link rel="canonical" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/entity-resolution/">
+  <link rel="alternate" hreflang="cs-CZ" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/dio-ai-data/">
+  <link rel="alternate" hreflang="en" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/entity-resolution/">
+  <link rel="alternate" hreflang="x-default" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/dio-ai-data/">
+  <link rel="alternate" type="text/plain" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/llms.txt" title="LLM context">
+  <link rel="icon" href="/dio-odi-autorsky-koncept/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/dio-odi-autorsky-koncept/assets/site.css">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DIO/ODI">
+  <meta property="og:title" content="DIO for Entity Resolution &amp; Knowledge Graphs">
+  <meta property="og:description" content="A technical and research pilot for more consistent entity reconstruction across data, RAG and AI systems.">
+  <meta property="og:url" content="https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/entity-resolution/">
+  <meta property="og:image" content="https://dan-beranek.github.io/dio-odi-autorsky-koncept/assets/dio-odi-social-v1.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="DIO/ODI – AI visibility, entity resolution and knowledge infrastructure">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="cs_CZ">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DIO for Entity Resolution &amp; Knowledge Graphs">
+  <meta name="twitter:description" content="A technical and research pilot for more consistent entity reconstruction across data, RAG and AI systems.">
+  <meta name="twitter:image" content="https://dan-beranek.github.io/dio-odi-autorsky-koncept/assets/dio-odi-social-v1.png">
+  <meta name="twitter:image:alt" content="DIO/ODI – AI visibility, entity resolution and knowledge infrastructure">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/entity-resolution/#webpage",
+  "url": "https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/entity-resolution/",
+  "name": "Entity Resolution & Knowledge Graphs for AI | DIO",
+  "description": "DIO for entity resolution, knowledge graphs, RAG and provenance. A technical pilot for more reliable entity reconstruction across data and AI systems.",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Person",
+    "@id": "https://danielberanek.cz/#person",
+    "name": "Daniel Beránek",
+    "url": "https://danielberanek.cz/"
+  },
+  "about": [
+    {
+      "@type": "DefinedTerm",
+      "name": "Digital Identity Optimization",
+      "alternateName": "DIO",
+      "description": "An applied framework for AI visibility, entity resolution and entity optimization across human and machine systems."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Ontology of Digital Identity",
+      "alternateName": "ODI",
+      "description": "A theoretical, research and ontological layer focused on the reconstruction of digital identity."
+    }
+  ],
+  "citation": [
+    "https://doi.org/10.5281/zenodo.21610934",
+    "https://doi.org/10.2139/ssrn.7247578",
+    "https://doi.org/10.2139/ssrn.7396398"
+  ],
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": "https://dan-beranek.github.io/dio-odi-autorsky-koncept/#website",
+    "url": "https://dan-beranek.github.io/dio-odi-autorsky-koncept/",
+    "name": "DIO/ODI – an author-led concept by Daniel Beránek"
+  }
+}
+  </script>
+  <script src="/dio-odi-autorsky-koncept/assets/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#obsah">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/dio-odi-autorsky-koncept/en/" aria-label="DIO/ODI – home"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><line x1="20" y1="7" x2="33" y2="16"/><line x1="20" y1="7" x2="7" y2="16"/><line x1="7" y1="16" x2="12" y2="31"/><line x1="12" y1="31" x2="28" y2="31"/><line x1="28" y1="31" x2="33" y2="16"/><line x1="20" y1="20" x2="20" y2="7"/><line x1="20" y1="20" x2="33" y2="16"/><line x1="20" y1="20" x2="28" y2="31"/><line x1="20" y1="20" x2="12" y2="31"/><line x1="20" y1="20" x2="7" y2="16"/><circle cx="20" cy="7" r="3"/><circle cx="33" cy="16" r="3"/><circle cx="28" cy="31" r="3"/><circle cx="12" cy="31" r="3"/><circle cx="7" cy="16" r="3"/><circle class="core" cx="20" cy="20" r="4"/></svg><span>DIO/ODI</span></a>
+      <nav class="main-nav" aria-label="Main navigation"><a href="/dio-odi-autorsky-koncept/en/ai-visibility/">AI visibility</a><a aria-current="page" href="/dio-odi-autorsky-koncept/en/entity-resolution/">AI & entity data</a><a href="/dio-odi-autorsky-koncept/en/ontology-of-digital-identity/">ODI</a><a href="/dio-odi-autorsky-koncept/en/evidence/">Evidence</a><a href="/dio-odi-autorsky-koncept/en/author/">Author</a><a class="nav-cta" href="/dio-odi-autorsky-koncept/en/partnerships/">Partnerships</a></nav>
+      <div class="header-actions">
+        <nav class="language-switch" aria-label="Language selection" data-language-switch><a href="/dio-odi-autorsky-koncept/dio-ai-data/" hreflang="cs-CZ" lang="cs" aria-label="Czech version">CZ</a><span aria-hidden="true">|</span><span aria-current="true">EN</span></nav>
+        <button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="mobile-nav" aria-expanded="false"><span></span></button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation"><a href="/dio-odi-autorsky-koncept/en/ai-visibility/">AI visibility</a><a aria-current="page" href="/dio-odi-autorsky-koncept/en/entity-resolution/">AI & entity data</a><a href="/dio-odi-autorsky-koncept/en/ontology-of-digital-identity/">ODI</a><a href="/dio-odi-autorsky-koncept/en/evidence/">Evidence</a><a href="/dio-odi-autorsky-koncept/en/author/">Author</a><a href="/dio-odi-autorsky-koncept/en/partnerships/">Partnerships</a></nav>
+  </header>
+
+  <main id="obsah">
+    <section class="page-hero"><div class="shell page-hero-grid">
+      <div><span class="route-id">02 · DIO for AI and entity data</span><h1>The same entity. Different systems. <span class="blue">Different reconstructions.</span></h1><p class="page-intro">DIO brings digital identity work into entity resolution, knowledge graphs, RAG, enterprise data and knowledge products. The current offer is a technical or research pilot and co-development—not finished software.</p></div>
+      <aside><p class="meta">Who it is for</p><p>AI and data teams, entity-resolution specialists, enterprise-data owners, knowledge-graph and RAG teams, and providers of data or knowledge products.</p><div class="hero-actions"><a class="button" href="#pilot">Design a pilot framework ↓</a></div></aside>
+    </div></section>
+
+    <section class="section"><div class="shell">
+      <div class="section-head reveal"><div><p class="eyebrow">The technical problem</p><h2>Identity failure is not confined to a single attribute.</h2></div><p>It emerges from the configuration of boundaries, aliases, attributes, relationships, sources and uncertainty. DIO asks whether different systems can use them to build compatible views of the same entity.</p></div>
+      <div class="grid-3 reveal">
+        <article class="card"><span class="meta">Entity boundaries</span><h3>What still belongs to a single node?</h3><p>An organization, brand, product line, branch or person can be merged or split incorrectly.</p></article>
+        <article class="card"><span class="meta">Aliases</span><h3>Which names refer to the same thing?</h3><p>Abbreviations, transliterations, historical names and language variants must be connected without erasing meaningful distinctions.</p></article>
+        <article class="card"><span class="meta">Attributes</span><h3>Which value applies—and when?</h3><p>Conflicts among sources require temporal, contextual and provenance frameworks—not arbitrary preference.</p></article>
+        <article class="card"><span class="meta">Relationships</span><h3>Who created, owns or represents what?</h3><p>An incorrect edge can alter identity as materially as an incorrect node value.</p></article>
+        <article class="card"><span class="meta">Provenance</span><h3>Where did the claim originate?</h3><p>Confidence in a reconstruction depends on a source’s traceability, role and currency.</p></article>
+        <article class="card"><span class="meta">Confidence</span><h3>What does the system know, and what is it only inferring?</h3><p>Uncertainty should be visible and managed; false precision merely moves the error into the next layer.</p></article>
+      </div>
+    </div></section>
+
+    <section class="section section-dark"><div class="shell mechanism reveal">
+      <div><p class="eyebrow">The DIO perspective</p><h2>An entity charter instead of a vague instruction to “clean the data.”</h2><p class="lead">A pilot defines which entity the system is resolving, from which representations, through which relationships and at what level of confidence. Only then does it make sense to measure change.</p></div>
+      <div><div class="mechanism-path"><div class="mechanism-row"><span class="dot"></span><span>Identification rules</span><small>boundaries · aliases</small></div><div class="mechanism-row"><span class="dot"></span><span>Evidence rules</span><small>source · time · role</small></div><div class="mechanism-row"><span class="dot"></span><span>Relationship rules</span><small>type · direction · context</small></div><div class="mechanism-row"><span class="dot"></span><span>Uncertainty policy</span><small>confidence · conflict · abstention</small></div></div><div class="mechanism-result"><span class="meta">Outcome</span><strong>An auditable entity reconstruction</strong></div></div>
+    </div></section>
+
+    <section class="section section-white" id="pilot"><div class="shell">
+      <div class="section-head reveal"><div><p class="eyebrow">Technical or research pilot</p><h2>A bounded case, explicit rules and predefined evaluation.</h2></div><p>The goal is not to bolt DIO onto every system as another general framework. It is to test whether its operational core improves decisions in one precisely bounded entity problem.</p></div>
+      <div class="steps reveal">
+        <div class="step"><strong>Entity definition</strong><p>Entity type, boundaries, identities of adjacent nodes, aliases and the conditions under which the system should distinguish or merge records.</p></div>
+        <div class="step"><strong>Baseline</strong><p>Current inputs, sources, relationships, rules, conflicts and observed error patterns.</p></div>
+        <div class="step"><strong>Representation map</strong><p>The relationship between what is claimed about the entity, where it originates, how it propagates and how the target system interprets it.</p></div>
+        <div class="step"><strong>Intervention</strong><p>Adjustment of selected rules, data links, source hierarchy, context or uncertainty handling.</p></div>
+        <div class="step"><strong>Evaluation</strong><p>Pre/post comparison, control cases, error analysis, transferability and a decision to repeat or narrow the work.</p></div>
+      </div>
+    </div></section>
+
+    <section class="section"><div class="shell">
+      <div class="section-head reveal"><div><p class="eyebrow">What can be measured</p><h2>The metric must match the system’s specific decision.</h2></div><p>Metric selection is part of the pilot. Without access to the target environment, no single set of measures can be claimed to suit every application.</p></div>
+      <div class="grid-4 reveal">
+        <article class="card"><span class="meta">Discrimination</span><h3>Fewer incorrect merges and splits</h3><p>Precision, recall or a domain-appropriate error matrix over pre-labeled cases.</p></article>
+        <article class="card"><span class="meta">Consistency</span><h3>Fewer conflicts across sources</h3><p>The share of attributes and relationships with a documented conflict resolution and temporal context.</p></article>
+        <article class="card"><span class="meta">Traceability</span><h3>More conclusions with provenance</h3><p>The ability to trace a claim to its origin and explain why it received a given weight.</p></article>
+        <article class="card"><span class="meta">Utility</span><h3>Better downstream decisions</h3><p>Whether the identity change reduces manual corrections, risk or the time needed for a specific task.</p></article>
+      </div>
+    </div></section>
+
+    <section class="section section-dark"><div class="shell">
+      <div class="section-head reveal"><div><p class="eyebrow">Limits of the current offer</p><h2>The methodological core exists. The product form still has to be validated.</h2></div><p>The site does not promise a dashboard, API or automated monitoring that has not yet been built. Those forms only become meaningful once a pilot reveals a repeatable problem and stable decision logic.</p></div>
+      <div class="grid-3 reveal">
+        <article class="card"><span class="meta">Today</span><h3>Pilot and co-development</h3><p>Problem definition, baseline, entity and evidence model, intervention and evaluation.</p></article>
+        <article class="card"><span class="meta">Possible next step</span><h3>Diagnostics and monitoring</h3><p>Repeatable checks for specific identity failures in a clearly defined environment.</p></article>
+        <article class="card"><span class="meta">Development option</span><h3>API, integration or licensing</h3><p>Technical integration of validated rules into the partner’s existing data infrastructure.</p></article>
+      </div>
+    </div></section>
+
+    <section class="section section-white"><div class="shell split reveal"><div><p class="eyebrow">A suitable co-development partner</p><h2>Has data, a problem and an environment where decisions can be observed.</h2></div><div><ul class="plain-list"><li>A specific entity use case and known error cases</li><li>Access to relevant sources and domain experts</li><li>Technical capacity to implement a bounded intervention</li><li>A willingness to share negative and ambiguous results</li><li>Clear terms for data, confidentiality and resulting rights</li></ul></div></div></section>
+
+    <section class="section section-blue"><div class="shell cta-block reveal"><div><p class="eyebrow">DIO for AI and entity data</p><h2>Propose one entity problem where a more accurate decision would matter.</h2></div><div><p>The first discussion should define the system, entity, error pattern, available data, possible intervention and how useful change will be recognized.</p><div class="cta-actions"><a class="button" href="/dio-odi-autorsky-koncept/en/partnerships/#proposal">Propose a technical or data pilot →</a><a class="button button-secondary" href="/dio-odi-autorsky-koncept/en/ontology-of-digital-identity/">Explore the theoretical layer</a></div></div></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="shell footer-main"><div><p class="footer-label">DIO/ODI</p><h2>Identity as the optimization object.</h2><p>An author-led concept by Daniel Beránek for market visibility, AI and entity data, and knowledge infrastructure.</p></div><div><p class="footer-label">Branches</p><ul class="footer-links"><li><a href="/dio-odi-autorsky-koncept/en/ai-visibility/">DIO for AI visibility</a></li><li><a href="/dio-odi-autorsky-koncept/en/entity-resolution/">DIO for AI & entity data</a></li><li><a href="/dio-odi-autorsky-koncept/en/ontology-of-digital-identity/">ODI for knowledge infrastructure</a></li></ul></div><div><p class="footer-label">Project</p><ul class="footer-links"><li><a href="/dio-odi-autorsky-koncept/en/partnerships/">Partnerships</a></li><li><a href="/dio-odi-autorsky-koncept/en/evidence/">Evidence</a></li><li><a href="/dio-odi-autorsky-koncept/en/author/">Author</a></li><li><a href="https://danielberanek.cz/manifest-digital-identity-optimization-dio/" target="_blank" rel="noopener noreferrer">Manifest <span aria-hidden="true">↗</span></a></li></ul></div></div><div class="shell footer-bottom"><span>© 2026 Daniel Beránek · DIO/ODI</span><span>Author-led IP · Brno</span></div></footer>
+</body>
+</html>

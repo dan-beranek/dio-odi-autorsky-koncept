@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://dan-beranek.github.io/dio-odi-autorsky-koncept/sitemap.xml

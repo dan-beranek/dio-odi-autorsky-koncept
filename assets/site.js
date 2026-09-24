@@ -18,13 +18,24 @@
     });
   }
 
+  const language = document.documentElement.lang === 'en' ? 'en' : 'cs';
   const descriptions = {
-    entity: ['Entita', 'Stabilizovaný interpretační uzel: firma, osoba, produkt, projekt nebo instituce, jejíž identita má zůstat rozlišitelná.'],
-    representation: ['Reprezentace', 'Texty, data, profily, publikace, vztahy a další stopy, z nichž pozorovatelé identitu skládají.'],
-    interpretation: ['Interpretace', 'Význam, který z dostupných stop vytváří člověk, vyhledávač, AI nebo datový systém.'],
-    trust: ['Důvěra', 'Doložitelnost, konzistence a provenance, které určují, nakolik lze rekonstrukci považovat za spolehlivou.'],
-    relationship: ['Vztah', 'Vazby k lidem, organizacím, dílům, kategoriím a zdrojům, které entitu ukotvují v širším poli.'],
-    reconstruction: ['Rekonstrukce', 'Výsledná podoba entity znovu sestavená konkrétním pozorovatelem z dostupných signálů a vztahů.']
+    cs: {
+      entity: ['Entita', 'Stabilizovaný interpretační uzel: firma, osoba, produkt, projekt nebo instituce, jejíž identita má zůstat rozlišitelná.'],
+      representation: ['Reprezentace', 'Texty, data, profily, publikace, vztahy a další stopy, z nichž pozorovatelé identitu skládají.'],
+      interpretation: ['Interpretace', 'Význam, který z dostupných stop vytváří člověk, vyhledávač, AI nebo datový systém.'],
+      trust: ['Důvěra', 'Doložitelnost, konzistence a provenance, které určují, nakolik lze rekonstrukci považovat za spolehlivou.'],
+      relationship: ['Vztah', 'Vazby k lidem, organizacím, dílům, kategoriím a zdrojům, které entitu ukotvují v širším poli.'],
+      reconstruction: ['Rekonstrukce', 'Výsledná podoba entity znovu sestavená konkrétním pozorovatelem z dostupných signálů a vztahů.']
+    },
+    en: {
+      entity: ['Entity', 'A stabilized interpretive node: a company, person, product, project or institution whose identity must remain distinguishable.'],
+      representation: ['Representation', 'Texts, data, profiles, publications, relationships and other traces from which observers reconstruct identity.'],
+      interpretation: ['Interpretation', 'The meaning a person, search engine, AI or data system produces from the available traces.'],
+      trust: ['Trust', 'Evidence, consistency and provenance that determine how reliable a reconstruction can be considered.'],
+      relationship: ['Relationship', 'Connections to people, organizations, works, categories and sources that anchor the entity in a broader field.'],
+      reconstruction: ['Reconstruction', 'The resulting form of the entity reassembled by a specific observer from available signals and relationships.']
+    }
   };
 
   const points = [...document.querySelectorAll('.k6-point')];
@@ -32,10 +43,10 @@
   const copy = document.querySelector('[data-k6-copy]');
   const selectPoint = (point) => {
     const key = point.dataset.k6;
-    if (!descriptions[key] || !title || !copy) return;
+    if (!descriptions[language][key] || !title || !copy) return;
     points.forEach((item) => item.classList.toggle('is-active', item === point));
-    title.textContent = descriptions[key][0];
-    copy.textContent = descriptions[key][1];
+    title.textContent = descriptions[language][key][0];
+    copy.textContent = descriptions[language][key][1];
   };
   points.forEach((point) => {
     point.addEventListener('click', () => selectPoint(point));
