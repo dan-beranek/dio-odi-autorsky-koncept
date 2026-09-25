@@ -54,13 +54,13 @@ English page: https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/ontology
 
 ## Evidence status
 
-The project explicitly distinguishes three evidence states:
+DIO/ODI is publicly articulated and methodologically prepared. The project distinguishes three evidence layers:
 
-1. Published and traceable: the manifest, archival edition, publications, multilingual projections, distribution infrastructure, authorship and genealogy.
-2. Operational hypothesis: baseline analysis, representation mapping, diagnosis, intervention design, selected changes and pre/post evidence.
-3. Requiring external validation: causal performance, repeatability across segments, metric reliability, willingness to pay, scalability and product-market fit.
+1. Public articulation and provenance: the manifest, archival edition, publications, multilingual projections, distribution infrastructure, authorship and genealogy.
+2. Testable intervention framework: baseline analysis, representation mapping, diagnosis, prioritised intervention design, selected changes, pre/post evidence and retrospective analysis.
+3. Empirically open area: causal performance, repeatability across segments, metric reliability, willingness to pay, scalability and product-market fit entering external evaluation.
 
-Do not infer that multiple distribution platforms constitute multiple independent validations. A DOI establishes a persistent scholarly record; it does not by itself validate the effectiveness of a method. Indexing, crawling, publication count and attention are not equivalent to empirical performance.
+Distribution platforms extend access to a shared author-led corpus. DOI records provide persistent, citable references; indexing and crawling document machine accessibility. Separate pilot measurement addresses the effectiveness, repeatability and transferability of a specific intervention.
 
 Evidence page: https://dan-beranek.github.io/dio-odi-autorsky-koncept/dukazy/
 English evidence page: https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/evidence/

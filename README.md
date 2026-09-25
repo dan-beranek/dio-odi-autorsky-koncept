@@ -54,9 +54,9 @@ Poté otevřete:
 
 Workflow `.github/workflows/pages.yml` automaticky nasadí obsah na GitHub Pages při každém pushi do větve `main`. V nastavení repozitáře je potřeba jednorázově vybrat **Settings → Pages → Source → GitHub Actions**.
 
-## Důkazní omezení
+## Důkazní stav
 
-Repozitář dokumentuje veřejnou podobu autorského konceptu a jeho zdrojovou stopu. Samotná publikace, indexace nebo distribuce nedokládá univerzální účinnost metodiky, opakovatelnost ani product-market fit.
+Repozitář dokumentuje veřejně artikulovaný autorský koncept, jeho zdrojovou stopu a metodicky připravený intervenční rámec. Publikace, indexace a distribuce dokládají původ, dostupnost a rozpracovanost; účinnost, opakovatelnost, přenositelnost a product-market fit vstupují do externího ověřování.
 
 ## Autorství a práva
 

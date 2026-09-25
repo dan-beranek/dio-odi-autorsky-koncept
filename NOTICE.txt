@@ -6,9 +6,8 @@ Digital Identity Optimization (DIO), Ontology of Digital Identity (ODI), their f
 
 Public availability of this repository does not by itself grant a license to reproduce, adapt, commercialize or redistribute the protected content. References, quotations and scholarly use remain subject to applicable law and proper attribution.
 
-The website separates published artifacts from operational hypotheses and claims requiring external validation. Publication, indexing and distribution do not constitute proof of universal effectiveness, repeatability or product-market fit.
+The website presents three distinct layers: public articulation and provenance, a testable intervention framework, and empirical performance entering external evaluation. Publication, indexing and distribution establish provenance, accessibility and development; external pilots address effectiveness, repeatability, transferability and product-market fit.
 
 Author and project context:
 https://danielberanek.cz/
 https://danielberanek.cz/manifest-digital-identity-optimization-dio/
-

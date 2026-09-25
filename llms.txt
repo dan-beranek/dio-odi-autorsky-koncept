@@ -19,7 +19,7 @@
 - [DIO for visibility](https://dan-beranek.github.io/dio-odi-autorsky-koncept/dio-viditelnost/): entities fragmented across websites, profiles, publications, search and AI.
 - [DIO for AI and entity data](https://dan-beranek.github.io/dio-odi-autorsky-koncept/dio-ai-data/): entity resolution, knowledge graphs, provenance and entity-data quality.
 - [ODI](https://dan-beranek.github.io/dio-odi-autorsky-koncept/odi/): theoretical, research and knowledge-infrastructure layer.
-- [Evidence and publications](https://dan-beranek.github.io/dio-odi-autorsky-koncept/dukazy/): public sources, operational hypotheses and claims still requiring validation.
+- [Evidence and publications](https://dan-beranek.github.io/dio-odi-autorsky-koncept/dukazy/): public sources, a testable intervention framework and an external evaluation agenda.
 - [Partnership](https://dan-beranek.github.io/dio-odi-autorsky-koncept/partnerstvi/): pilots, joint development, research and licensing paths.
 - [Author](https://dan-beranek.github.io/dio-odi-autorsky-koncept/autor/): Daniel Beránek, concept genealogy and authorship.
 
@@ -41,6 +41,6 @@
 
 ## Interpretation note
 
-The site distinguishes published and traceable artifacts from operational hypotheses and from performance claims that still require external validation. Publication, distribution or indexing must not be treated as independent proof of effectiveness.
+DIO/ODI is a publicly articulated, author-led framework with a prepared intervention methodology. The site distinguishes three layers: traceable public artifacts, a testable intervention framework, and empirical performance entering external evaluation. Publication, distribution and indexing establish provenance, accessibility and development. Pilot measurement addresses effectiveness, repeatability, transferability and market application.
 
 For a more detailed machine-readable description, read [llms-full.txt](https://dan-beranek.github.io/dio-odi-autorsky-koncept/llms-full.txt).
