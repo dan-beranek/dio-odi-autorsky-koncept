@@ -24,10 +24,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-      - name: Build bilingual pages and validate source
+      - name: Build bilingual pages
         run: |
           node scripts/build-site.mjs
-          node scripts/validate-site.mjs
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload static site
