@@ -2,6 +2,7 @@ import { access, readFile, stat } from "node:fs/promises";
 import { constants } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { exposedAttributeTranslations, translations } from "./translations.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const siteUrl = "https://dan-beranek.github.io/dio-odi-autorsky-koncept/";
@@ -15,30 +16,37 @@ const imageAlt = {
 
 const pairs = [
   {
-    cs: ["index.html", "", "DIO/ODI: autorský koncept – AI visibility a entity resolution", "DIO/ODI je autorský koncept pro AI visibility, entity resolution a znalostní infrastrukturu. Otevřený pilotům, společnému vývoji a strategickému kapitálu.", "DIO/ODI: IP pro AI visibility a entity resolution", "Tři propojené hodnotové větve: tržní viditelnost, entitní data a ontologie digitální identity. Pro piloty, partnerství a strategický kapitál."],
+    key: "home",
+    cs: ["index.html", "", "DIO/ODI: autorský koncept – AI visibility a entity resolution", "DIO/ODI pomáhá digitálním systémům správně poznat, spojit a popsat firmy, lidi, produkty a projekty. Otevřeno pilotům, společnému vývoji a strategickému kapitálu.", "DIO/ODI: IP pro AI visibility a entity resolution", "DIO/ODI pomáhá digitálním systémům správně poznat, spojit a popsat firmy, lidi, produkty a projekty. Pro piloty, partnerství a strategický kapitál."],
     en: ["en/index.html", "en/", "DIO/ODI: Author-Led IP – AI Visibility & Entity Resolution", "DIO/ODI is author-led IP for AI visibility, entity resolution and knowledge infrastructure—open to pilots, co-development and strategic capital.", "DIO/ODI: IP for AI Visibility & Entity Resolution", "Three connected value tracks: market visibility, entity data and the ontology of digital identity—open to pilots, partnerships and strategic capital."],
   },
   {
+    key: "visibility",
     cs: ["dio-viditelnost/index.html", "dio-viditelnost/", "AI visibility: optimalizace digitální identity | DIO", "DIO řídí, jak jsou firmy, lidé a projekty rozpoznávány napříč webem, vyhledávači a AI – od analýzy výchozího stavu po měřitelnou intervenci.", "DIO pro AI visibility: řídit, jak systémy rozpoznají entitu", "Od analýzy výchozího stavu přes diagnostiku k měřitelné intervenci napříč webem, vyhledávači a AI."],
     en: ["en/ai-visibility/index.html", "en/ai-visibility/", "AI Visibility & Digital Identity Optimization | DIO", "DIO shapes how companies, people and projects are recognized across the web, search and AI—from an identity baseline to a measurable intervention.", "DIO for AI Visibility: Shape How Systems Recognize an Entity", "From identity baseline and diagnosis to measurable intervention across the web, search and AI."],
   },
   {
+    key: "entity",
     cs: ["dio-ai-data/index.html", "dio-ai-data/", "Entity resolution a znalostní grafy pro AI | DIO", "DIO pro entity resolution, znalostní grafy, RAG a provenance. Technický pilot pro spolehlivější rekonstrukci entit napříč datovými a AI systémy.", "DIO pro entity resolution a znalostní grafy", "Technický a výzkumný pilot pro konzistentnější rekonstrukci entit v datech, RAG a AI systémech."],
     en: ["en/entity-resolution/index.html", "en/entity-resolution/", "Entity Resolution & Knowledge Graphs for AI | DIO", "DIO for entity resolution, knowledge graphs, RAG and provenance. A technical pilot for more reliable entity reconstruction across data and AI systems.", "DIO for Entity Resolution & Knowledge Graphs", "A technical and research pilot for more consistent entity reconstruction across data, RAG and AI systems."],
   },
   {
+    key: "odi",
     cs: ["odi/index.html", "odi/", "Ontology of Digital Identity a znalostní infrastruktura | ODI", "ODI formalizuje digitální identitu pro ontologie, znalostní grafy, výzkum AI a standardizaci. Koncept je otevřený výzkumným a licenčním partnerstvím.", "ODI: ontologie digitální identity", "Teoretická, terminologická a IP vrstva pro ontologie, znalostní grafy, výzkum AI a standardizaci."],
     en: ["en/ontology-of-digital-identity/index.html", "en/ontology-of-digital-identity/", "Ontology of Digital Identity & Knowledge Infrastructure | ODI", "ODI formalizes digital identity for ontologies, knowledge graphs, AI R&D and standards—author-led IP open to research and licensing partnerships.", "ODI: An Ontology of Digital Identity", "A theoretical, terminological and IP layer for ontologies, knowledge graphs, AI research and standards."],
   },
   {
+    key: "partnerships",
     cs: ["partnerstvi/index.html", "partnerstvi/", "Investiční teze, partnerství a licence | DIO/ODI", "Piloty, licence, společný vývoj a investiční vstup do DIO/ODI: AI visibility, entity resolution a znalostní infrastruktura.", "DIO/ODI hledá piloty, partnery a strategický kapitál", "Vyberte konkrétní vstup: pilot, společný vývoj, výzkumné partnerství, licence nebo investice."],
     en: ["en/partnerships/index.html", "en/partnerships/", "Investment Thesis, Partnerships & Licensing | DIO/ODI", "Pilots, licensing, co-development and investment paths across DIO/ODI: AI visibility, entity resolution and knowledge infrastructure.", "DIO/ODI Is Open to Pilots, Partners & Strategic Capital", "Choose a concrete path: pilot, co-development, research partnership, licensing or investment."],
   },
   {
+    key: "evidence",
     cs: ["dukazy/index.html", "dukazy/", "DIO/ODI: důkazy, publikace a stav validace", "Publikace, DOI, distribuční vrstvy a stav validace DIO/ODI: veřejná artikulace, testovatelný intervenční rámec a externí ověřování.", "DIO/ODI: veřejná artikulace a externí ověřování", "Publikace, DOI, zdrojová stopa, testovatelné předpoklady a transparentně oddělené fáze validace."],
     en: ["en/evidence/index.html", "en/evidence/", "DIO/ODI Evidence, Publications & Validation Status", "Publications, DOI records, distribution layers and DIO/ODI validation status: public articulation, a testable intervention framework and external evaluation.", "DIO/ODI: Public Articulation & External Evaluation", "Publications, DOI records, source trail, testable assumptions and transparently separated validation stages."],
   },
   {
+    key: "author",
     cs: ["autor/index.html", "autor/", "Daniel Beránek – autor DIO a ODI", "Daniel Beránek je autorem Digital Identity Optimization a Ontology of Digital Identity. Geneze obou konceptů, odborné zázemí a autorská IP.", "Daniel Beránek, autor konceptů DIO a ODI", "Geneze Digital Identity Optimization a Ontology of Digital Identity, odborné zázemí a autorská IP vrstva."],
     en: ["en/author/index.html", "en/author/", "Daniel Beránek – Author of DIO and ODI", "Daniel Beránek is the author of Digital Identity Optimization and Ontology of Digital Identity. Explore the concepts’ origins, expertise and IP layer.", "Daniel Beránek, Author of DIO and ODI", "The origins of Digital Identity Optimization and Ontology of Digital Identity, the author’s background and the IP layer."],
   },
@@ -58,6 +66,135 @@ function decode(value = "") {
     .replaceAll("&#39;", "'")
     .replaceAll("&lt;", "<")
     .replaceAll("&gt;", ">");
+}
+
+const exposedTextAttributes = new Set([
+  "alt",
+  "aria-description",
+  "aria-label",
+  "aria-placeholder",
+  "aria-roledescription",
+  "aria-valuetext",
+  "placeholder",
+  "title",
+]);
+const czechDiacritics = /[áčďéěíňóřšťúůýžÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]/u;
+const czechInterface = /\b(?:Autor|Autorské|Další|Důkazy|Hlavní|Kontakt|Kontaktovat|Mobilní|Navrhnout|Otevřít|Partnerství|Přejít|Přineste|Připraveno|Projekt|Prozkoumat|Prověřit|Volba|Větve|Vyberte)\b/iu;
+
+function normalizeFragment(value) {
+  return decode(value).replace(/\s+/gu, " ").trim();
+}
+
+function withoutAllowedNames(value) {
+  return value
+    .replaceAll("Daniel Beránek", "Daniel Beranek")
+    .replaceAll("Beránek", "Beranek");
+}
+
+function findTagEnd(markup, start) {
+  let quote = "";
+  for (let index = start + 1; index < markup.length; index += 1) {
+    const character = markup[index];
+    if (quote) {
+      if (character === quote) quote = "";
+    } else if (character === '"' || character === "'") {
+      quote = character;
+    } else if (character === ">") {
+      return index;
+    }
+  }
+  return -1;
+}
+
+function localizedContent(html) {
+  const body = html.match(/<body\b[\s\S]*?<\/body>/iu)?.[0] ?? "";
+  const textNodes = [];
+  const exposedAttributes = [];
+  let cursor = 0;
+  let rawTextElement = "";
+
+  while (cursor < body.length) {
+    if (rawTextElement) {
+      const closing = new RegExp(`</${rawTextElement}\\s*>`, "iu").exec(body.slice(cursor));
+      if (!closing) break;
+      cursor += closing.index + closing[0].length;
+      rawTextElement = "";
+      continue;
+    }
+
+    if (body[cursor] !== "<") {
+      const nextTag = body.indexOf("<", cursor);
+      const end = nextTag === -1 ? body.length : nextTag;
+      if (!rawTextElement) {
+        const fragment = decode(body.slice(cursor, end)).trim();
+        if (fragment) textNodes.push(fragment);
+      }
+      cursor = end;
+      continue;
+    }
+
+    const tagEnd = findTagEnd(body, cursor);
+    if (tagEnd === -1) break;
+    const tag = body.slice(cursor, tagEnd + 1);
+    for (const match of tag.matchAll(/\b([:\w-]+)\s*=\s*(["'])([\s\S]*?)\2/gu)) {
+      const name = match[1].toLowerCase();
+      if (!exposedTextAttributes.has(name)) continue;
+      const fragment = decode(match[3]).trim();
+      if (fragment) exposedAttributes.push({ name, fragment });
+    }
+
+    const tagName = tag.match(/^<\/?\s*([\w:-]+)/u)?.[1]?.toLowerCase();
+    if (tagName === "script" || tagName === "style") {
+      if (/^<\//u.test(tag)) rawTextElement = "";
+      else if (!/\/\s*>$/u.test(tag)) rawTextElement = tagName;
+    }
+    cursor = tagEnd + 1;
+  }
+
+  return { exposedAttributes, textNodes };
+}
+
+function translationLookup(...records) {
+  const lookup = new Map();
+  for (const record of records) {
+    for (const [source, target] of Object.entries(record)) {
+      lookup.set(normalizeFragment(source), normalizeFragment(target));
+    }
+  }
+  return lookup;
+}
+
+function validateEnglishLocalization(scope, html, key) {
+  const pageTranslations = translations[key] ?? {};
+  const textLookup = translationLookup(pageTranslations);
+  const attributeLookup = translationLookup(pageTranslations, exposedAttributeTranslations);
+  const { exposedAttributes, textNodes } = localizedContent(html);
+
+  for (const fragment of textNodes) {
+    const normalized = normalizeFragment(fragment);
+    const expected = textLookup.get(normalized);
+    const inspectable = withoutAllowedNames(fragment);
+    if (expected !== undefined && expected !== normalized) {
+      fail(scope, `untranslated Czech text node: ${JSON.stringify(fragment)}`);
+    } else if (czechDiacritics.test(inspectable)) {
+      fail(scope, `visible text contains Czech diacritics: ${JSON.stringify(fragment)}`);
+    } else if (czechInterface.test(inspectable)) {
+      fail(scope, `visible text contains Czech navigation/interface wording: ${JSON.stringify(fragment)}`);
+    }
+  }
+
+  for (const { name, fragment } of exposedAttributes) {
+    const normalized = normalizeFragment(fragment);
+    const expected = attributeLookup.get(normalized);
+    const inspectable = withoutAllowedNames(fragment);
+    if (expected !== undefined && expected !== normalized) {
+      fail(scope, `untranslated exposed attribute ${name}: ${JSON.stringify(fragment)}`);
+    } else if (czechDiacritics.test(inspectable)) {
+      fail(scope, `exposed attribute ${name} contains Czech diacritics: ${JSON.stringify(fragment)}`);
+    } else if (czechInterface.test(inspectable)) {
+      fail(scope, `exposed attribute ${name} contains Czech navigation/interface wording: ${JSON.stringify(fragment)}`);
+    }
+  }
 }
 
 function attrs(tag) {
@@ -160,14 +297,7 @@ for (const pair of pairs) {
     if (!switchBlock.includes("CZ") || !switchBlock.includes("EN")) fail(scope, "language switch must show CZ and EN");
 
     if (lang === "en") {
-      const body = (html.match(/<body\b[\s\S]*?<\/body>/i)?.[0] ?? "")
-        .replace(/<script\b[\s\S]*?<\/script>/gi, " ")
-        .replace(/<style\b[\s\S]*?<\/style>/gi, " ")
-        .replace(/<[^>]+>/g, " ")
-        .replaceAll("Beránek", "Beranek");
-      if (/[áčďéěíňóřšťúůýžÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]/.test(body)) fail(scope, "English visible content contains Czech diacritics");
-      const czechUi = /\b(Přejít|Otevřít|Důkazy|Partnerství|Větve|Projekt|Kontaktovat|Přineste|Vyberte|Navrhnout|Prozkoumat|Prověřit)\b/;
-      if (czechUi.test(body)) fail(scope, "English visible content contains Czech interface text");
+      validateEnglishLocalization(scope, html, pair.key);
     }
   }
 }
@@ -226,4 +356,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log("Validated 14 pages, bilingual metadata, reciprocal hreflang, JSON-LD, sitemap, internal routes and 1200×630 social image.");
+console.log("Validation passed for 14 localized HTML pages.");

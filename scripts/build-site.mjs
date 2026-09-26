@@ -1,7 +1,7 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { translations } from "./translations.mjs";
+import { exposedAttributeTranslations, translations } from "./translations.mjs";
 
 const projectRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
 const origin = "https://dan-beranek.github.io";
@@ -23,11 +23,11 @@ const pages = [
     csPath: "",
     enPath: "en/",
     csTitle: "DIO/ODI: autorský koncept – AI visibility a entity resolution",
-    csDescription: "DIO/ODI je autorský koncept pro AI visibility, entity resolution a znalostní infrastrukturu. Otevřený pilotům, společnému vývoji a strategickému kapitálu.",
+    csDescription: "DIO/ODI pomáhá digitálním systémům správně poznat, spojit a popsat firmy, lidi, produkty a projekty. Otevřeno pilotům, společnému vývoji a strategickému kapitálu.",
     enTitle: "DIO/ODI: Author-Led IP – AI Visibility & Entity Resolution",
     enDescription: "DIO/ODI is author-led IP for AI visibility, entity resolution and knowledge infrastructure—open to pilots, co-development and strategic capital.",
     csSocialTitle: "DIO/ODI: IP pro AI visibility a entity resolution",
-    csSocialDescription: "Tři propojené hodnotové větve: tržní viditelnost, entitní data a ontologie digitální identity. Pro piloty, partnerství a strategický kapitál.",
+    csSocialDescription: "DIO/ODI pomáhá digitálním systémům správně poznat, spojit a popsat firmy, lidi, produkty a projekty. Pro piloty, partnerství a strategický kapitál.",
     enSocialTitle: "DIO/ODI: IP for AI Visibility & Entity Resolution",
     enSocialDescription: "Three connected value tracks: market visibility, entity data and the ontology of digital identity—open to pilots, partnerships and strategic capital.",
   },
@@ -310,16 +310,139 @@ function footer(lang) {
   return `<footer class="site-footer"><div class="shell footer-main"><div><p class="footer-label">DIO/ODI</p><h2>${isCs ? "Identita jako optimalizační objekt." : "Identity as the optimization object."}</h2><p>${isCs ? "Autorský koncept Daniela Beránka pro tržní viditelnost, AI a entitní data a znalostní infrastrukturu." : "An author-led concept by Daniel Beránek for market visibility, AI and entity data, and knowledge infrastructure."}</p></div><div><p class="footer-label">${isCs ? "Větve" : "Branches"}</p><ul class="footer-links"><li><a href="${localPaths[`${lang}:visibility`]}">${isCs ? "DIO pro viditelnost" : "DIO for AI visibility"}</a></li><li><a href="${localPaths[`${lang}:entity`]}">${isCs ? "DIO pro AI a data" : "DIO for AI & entity data"}</a></li><li><a href="${localPaths[`${lang}:odi`]}">${isCs ? "ODI" : "ODI for knowledge infrastructure"}</a></li></ul></div><div><p class="footer-label">${isCs ? "Projekt" : "Project"}</p><ul class="footer-links"><li><a href="${localPaths[`${lang}:partnerships`]}">${isCs ? "Partnerství" : "Partnerships"}</a></li><li><a href="${localPaths[`${lang}:evidence`]}">${isCs ? "Důkazy" : "Evidence"}</a></li><li><a href="${localPaths[`${lang}:author`]}">${isCs ? "Autor" : "Author"}</a></li><li><a href="https://danielberanek.cz/manifest-digital-identity-optimization-dio/" target="_blank" rel="noopener noreferrer">Manifest <span aria-hidden="true">↗</span></a></li></ul></div></div><div class="shell footer-bottom"><span>© 2026 Daniel Beránek · DIO/ODI</span><span>${isCs ? "Autorské IP · Brno" : "Author-led IP · Brno"}</span></div></footer>`;
 }
 
-function translateMain(main, key) {
-  const pageTranslations = translations[key];
-  if (!pageTranslations) throw new Error(`Missing translations for ${key}`);
-  const translated = main.replace(/>([^<]+)</g, (match, value) => {
-    const leading = value.match(/^\s*/)[0];
-    const trailing = value.match(/\s*$/)[0];
-    const text = value.trim();
-    if (!text || !Object.hasOwn(pageTranslations, text)) return match;
-    return `>${leading}${pageTranslations[text]}${trailing}<`;
+const exposedTextAttributes = new Set([
+  "alt",
+  "aria-description",
+  "aria-label",
+  "aria-placeholder",
+  "aria-roledescription",
+  "aria-valuetext",
+  "placeholder",
+  "title",
+]);
+const czechDiacritics = /[áčďéěíňóřšťúůýžÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]/u;
+const czechAsciiInterface = /\b(?:autor|geneze|kontakt|kontaktovat|koordinace|navrhnout|obsah|praxe|projekt|strategie)\b/iu;
+
+function normalizeTranslationKey(value) {
+  return value.replace(/\s+/gu, " ").trim();
+}
+
+function translationIndex(records, label) {
+  const index = new Map();
+  for (const record of records) {
+    for (const [source, target] of Object.entries(record)) {
+      const key = normalizeTranslationKey(source);
+      if (index.has(key) && index.get(key) !== target) {
+        throw new Error(`Conflicting normalized translation key in ${label}: ${JSON.stringify(key)}`);
+      }
+      index.set(key, target);
+    }
+  }
+  return index;
+}
+
+function looksCzech(value) {
+  const withoutNames = value
+    .replaceAll("Daniel Beránek", "Daniel Beranek")
+    .replaceAll("Beránek", "Beranek");
+  return czechDiacritics.test(withoutNames) || czechAsciiInterface.test(withoutNames);
+}
+
+function translateValue(value, index, page, type, missing) {
+  const leading = value.match(/^\s*/u)?.[0] ?? "";
+  const trailing = value.match(/\s*$/u)?.[0] ?? "";
+  const exactFragment = value.slice(leading.length, value.length - trailing.length);
+  const normalized = normalizeTranslationKey(exactFragment);
+  if (!normalized) return value;
+
+  const translated = index.get(normalized);
+  if (translated !== undefined) return `${leading}${translated}${trailing}`;
+
+  if (looksCzech(exactFragment)) {
+    missing.push(`${page.csFile} -> /${page.enPath} [${type}]: ${JSON.stringify(exactFragment)}`);
+  }
+  return value;
+}
+
+function findTagEnd(markup, start) {
+  let quote = "";
+  for (let index = start + 1; index < markup.length; index += 1) {
+    const character = markup[index];
+    if (quote) {
+      if (character === quote) quote = "";
+    } else if (character === '"' || character === "'") {
+      quote = character;
+    } else if (character === ">") {
+      return index;
+    }
+  }
+  return -1;
+}
+
+function translateExposedAttributes(tag, index, page, missing) {
+  return tag.replace(/\b([:\w-]+)(\s*=\s*)(["'])([\s\S]*?)\3/gu, (match, name, equals, quote, value) => {
+    if (!exposedTextAttributes.has(name.toLowerCase())) return match;
+    const translated = translateValue(value, index, page, `attribute ${name}`, missing);
+    return `${name}${equals}${quote}${translated}${quote}`;
   });
+}
+
+function translateMarkup(main, page, textIndex, attributeIndex, missing) {
+  let cursor = 0;
+  let output = "";
+  let rawTextElement = "";
+
+  while (cursor < main.length) {
+    if (rawTextElement) {
+      const closing = new RegExp(`</${rawTextElement}\\s*>`, "iu").exec(main.slice(cursor));
+      if (!closing) {
+        output += main.slice(cursor);
+        break;
+      }
+      const closingStart = cursor + closing.index;
+      output += main.slice(cursor, closingStart + closing[0].length);
+      cursor = closingStart + closing[0].length;
+      rawTextElement = "";
+      continue;
+    }
+
+    if (main[cursor] !== "<") {
+      const nextTag = main.indexOf("<", cursor);
+      const end = nextTag === -1 ? main.length : nextTag;
+      const value = main.slice(cursor, end);
+      output += rawTextElement ? value : translateValue(value, textIndex, page, "text node", missing);
+      cursor = end;
+      continue;
+    }
+
+    const tagEnd = findTagEnd(main, cursor);
+    if (tagEnd === -1) throw new Error(`${page.csFile}: unterminated HTML tag in <main>`);
+    const sourceTag = main.slice(cursor, tagEnd + 1);
+    output += translateExposedAttributes(sourceTag, attributeIndex, page, missing);
+
+    const tagName = sourceTag.match(/^<\/?\s*([\w:-]+)/u)?.[1]?.toLowerCase();
+    if (tagName === "script" || tagName === "style") {
+      if (/^<\//u.test(sourceTag)) rawTextElement = "";
+      else if (!/\/\s*>$/u.test(sourceTag)) rawTextElement = tagName;
+    }
+    cursor = tagEnd + 1;
+  }
+
+  return output;
+}
+
+function translateMain(main, page) {
+  const pageTranslations = translations[page.key];
+  if (!pageTranslations) throw new Error(`Missing translations for ${page.key}`);
+
+  const missing = [];
+  const textIndex = translationIndex([pageTranslations], page.key);
+  const attributeIndex = translationIndex([pageTranslations, exposedAttributeTranslations], `${page.key} attributes`);
+  const translated = translateMarkup(main, page, textIndex, attributeIndex, missing);
+  if (missing.length) {
+    throw new Error(`Missing English localization:\n${missing.map((item) => `- ${item}`).join("\n")}`);
+  }
+
   return translated
     .replaceAll(`${projectPath}partnerstvi/`, `${projectPath}en/partnerships/`)
     .replaceAll(`${projectPath}dio-viditelnost/`, `${projectPath}en/ai-visibility/`)
@@ -328,14 +451,6 @@ function translateMain(main, key) {
     .replaceAll(`${projectPath}autor/`, `${projectPath}en/author/`)
     .replaceAll(`${projectPath}odi/`, `${projectPath}en/ontology-of-digital-identity/`)
     .replaceAll(`href="${projectPath}"`, `href="${projectPath}en/"`)
-    .replace('aria-label="Média, která rekonstruují digitální identitu"', 'aria-label="Media that reconstruct digital identity"')
-    .replace('aria-label="K6 – plně propojený model šesti dimenzí digitální identity"', 'aria-label="K6 – a fully connected model of six digital-identity dimensions"')
-    .replace('aria-label="Entita"', 'aria-label="Entity"')
-    .replace('aria-label="Reprezentace"', 'aria-label="Representation"')
-    .replace('aria-label="Interpretace"', 'aria-label="Interpretation"')
-    .replace('aria-label="Důvěra"', 'aria-label="Trust"')
-    .replace('aria-label="Vztah"', 'aria-label="Relationship"')
-    .replace('aria-label="Rekonstrukce"', 'aria-label="Reconstruction"')
     .replace('id="intervence"', 'id="intervention"')
     .replace('href="#intervence"', 'href="#intervention"')
     .replace('id="otazky"', 'id="questions"')
@@ -368,11 +483,9 @@ for (const page of pages) {
   const main = source.match(/<main\b[\s\S]*?<\/main>/)?.[0];
   if (!main) throw new Error(`Missing <main> in ${page.csFile}`);
 
-  const csOutput = document(page, "cs", main);
-  const enOutput = document(page, "en", translateMain(main, page.key));
+  const enOutput = document(page, "en", translateMain(main, page));
   const enTarget = join(projectRoot, page.enFile);
   await mkdir(dirname(enTarget), { recursive: true });
-  await writeFile(join(projectRoot, page.csFile), csOutput);
   await writeFile(enTarget, enOutput);
 }
 
