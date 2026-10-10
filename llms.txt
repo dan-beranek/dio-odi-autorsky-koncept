@@ -40,7 +40,7 @@
 - [Manifest of DIO and ODI — canonical multilingual edition](https://doi.org/10.5281/zenodo.21610934)
 - [DIO: A Conceptual Framework for Entity-Based Visibility in the Age of AI-Mediated Search](https://doi.org/10.2139/ssrn.7247578)
 - [The Crisis of Entity Resolution in Heterogeneous AI Environments](https://doi.org/10.2139/ssrn.7396398)
-- [Minimum Viable Digital Identity Optimization (DIO)](https://doi.org/10.5281/zenodo.23226205)
+- [Minimum Viable Digital Identity Optimization (DIO)](https://dx.doi.org/10.2139/ssrn.7590979)
 - [From Entity Resolution Anomalies to Reconstruction Failure Modes: A Taxonomic Note Following MVDIO](https://doi.org/10.5281/zenodo.23269323)
 - [DIO/ODI Reference Model v0.2.0](https://doi.org/10.5281/zenodo.23282752)
 
