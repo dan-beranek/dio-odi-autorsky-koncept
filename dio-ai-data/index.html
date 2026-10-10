@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Entity resolution a znalostní grafy pro AI | DIO</title>
-  <meta name="description" content="DIO pro entity resolution, znalostní grafy, RAG a provenance. Technický pilot pro spolehlivější rekonstrukci entit napříč datovými a AI systémy.">
+  <meta name="description" content="DIO pro entity resolution, znalostní grafy, RAG a taxonomii Reconstruction Failure Modes. Technický pilot pro spolehlivější rekonstrukci entit.">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <meta name="theme-color" content="#080b12">
   <link rel="canonical" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/dio-ai-data/">
@@ -17,7 +17,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="DIO/ODI">
   <meta property="og:title" content="DIO pro entity resolution a znalostní grafy">
-  <meta property="og:description" content="Technický a výzkumný pilot pro konzistentnější rekonstrukci entit v datech, RAG a AI systémech.">
+  <meta property="og:description" content="Víceúrovňová diagnostická taxonomie a technický pilot pro přesnější rekonstrukci entit v datech, RAG a AI systémech.">
   <meta property="og:url" content="https://dan-beranek.github.io/dio-odi-autorsky-koncept/dio-ai-data/">
   <meta property="og:image" content="https://dan-beranek.github.io/dio-odi-autorsky-koncept/assets/dio-odi-social-v1.png">
   <meta property="og:image:width" content="1200">
@@ -28,7 +28,7 @@
   <meta property="og:locale:alternate" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="DIO pro entity resolution a znalostní grafy">
-  <meta name="twitter:description" content="Technický a výzkumný pilot pro konzistentnější rekonstrukci entit v datech, RAG a AI systémech.">
+  <meta name="twitter:description" content="Víceúrovňová diagnostická taxonomie a technický pilot pro přesnější rekonstrukci entit v datech, RAG a AI systémech.">
   <meta name="twitter:image" content="https://dan-beranek.github.io/dio-odi-autorsky-koncept/assets/dio-odi-social-v1.png">
   <meta name="twitter:image:alt" content="DIO/ODI – AI visibility, entity resolution a znalostní infrastruktura">
   <script type="application/ld+json">
@@ -38,7 +38,7 @@
   "@id": "https://dan-beranek.github.io/dio-odi-autorsky-koncept/dio-ai-data/#webpage",
   "url": "https://dan-beranek.github.io/dio-odi-autorsky-koncept/dio-ai-data/",
   "name": "Entity resolution a znalostní grafy pro AI | DIO",
-  "description": "DIO pro entity resolution, znalostní grafy, RAG a provenance. Technický pilot pro spolehlivější rekonstrukci entit napříč datovými a AI systémy.",
+  "description": "DIO pro entity resolution, znalostní grafy, RAG a taxonomii Reconstruction Failure Modes. Technický pilot pro spolehlivější rekonstrukci entit.",
   "inLanguage": "cs-CZ",
   "author": {
     "@type": "Person",
@@ -63,7 +63,10 @@
   "citation": [
     "https://doi.org/10.5281/zenodo.21610934",
     "https://doi.org/10.2139/ssrn.7247578",
-    "https://doi.org/10.2139/ssrn.7396398"
+    "https://doi.org/10.2139/ssrn.7396398",
+    "https://doi.org/10.5281/zenodo.23226205",
+    "https://doi.org/10.5281/zenodo.23269323",
+    "https://doi.org/10.5281/zenodo.23282752"
   ],
   "isPartOf": {
     "@type": "WebSite",
@@ -107,6 +110,18 @@
       </div>
     </div></section>
 
+    <section class="section section-white" id="reconstruction-failures"><div class="shell">
+      <div class="section-head reveal"><div><p class="eyebrow">Diagnostická taxonomie</p><h2>Reconstruction Failure Modes rozlišují, co přesně se v rekonstrukci porušilo.</h2></div><p>Taxonomie navazuje na MVDIO a převádí jednotlivé anomálie do víceúrovňového systému. Jedna rekonstrukce může současně vykazovat více režimů selhání.</p></div>
+      <div class="grid-2 reveal">
+        <article class="card"><span class="meta">Referential Reconstruction Failures</span><h3>Který referent systém rekonstruuje?</h3><p><strong>Entity Substitution</strong> zamění referent. <strong>Merge Failure</strong> sloučí odlišné entity. <strong>Split Failure</strong> rozdělí jednu entitu do více uzlů. <strong>Entity Omission</strong> vynechá součást rekonstrukce navzdory tomu, že byla pro systém dostupná.</p></article>
+        <article class="card"><span class="meta">Semantic Coherence Failures</span><h3>Zůstává význam soudržný?</h3><p><strong>Semantic Fragmentation</strong> zachovává referenční jednotu entity, ale její reprezentace už netvoří vzájemně slučitelný významový celek.</p></article>
+        <article class="card"><span class="meta">Temporal Reconstruction Failures</span><h3>Odpovídá rekonstrukce správnému času?</h3><p><strong>Temporal Discontinuity</strong> naruší návaznost identity. <strong>Temporal Misalignment</strong> rekonstruuje správný referent v nesprávném časovém stavu.</p></article>
+        <article class="card"><span class="meta">Contextual Adequacy Failures</span><h3>Odpovídá rekonstrukce situaci?</h3><p><strong>Contextual Displacement</strong> zvýrazní aspekt, který může být fakticky doložitelný, ale pro danou otázku, roli nebo prostředí není adekvátní.</p></article>
+      </div>
+      <div class="taxonomy-note reveal"><div><span class="meta">Jev nad úrovní jednotlivého selhání</span><h3>Identity Collapse</h3><p>Označuje souhrnný rozpad rekonstrukce, nikoli další položku uvnitř taxonomické hierarchie.</p></div><div><span class="meta">Vlastnost odolnosti a rizika</span><h3>Semantic Vulnerability ↔ Semantic Robustness</h3><p>Vyjadřuje náchylnost, nebo naopak odolnost rekonstrukce vůči významovému posunu. Stojí mimo hierarchii failure modes.</p></div></div>
+      <p class="source-links reveal"><a class="text-link" href="https://doi.org/10.5281/zenodo.23269323" target="_blank" rel="noopener noreferrer">Taxonomic Note <span aria-hidden="true">↗</span></a><a class="text-link" href="https://vocab.danielberanek.cz/dio-odi/" target="_blank" rel="noopener noreferrer">DIO/ODI Reference Vocabulary <span aria-hidden="true">↗</span></a></p>
+    </div></section>
+
     <section class="section section-dark"><div class="shell mechanism reveal">
       <div><p class="eyebrow">DIO perspektiva</p><h2>Entity charter místo neurčitého „vyčistěte data“.</h2><p class="lead">Pilot vymezí, jakou entitu systém rozhoduje, z jakých reprezentací, podle kterých vztahů a s jakou důvěrou. Teprve potom má smysl měřit změnu.</p></div>
       <div><div class="mechanism-path"><div class="mechanism-row"><span class="dot"></span><span>Identifikační pravidla</span><small>hranice · aliasy</small></div><div class="mechanism-row"><span class="dot"></span><span>Důkazní pravidla</span><small>zdroj · čas · role</small></div><div class="mechanism-row"><span class="dot"></span><span>Vztahová pravidla</span><small>typ · směr · kontext</small></div><div class="mechanism-row"><span class="dot"></span><span>Politika nejistoty</span><small>jistota · konflikt · abstence</small></div></div><div class="mechanism-result"><span class="meta">Výsledek</span><strong>Auditovatelná rekonstrukce entity</strong></div></div>
@@ -147,6 +162,6 @@
     <section class="section section-blue"><div class="shell cta-block reveal"><div><p class="eyebrow">DIO pro AI a data</p><h2>Navrhněte jeden entitní problém, který stojí za přesnější rozhodnutí.</h2></div><div><p>První dialog má vymezit systém, entitu, chybový vzorec, dostupná data, možný zásah a způsob, jak poznat užitečnou změnu.</p><div class="cta-actions"><a class="button" href="/dio-odi-autorsky-koncept/partnerstvi/#nabidka">Navrhnout technický nebo datový pilot →</a><a class="button button-secondary" href="/dio-odi-autorsky-koncept/odi/">Prozkoumat teoretickou vrstvu</a></div></div></div></section>
   </main>
 
-  <footer class="site-footer"><div class="shell footer-main"><div><p class="footer-label">DIO/ODI</p><h2>Identita jako optimalizační objekt.</h2><p>Autorský koncept Daniela Beránka pro tržní viditelnost, AI a entitní data a znalostní infrastrukturu.</p></div><div><p class="footer-label">Větve</p><ul class="footer-links"><li><a href="/dio-odi-autorsky-koncept/dio-viditelnost/">DIO pro viditelnost</a></li><li><a href="/dio-odi-autorsky-koncept/dio-ai-data/">DIO pro AI a data</a></li><li><a href="/dio-odi-autorsky-koncept/odi/">ODI</a></li></ul></div><div><p class="footer-label">Projekt</p><ul class="footer-links"><li><a href="/dio-odi-autorsky-koncept/partnerstvi/">Partnerství</a></li><li><a href="/dio-odi-autorsky-koncept/dukazy/">Důkazy</a></li><li><a href="/dio-odi-autorsky-koncept/autor/">Autor</a></li><li><a href="https://danielberanek.cz/manifest-digital-identity-optimization-dio/" target="_blank" rel="noopener noreferrer">Manifest <span aria-hidden="true">↗</span></a></li></ul></div></div><div class="shell footer-bottom"><span>© 2026 Daniel Beránek · DIO/ODI</span><span>Autorské IP · Brno</span></div></footer>
+  <footer class="site-footer"><div class="shell footer-main"><div><p class="footer-label">DIO/ODI</p><h2>Identita jako optimalizační objekt.</h2><p>Autorský koncept Daniela Beránka pro tržní viditelnost, AI a entitní data a znalostní infrastrukturu.</p></div><div><p class="footer-label">Větve</p><ul class="footer-links"><li><a href="/dio-odi-autorsky-koncept/dio-viditelnost/">DIO pro viditelnost</a></li><li><a href="/dio-odi-autorsky-koncept/dio-ai-data/">DIO pro AI a data</a></li><li><a href="/dio-odi-autorsky-koncept/odi/">ODI</a></li></ul></div><div><p class="footer-label">Projekt</p><ul class="footer-links"><li><a href="/dio-odi-autorsky-koncept/partnerstvi/">Partnerství</a></li><li><a href="/dio-odi-autorsky-koncept/dukazy/">Důkazy</a></li><li><a href="/dio-odi-autorsky-koncept/autor/">Autor</a></li><li><a href="https://danielberanek.cz/manifest-dio/" target="_blank" rel="noopener noreferrer">Manifest <span aria-hidden="true">↗</span></a></li></ul></div></div><div class="shell footer-bottom"><span>© 2026 Daniel Beránek · DIO/ODI</span><span>Autorské IP · Brno</span></div></footer>
 </body>
 </html>

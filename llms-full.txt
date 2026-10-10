@@ -8,8 +8,10 @@ Languages: Czech (`cs-CZ`) and English (`en`). Czech is the default language.
 Project website: https://dan-beranek.github.io/dio-odi-autorsky-koncept/
 English overview: https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/
 Author website: https://danielberanek.cz/
-Live Czech manifest: https://danielberanek.cz/manifest-digital-identity-optimization-dio/
+Live Czech manifest and changelog: https://danielberanek.cz/manifest-dio/
 Canonical multilingual archival edition: https://doi.org/10.5281/zenodo.21610934
+Canonical reference vocabulary: https://vocab.danielberanek.cz/dio-odi/
+Canonical namespace: https://vocab.danielberanek.cz/dio-odi/#
 
 ## Concise definition
 
@@ -18,6 +20,8 @@ DIO treats an entity—not an individual page—as the object of optimization. I
 ODI is the related theoretical, research and IP layer. It develops the vocabulary, principles, questions and possible formal foundations needed to describe identity reconstruction across heterogeneous human and machine environments.
 
 DIO and ODI are related but not interchangeable: DIO is the applied optimization framework; ODI is the theoretical and ontological layer.
+
+The minimal DIO formulation describes the intentional and systematic manipulation of a distributed digital representational state to improve reconstruction conditions within a defined observation domain. MVDIO is the coarse-grained minimum; K6 is a finer-grained candidate model.
 
 ## Shared mechanism
 
@@ -31,6 +35,29 @@ The K6 semantic connectome contains six mutually dependent dimensions:
 4. Trust — consistency, provenance and evidence supporting a reconstruction.
 5. Relationship — connections to people, organizations, works, categories and sources.
 6. Reconstruction — the resulting version of the entity assembled by a specific observer.
+
+## Reconstruction Failure Modes
+
+The taxonomy is multi-level and non-exclusive: one reconstruction may exhibit more than one failure mode.
+
+1. Referential Reconstruction Failures
+   - Entity Substitution — the reconstruction points to a different referent.
+   - Merge Failure — distinct entities are collapsed into one.
+   - Split Failure — one entity loses referential unity across multiple reconstructed nodes.
+   - Entity Omission — a reconstruction omits a relevant entity or component that was available to the system. Cases in which a representation was never acquired, crawled, indexed, retrieved or made available belong to an acquisition or retrieval problem and are not automatically Entity Omission.
+2. Semantic Coherence Failures
+   - Semantic Fragmentation — referential unity is preserved while semantic coherence is lost.
+3. Temporal Reconstruction Failures
+   - Temporal Discontinuity — continuity across identity states is broken.
+   - Temporal Misalignment — the referent is correct but reconstructed in the wrong temporal state.
+4. Contextual Adequacy Failures
+   - Contextual Displacement — the reconstruction may be factually supportable yet inadequate to the relevant question, role or context.
+
+Identity Collapse is a phenomenon-level outcome outside the taxonomy. Semantic Vulnerability and its counterpart Semantic Robustness are risk/robustness properties, not additional failure modes.
+
+## Machine-readable reference layer
+
+Reference Vocabulary v0.1.0 and Reference Model v0.2.0 provide stable term identifiers, definitions, relations and provenance under the canonical namespace. The vocabulary is SKOS-first and distributed in Turtle and JSON-LD. A RAG mapping translates selected terms into an application pipeline; it is derived rather than canonical.
 
 ## Three value branches
 
@@ -54,9 +81,9 @@ English page: https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/ontology
 
 ## Evidence status
 
-DIO/ODI is publicly articulated and methodologically prepared. The project distinguishes three evidence layers:
+DIO/ODI has a public research and reference architecture. The project distinguishes three evidence layers:
 
-1. Public articulation and provenance: the manifest, archival edition, publications, multilingual projections, distribution infrastructure, authorship and genealogy.
+1. Published and reference artifacts: the manifest, archival edition, research papers, MVDIO, the Reconstruction Failure Modes taxonomy, Reference Vocabulary v0.1.0, Reference Model v0.2.0, multilingual projections, distribution infrastructure, authorship and genealogy.
 2. Testable intervention framework: baseline analysis, representation mapping, diagnosis, prioritised intervention design, selected changes, pre/post evidence and retrospective analysis.
 3. Empirically open area: causal performance, repeatability across segments, metric reliability, willingness to pay, scalability and product-market fit entering external evaluation.
 
@@ -70,6 +97,9 @@ English evidence page: https://dan-beranek.github.io/dio-odi-autorsky-koncept/en
 1. Daniel Beránek. “Manifest of Digital Identity Optimization (DIO) and Ontology of Digital Identity (ODI): Canonical Multilingual Edition.” https://doi.org/10.5281/zenodo.21610934
 2. Daniel Beránek. “Digital Identity Optimization (DIO): A Conceptual Framework for Entity-Based Visibility in the Age of AI-Mediated Search.” https://doi.org/10.2139/ssrn.7247578
 3. Daniel Beránek. “The Crisis of Entity Resolution in Heterogeneous AI Environments: Data, Financial, and Semantic Dimensions.” https://doi.org/10.2139/ssrn.7396398
+4. Daniel Beránek. “Minimum Viable Digital Identity Optimization (DIO).” https://doi.org/10.5281/zenodo.23226205
+5. Daniel Beránek. “From Entity Resolution Anomalies to Reconstruction Failure Modes: A Taxonomic Note Following Minimum Viable Digital Identity Optimization (DIO).” https://doi.org/10.5281/zenodo.23269323
+6. Daniel Beránek. “DIO/ODI Reference Model v0.2.0.” https://doi.org/10.5281/zenodo.23282752
 
 ## Author
 

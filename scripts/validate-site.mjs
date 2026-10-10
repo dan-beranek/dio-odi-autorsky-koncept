@@ -9,6 +9,14 @@ const siteUrl = "https://dan-beranek.github.io/dio-odi-autorsky-koncept/";
 const projectPath = "/dio-odi-autorsky-koncept/";
 const imageUrl = `${siteUrl}assets/dio-odi-social-v1.png`;
 const robots = "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1";
+const citations = [
+  "https://doi.org/10.5281/zenodo.21610934",
+  "https://doi.org/10.2139/ssrn.7247578",
+  "https://doi.org/10.2139/ssrn.7396398",
+  "https://doi.org/10.5281/zenodo.23226205",
+  "https://doi.org/10.5281/zenodo.23269323",
+  "https://doi.org/10.5281/zenodo.23282752",
+];
 const imageAlt = {
   cs: "DIO/ODI – AI visibility, entity resolution a znalostní infrastruktura",
   en: "DIO/ODI – AI visibility, entity resolution and knowledge infrastructure",
@@ -27,13 +35,13 @@ const pairs = [
   },
   {
     key: "entity",
-    cs: ["dio-ai-data/index.html", "dio-ai-data/", "Entity resolution a znalostní grafy pro AI | DIO", "DIO pro entity resolution, znalostní grafy, RAG a provenance. Technický pilot pro spolehlivější rekonstrukci entit napříč datovými a AI systémy.", "DIO pro entity resolution a znalostní grafy", "Technický a výzkumný pilot pro konzistentnější rekonstrukci entit v datech, RAG a AI systémech."],
-    en: ["en/entity-resolution/index.html", "en/entity-resolution/", "Entity Resolution & Knowledge Graphs for AI | DIO", "DIO for entity resolution, knowledge graphs, RAG and provenance. A technical pilot for more reliable entity reconstruction across data and AI systems.", "DIO for Entity Resolution & Knowledge Graphs", "A technical and research pilot for more consistent entity reconstruction across data, RAG and AI systems."],
+    cs: ["dio-ai-data/index.html", "dio-ai-data/", "Entity resolution a znalostní grafy pro AI | DIO", "DIO pro entity resolution, znalostní grafy, RAG a taxonomii Reconstruction Failure Modes. Technický pilot pro spolehlivější rekonstrukci entit.", "DIO pro entity resolution a znalostní grafy", "Víceúrovňová diagnostická taxonomie a technický pilot pro přesnější rekonstrukci entit v datech, RAG a AI systémech."],
+    en: ["en/entity-resolution/index.html", "en/entity-resolution/", "Entity Resolution & Knowledge Graphs for AI | DIO", "DIO for entity resolution, knowledge graphs, RAG and the Reconstruction Failure Modes taxonomy. A technical pilot for more reliable entity reconstruction.", "DIO for Entity Resolution & Knowledge Graphs", "A multi-level diagnostic taxonomy and technical pilot for more accurate entity reconstruction across data, RAG and AI systems."],
   },
   {
     key: "odi",
-    cs: ["odi/index.html", "odi/", "Ontology of Digital Identity a znalostní infrastruktura | ODI", "ODI formalizuje digitální identitu pro ontologie, znalostní grafy, výzkum AI a standardizaci. Koncept je otevřený výzkumným a licenčním partnerstvím.", "ODI: ontologie digitální identity", "Teoretická, terminologická a IP vrstva pro ontologie, znalostní grafy, výzkum AI a standardizaci."],
-    en: ["en/ontology-of-digital-identity/index.html", "en/ontology-of-digital-identity/", "Ontology of Digital Identity & Knowledge Infrastructure | ODI", "ODI formalizes digital identity for ontologies, knowledge graphs, AI R&D and standards—author-led IP open to research and licensing partnerships.", "ODI: An Ontology of Digital Identity", "A theoretical, terminological and IP layer for ontologies, knowledge graphs, AI research and standards."],
+    cs: ["odi/index.html", "odi/", "Ontology of Digital Identity a znalostní infrastruktura | ODI", "ODI propojuje Reference Vocabulary v0.1.0, Reference Model v0.2.0 a strojově čitelné formáty pro ontologie, znalostní grafy a výzkum AI.", "ODI: ontologie digitální identity", "Teoretická, terminologická a IP vrstva pro ontologie, znalostní grafy, výzkum AI a standardizaci."],
+    en: ["en/ontology-of-digital-identity/index.html", "en/ontology-of-digital-identity/", "Ontology of Digital Identity & Knowledge Infrastructure | ODI", "ODI connects Reference Vocabulary v0.1.0, Reference Model v0.2.0 and machine-readable formats for ontologies, knowledge graphs and AI research.", "ODI: An Ontology of Digital Identity", "A theoretical, terminological and IP layer for ontologies, knowledge graphs, AI research and standards."],
   },
   {
     key: "partnerships",
@@ -42,8 +50,8 @@ const pairs = [
   },
   {
     key: "evidence",
-    cs: ["dukazy/index.html", "dukazy/", "DIO/ODI: důkazy, publikace a stav validace", "Publikace, DOI, distribuční vrstvy a stav validace DIO/ODI: veřejná artikulace, testovatelný intervenční rámec a externí ověřování.", "DIO/ODI: veřejná artikulace a externí ověřování", "Publikace, DOI, zdrojová stopa, testovatelné předpoklady a transparentně oddělené fáze validace."],
-    en: ["en/evidence/index.html", "en/evidence/", "DIO/ODI Evidence, Publications & Validation Status", "Publications, DOI records, distribution layers and DIO/ODI validation status: public articulation, a testable intervention framework and external evaluation.", "DIO/ODI: Public Articulation & External Evaluation", "Publications, DOI records, source trail, testable assumptions and transparently separated validation stages."],
+    cs: ["dukazy/index.html", "dukazy/", "DIO/ODI: publikace, taxonomie a referenční model", "Vývoj DIO/ODI od manifestu přes MVDIO a taxonomii Reconstruction Failure Modes k Reference Vocabulary v0.1.0 a Reference Modelu v0.2.0.", "DIO/ODI: od MVDIO k referenčnímu modelu", "Citovatelná vývojová linie, Reconstruction Failure Modes, Reference Vocabulary v0.1.0 a Reference Model v0.2.0."],
+    en: ["en/evidence/index.html", "en/evidence/", "DIO/ODI Publications, Taxonomy & Reference Model", "The development of DIO/ODI from the manifesto through MVDIO and the Reconstruction Failure Modes taxonomy to Reference Vocabulary v0.1.0 and Reference Model v0.2.0.", "DIO/ODI: From MVDIO to a Reference Model", "A citable development path, Reconstruction Failure Modes, Reference Vocabulary v0.1.0 and Reference Model v0.2.0."],
   },
   {
     key: "author",
@@ -286,6 +294,7 @@ for (const pair of pairs) {
         const person = data.author ?? data.creator;
         expect(scope, person?.["@type"], "Person", "JSON-LD author type");
         expect(scope, person?.name, "Daniel Beránek", "JSON-LD author name");
+        expect(scope, JSON.stringify(data.citation), JSON.stringify(citations), "JSON-LD citations");
         if (JSON.stringify(data).includes('"Organization"')) fail(scope, "DIO/ODI must not be represented as an Organization");
       } catch (error) {
         fail(scope, `invalid JSON-LD: ${error.message}`);
@@ -344,12 +353,10 @@ expect("social image", image.readUInt32BE(16), 1200, "width");
 expect("social image", image.readUInt32BE(20), 630, "height");
 if (imageInfo.size >= 1_000_000) fail("social image", `file should remain below 1 MB (found ${imageInfo.size} bytes)`);
 
-try {
-  await access(join(root, "robots.txt"), constants.F_OK);
-  fail("robots.txt", "must not exist inside the project subdirectory");
-} catch {
-  // Expected: project-scoped robots.txt cannot control the GitHub Pages host root.
-}
+const robotsText = await readFile(join(root, "robots.txt"), "utf8");
+if (!robotsText.includes("User-agent: *")) fail("robots.txt", "missing wildcard user agent");
+if (!robotsText.includes("Allow: /")) fail("robots.txt", "missing allow rule");
+if (!robotsText.includes(`Sitemap: ${siteUrl}sitemap.xml`)) fail("robots.txt", "missing canonical sitemap URL");
 
 if (failures.length) {
   console.error(`Validation failed with ${failures.length} issue(s):\n\n${failures.map((item) => `- ${item}`).join("\n")}`);

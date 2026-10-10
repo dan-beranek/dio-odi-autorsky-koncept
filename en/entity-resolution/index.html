@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Entity Resolution &amp; Knowledge Graphs for AI | DIO</title>
-  <meta name="description" content="DIO for entity resolution, knowledge graphs, RAG and provenance. A technical pilot for more reliable entity reconstruction across data and AI systems.">
+  <meta name="description" content="DIO for entity resolution, knowledge graphs, RAG and the Reconstruction Failure Modes taxonomy. A technical pilot for more reliable entity reconstruction.">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <meta name="theme-color" content="#080b12">
   <link rel="canonical" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/entity-resolution/">
@@ -17,7 +17,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="DIO/ODI">
   <meta property="og:title" content="DIO for Entity Resolution &amp; Knowledge Graphs">
-  <meta property="og:description" content="A technical and research pilot for more consistent entity reconstruction across data, RAG and AI systems.">
+  <meta property="og:description" content="A multi-level diagnostic taxonomy and technical pilot for more accurate entity reconstruction across data, RAG and AI systems.">
   <meta property="og:url" content="https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/entity-resolution/">
   <meta property="og:image" content="https://dan-beranek.github.io/dio-odi-autorsky-koncept/assets/dio-odi-social-v1.png">
   <meta property="og:image:width" content="1200">
@@ -28,7 +28,7 @@
   <meta property="og:locale:alternate" content="cs_CZ">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="DIO for Entity Resolution &amp; Knowledge Graphs">
-  <meta name="twitter:description" content="A technical and research pilot for more consistent entity reconstruction across data, RAG and AI systems.">
+  <meta name="twitter:description" content="A multi-level diagnostic taxonomy and technical pilot for more accurate entity reconstruction across data, RAG and AI systems.">
   <meta name="twitter:image" content="https://dan-beranek.github.io/dio-odi-autorsky-koncept/assets/dio-odi-social-v1.png">
   <meta name="twitter:image:alt" content="DIO/ODI – AI visibility, entity resolution and knowledge infrastructure">
   <script type="application/ld+json">
@@ -38,7 +38,7 @@
   "@id": "https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/entity-resolution/#webpage",
   "url": "https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/entity-resolution/",
   "name": "Entity Resolution & Knowledge Graphs for AI | DIO",
-  "description": "DIO for entity resolution, knowledge graphs, RAG and provenance. A technical pilot for more reliable entity reconstruction across data and AI systems.",
+  "description": "DIO for entity resolution, knowledge graphs, RAG and the Reconstruction Failure Modes taxonomy. A technical pilot for more reliable entity reconstruction.",
   "inLanguage": "en",
   "author": {
     "@type": "Person",
@@ -63,7 +63,10 @@
   "citation": [
     "https://doi.org/10.5281/zenodo.21610934",
     "https://doi.org/10.2139/ssrn.7247578",
-    "https://doi.org/10.2139/ssrn.7396398"
+    "https://doi.org/10.2139/ssrn.7396398",
+    "https://doi.org/10.5281/zenodo.23226205",
+    "https://doi.org/10.5281/zenodo.23269323",
+    "https://doi.org/10.5281/zenodo.23282752"
   ],
   "isPartOf": {
     "@type": "WebSite",
@@ -107,6 +110,18 @@
       </div>
     </div></section>
 
+    <section class="section section-white" id="reconstruction-failures"><div class="shell">
+      <div class="section-head reveal"><div><p class="eyebrow">Diagnostic taxonomy</p><h2>Reconstruction Failure Modes distinguish what exactly broke down in a reconstruction.</h2></div><p>The taxonomy follows MVDIO and organizes individual anomalies into a multi-level system. A single reconstruction may exhibit several failure modes at once.</p></div>
+      <div class="grid-2 reveal">
+        <article class="card"><span class="meta">Referential Reconstruction Failures</span><h3>Which referent is the system reconstructing?</h3><p><strong>Entity Substitution</strong> replaces the referent. <strong>Merge Failure</strong> merges distinct entities. <strong>Split Failure</strong> splits one entity across multiple nodes. <strong>Entity Omission</strong> omits part of a reconstruction even though it was available to the system.</p></article>
+        <article class="card"><span class="meta">Semantic Coherence Failures</span><h3>Does the meaning remain coherent?</h3><p><strong>Semantic Fragmentation</strong> preserves the entity’s referential unity, but its representations no longer form a mutually compatible semantic whole.</p></article>
+        <article class="card"><span class="meta">Temporal Reconstruction Failures</span><h3>Does the reconstruction correspond to the correct time?</h3><p><strong>Temporal Discontinuity</strong> breaks the continuity of identity. <strong>Temporal Misalignment</strong> reconstructs the correct referent in the wrong temporal state.</p></article>
+        <article class="card"><span class="meta">Contextual Adequacy Failures</span><h3>Does the reconstruction fit the situation?</h3><p><strong>Contextual Displacement</strong> foregrounds an aspect that may be factually supportable yet is inadequate to the particular question, role or environment.</p></article>
+      </div>
+      <div class="taxonomy-note reveal"><div><span class="meta">Phenomenon above the level of an individual failure</span><h3>Identity Collapse</h3><p>Describes an aggregate collapse of reconstruction rather than another item within the taxonomic hierarchy.</p></div><div><span class="meta">Robustness and risk property</span><h3>Semantic Vulnerability ↔ Semantic Robustness</h3><p>Expresses a reconstruction’s susceptibility or resilience to a shift in meaning. It sits outside the failure-mode hierarchy.</p></div></div>
+      <p class="source-links reveal"><a class="text-link" href="https://doi.org/10.5281/zenodo.23269323" target="_blank" rel="noopener noreferrer">Taxonomic Note <span aria-hidden="true">↗</span></a><a class="text-link" href="https://vocab.danielberanek.cz/dio-odi/" target="_blank" rel="noopener noreferrer">DIO/ODI Reference Vocabulary <span aria-hidden="true">↗</span></a></p>
+    </div></section>
+
     <section class="section section-dark"><div class="shell mechanism reveal">
       <div><p class="eyebrow">The DIO perspective</p><h2>An entity charter instead of a vague instruction to “clean the data.”</h2><p class="lead">A pilot defines which entity the system is resolving, from which representations, through which relationships and at what level of confidence. Only then does it make sense to measure change.</p></div>
       <div><div class="mechanism-path"><div class="mechanism-row"><span class="dot"></span><span>Identification rules</span><small>boundaries · aliases</small></div><div class="mechanism-row"><span class="dot"></span><span>Evidence rules</span><small>source · time · role</small></div><div class="mechanism-row"><span class="dot"></span><span>Relationship rules</span><small>type · direction · context</small></div><div class="mechanism-row"><span class="dot"></span><span>Uncertainty policy</span><small>confidence · conflict · abstention</small></div></div><div class="mechanism-result"><span class="meta">Outcome</span><strong>An auditable entity reconstruction</strong></div></div>
@@ -147,6 +162,6 @@
     <section class="section section-blue"><div class="shell cta-block reveal"><div><p class="eyebrow">DIO for AI and entity data</p><h2>Propose one entity problem where a more accurate decision would matter.</h2></div><div><p>The first discussion should define the system, entity, error pattern, available data, possible intervention and how useful change will be recognized.</p><div class="cta-actions"><a class="button" href="/dio-odi-autorsky-koncept/en/partnerships/#proposal">Propose a technical or data pilot →</a><a class="button button-secondary" href="/dio-odi-autorsky-koncept/en/ontology-of-digital-identity/">Explore the theoretical layer</a></div></div></div></section>
   </main>
 
-  <footer class="site-footer"><div class="shell footer-main"><div><p class="footer-label">DIO/ODI</p><h2>Identity as the optimization object.</h2><p>An author-led concept by Daniel Beránek for market visibility, AI and entity data, and knowledge infrastructure.</p></div><div><p class="footer-label">Branches</p><ul class="footer-links"><li><a href="/dio-odi-autorsky-koncept/en/ai-visibility/">DIO for AI visibility</a></li><li><a href="/dio-odi-autorsky-koncept/en/entity-resolution/">DIO for AI & entity data</a></li><li><a href="/dio-odi-autorsky-koncept/en/ontology-of-digital-identity/">ODI for knowledge infrastructure</a></li></ul></div><div><p class="footer-label">Project</p><ul class="footer-links"><li><a href="/dio-odi-autorsky-koncept/en/partnerships/">Partnerships</a></li><li><a href="/dio-odi-autorsky-koncept/en/evidence/">Evidence</a></li><li><a href="/dio-odi-autorsky-koncept/en/author/">Author</a></li><li><a href="https://danielberanek.cz/manifest-digital-identity-optimization-dio/" target="_blank" rel="noopener noreferrer">Manifest <span aria-hidden="true">↗</span></a></li></ul></div></div><div class="shell footer-bottom"><span>© 2026 Daniel Beránek · DIO/ODI</span><span>Author-led IP · Brno</span></div></footer>
+  <footer class="site-footer"><div class="shell footer-main"><div><p class="footer-label">DIO/ODI</p><h2>Identity as the optimization object.</h2><p>An author-led concept by Daniel Beránek for market visibility, AI and entity data, and knowledge infrastructure.</p></div><div><p class="footer-label">Branches</p><ul class="footer-links"><li><a href="/dio-odi-autorsky-koncept/en/ai-visibility/">DIO for AI visibility</a></li><li><a href="/dio-odi-autorsky-koncept/en/entity-resolution/">DIO for AI & entity data</a></li><li><a href="/dio-odi-autorsky-koncept/en/ontology-of-digital-identity/">ODI for knowledge infrastructure</a></li></ul></div><div><p class="footer-label">Project</p><ul class="footer-links"><li><a href="/dio-odi-autorsky-koncept/en/partnerships/">Partnerships</a></li><li><a href="/dio-odi-autorsky-koncept/en/evidence/">Evidence</a></li><li><a href="/dio-odi-autorsky-koncept/en/author/">Author</a></li><li><a href="https://danielberanek.cz/manifest-dio/" target="_blank" rel="noopener noreferrer">Manifest <span aria-hidden="true">↗</span></a></li></ul></div></div><div class="shell footer-bottom"><span>© 2026 Daniel Beránek · DIO/ODI</span><span>Author-led IP · Brno</span></div></footer>
 </body>
 </html>

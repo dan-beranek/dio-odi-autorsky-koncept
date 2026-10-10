@@ -10,8 +10,10 @@
 - Website: https://dan-beranek.github.io/dio-odi-autorsky-koncept/
 - English overview: https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/
 - Author website: https://danielberanek.cz/
-- Live Czech manifest: https://danielberanek.cz/manifest-digital-identity-optimization-dio/
+- Live Czech manifest and changelog: https://danielberanek.cz/manifest-dio/
 - Canonical multilingual archival edition: https://doi.org/10.5281/zenodo.21610934
+- Canonical reference vocabulary: https://vocab.danielberanek.cz/dio-odi/
+- Canonical namespace: https://vocab.danielberanek.cz/dio-odi/#
 
 ## Core pages
 
@@ -38,9 +40,21 @@
 - [Manifest of DIO and ODI — canonical multilingual edition](https://doi.org/10.5281/zenodo.21610934)
 - [DIO: A Conceptual Framework for Entity-Based Visibility in the Age of AI-Mediated Search](https://doi.org/10.2139/ssrn.7247578)
 - [The Crisis of Entity Resolution in Heterogeneous AI Environments](https://doi.org/10.2139/ssrn.7396398)
+- [Minimum Viable Digital Identity Optimization (DIO)](https://doi.org/10.5281/zenodo.23226205)
+- [From Entity Resolution Anomalies to Reconstruction Failure Modes: A Taxonomic Note Following MVDIO](https://doi.org/10.5281/zenodo.23269323)
+- [DIO/ODI Reference Model v0.2.0](https://doi.org/10.5281/zenodo.23282752)
+
+## Reference architecture
+
+- MVDIO defines the coarse-grained minimum around a referent, distributed representational state and observer reconstruction; K6 remains a finer-grained candidate model.
+- Reconstruction Failure Modes are organized into referential, semantic-coherence, temporal and contextual-adequacy families.
+- Identity Collapse is a phenomenon-level outcome outside the failure hierarchy.
+- Semantic Vulnerability and Semantic Robustness describe a risk/robustness property, not an additional failure mode.
+- Reference Vocabulary v0.1.0 is published under the canonical DIO/ODI namespace in SKOS-first Turtle and JSON-LD serializations.
+- The RAG mapping is a derived application layer rather than the canonical vocabulary.
 
 ## Interpretation note
 
-DIO/ODI is a publicly articulated, author-led framework with a prepared intervention methodology. The site distinguishes three layers: traceable public artifacts, a testable intervention framework, and empirical performance entering external evaluation. Publication, distribution and indexing establish provenance, accessibility and development. Pilot measurement addresses effectiveness, repeatability, transferability and market application.
+DIO/ODI is a publicly articulated, author-led framework with a published analytical and machine-readable reference architecture. The site distinguishes public research artifacts, a testable intervention framework and empirical work conducted in specific environments. Pilot measurement addresses the effect of a defined intervention, while the reference layer provides stable concepts for diagnosis and comparison.
 
 For a more detailed machine-readable description, read [llms-full.txt](https://dan-beranek.github.io/dio-odi-autorsky-koncept/llms-full.txt).

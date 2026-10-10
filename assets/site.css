@@ -379,6 +379,23 @@ h3 {
 .plain-list li::before { content: ""; position: absolute; left: 0; top: 1.38rem; width: 0.38rem; height: 0.38rem; background: var(--blue); }
 .section-dark .plain-list li { border-color: var(--line-dark); }
 
+.taxonomy-note {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: clamp(2rem, 6vw, 6rem);
+  margin-top: clamp(2rem, 5vw, 4rem);
+  padding: clamp(1.5rem, 3vw, 2.25rem) 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.taxonomy-note h3 { margin-top: 0.5rem; }
+.taxonomy-note p { color: var(--muted); }
+.section-dark .taxonomy-note { border-color: var(--line-dark); }
+.section-dark .taxonomy-note p { color: var(--muted-dark); }
+.source-links { display: flex; flex-wrap: wrap; gap: 1.4rem; margin: 1.5rem 0 0; }
+.research-timeline .step { grid-template-columns: 5.4rem minmax(15rem,0.7fr) minmax(0,1.3fr); }
+code { overflow-wrap: anywhere; font-size: 0.9em; }
+
 .split {
   display: grid;
   grid-template-columns: minmax(0,1fr) minmax(0,1fr);
@@ -459,7 +476,7 @@ h3 {
   .mobile-nav a { padding: 0.95rem 0.3rem; border-bottom: 1px solid var(--line); font-weight: 720; text-decoration: none; }
   .shell { width: min(calc(100% - 2rem), var(--max)); }
   .hero { min-height: auto; background: none; }
-  .hero-grid, .section-head, .mechanism, .k6-layout, .page-hero-grid, .split, .cta-block { grid-template-columns: 1fr; }
+  .hero-grid, .section-head, .mechanism, .k6-layout, .page-hero-grid, .split, .cta-block, .taxonomy-note { grid-template-columns: 1fr; }
   .hero-grid { gap: 3rem; }
   .entry-stack { margin-top: 0.5rem; }
   .grid-3, .status-grid { grid-template-columns: 1fr; }
@@ -492,6 +509,7 @@ h3 {
   .entry-card strong { font-size: 1.02rem; }
   .grid-4 { grid-template-columns: 1fr; }
   .step { grid-template-columns: 2.3rem 1fr; gap: 0.9rem; }
+  .research-timeline .step { grid-template-columns: 2.3rem 1fr; }
   .step p { grid-column: 2; }
   .proof-strip { grid-template-columns: 1fr; }
   .proof-item, .proof-item + .proof-item { padding: 1.3rem 0; border-right: 0; border-top: 1px solid var(--line-dark); }
