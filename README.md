@@ -20,7 +20,7 @@ Po aktivaci GitHub Pages bude web dostupný na:
 - `en/` – anglický rozcestník a šest anglických protějšků českých podstránek
 - `assets/dio-odi-social-v1.png` – univerzální social-preview obrázek 1200 × 630 px
 - `llms.txt` a `llms-full.txt` – stručný a rozšířený kontext pro AI systémy
-- `sitemap.xml` a `humans.txt` – strojově čitelné doprovodné soubory
+- `robots.txt`, `sitemap.xml` a `humans.txt` – strojově čitelné doprovodné soubory
 - `scripts/build-site.mjs` – reprodukovatelná lokalizace, metadata a společné rozhraní
 - `scripts/validate-site.mjs` – kontrola všech 14 stránek, metadat, sitemap a sociálního obrázku
 
@@ -29,7 +29,11 @@ Po aktivaci GitHub Pages bude web dostupný na:
 1. [Manifest of Digital Identity Optimization (DIO) and Ontology of Digital Identity (ODI): Canonical Multilingual Edition](https://doi.org/10.5281/zenodo.21610934)
 2. [Digital Identity Optimization (DIO): A Conceptual Framework for Entity-Based Visibility in the Age of AI-Mediated Search](https://doi.org/10.2139/ssrn.7247578)
 3. [The Crisis of Entity Resolution in Heterogeneous AI Environments: Data, Financial, and Semantic Dimensions](https://doi.org/10.2139/ssrn.7396398)
-4. [Živá česká verze manifestu](https://danielberanek.cz/manifest-digital-identity-optimization-dio/)
+4. [Minimum Viable Digital Identity Optimization (DIO)](https://dx.doi.org/10.2139/ssrn.7590979)
+5. [From Entity Resolution Anomalies to Reconstruction Failure Modes: A Taxonomic Note Following Minimum Viable Digital Identity Optimization (DIO)](https://doi.org/10.5281/zenodo.23269323)
+6. [DIO/ODI Reference Model v0.2.0](https://doi.org/10.5281/zenodo.23282752)
+7. [DIO/ODI Reference Vocabulary v0.1.0](https://vocab.danielberanek.cz/dio-odi/)
+8. [Živý český manifest a changelog](https://danielberanek.cz/manifest-dio/)
 
 ## Lokální spuštění
 
@@ -56,7 +60,7 @@ Workflow `.github/workflows/pages.yml` automaticky nasadí obsah na GitHub Pages
 
 ## Důkazní stav
 
-Repozitář dokumentuje veřejně artikulovaný autorský koncept, jeho zdrojovou stopu a metodicky připravený intervenční rámec. Publikace, indexace a distribuce dokládají původ, dostupnost a rozpracovanost; účinnost, opakovatelnost, přenositelnost a product-market fit vstupují do externího ověřování.
+Repozitář dokumentuje vývoj DIO/ODI od manifestu a konceptuálních prací přes minimální analytický model MVDIO a taxonomii Reconstruction Failure Modes k Reference Vocabulary v0.1.0 a Reference Modelu v0.2.0. Samostatná pilotní vrstva převádí tuto architekturu do konkrétních intervencí a měření.
 
 ## Autorství a práva
 
