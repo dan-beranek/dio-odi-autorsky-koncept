@@ -14,6 +14,7 @@
 - Canonical multilingual archival edition: https://doi.org/10.5281/zenodo.21610934
 - Canonical reference vocabulary: https://vocab.danielberanek.cz/dio-odi/
 - Canonical namespace: https://vocab.danielberanek.cz/dio-odi/#
+- Application Mappings: https://vocab.danielberanek.cz/mappings/
 
 ## Core pages
 
@@ -42,7 +43,7 @@
 - [The Crisis of Entity Resolution in Heterogeneous AI Environments](https://doi.org/10.2139/ssrn.7396398)
 - [Minimum Viable Digital Identity Optimization (DIO)](https://dx.doi.org/10.2139/ssrn.7590979)
 - [From Entity Resolution Anomalies to Reconstruction Failure Modes: A Taxonomic Note Following MVDIO](https://doi.org/10.5281/zenodo.23269323)
-- [DIO/ODI Reference Model v0.2.0](https://doi.org/10.5281/zenodo.23282752)
+- [DIO/ODI Reference Model v0.3.1](https://doi.org/10.5281/zenodo.23290683)
 
 ## Reference architecture
 
@@ -51,7 +52,8 @@
 - Identity Collapse is a phenomenon-level outcome outside the failure hierarchy.
 - Semantic Vulnerability and Semantic Robustness describe a risk/robustness property, not an additional failure mode.
 - Reference Vocabulary v0.1.0 is published under the canonical DIO/ODI namespace in SKOS-first Turtle and JSON-LD serializations.
-- The RAG mapping is a derived application layer rather than the canonical vocabulary.
+- Separate Application Mappings connect DIO/ODI concepts with a RAG pipeline and the Heterogeneous Entity Matching taxonomy without modifying the canonical vocabulary.
+- Each mapping is published as a human-readable frontend, Markdown, JSON-LD and Turtle RDF. Qualified relations such as `may contribute to`, `may increase` and `may increase risk of` do not assert equivalence or deterministic causality.
 
 ## Interpretation note
 

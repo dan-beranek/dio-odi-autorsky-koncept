@@ -12,6 +12,7 @@ Live Czech manifest and changelog: https://danielberanek.cz/manifest-dio/
 Canonical multilingual archival edition: https://doi.org/10.5281/zenodo.21610934
 Canonical reference vocabulary: https://vocab.danielberanek.cz/dio-odi/
 Canonical namespace: https://vocab.danielberanek.cz/dio-odi/#
+Application Mappings: https://vocab.danielberanek.cz/mappings/
 
 ## Concise definition
 
@@ -57,7 +58,7 @@ Identity Collapse is a phenomenon-level outcome outside the taxonomy. Semantic V
 
 ## Machine-readable reference layer
 
-Reference Vocabulary v0.1.0 and Reference Model v0.2.0 provide stable term identifiers, definitions, relations and provenance under the canonical namespace. The vocabulary is SKOS-first and distributed in Turtle and JSON-LD. A RAG mapping translates selected terms into an application pipeline; it is derived rather than canonical.
+Reference Vocabulary v0.1.0 and Reference Model v0.3.1 provide stable term identifiers, definitions, relations and provenance under the canonical namespace. The vocabulary is SKOS-first and distributed in Turtle and JSON-LD. Separate Application Mappings connect DIO/ODI concepts with a RAG pipeline and the Heterogeneous Entity Matching taxonomy while remaining outside the canonical vocabulary. Each mapping has a human-readable frontend, Markdown, JSON-LD and Turtle RDF; its qualified assertions distinguish source conditions, target concepts and non-deterministic relation types.
 
 ## Three value branches
 
@@ -83,7 +84,7 @@ English page: https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/ontology
 
 DIO/ODI has a public research and reference architecture. The project distinguishes three evidence layers:
 
-1. Published and reference artifacts: the manifest, archival edition, research papers, MVDIO, the Reconstruction Failure Modes taxonomy, Reference Vocabulary v0.1.0, Reference Model v0.2.0, multilingual projections, distribution infrastructure, authorship and genealogy.
+1. Published and reference artifacts: the manifest, archival edition, research papers, MVDIO, the Reconstruction Failure Modes taxonomy, Reference Vocabulary v0.1.0, Reference Model v0.3.1, multilingual projections, distribution infrastructure, authorship and genealogy.
 2. Testable intervention framework: baseline analysis, representation mapping, diagnosis, prioritised intervention design, selected changes, pre/post evidence and retrospective analysis.
 3. Empirically open area: causal performance, repeatability across segments, metric reliability, willingness to pay, scalability and product-market fit entering external evaluation.
 
@@ -99,7 +100,7 @@ English evidence page: https://dan-beranek.github.io/dio-odi-autorsky-koncept/en
 3. Daniel Beránek. “The Crisis of Entity Resolution in Heterogeneous AI Environments: Data, Financial, and Semantic Dimensions.” https://doi.org/10.2139/ssrn.7396398
 4. Daniel Beránek. “Minimum Viable Digital Identity Optimization (DIO).” https://dx.doi.org/10.2139/ssrn.7590979
 5. Daniel Beránek. “From Entity Resolution Anomalies to Reconstruction Failure Modes: A Taxonomic Note Following Minimum Viable Digital Identity Optimization (DIO).” https://doi.org/10.5281/zenodo.23269323
-6. Daniel Beránek. “DIO/ODI Reference Model v0.2.0.” https://doi.org/10.5281/zenodo.23282752
+6. Daniel Beránek. “DIO/ODI Reference Model v0.3.1.” https://doi.org/10.5281/zenodo.23290683
 
 ## Author
 

@@ -31,9 +31,10 @@ Po aktivaci GitHub Pages bude web dostupný na:
 3. [The Crisis of Entity Resolution in Heterogeneous AI Environments: Data, Financial, and Semantic Dimensions](https://doi.org/10.2139/ssrn.7396398)
 4. [Minimum Viable Digital Identity Optimization (DIO)](https://dx.doi.org/10.2139/ssrn.7590979)
 5. [From Entity Resolution Anomalies to Reconstruction Failure Modes: A Taxonomic Note Following Minimum Viable Digital Identity Optimization (DIO)](https://doi.org/10.5281/zenodo.23269323)
-6. [DIO/ODI Reference Model v0.2.0](https://doi.org/10.5281/zenodo.23282752)
+6. [DIO/ODI Reference Model v0.3.1](https://doi.org/10.5281/zenodo.23290683)
 7. [DIO/ODI Reference Vocabulary v0.1.0](https://vocab.danielberanek.cz/dio-odi/)
-8. [Živý český manifest a changelog](https://danielberanek.cz/manifest-dio/)
+8. [DIO/ODI Application Mappings](https://vocab.danielberanek.cz/mappings/)
+9. [Živý český manifest a changelog](https://danielberanek.cz/manifest-dio/)
 
 ## Lokální spuštění
 
@@ -60,7 +61,7 @@ Workflow `.github/workflows/pages.yml` automaticky nasadí obsah na GitHub Pages
 
 ## Důkazní stav
 
-Repozitář dokumentuje vývoj DIO/ODI od manifestu a konceptuálních prací přes minimální analytický model MVDIO a taxonomii Reconstruction Failure Modes k Reference Vocabulary v0.1.0 a Reference Modelu v0.2.0. Samostatná pilotní vrstva převádí tuto architekturu do konkrétních intervencí a měření.
+Repozitář dokumentuje vývoj DIO/ODI od manifestu a konceptuálních prací přes minimální analytický model MVDIO a taxonomii Reconstruction Failure Modes k Reference Vocabulary v0.1.0, Reference Modelu v0.3.1 a odděleným aplikačním mapováním pro RAG a HEM. Samostatná pilotní vrstva převádí tuto architekturu do konkrétních intervencí a měření.
 
 ## Autorství a práva
 
