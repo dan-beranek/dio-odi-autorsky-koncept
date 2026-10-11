@@ -15,7 +15,7 @@ const citations = [
   "https://doi.org/10.2139/ssrn.7396398",
   "https://dx.doi.org/10.2139/ssrn.7590979",
   "https://doi.org/10.5281/zenodo.23269323",
-  "https://doi.org/10.5281/zenodo.23282752",
+  "https://doi.org/10.5281/zenodo.23290683",
 ];
 const imageAlt = {
   cs: "DIO/ODI – AI visibility, entity resolution a znalostní infrastruktura",
@@ -40,8 +40,8 @@ const pairs = [
   },
   {
     key: "odi",
-    cs: ["odi/index.html", "odi/", "Ontology of Digital Identity a znalostní infrastruktura | ODI", "ODI propojuje Reference Vocabulary v0.1.0, Reference Model v0.2.0 a strojově čitelné formáty pro ontologie, znalostní grafy a výzkum AI.", "ODI: ontologie digitální identity", "Teoretická, terminologická a IP vrstva pro ontologie, znalostní grafy, výzkum AI a standardizaci."],
-    en: ["en/ontology-of-digital-identity/index.html", "en/ontology-of-digital-identity/", "Ontology of Digital Identity & Knowledge Infrastructure | ODI", "ODI connects Reference Vocabulary v0.1.0, Reference Model v0.2.0 and machine-readable formats for ontologies, knowledge graphs and AI research.", "ODI: An Ontology of Digital Identity", "A theoretical, terminological and IP layer for ontologies, knowledge graphs, AI research and standards."],
+    cs: ["odi/index.html", "odi/", "Ontology of Digital Identity a znalostní infrastruktura | ODI", "ODI propojuje Reference Vocabulary v0.1.0, Reference Model v0.3.1 a strojově čitelné formáty pro ontologie, znalostní grafy a výzkum AI.", "ODI: ontologie digitální identity", "Teoretická, terminologická a IP vrstva pro ontologie, znalostní grafy, výzkum AI a standardizaci."],
+    en: ["en/ontology-of-digital-identity/index.html", "en/ontology-of-digital-identity/", "Ontology of Digital Identity & Knowledge Infrastructure | ODI", "ODI connects Reference Vocabulary v0.1.0, Reference Model v0.3.1 and machine-readable formats for ontologies, knowledge graphs and AI research.", "ODI: An Ontology of Digital Identity", "A theoretical, terminological and IP layer for ontologies, knowledge graphs, AI research and standards."],
   },
   {
     key: "partnerships",
@@ -50,8 +50,8 @@ const pairs = [
   },
   {
     key: "evidence",
-    cs: ["dukazy/index.html", "dukazy/", "DIO/ODI: publikace, taxonomie a referenční model", "Vývoj DIO/ODI od manifestu přes MVDIO a taxonomii Reconstruction Failure Modes k Reference Vocabulary v0.1.0 a Reference Modelu v0.2.0.", "DIO/ODI: od MVDIO k referenčnímu modelu", "Citovatelná vývojová linie, Reconstruction Failure Modes, Reference Vocabulary v0.1.0 a Reference Model v0.2.0."],
-    en: ["en/evidence/index.html", "en/evidence/", "DIO/ODI Publications, Taxonomy & Reference Model", "The development of DIO/ODI from the manifesto through MVDIO and the Reconstruction Failure Modes taxonomy to Reference Vocabulary v0.1.0 and Reference Model v0.2.0.", "DIO/ODI: From MVDIO to a Reference Model", "A citable development path, Reconstruction Failure Modes, Reference Vocabulary v0.1.0 and Reference Model v0.2.0."],
+    cs: ["dukazy/index.html", "dukazy/", "DIO/ODI: publikace, taxonomie a referenční model", "Vývoj DIO/ODI od manifestu přes MVDIO a taxonomii Reconstruction Failure Modes k Reference Vocabulary v0.1.0 a Reference Modelu v0.3.1.", "DIO/ODI: od MVDIO k referenčnímu modelu", "Citovatelná vývojová linie, Reconstruction Failure Modes, Reference Vocabulary v0.1.0 a Reference Model v0.3.1."],
+    en: ["en/evidence/index.html", "en/evidence/", "DIO/ODI Publications, Taxonomy & Reference Model", "The development of DIO/ODI from the manifesto through MVDIO and the Reconstruction Failure Modes taxonomy to Reference Vocabulary v0.1.0 and Reference Model v0.3.1.", "DIO/ODI: From MVDIO to a Reference Model", "A citable development path, Reconstruction Failure Modes, Reference Vocabulary v0.1.0 and Reference Model v0.3.1."],
   },
   {
     key: "author",
@@ -324,6 +324,29 @@ for (const [publicPath, sourceFile] of publicFiles) {
     } catch {
       fail(publicPath, `broken internal target: ${href}`);
     }
+  }
+}
+
+const requiredExternalLinks = new Map([
+  ["/dio-ai-data/", [
+    "https://vocab.danielberanek.cz/mappings/rag-pipeline/",
+    "https://vocab.danielberanek.cz/mappings/hem-dio/",
+  ]],
+  ["/en/entity-resolution/", [
+    "https://vocab.danielberanek.cz/mappings/rag-pipeline/",
+    "https://vocab.danielberanek.cz/mappings/hem-dio/",
+  ]],
+  ["/odi/", ["https://vocab.danielberanek.cz/mappings/"]],
+  ["/en/ontology-of-digital-identity/", ["https://vocab.danielberanek.cz/mappings/"]],
+  ["/dukazy/", ["https://vocab.danielberanek.cz/mappings/"]],
+  ["/en/evidence/", ["https://vocab.danielberanek.cz/mappings/"]],
+]);
+
+for (const [path, requiredLinks] of requiredExternalLinks) {
+  const fullPath = publicFiles.get(`${projectPath}${path.slice(1)}`);
+  const html = await readFile(fullPath, "utf8");
+  for (const href of requiredLinks) {
+    if (!html.includes(`href="${href}"`)) fail(path, `missing required external link: ${href}`);
   }
 }
 

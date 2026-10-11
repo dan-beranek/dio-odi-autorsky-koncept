@@ -6,7 +6,7 @@ Digital Identity Optimization (DIO), Ontology of Digital Identity (ODI), their f
 
 Public availability of this repository does not by itself grant a license to reproduce, adapt, commercialize or redistribute the protected content. References, quotations and scholarly use remain subject to applicable law and proper attribution.
 
-The website presents published research and reference artifacts, a testable intervention framework, and empirical work conducted in specific environments. The reference architecture includes MVDIO, the Reconstruction Failure Modes taxonomy, Reference Vocabulary v0.1.0 and Reference Model v0.2.0.
+The website presents published research and reference artifacts, a testable intervention framework, and empirical work conducted in specific environments. The reference architecture includes MVDIO, the Reconstruction Failure Modes taxonomy, Reference Vocabulary v0.1.0, Reference Model v0.3.1 and separate Application Mappings for RAG and HEM.
 
 Author and project context:
 https://danielberanek.cz/
