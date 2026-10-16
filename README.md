@@ -1,5 +1,16 @@
 # DIO/ODI – autorský koncept Daniela Beránka
 
+---
+
+## DIO/ODI — Vocabulary & Reference Model
+
+A machine-readable vocabulary and a reference model for Digital Identity Optimization (DIO) and the Ontology of Digital Identity (ODI).
+
+- **Vocabulary:** https://vocab.danielberanek.cz/dio-odi/
+- **Reference Model & Source Repository:** https://github.com/dan-beranek/dio-odi-reference-model/
+
+---
+
 Veřejný, statický a plně dvojjazyčný web představující Digital Identity Optimization (DIO) a Ontology of Digital Identity (ODI), jejich společný mechanismus, tři realizační větve, publikační základ a možnosti partnerství.
 
 ## Veřejný web
