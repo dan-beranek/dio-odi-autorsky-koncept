@@ -26,7 +26,7 @@ Po aktivaci GitHub Pages bude web dostupný na:
 - `dio-ai-data/` – DIO pro AI a entitní data
 - `odi/` – ODI jako teoretická, výzkumná a IP vrstva
 - `partnerstvi/` – formy spolupráce a pilotů
-- `dukazy/` – publikace, důkazní stav a validační agenda
+- `dukazy/` – vývojová linie, publikace, aplikační architektury a další kroky
 - `autor/` – Daniel Beránek, geneze konceptu a autorská vrstva
 - `en/` – anglický rozcestník a šest anglických protějšků českých podstránek
 - `assets/dio-odi-social-v1.png` – univerzální social-preview obrázek 1200 × 630 px
@@ -42,10 +42,11 @@ Po aktivaci GitHub Pages bude web dostupný na:
 3. [The Crisis of Entity Resolution in Heterogeneous AI Environments: Data, Financial, and Semantic Dimensions](https://doi.org/10.2139/ssrn.7396398)
 4. [Minimum Viable Digital Identity Optimization (DIO)](https://dx.doi.org/10.2139/ssrn.7590979)
 5. [From Entity Resolution Anomalies to Reconstruction Failure Modes: A Taxonomic Note Following Minimum Viable Digital Identity Optimization (DIO)](https://doi.org/10.5281/zenodo.23269323)
-6. [DIO/ODI Reference Model v0.3.1](https://doi.org/10.5281/zenodo.23290683)
-7. [DIO/ODI Reference Vocabulary v0.1.0](https://vocab.danielberanek.cz/dio-odi/)
+6. [DIO/ODI Reference Model v0.5.0](https://doi.org/10.5281/zenodo.23643845)
+7. [DIO/ODI Reference Vocabulary v0.2.0](https://vocab.danielberanek.cz/dio-odi/)
 8. [DIO/ODI Application Mappings](https://vocab.danielberanek.cz/mappings/)
-9. [Živý český manifest a changelog](https://danielberanek.cz/manifest-dio/)
+9. [Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution](https://arxiv.org/abs/2610.37407)
+10. [Živý český manifest a changelog](https://danielberanek.cz/manifest-dio/)
 
 ## Lokální spuštění
 
@@ -72,7 +73,7 @@ Workflow `.github/workflows/pages.yml` automaticky nasadí obsah na GitHub Pages
 
 ## Důkazní stav
 
-Repozitář dokumentuje vývoj DIO/ODI od manifestu a konceptuálních prací přes minimální analytický model MVDIO a taxonomii Reconstruction Failure Modes k Reference Vocabulary v0.1.0, Reference Modelu v0.3.1 a odděleným aplikačním mapováním pro RAG a HEM. Samostatná pilotní vrstva převádí tuto architekturu do konkrétních intervencí a měření.
+Repozitář dokumentuje vývoj DIO/ODI od manifestu a konceptuálních prací přes MVDIO a taxonomii Reconstruction Failure Modes k Reference Vocabulary v0.2.0 a Reference Modelu v0.5.0. Tři oddělená Application Mappings propojují referenční vrstvu s RAG, HEM a Policy-as-Code. Paper na arXiv navíc představuje jeden konkrétní návrh technické aplikace pro Agentic ER; implementace, piloty a další aplikační směry zůstávají otevřené.
 
 ## Autorství a práva
 
