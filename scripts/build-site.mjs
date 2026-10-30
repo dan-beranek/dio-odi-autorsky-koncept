@@ -55,13 +55,13 @@ const pages = [
     csPath: "dio-ai-data/",
     enPath: "en/entity-resolution/",
     csTitle: "Entity resolution a znalostní grafy pro AI | DIO",
-    csDescription: "DIO pro entity resolution, znalostní grafy, RAG a taxonomii Reconstruction Failure Modes. Technický pilot pro spolehlivější rekonstrukci entit.",
+    csDescription: "DIO pro entity resolution, znalostní grafy, RAG a diagnostiku rekonstrukce entit. Jeden z možných směrů aplikace vede k Agentic ER.",
     enTitle: "Entity Resolution & Knowledge Graphs for AI | DIO",
-    enDescription: "DIO for entity resolution, knowledge graphs, RAG and the Reconstruction Failure Modes taxonomy. A technical pilot for more reliable entity reconstruction.",
+    enDescription: "DIO for entity resolution, knowledge graphs, RAG and entity-reconstruction diagnosis. One possible application direction is Agentic ER.",
     csSocialTitle: "DIO pro entity resolution a znalostní grafy",
-    csSocialDescription: "Víceúrovňová diagnostická taxonomie a technický pilot pro přesnější rekonstrukci entit v datech, RAG a AI systémech.",
+    csSocialDescription: "Diagnostická taxonomie, aplikační mapování a návrh sémantického jističe pro Agentic ER jako jedna z možných cest.",
     enSocialTitle: "DIO for Entity Resolution & Knowledge Graphs",
-    enSocialDescription: "A multi-level diagnostic taxonomy and technical pilot for more accurate entity reconstruction across data, RAG and AI systems.",
+    enSocialDescription: "A diagnostic taxonomy, application mappings and a proposed semantic guardrail for Agentic ER as one possible path.",
   },
   {
     key: "odi",
@@ -71,9 +71,9 @@ const pages = [
     csPath: "odi/",
     enPath: "en/ontology-of-digital-identity/",
     csTitle: "Ontology of Digital Identity a znalostní infrastruktura | ODI",
-    csDescription: "ODI propojuje Reference Vocabulary v0.1.0, Reference Model v0.3.1 a strojově čitelné formáty pro ontologie, znalostní grafy a výzkum AI.",
+    csDescription: "ODI propojuje Reference Vocabulary v0.2.0, Reference Model v0.5.0 a tři aplikační mapování pro další využití v AI a znalostních systémech.",
     enTitle: "Ontology of Digital Identity & Knowledge Infrastructure | ODI",
-    enDescription: "ODI connects Reference Vocabulary v0.1.0, Reference Model v0.3.1 and machine-readable formats for ontologies, knowledge graphs and AI research.",
+    enDescription: "ODI connects Reference Vocabulary v0.2.0, Reference Model v0.5.0 and three application mappings for further use in AI and knowledge systems.",
     csSocialTitle: "ODI: ontologie digitální identity",
     csSocialDescription: "Teoretická, terminologická a IP vrstva pro ontologie, znalostní grafy, výzkum AI a standardizaci.",
     enSocialTitle: "ODI: An Ontology of Digital Identity",
@@ -102,14 +102,14 @@ const pages = [
     enFile: "en/evidence/index.html",
     csPath: "dukazy/",
     enPath: "en/evidence/",
-    csTitle: "DIO/ODI: publikace, taxonomie a referenční model",
-    csDescription: "Vývoj DIO/ODI od manifestu přes MVDIO a taxonomii Reconstruction Failure Modes k Reference Vocabulary v0.1.0 a Reference Modelu v0.3.1.",
-    enTitle: "DIO/ODI Publications, Taxonomy & Reference Model",
-    enDescription: "The development of DIO/ODI from the manifesto through MVDIO and the Reconstruction Failure Modes taxonomy to Reference Vocabulary v0.1.0 and Reference Model v0.3.1.",
-    csSocialTitle: "DIO/ODI: od MVDIO k referenčnímu modelu",
-    csSocialDescription: "Citovatelná vývojová linie, Reconstruction Failure Modes, Reference Vocabulary v0.1.0 a Reference Model v0.3.1.",
-    enSocialTitle: "DIO/ODI: From MVDIO to a Reference Model",
-    enSocialDescription: "A citable development path, Reconstruction Failure Modes, Reference Vocabulary v0.1.0 and Reference Model v0.3.1.",
+    csTitle: "DIO/ODI: od teorie k aplikacím | Vývoj a důkazy",
+    csDescription: "Od ontologického základu DIO/ODI k referenční architektuře a návrhům konkrétních aplikací včetně sémantického jističe pro Agentic ER.",
+    enTitle: "DIO/ODI: From Theory to Applications | Development & Evidence",
+    enDescription: "From the DIO/ODI ontological foundation to a reference architecture and concrete application designs, including a semantic guardrail for Agentic ER.",
+    csSocialTitle: "DIO/ODI: od teorie k aplikacím",
+    csSocialDescription: "Ontologický a diagnostický základ, strojově čitelný model a návrh sémantického jističe pro Agentic ER.",
+    enSocialTitle: "DIO/ODI: From Theory to Applications",
+    enSocialDescription: "An ontological and diagnostic foundation, a machine-readable model and a proposed semantic guardrail for Agentic ER.",
   },
   {
     key: "author",
@@ -134,7 +134,7 @@ const navItems = {
     ["visibility", "DIO pro viditelnost"],
     ["entity", "DIO pro AI a data"],
     ["odi", "ODI"],
-    ["evidence", "Důkazy"],
+    ["evidence", "Vývoj"],
     ["author", "Autor"],
     ["partnerships", "Partnerství"],
   ],
@@ -142,7 +142,7 @@ const navItems = {
     ["visibility", "AI visibility"],
     ["entity", "AI & entity data"],
     ["odi", "ODI"],
-    ["evidence", "Evidence"],
+    ["evidence", "Development"],
     ["author", "Author"],
     ["partnerships", "Partnerships"],
   ],
@@ -206,6 +206,8 @@ function structuredData(page, lang) {
       "https://dx.doi.org/10.2139/ssrn.7590979",
       "https://doi.org/10.5281/zenodo.23269323",
       "https://doi.org/10.5281/zenodo.23290683",
+      "https://doi.org/10.5281/zenodo.23643845",
+      "https://arxiv.org/abs/2610.37407",
     ],
   };
   if (!isHome) {
@@ -310,7 +312,7 @@ function header(page, lang) {
 
 function footer(lang) {
   const isCs = lang === "cs";
-  return `<footer class="site-footer"><div class="shell footer-main"><div><p class="footer-label">DIO/ODI</p><h2>${isCs ? "Identita jako optimalizační objekt." : "Identity as the optimization object."}</h2><p>${isCs ? "Autorský koncept Daniela Beránka pro tržní viditelnost, AI a entitní data a znalostní infrastrukturu." : "An author-led concept by Daniel Beránek for market visibility, AI and entity data, and knowledge infrastructure."}</p></div><div><p class="footer-label">${isCs ? "Větve" : "Branches"}</p><ul class="footer-links"><li><a href="${localPaths[`${lang}:visibility`]}">${isCs ? "DIO pro viditelnost" : "DIO for AI visibility"}</a></li><li><a href="${localPaths[`${lang}:entity`]}">${isCs ? "DIO pro AI a data" : "DIO for AI & entity data"}</a></li><li><a href="${localPaths[`${lang}:odi`]}">${isCs ? "ODI" : "ODI for knowledge infrastructure"}</a></li></ul></div><div><p class="footer-label">${isCs ? "Projekt" : "Project"}</p><ul class="footer-links"><li><a href="${localPaths[`${lang}:partnerships`]}">${isCs ? "Partnerství" : "Partnerships"}</a></li><li><a href="${localPaths[`${lang}:evidence`]}">${isCs ? "Důkazy" : "Evidence"}</a></li><li><a href="${localPaths[`${lang}:author`]}">${isCs ? "Autor" : "Author"}</a></li><li><a href="https://danielberanek.cz/manifest-dio/" target="_blank" rel="noopener noreferrer">Manifest <span aria-hidden="true">↗</span></a></li></ul></div></div><div class="shell footer-bottom"><span>© 2026 Daniel Beránek · DIO/ODI</span><span>${isCs ? "Autorské IP · Brno" : "Author-led IP · Brno"}</span></div></footer>`;
+  return `<footer class="site-footer"><div class="shell footer-main"><div><p class="footer-label">DIO/ODI</p><h2>${isCs ? "Identita jako optimalizační objekt." : "Identity as the optimization object."}</h2><p>${isCs ? "Autorský koncept Daniela Beránka pro tržní viditelnost, AI a entitní data a znalostní infrastrukturu." : "An author-led concept by Daniel Beránek for market visibility, AI and entity data, and knowledge infrastructure."}</p></div><div><p class="footer-label">${isCs ? "Větve" : "Branches"}</p><ul class="footer-links"><li><a href="${localPaths[`${lang}:visibility`]}">${isCs ? "DIO pro viditelnost" : "DIO for AI visibility"}</a></li><li><a href="${localPaths[`${lang}:entity`]}">${isCs ? "DIO pro AI a data" : "DIO for AI & entity data"}</a></li><li><a href="${localPaths[`${lang}:odi`]}">${isCs ? "ODI" : "ODI for knowledge infrastructure"}</a></li></ul></div><div><p class="footer-label">${isCs ? "Projekt" : "Project"}</p><ul class="footer-links"><li><a href="${localPaths[`${lang}:partnerships`]}">${isCs ? "Partnerství" : "Partnerships"}</a></li><li><a href="${localPaths[`${lang}:evidence`]}">${isCs ? "Vývoj" : "Development"}</a></li><li><a href="${localPaths[`${lang}:author`]}">${isCs ? "Autor" : "Author"}</a></li><li><a href="https://danielberanek.cz/manifest-dio/" target="_blank" rel="noopener noreferrer">Manifest <span aria-hidden="true">↗</span></a></li></ul></div></div><div class="shell footer-bottom"><span>© 2026 Daniel Beránek · DIO/ODI</span><span>${isCs ? "Autorské IP · Brno" : "Author-led IP · Brno"}</span></div></footer>`;
 }
 
 const exposedTextAttributes = new Set([

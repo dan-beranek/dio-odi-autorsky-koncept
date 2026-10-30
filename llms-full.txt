@@ -58,7 +58,7 @@ Identity Collapse is a phenomenon-level outcome outside the taxonomy. Semantic V
 
 ## Machine-readable reference layer
 
-Reference Vocabulary v0.1.0 and Reference Model v0.3.1 provide stable term identifiers, definitions, relations and provenance under the canonical namespace. The vocabulary is SKOS-first and distributed in Turtle and JSON-LD. Separate Application Mappings connect DIO/ODI concepts with a RAG pipeline and the Heterogeneous Entity Matching taxonomy while remaining outside the canonical vocabulary. Each mapping has a human-readable frontend, Markdown, JSON-LD and Turtle RDF; its qualified assertions distinguish source conditions, target concepts and non-deterministic relation types.
+Reference Vocabulary v0.2.0 and Reference Model v0.5.0 provide stable term identifiers, definitions, relations and provenance under the canonical namespace. The vocabulary is SKOS-first and distributed in Turtle and JSON-LD. Three separate Application Mappings connect DIO/ODI concepts with a RAG pipeline, the Heterogeneous Entity Matching taxonomy and Policy-as-Code authorization while remaining outside the canonical vocabulary. Each mapping has a human-readable frontend, Markdown, JSON-LD and Turtle RDF; qualified assertions distinguish source conditions, target concepts and non-deterministic relation types.
 
 ## Three value branches
 
@@ -82,15 +82,15 @@ English page: https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/ontology
 
 ## Evidence status
 
-DIO/ODI has a public research and reference architecture. The project distinguishes three evidence layers:
+DIO/ODI has a public theoretical, diagnostic and machine-readable reference architecture, and is now developing concrete application designs:
 
-1. Published and reference artifacts: the manifest, archival edition, research papers, MVDIO, the Reconstruction Failure Modes taxonomy, Reference Vocabulary v0.1.0, Reference Model v0.3.1, multilingual projections, distribution infrastructure, authorship and genealogy.
-2. Testable intervention framework: baseline analysis, representation mapping, diagnosis, prioritised intervention design, selected changes, pre/post evidence and retrospective analysis.
-3. Empirically open area: causal performance, repeatability across segments, metric reliability, willingness to pay, scalability and product-market fit entering external evaluation.
+1. Published foundations: the manifesto, conceptual papers, MVDIO, the Reconstruction Failure Modes taxonomy, Reference Vocabulary v0.2.0, Reference Model v0.5.0 and three separate Application Mappings.
+2. Application design: the arXiv paper *Constraining the Commit Boundary* proposes a semantic guardrail for Agentic ER. It is one concrete application direction, not a commitment to make Agentic ER the exclusive focus of DIO/ODI. The Commit-Boundary × Policy-as-Code mapping relates the design to OPA/Rego and Cedar.
+3. Next steps: implementation, integration, pilots and further application directions. The practical value and transferability of particular implementations remain to be tested.
 
 Distribution platforms extend access to a shared author-led corpus. DOI records provide persistent, citable references; indexing and crawling document machine accessibility. Separate pilot measurement addresses the effectiveness, repeatability and transferability of a specific intervention.
 
-Evidence page: https://dan-beranek.github.io/dio-odi-autorsky-koncept/dukazy/
+Development and evidence page: https://dan-beranek.github.io/dio-odi-autorsky-koncept/dukazy/
 English evidence page: https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/evidence/
 
 ## Primary publications
@@ -100,7 +100,8 @@ English evidence page: https://dan-beranek.github.io/dio-odi-autorsky-koncept/en
 3. Daniel Beránek. “The Crisis of Entity Resolution in Heterogeneous AI Environments: Data, Financial, and Semantic Dimensions.” https://doi.org/10.2139/ssrn.7396398
 4. Daniel Beránek. “Minimum Viable Digital Identity Optimization (DIO).” https://dx.doi.org/10.2139/ssrn.7590979
 5. Daniel Beránek. “From Entity Resolution Anomalies to Reconstruction Failure Modes: A Taxonomic Note Following Minimum Viable Digital Identity Optimization (DIO).” https://doi.org/10.5281/zenodo.23269323
-6. Daniel Beránek. “DIO/ODI Reference Model v0.3.1.” https://doi.org/10.5281/zenodo.23290683
+6. Daniel Beránek. “DIO/ODI Reference Model v0.5.0.” https://doi.org/10.5281/zenodo.23643845
+7. Daniel Beránek. “Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution.” arXiv:2610.37407. https://arxiv.org/abs/2610.37407
 
 ## Author
 

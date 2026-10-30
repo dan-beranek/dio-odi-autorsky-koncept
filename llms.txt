@@ -22,7 +22,7 @@
 - [DIO for visibility](https://dan-beranek.github.io/dio-odi-autorsky-koncept/dio-viditelnost/): entities fragmented across websites, profiles, publications, search and AI.
 - [DIO for AI and entity data](https://dan-beranek.github.io/dio-odi-autorsky-koncept/dio-ai-data/): entity resolution, knowledge graphs, provenance and entity-data quality.
 - [ODI](https://dan-beranek.github.io/dio-odi-autorsky-koncept/odi/): theoretical, research and knowledge-infrastructure layer.
-- [Evidence and publications](https://dan-beranek.github.io/dio-odi-autorsky-koncept/dukazy/): public sources, a testable intervention framework and an external evaluation agenda.
+- [Development and evidence](https://dan-beranek.github.io/dio-odi-autorsky-koncept/dukazy/): the path from DIO/ODI theory and reference infrastructure to concrete application designs.
 - [Partnership](https://dan-beranek.github.io/dio-odi-autorsky-koncept/partnerstvi/): pilots, joint development, research and licensing paths.
 - [Author](https://dan-beranek.github.io/dio-odi-autorsky-koncept/autor/): Daniel Beránek, concept genealogy and authorship.
 
@@ -32,7 +32,7 @@
 - [DIO for AI visibility](https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/ai-visibility/)
 - [DIO for entity resolution](https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/entity-resolution/)
 - [ODI for knowledge infrastructure](https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/ontology-of-digital-identity/)
-- [Evidence and publications](https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/evidence/)
+- [Development and evidence](https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/evidence/)
 - [Partnerships and licensing](https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/partnerships/)
 - [Author](https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/author/)
 
@@ -43,7 +43,8 @@
 - [The Crisis of Entity Resolution in Heterogeneous AI Environments](https://doi.org/10.2139/ssrn.7396398)
 - [Minimum Viable Digital Identity Optimization (DIO)](https://dx.doi.org/10.2139/ssrn.7590979)
 - [From Entity Resolution Anomalies to Reconstruction Failure Modes: A Taxonomic Note Following MVDIO](https://doi.org/10.5281/zenodo.23269323)
-- [DIO/ODI Reference Model v0.3.1](https://doi.org/10.5281/zenodo.23290683)
+- [DIO/ODI Reference Model v0.5.0](https://doi.org/10.5281/zenodo.23643845)
+- [Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution](https://arxiv.org/abs/2610.37407)
 
 ## Reference architecture
 
@@ -51,12 +52,15 @@
 - Reconstruction Failure Modes are organized into referential, semantic-coherence, temporal and contextual-adequacy families.
 - Identity Collapse is a phenomenon-level outcome outside the failure hierarchy.
 - Semantic Vulnerability and Semantic Robustness describe a risk/robustness property, not an additional failure mode.
-- Reference Vocabulary v0.1.0 is published under the canonical DIO/ODI namespace in SKOS-first Turtle and JSON-LD serializations.
-- Separate Application Mappings connect DIO/ODI concepts with a RAG pipeline and the Heterogeneous Entity Matching taxonomy without modifying the canonical vocabulary.
+- Reference Vocabulary v0.2.0 is published under the canonical DIO/ODI namespace in SKOS-first Turtle and JSON-LD serializations. The current archived Reference Model is v0.5.0.
+- Three separate Application Mappings connect DIO/ODI concepts with RAG, Heterogeneous Entity Matching and Policy-as-Code authorization. They remain outside the canonical vocabulary.
+- The arXiv paper presents one possible application direction: a proposed semantic guardrail for Agentic ER. It does not define the future scope of DIO/ODI as a whole.
+- Separate Application Mappings connect DIO/ODI concepts with a RAG pipeline, the Heterogeneous Entity Matching taxonomy, and Policy-as-Code authorization without modifying the canonical vocabulary.
 - Each mapping is published as a human-readable frontend, Markdown, JSON-LD and Turtle RDF. Qualified relations such as `may contribute to`, `may increase` and `may increase risk of` do not assert equivalence or deterministic causality.
+- The Commit-Boundary × Policy-as-Code mapping relates the proposed Agentic ER authorization architecture to OPA/Rego and Cedar. It is one of several application directions.
 
 ## Interpretation note
 
-DIO/ODI is a publicly articulated, author-led framework with a published analytical and machine-readable reference architecture. The site distinguishes public research artifacts, a testable intervention framework and empirical work conducted in specific environments. Pilot measurement addresses the effect of a defined intervention, while the reference layer provides stable concepts for diagnosis and comparison.
+DIO/ODI is an author-led framework with a published theoretical, diagnostic and machine-readable reference foundation. It is now also producing concrete application designs. The arXiv paper on a semantic guardrail for Agentic ER is one possible technical direction, alongside RAG, HEM and other future applications. Implementation, pilots and empirical evaluation are the next steps; Agentic ER is not the exclusive direction of DIO/ODI.
 
 For a more detailed machine-readable description, read [llms-full.txt](https://dan-beranek.github.io/dio-odi-autorsky-koncept/llms-full.txt).

@@ -16,6 +16,8 @@ const citations = [
   "https://dx.doi.org/10.2139/ssrn.7590979",
   "https://doi.org/10.5281/zenodo.23269323",
   "https://doi.org/10.5281/zenodo.23290683",
+  "https://doi.org/10.5281/zenodo.23643845",
+  "https://arxiv.org/abs/2610.37407",
 ];
 const imageAlt = {
   cs: "DIO/ODI – AI visibility, entity resolution a znalostní infrastruktura",
@@ -35,13 +37,13 @@ const pairs = [
   },
   {
     key: "entity",
-    cs: ["dio-ai-data/index.html", "dio-ai-data/", "Entity resolution a znalostní grafy pro AI | DIO", "DIO pro entity resolution, znalostní grafy, RAG a taxonomii Reconstruction Failure Modes. Technický pilot pro spolehlivější rekonstrukci entit.", "DIO pro entity resolution a znalostní grafy", "Víceúrovňová diagnostická taxonomie a technický pilot pro přesnější rekonstrukci entit v datech, RAG a AI systémech."],
-    en: ["en/entity-resolution/index.html", "en/entity-resolution/", "Entity Resolution & Knowledge Graphs for AI | DIO", "DIO for entity resolution, knowledge graphs, RAG and the Reconstruction Failure Modes taxonomy. A technical pilot for more reliable entity reconstruction.", "DIO for Entity Resolution & Knowledge Graphs", "A multi-level diagnostic taxonomy and technical pilot for more accurate entity reconstruction across data, RAG and AI systems."],
+    cs: ["dio-ai-data/index.html", "dio-ai-data/", "Entity resolution a znalostní grafy pro AI | DIO", "DIO pro entity resolution, znalostní grafy, RAG a diagnostiku rekonstrukce entit. Jeden z možných směrů aplikace vede k Agentic ER.", "DIO pro entity resolution a znalostní grafy", "Diagnostická taxonomie, aplikační mapování a návrh sémantického jističe pro Agentic ER jako jedna z možných cest."],
+    en: ["en/entity-resolution/index.html", "en/entity-resolution/", "Entity Resolution & Knowledge Graphs for AI | DIO", "DIO for entity resolution, knowledge graphs, RAG and entity-reconstruction diagnosis. One possible application direction is Agentic ER.", "DIO for Entity Resolution & Knowledge Graphs", "A diagnostic taxonomy, application mappings and a proposed semantic guardrail for Agentic ER as one possible path."],
   },
   {
     key: "odi",
-    cs: ["odi/index.html", "odi/", "Ontology of Digital Identity a znalostní infrastruktura | ODI", "ODI propojuje Reference Vocabulary v0.1.0, Reference Model v0.3.1 a strojově čitelné formáty pro ontologie, znalostní grafy a výzkum AI.", "ODI: ontologie digitální identity", "Teoretická, terminologická a IP vrstva pro ontologie, znalostní grafy, výzkum AI a standardizaci."],
-    en: ["en/ontology-of-digital-identity/index.html", "en/ontology-of-digital-identity/", "Ontology of Digital Identity & Knowledge Infrastructure | ODI", "ODI connects Reference Vocabulary v0.1.0, Reference Model v0.3.1 and machine-readable formats for ontologies, knowledge graphs and AI research.", "ODI: An Ontology of Digital Identity", "A theoretical, terminological and IP layer for ontologies, knowledge graphs, AI research and standards."],
+    cs: ["odi/index.html", "odi/", "Ontology of Digital Identity a znalostní infrastruktura | ODI", "ODI propojuje Reference Vocabulary v0.2.0, Reference Model v0.5.0 a tři aplikační mapování pro další využití v AI a znalostních systémech.", "ODI: ontologie digitální identity", "Teoretická, terminologická a IP vrstva pro ontologie, znalostní grafy, výzkum AI a standardizaci."],
+    en: ["en/ontology-of-digital-identity/index.html", "en/ontology-of-digital-identity/", "Ontology of Digital Identity & Knowledge Infrastructure | ODI", "ODI connects Reference Vocabulary v0.2.0, Reference Model v0.5.0 and three application mappings for further use in AI and knowledge systems.", "ODI: An Ontology of Digital Identity", "A theoretical, terminological and IP layer for ontologies, knowledge graphs, AI research and standards."],
   },
   {
     key: "partnerships",
@@ -50,8 +52,8 @@ const pairs = [
   },
   {
     key: "evidence",
-    cs: ["dukazy/index.html", "dukazy/", "DIO/ODI: publikace, taxonomie a referenční model", "Vývoj DIO/ODI od manifestu přes MVDIO a taxonomii Reconstruction Failure Modes k Reference Vocabulary v0.1.0 a Reference Modelu v0.3.1.", "DIO/ODI: od MVDIO k referenčnímu modelu", "Citovatelná vývojová linie, Reconstruction Failure Modes, Reference Vocabulary v0.1.0 a Reference Model v0.3.1."],
-    en: ["en/evidence/index.html", "en/evidence/", "DIO/ODI Publications, Taxonomy & Reference Model", "The development of DIO/ODI from the manifesto through MVDIO and the Reconstruction Failure Modes taxonomy to Reference Vocabulary v0.1.0 and Reference Model v0.3.1.", "DIO/ODI: From MVDIO to a Reference Model", "A citable development path, Reconstruction Failure Modes, Reference Vocabulary v0.1.0 and Reference Model v0.3.1."],
+    cs: ["dukazy/index.html", "dukazy/", "DIO/ODI: od teorie k aplikacím | Vývoj a důkazy", "Od ontologického základu DIO/ODI k referenční architektuře a návrhům konkrétních aplikací včetně sémantického jističe pro Agentic ER.", "DIO/ODI: od teorie k aplikacím", "Ontologický a diagnostický základ, strojově čitelný model a návrh sémantického jističe pro Agentic ER."],
+    en: ["en/evidence/index.html", "en/evidence/", "DIO/ODI: From Theory to Applications | Development & Evidence", "From the DIO/ODI ontological foundation to a reference architecture and concrete application designs, including a semantic guardrail for Agentic ER.", "DIO/ODI: From Theory to Applications", "An ontological and diagnostic foundation, a machine-readable model and a proposed semantic guardrail for Agentic ER."],
   },
   {
     key: "author",
@@ -331,15 +333,19 @@ const requiredExternalLinks = new Map([
   ["/dio-ai-data/", [
     "https://vocab.danielberanek.cz/mappings/rag-pipeline/",
     "https://vocab.danielberanek.cz/mappings/hem-dio/",
+    "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/",
+    "https://arxiv.org/abs/2610.37407",
   ]],
   ["/en/entity-resolution/", [
     "https://vocab.danielberanek.cz/mappings/rag-pipeline/",
     "https://vocab.danielberanek.cz/mappings/hem-dio/",
+    "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/",
+    "https://arxiv.org/abs/2610.37407",
   ]],
-  ["/odi/", ["https://vocab.danielberanek.cz/mappings/"]],
-  ["/en/ontology-of-digital-identity/", ["https://vocab.danielberanek.cz/mappings/"]],
-  ["/dukazy/", ["https://vocab.danielberanek.cz/mappings/"]],
-  ["/en/evidence/", ["https://vocab.danielberanek.cz/mappings/"]],
+  ["/odi/", ["https://vocab.danielberanek.cz/mappings/", "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/", "https://arxiv.org/abs/2610.37407"]],
+  ["/en/ontology-of-digital-identity/", ["https://vocab.danielberanek.cz/mappings/", "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/", "https://arxiv.org/abs/2610.37407"]],
+  ["/dukazy/", ["https://vocab.danielberanek.cz/mappings/", "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/", "https://arxiv.org/abs/2610.37407"]],
+  ["/en/evidence/", ["https://vocab.danielberanek.cz/mappings/", "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/", "https://arxiv.org/abs/2610.37407"]],
 ]);
 
 for (const [path, requiredLinks] of requiredExternalLinks) {
