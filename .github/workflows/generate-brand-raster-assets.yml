@@ -1,0 +1,45 @@
+name: Generate DIO/ODI raster logo assets
+
+on:
+  push:
+    branches:
+      - brand/raster-logo-formats
+
+permissions:
+  contents: write
+
+concurrency:
+  group: brand-raster-assets
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install pinned image encoder
+        run: npm install --no-save --no-package-lock sharp@0.35.5
+
+      - name: Generate PNG, JPG, WebP and AVIF files
+        run: node scripts/generate-brand-raster-assets.mjs
+
+      - name: Commit generated assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/brand/raster
+          if git diff --cached --quiet; then
+            echo "Raster assets are already up to date."
+          else
+            git commit -m "Add DIO/ODI raster logo exports"
+            git push
+          fi
