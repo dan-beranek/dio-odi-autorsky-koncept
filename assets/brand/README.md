@@ -34,6 +34,31 @@ Pro tmavé plochy použij odpovídající soubor s příponou `-inverse`. Inverz
 
 Značka zobrazuje šest uzlů v projekci pětibokého jehlanu: pět uzlů tvoří obvod a šestý leží uvnitř. Je v ní zakresleno **deset spojnic**. Jde o záměrnou stylizaci existující značky z webové hlavičky, nikoli o úplný graf K6 se všemi patnácti hranami. Když je potřeba výslovně znázornit úplný graf K6, použij příslušnou modelovou vizualizaci, ne samotné logo.
 
+## Rastrové exporty
+
+Samostatný symbol je dostupný také v běžných rastrových formátech. Soubory jsou uloženy přímo v repozitáři, nikoli pouze v distribučním archivu.
+
+| Formát | Pozadí | Vhodné použití |
+|---|---|---|
+| PNG | Průhledné | Univerzální kompatibilita, grafické editory |
+| JPG | Plné podle varianty | Systémy, které neumějí průhlednost |
+| WebP | Průhledné | Webové použití s dobrou kompresí |
+| AVIF | Průhledné | Moderní webové použití s úsporným přenosem |
+
+Každý formát je dostupný v rozměrech **128 × 128, 256 × 256 a 512 × 512 px**, vždy ve světlé a inverzní variantě. Celkem jde o 24 souborů.
+
+Pojmenování odpovídá vzoru `raster/{rozměr}/symbol-{light|inverse}-{rozměr}.{formát}`. Například:
+
+- [PNG 512 px – světlý symbol](raster/512/symbol-light-512.png)
+- [PNG 512 px – inverzní symbol](raster/512/symbol-inverse-512.png)
+- [WebP 512 px – světlý symbol](raster/512/symbol-light-512.webp)
+- [AVIF 512 px – světlý symbol](raster/512/symbol-light-512.avif)
+- [JPG 512 px – světlý symbol](raster/512/symbol-light-512.jpg)
+
+PNG, WebP a AVIF zachovávají průhledné okolí. JPG má neprůhledný podklad: světlá varianta `#f7f8fb`, inverzní varianta `#080b12`.
+
+Rastrové soubory lze znovu vytvořit z kanonických SVG příkazem `node scripts/generate-brand-raster-assets.mjs`. GitHub Actions používá připnutou verzi Sharp a při aktualizaci zdrojových SVG znovu vygeneruje soubory; exportní skript je uložen v `scripts/`.
+
 ## Barevnost
 
 | Token | HEX | Role |
