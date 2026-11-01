@@ -59,6 +59,26 @@ Světlé varianty jsou optimalizované pro plochu `#f7f8fb`, tmavé pro `#080b12
 
 Logo sada je uložena v `assets/brand/`, odděleně od obecných assetů webu. Tato struktura umožňuje později doplnit exporty PNG, tiskové varianty, šablony nebo samostatný stručný manuál, aniž by se míchaly s ilustracemi a sociálními náhledy.
 
+## Práva a podmínky užití
+
+**Copyright © 2026 Daniel Beránek. All rights reserved.**
+
+Název DIO/ODI, název DIO, společný symbol a soubory této logo sady jsou proprietárními materiály značky. Jejich zveřejnění v tomto veřejném repozitáři ani možnost stažení nepředstavují obecnou licenci k užití, úpravám, začlenění do jiných značek nebo dalšímu šíření.
+
+Bez předchozího souhlasu autora je dovoleno logo reprodukovat pouze v nezměněné podobě pro věcnou identifikaci, popis, recenzi nebo odbornou citaci konceptu DIO/ODI, a to způsobem, který nevyvolává dojem schválení, partnerství, sponzorství či jiné afiliace. Je-li to přiměřené, uveď autora a odkaz na oficiální web DIO/ODI.
+
+Předchozí výslovný souhlas autora je nutný zejména pro:
+
+- komerční užití loga jako označení vlastních produktů, služeb, akcí nebo činností třetí strany;
+- začlenění loga do cizího loga, vizuální identity, produktu nebo propagačního materiálu;
+- úpravy, překreslení, barevné změny, deformace nebo vytváření odvozených variant;
+- použití, které by mohlo naznačovat oficiální vztah, podporu, certifikaci nebo partnerství;
+- poskytování loga dalším subjektům jako součást licence, balíčku nebo vlastní nabídky.
+
+Tato pravidla upravují užití grafických a slovních prvků značky. **Autorskoprávní ochrana grafického zpracování a případná známkoprávní ochrana označení jsou dvě odlišné právní otázky.** Toto prohlášení samo o sobě netvrdí, že označení DIO nebo DIO/ODI je registrovanou ochrannou známkou, ani nenahrazuje individuální licenční smlouvu. Konkrétní souhlas nebo širší oprávnění lze sjednat přímo s autorem.
+
+Tato logo sada není vydána pod licencí Creative Commons, MIT, BSD ani jinou obecnou open-source či open-content licencí.
+
 ## Technická poznámka
 
 SVG wordmarky používají textový element s font stackem `Inter, Arial, sans-serif`, nikoli vložený font. Pro web se vykreslí dostupným systémovým písmem; pro finální tiskovou výrobu lze text při exportu převést na křivky.
