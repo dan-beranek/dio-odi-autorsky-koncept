@@ -12,12 +12,15 @@ const robots = "index,follow,max-image-preview:large,max-snippet:-1,max-video-pr
 const citations = [
   "https://doi.org/10.5281/zenodo.21610934",
   "https://doi.org/10.2139/ssrn.7247578",
+  "https://doi.org/10.5281/zenodo.23305929",
   "https://doi.org/10.2139/ssrn.7396398",
+  "https://doi.org/10.5281/zenodo.22416026",
   "https://dx.doi.org/10.2139/ssrn.7590979",
+  "https://doi.org/10.5281/zenodo.23226205",
   "https://doi.org/10.5281/zenodo.23269323",
-  "https://doi.org/10.5281/zenodo.23290683",
-  "https://doi.org/10.5281/zenodo.23643845",
-  "https://arxiv.org/abs/2610.37407",
+  "https://doi.org/10.5281/zenodo.23272897",
+  "https://doi.org/10.5281/zenodo.24020300",
+  "https://arxiv.org/abs/2610.37407v2",
 ];
 const imageAlt = {
   cs: "DIO/ODI – AI visibility, entity resolution a znalostní infrastruktura",
@@ -42,8 +45,8 @@ const pairs = [
   },
   {
     key: "odi",
-    cs: ["odi/index.html", "odi/", "Ontology of Digital Identity a znalostní infrastruktura | ODI", "ODI propojuje Reference Vocabulary v0.2.0, Reference Model v0.5.0 a tři aplikační mapování pro další využití v AI a znalostních systémech.", "ODI: ontologie digitální identity", "Teoretická, terminologická a IP vrstva pro ontologie, znalostní grafy, výzkum AI a standardizaci."],
-    en: ["en/ontology-of-digital-identity/index.html", "en/ontology-of-digital-identity/", "Ontology of Digital Identity & Knowledge Infrastructure | ODI", "ODI connects Reference Vocabulary v0.2.0, Reference Model v0.5.0 and three application mappings for further use in AI and knowledge systems.", "ODI: An Ontology of Digital Identity", "A theoretical, terminological and IP layer for ontologies, knowledge graphs, AI research and standards."],
+    cs: ["odi/index.html", "odi/", "Ontology of Digital Identity a znalostní infrastruktura | ODI", "ODI propojuje Reference Vocabulary v0.2.1, archivovaný Reference Model v0.7.0 a čtyři odvozená mapování pro AI a znalostní systémy.", "ODI: ontologie digitální identity", "Teoretická, terminologická a IP vrstva pro ontologie, znalostní grafy, výzkum AI a standardizaci."],
+    en: ["en/ontology-of-digital-identity/index.html", "en/ontology-of-digital-identity/", "Ontology of Digital Identity & Knowledge Infrastructure | ODI", "ODI connects Reference Vocabulary v0.2.1, the archived Reference Model v0.7.0 and four derived mappings for AI and knowledge systems.", "ODI: An Ontology of Digital Identity", "A theoretical, terminological and IP layer for ontologies, knowledge graphs, AI research and standards."],
   },
   {
     key: "partnerships",
@@ -334,18 +337,18 @@ const requiredExternalLinks = new Map([
     "https://vocab.danielberanek.cz/mappings/rag-pipeline/",
     "https://vocab.danielberanek.cz/mappings/hem-dio/",
     "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/",
-    "https://arxiv.org/abs/2610.37407",
+    "https://arxiv.org/abs/2610.37407v2",
   ]],
   ["/en/entity-resolution/", [
     "https://vocab.danielberanek.cz/mappings/rag-pipeline/",
     "https://vocab.danielberanek.cz/mappings/hem-dio/",
     "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/",
-    "https://arxiv.org/abs/2610.37407",
+    "https://arxiv.org/abs/2610.37407v2",
   ]],
-  ["/odi/", ["https://vocab.danielberanek.cz/mappings/", "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/", "https://arxiv.org/abs/2610.37407"]],
-  ["/en/ontology-of-digital-identity/", ["https://vocab.danielberanek.cz/mappings/", "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/", "https://arxiv.org/abs/2610.37407"]],
-  ["/dukazy/", ["https://vocab.danielberanek.cz/mappings/", "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/", "https://arxiv.org/abs/2610.37407"]],
-  ["/en/evidence/", ["https://vocab.danielberanek.cz/mappings/", "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/", "https://arxiv.org/abs/2610.37407"]],
+  ["/odi/", ["https://vocab.danielberanek.cz/mappings/", "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/", "https://doi.org/10.5281/zenodo.24020300", "https://arxiv.org/abs/2610.37407v2"]],
+  ["/en/ontology-of-digital-identity/", ["https://vocab.danielberanek.cz/mappings/", "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/", "https://doi.org/10.5281/zenodo.24020300", "https://arxiv.org/abs/2610.37407v2"]],
+  ["/dukazy/", ["https://vocab.danielberanek.cz/mappings/", "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/", "https://doi.org/10.5281/zenodo.24020300", "https://arxiv.org/abs/2610.37407v2"]],
+  ["/en/evidence/", ["https://vocab.danielberanek.cz/mappings/", "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/", "https://doi.org/10.5281/zenodo.24020300", "https://arxiv.org/abs/2610.37407v2"]],
 ]);
 
 for (const [path, requiredLinks] of requiredExternalLinks) {
