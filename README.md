@@ -49,9 +49,9 @@ Po aktivaci GitHub Pages bude web dostupný na:
 6. [DIO/ODI Reference Model v0.8.0](https://doi.org/10.5281/zenodo.24056601)
 7. [DIO/ODI Reference Vocabulary v0.2.1](https://vocab.danielberanek.cz/dio-odi/)
 8. [Semantic Change Feed](https://vocab.danielberanek.cz/semantic-change-feed/)
-8. [DIO/ODI Application Mappings](https://vocab.danielberanek.cz/mappings/)
-9. [Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution](https://arxiv.org/abs/2610.37407)
-10. [Živý český manifest a changelog](https://danielberanek.cz/manifest-dio/)
+9. [DIO/ODI Application Mappings](https://vocab.danielberanek.cz/mappings/)
+10. [Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution](https://arxiv.org/abs/2610.37407)
+11. [Živý český manifest a changelog](https://danielberanek.cz/manifest-dio/)
 
 ## Lokální spuštění
 
