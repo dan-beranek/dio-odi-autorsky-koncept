@@ -145,6 +145,7 @@ export const translations = {
     "Otevřít archivní vydání Reference Model v0.8.0 →": "Open the archived Reference Model v0.8.0 release →",
     "Prohlédnout Semantic Change Feed →": "Explore the Semantic Change Feed →",
     "dimenzí sémantického konektomu": "dimensions of the Semantic Connectome",
+    "K6 – úplný graf šesti dimenzí digitální identity": "K6 — the complete graph of the six digital-identity dimensions",
   },
   visibility: {
     "01 · DIO pro tržní viditelnost": "01 · DIO for market visibility",
