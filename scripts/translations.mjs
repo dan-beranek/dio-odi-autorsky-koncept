@@ -517,7 +517,7 @@ export const translations = {
     "Archivní vydání integruje Reference Vocabulary v0.2.1, dokumentaci, odvozená aplikační mapování a Semantic Change Feed v0.1.0 (JSON Schema v0.2.0; 44 událostí k 7. 11. 2026).": "The archived release integrates Reference Vocabulary v0.2.1, documentation, derived application mappings and Semantic Change Feed v0.1.0 (JSON Schema v0.2.0; 44 events as of 7 November 2026).",
     "Otevřít archivní vydání": "Open the archived release",
     "Otevřít Semantic Change Feed": "Open the Semantic Change Feed",
-    "JSON Schema": "JSON Schema"
+    "JSON Schema": "JSON Schema",
     "Reference Vocabulary, Reconstruction Failure Modes a Reference Model propojují publikační vrstvu s kanonickým jmenným prostorem, otevřenými datovými formáty a odvozenými aplikačními mapováními. Reference Model v0.8.0 navíc integruje Semantic Change Feed jako append-only registr změn.": "Reference Vocabulary, Reconstruction Failure Modes and the Reference Model connect the publication layer to a canonical namespace, open data formats and derived application mappings. Reference Model v0.8.0 also integrates the Semantic Change Feed as an append-only change registry.",
   },
   partnerships: {
