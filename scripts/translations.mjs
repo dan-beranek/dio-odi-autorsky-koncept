@@ -518,6 +518,7 @@ export const translations = {
     "Otevřít archivní vydání": "Open the archived release",
     "Otevřít Semantic Change Feed": "Open the Semantic Change Feed",
     "JSON Schema": "JSON Schema"
+    "Reference Vocabulary, Reconstruction Failure Modes a Reference Model propojují publikační vrstvu s kanonickým jmenným prostorem, otevřenými datovými formáty a odvozenými aplikačními mapováními. Reference Model v0.8.0 navíc integruje Semantic Change Feed jako append-only registr změn.": "Reference Vocabulary, Reconstruction Failure Modes and the Reference Model connect the publication layer to a canonical namespace, open data formats and derived application mappings. Reference Model v0.8.0 also integrates the Semantic Change Feed as an append-only change registry.",
   },
   partnerships: {
     "Partnerství · společný vývoj · kapitál": "Partnerships · co-development · capital",
@@ -809,6 +810,9 @@ export const translations = {
     "Reference Vocabulary v0.2.1 vymezuje kanonické pojmy DIO/ODI. Odvozená Application Mappings je promítají do RAG pipeline, taxonomie Heterogeneous Entity Matching a Policy-as-Code autorizace, aniž by měnila kanonické definice. Semantic Change Feed zaznamenává dokumentované změny referenčního systému v append-only registru; je součástí Reference Modelu, nikoli samostatným DOI-identifikovaným dílem.": "Reference Vocabulary v0.2.1 defines canonical DIO/ODI concepts. Derived Application Mappings project them into the RAG pipeline, the Heterogeneous Entity Matching taxonomy and Policy-as-Code authorization without changing canonical definitions. The Semantic Change Feed records documented changes to the reference system in an append-only registry; it is a component of the Reference Model, not a separately DOI-identified work.",
     "sémantický konektom poskytuje jemnější relační popis a jeho geometrická reprezentace K6 je úplným grafem se šesti vrcholy a patnácti hranami.": "The Semantic Connectome provides a finer-grained relational account; its geometric K6 representation is a complete graph with six vertices and fifteen edges.",
     "sémantického konektomu v kanonické vícejazyčné edici.": "the Semantic Connectome in the canonical multilingual edition.",
+    "Adversariální redukce DIO na referent, distribuovaný stav reprezentací a rekonstrukci pozorovatelem; sémantický konektom poskytuje jemnější relační popis a jeho geometrická reprezentace K6 je úplným grafem se šesti vrcholy a patnácti hranami.": "An adversarial reduction of DIO to a referent, a distributed representational state and observer reconstruction; the Semantic Connectome provides a finer-grained relational account, and its geometric K6 representation is a complete graph with six vertices and fifteen edges.",
+    "Vymezení DIO, ODI, společné terminologie a sémantického konektomu v kanonické vícejazyčné edici.": "Definition of DIO, ODI, their shared terminology and the Semantic Connectome in the canonical multilingual edition.",
+    "Otevřít Semantic Change Feed →": "Open the Semantic Change Feed →",
   },
   author: {
     "Autor · geneze · IP": "Author · origins · IP",
