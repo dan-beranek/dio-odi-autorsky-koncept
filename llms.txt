@@ -13,12 +13,17 @@
 - Live Czech manifest and changelog: https://danielberanek.cz/manifest-dio/
 - Canonical multilingual archival edition: https://doi.org/10.5281/zenodo.21610934
 - Canonical reference vocabulary: https://vocab.danielberanek.cz/dio-odi/
+- Current archived Reference Model v0.8.0: https://doi.org/10.5281/zenodo.24056601
+- Reference Model source repository: https://github.com/dan-beranek/dio-odi-reference-model/
+- Semantic Change Feed: https://vocab.danielberanek.cz/semantic-change-feed/
+- SCF event registry (JSON): https://vocab.danielberanek.cz/semantic-change-feed/events.json
+- SCF JSON Schema: https://vocab.danielberanek.cz/semantic-change-feed/schema.json
 - Canonical namespace: https://vocab.danielberanek.cz/dio-odi/#
 - Application Mappings: https://vocab.danielberanek.cz/mappings/
 
 ## Core pages
 
-- [DIO/ODI overview](https://dan-beranek.github.io/dio-odi-autorsky-koncept/): common mechanism, K6 semantic connectome and three value branches.
+- [DIO/ODI overview](https://dan-beranek.github.io/dio-odi-autorsky-koncept/): common mechanism, Semantic Connectome and three value branches.
 - [DIO for visibility](https://dan-beranek.github.io/dio-odi-autorsky-koncept/dio-viditelnost/): entities fragmented across websites, profiles, publications, search and AI.
 - [DIO for AI and entity data](https://dan-beranek.github.io/dio-odi-autorsky-koncept/dio-ai-data/): entity resolution, knowledge graphs, provenance and entity-data quality.
 - [ODI](https://dan-beranek.github.io/dio-odi-autorsky-koncept/odi/): theoretical, research and knowledge-infrastructure layer.
@@ -43,16 +48,16 @@
 - [The Crisis of Entity Resolution in Heterogeneous AI Environments](https://doi.org/10.2139/ssrn.7396398)
 - [Minimum Viable Digital Identity Optimization (DIO)](https://dx.doi.org/10.2139/ssrn.7590979)
 - [From Entity Resolution Anomalies to Reconstruction Failure Modes: A Taxonomic Note Following MVDIO](https://doi.org/10.5281/zenodo.23269323)
-- [DIO/ODI Reference Model v0.5.0](https://doi.org/10.5281/zenodo.23643845)
+- [DIO/ODI Reference Model v0.8.0](https://doi.org/10.5281/zenodo.24056601)
 - [Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution](https://arxiv.org/abs/2610.37407)
 
 ## Reference architecture
 
-- MVDIO defines the coarse-grained minimum around a referent, distributed representational state and observer reconstruction; K6 remains a finer-grained candidate model.
+- MVDIO defines the coarse-grained minimum around a referent, distributed representational state and observer reconstruction; the Semantic Connectome provides a finer-grained relational account, with K6 as its complete-graph representation (six vertices and fifteen edges).
 - Reconstruction Failure Modes are organized into referential, semantic-coherence, temporal and contextual-adequacy families.
 - Identity Collapse is a phenomenon-level outcome outside the failure hierarchy.
 - Semantic Vulnerability and Semantic Robustness describe a risk/robustness property, not an additional failure mode.
-- Reference Vocabulary v0.2.0 is published under the canonical DIO/ODI namespace in SKOS-first Turtle and JSON-LD serializations. The current archived Reference Model is v0.5.0.
+- Reference Vocabulary v0.2.1 is published under the canonical DIO/ODI namespace in SKOS-first Turtle and JSON-LD serializations. The current archived Reference Model is v0.8.0 and integrates Semantic Change Feed v0.1.0 (JSON Schema v0.2.0; 44 documented events through 7 November 2026). SCF is an append-only component of the Reference Model, not a separate DOI-identified work.
 - Three separate Application Mappings connect DIO/ODI concepts with RAG, Heterogeneous Entity Matching and Policy-as-Code authorization. They remain outside the canonical vocabulary.
 - The arXiv paper presents one possible application direction: a proposed semantic guardrail for Agentic ER. It does not define the future scope of DIO/ODI as a whole.
 - Separate Application Mappings connect DIO/ODI concepts with a RAG pipeline, the Heterogeneous Entity Matching taxonomy, and Policy-as-Code authorization without modifying the canonical vocabulary.

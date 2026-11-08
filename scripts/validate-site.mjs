@@ -15,8 +15,8 @@ const citations = [
   "https://doi.org/10.2139/ssrn.7396398",
   "https://dx.doi.org/10.2139/ssrn.7590979",
   "https://doi.org/10.5281/zenodo.23269323",
-  "https://doi.org/10.5281/zenodo.23290683",
-  "https://doi.org/10.5281/zenodo.23643845",
+  "https://doi.org/10.5281/zenodo.24056601",
+  "https://vocab.danielberanek.cz/semantic-change-feed/",
   "https://arxiv.org/abs/2610.37407",
 ];
 const imageAlt = {
@@ -42,8 +42,8 @@ const pairs = [
   },
   {
     key: "odi",
-    cs: ["odi/index.html", "odi/", "Ontology of Digital Identity a znalostní infrastruktura | ODI", "ODI propojuje Reference Vocabulary v0.2.0, Reference Model v0.5.0 a tři aplikační mapování pro další využití v AI a znalostních systémech.", "ODI: ontologie digitální identity", "Teoretická, terminologická a IP vrstva pro ontologie, znalostní grafy, výzkum AI a standardizaci."],
-    en: ["en/ontology-of-digital-identity/index.html", "en/ontology-of-digital-identity/", "Ontology of Digital Identity & Knowledge Infrastructure | ODI", "ODI connects Reference Vocabulary v0.2.0, Reference Model v0.5.0 and three application mappings for further use in AI and knowledge systems.", "ODI: An Ontology of Digital Identity", "A theoretical, terminological and IP layer for ontologies, knowledge graphs, AI research and standards."],
+    cs: ["odi/index.html", "odi/", "Ontology of Digital Identity a znalostní infrastruktura | ODI", "ODI propojuje kanonický Reference Vocabulary a Reference Model s odvozenými aplikačními mapováními a integrovaným Semantic Change Feed pro další využití v AI a znalostních systémech.", "ODI: ontologie digitální identity", "Teoretická, terminologická a IP vrstva pro ontologie, znalostní grafy, výzkum AI a standardizaci."],
+    en: ["en/ontology-of-digital-identity/index.html", "en/ontology-of-digital-identity/", "Ontology of Digital Identity & Knowledge Infrastructure | ODI", "ODI connects the canonical Reference Vocabulary and Reference Model with derived application mappings and an integrated Semantic Change Feed for AI and knowledge systems.", "ODI: An Ontology of Digital Identity", "A theoretical, terminological and IP layer for ontologies, knowledge graphs, AI research and standards."],
   },
   {
     key: "partnerships",
@@ -342,10 +342,10 @@ const requiredExternalLinks = new Map([
     "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/",
     "https://arxiv.org/abs/2610.37407",
   ]],
-  ["/odi/", ["https://vocab.danielberanek.cz/mappings/", "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/", "https://arxiv.org/abs/2610.37407"]],
-  ["/en/ontology-of-digital-identity/", ["https://vocab.danielberanek.cz/mappings/", "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/", "https://arxiv.org/abs/2610.37407"]],
-  ["/dukazy/", ["https://vocab.danielberanek.cz/mappings/", "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/", "https://arxiv.org/abs/2610.37407"]],
-  ["/en/evidence/", ["https://vocab.danielberanek.cz/mappings/", "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/", "https://arxiv.org/abs/2610.37407"]],
+  ["/odi/", ["https://vocab.danielberanek.cz/mappings/", "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/", "https://arxiv.org/abs/2610.37407", "https://doi.org/10.5281/zenodo.24056601", "https://vocab.danielberanek.cz/semantic-change-feed/", "https://vocab.danielberanek.cz/semantic-change-feed/schema.json"]],
+  ["/en/ontology-of-digital-identity/", ["https://vocab.danielberanek.cz/mappings/", "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/", "https://arxiv.org/abs/2610.37407", "https://doi.org/10.5281/zenodo.24056601", "https://vocab.danielberanek.cz/semantic-change-feed/", "https://vocab.danielberanek.cz/semantic-change-feed/schema.json"]],
+  ["/dukazy/", ["https://vocab.danielberanek.cz/mappings/", "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/", "https://arxiv.org/abs/2610.37407", "https://doi.org/10.5281/zenodo.24056601", "https://vocab.danielberanek.cz/semantic-change-feed/"]],
+  ["/en/evidence/", ["https://vocab.danielberanek.cz/mappings/", "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/", "https://arxiv.org/abs/2610.37407", "https://doi.org/10.5281/zenodo.24056601", "https://vocab.danielberanek.cz/semantic-change-feed/"]],
 ]);
 
 for (const [path, requiredLinks] of requiredExternalLinks) {
