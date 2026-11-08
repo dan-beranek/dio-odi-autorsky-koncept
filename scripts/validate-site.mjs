@@ -342,10 +342,10 @@ const requiredExternalLinks = new Map([
     "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/",
     "https://arxiv.org/abs/2610.37407",
   ]],
-  ["/odi/", ["https://vocab.danielberanek.cz/mappings/", "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/", "https://arxiv.org/abs/2610.37407"]],
-  ["/en/ontology-of-digital-identity/", ["https://vocab.danielberanek.cz/mappings/", "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/", "https://arxiv.org/abs/2610.37407"]],
-  ["/dukazy/", ["https://vocab.danielberanek.cz/mappings/", "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/", "https://arxiv.org/abs/2610.37407"]],
-  ["/en/evidence/", ["https://vocab.danielberanek.cz/mappings/", "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/", "https://arxiv.org/abs/2610.37407"]],
+  ["/odi/", ["https://vocab.danielberanek.cz/mappings/", "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/", "https://arxiv.org/abs/2610.37407", "https://doi.org/10.5281/zenodo.24056601", "https://vocab.danielberanek.cz/semantic-change-feed/", "https://vocab.danielberanek.cz/semantic-change-feed/schema.json"]],
+  ["/en/ontology-of-digital-identity/", ["https://vocab.danielberanek.cz/mappings/", "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/", "https://arxiv.org/abs/2610.37407", "https://doi.org/10.5281/zenodo.24056601", "https://vocab.danielberanek.cz/semantic-change-feed/", "https://vocab.danielberanek.cz/semantic-change-feed/schema.json"]],
+  ["/dukazy/", ["https://vocab.danielberanek.cz/mappings/", "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/", "https://arxiv.org/abs/2610.37407", "https://doi.org/10.5281/zenodo.24056601", "https://vocab.danielberanek.cz/semantic-change-feed/"]],
+  ["/en/evidence/", ["https://vocab.danielberanek.cz/mappings/", "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/", "https://arxiv.org/abs/2610.37407", "https://doi.org/10.5281/zenodo.24056601", "https://vocab.danielberanek.cz/semantic-change-feed/"]],
 ]);
 
 for (const [path, requiredLinks] of requiredExternalLinks) {
