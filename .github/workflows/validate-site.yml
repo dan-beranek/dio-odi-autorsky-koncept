@@ -1,0 +1,29 @@
+name: Validate bilingual site
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+      - name: Generate English pages
+        run: node scripts/build-site.mjs
+      - name: Validate localized pages and metadata
+        run: node scripts/validate-site.mjs
+      - name: Check patch whitespace
+        run: git diff --check
