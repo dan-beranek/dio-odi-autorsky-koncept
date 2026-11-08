@@ -4,12 +4,16 @@ Veřejný, statický a plně dvojjazyčný web představující Digital Identity
 
 ---
 
-## DIO/ODI — Vocabulary & Reference Model
+## DIO/ODI — Reference infrastructure
 
-A machine-readable vocabulary and a reference model for Digital Identity Optimization (DIO) and the Ontology of Digital Identity (ODI).
+The current archived Reference Model release is v0.8.0. It integrates the SKOS-first Reference Vocabulary v0.2.1, derived non-normative Application Mappings and the append-only Semantic Change Feed (SCF) v0.1.0 (JSON Schema v0.2.0; 44 documented events through 7 November 2026). SCF is a component of the Reference Model, not a separately DOI-identified work.
 
-- **Vocabulary:** https://vocab.danielberanek.cz/dio-odi/
-- **Reference Model & Source Repository:** https://github.com/dan-beranek/dio-odi-reference-model/
+- **Current archived Reference Model v0.8.0:** https://doi.org/10.5281/zenodo.24056601
+- **Reference Model source repository:** https://github.com/dan-beranek/dio-odi-reference-model/
+- **Reference Vocabulary:** https://vocab.danielberanek.cz/dio-odi/
+- **Semantic Change Feed:** https://vocab.danielberanek.cz/semantic-change-feed/
+- **SCF event registry (JSON):** https://vocab.danielberanek.cz/semantic-change-feed/events.json
+- **SCF JSON Schema:** https://vocab.danielberanek.cz/semantic-change-feed/schema.json
 
 ---
 
@@ -42,8 +46,9 @@ Po aktivaci GitHub Pages bude web dostupný na:
 3. [The Crisis of Entity Resolution in Heterogeneous AI Environments: Data, Financial, and Semantic Dimensions](https://doi.org/10.2139/ssrn.7396398)
 4. [Minimum Viable Digital Identity Optimization (DIO)](https://dx.doi.org/10.2139/ssrn.7590979)
 5. [From Entity Resolution Anomalies to Reconstruction Failure Modes: A Taxonomic Note Following Minimum Viable Digital Identity Optimization (DIO)](https://doi.org/10.5281/zenodo.23269323)
-6. [DIO/ODI Reference Model v0.5.0](https://doi.org/10.5281/zenodo.23643845)
-7. [DIO/ODI Reference Vocabulary v0.2.0](https://vocab.danielberanek.cz/dio-odi/)
+6. [DIO/ODI Reference Model v0.8.0](https://doi.org/10.5281/zenodo.24056601)
+7. [DIO/ODI Reference Vocabulary v0.2.1](https://vocab.danielberanek.cz/dio-odi/)
+8. [Semantic Change Feed](https://vocab.danielberanek.cz/semantic-change-feed/)
 8. [DIO/ODI Application Mappings](https://vocab.danielberanek.cz/mappings/)
 9. [Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution](https://arxiv.org/abs/2610.37407)
 10. [Živý český manifest a changelog](https://danielberanek.cz/manifest-dio/)
@@ -73,7 +78,7 @@ Workflow `.github/workflows/pages.yml` automaticky nasadí obsah na GitHub Pages
 
 ## Důkazní stav
 
-Repozitář dokumentuje vývoj DIO/ODI od manifestu a konceptuálních prací přes MVDIO a taxonomii Reconstruction Failure Modes k Reference Vocabulary v0.2.0 a Reference Modelu v0.5.0. Tři oddělená Application Mappings propojují referenční vrstvu s RAG, HEM a Policy-as-Code. Paper na arXiv navíc představuje jeden konkrétní návrh technické aplikace pro Agentic ER; implementace, piloty a další aplikační směry zůstávají otevřené.
+Repozitář dokumentuje vývoj DIO/ODI od manifestu a konceptuálních prací přes MVDIO a taxonomii Reconstruction Failure Modes k aktuální referenční infrastruktuře: Reference Vocabulary v0.2.1, archivní Reference Model v0.8.0 a integrovaný Semantic Change Feed. Odvozená Application Mappings propojují referenční vrstvu s externími technickými doménami. Paper na arXiv představuje jeden konkrétní návrh technické aplikace pro Agentic ER; implementace, piloty a další aplikační směry zůstávají otevřené.
 
 ## Autorství a práva
 
