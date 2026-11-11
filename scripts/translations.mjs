@@ -509,6 +509,8 @@ export const translations = {
     "Archivní vydání integruje Reference Vocabulary v0.2.2, dokumentaci, odvozená aplikační mapování a Semantic Change Feed v0.1.1 (JSON Schema v0.2.0; 45 událostí k 9. 11. 2026).": "The archived release integrates Reference Vocabulary v0.2.2, documentation, derived application mappings and Semantic Change Feed v0.1.1 (JSON Schema v0.2.0; 45 events as of 9 November 2026).",
     "Otevřít archivní vydání": "Open the archived release",
     "DIO/ODI MCP v0.1.1 · read-only endpoint": "DIO/ODI MCP v0.1.1 · read-only endpoint",
+    "MCP version DOI": "MCP version DOI",
+    "Concept DOI": "Concept DOI",
     "Otevřít Semantic Change Feed": "Open the Semantic Change Feed",
     "JSON Schema": "JSON Schema",
     "Reference Vocabulary, Reconstruction Failure Modes a Reference Model propojují publikační vrstvu s kanonickým jmenným prostorem, otevřenými datovými formáty a odvozenými aplikačními mapováními. Reference Model v0.9.0 navíc integruje Semantic Change Feed jako append-only registr změn.": "Reference Vocabulary, Reconstruction Failure Modes and the Reference Model connect the publication layer to a canonical namespace, open data formats and derived application mappings. Reference Model v0.9.0 also integrates the Semantic Change Feed as an append-only change registry.",
