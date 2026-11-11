@@ -722,6 +722,8 @@ export const translations = {
     "Rozpracování DIO jako přechodu od optimalizace jednotlivých povrchů k entity-based visibility.": "Development of DIO as a shift from optimizing individual surfaces toward entity-based visibility.",
     "Analýza entity resolution anomálií, identity collapse a sémantické zranitelnosti.": "Analysis of entity-resolution anomalies, identity collapse and semantic vulnerability.",
     "Víceúrovňová taxonomie referenčních, sémantických, časových a kontextových selhání rekonstrukce.": "A multi-level taxonomy of referential, semantic, temporal and contextual reconstruction failures.",
+    "arXiv preprint · 5. 11. 2026": "arXiv preprint · 5 November 2026",
+    "Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution · v2": "Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution · v2",
     "MCP distribuce · 11. 11. 2026": "MCP distribution · 11 November 2026",
     "DIO/ODI MCP v0.1.1 · Zenodo version DOI": "DIO/ODI MCP v0.1.1 · Zenodo version DOI",
     "Veřejný, stateless a read-only Model Context Protocol server zpřístupňuje referenční snapshot a vybraná mapování Agentic ER a Policy-as-Code. Je to integrační rozhraní, nikoli autorizační služba nebo MVDIO Supervisor.": "A public, stateless, read-only Model Context Protocol server exposes a reference snapshot and selected Agentic ER and Policy-as-Code mappings. It is an integration interface, not an authorization service or an MVDIO Supervisor.",
