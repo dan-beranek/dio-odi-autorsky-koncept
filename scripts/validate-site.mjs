@@ -15,9 +15,11 @@ const citations = [
   "https://doi.org/10.2139/ssrn.7396398",
   "https://dx.doi.org/10.2139/ssrn.7590979",
   "https://doi.org/10.5281/zenodo.23269323",
-  "https://doi.org/10.5281/zenodo.24056601",
+  "https://doi.org/10.5281/zenodo.24085589",
   "https://vocab.danielberanek.cz/semantic-change-feed/",
   "https://arxiv.org/abs/2610.37407",
+  "https://doi.org/10.5281/zenodo.24123229",
+  "https://doi.org/10.5281/zenodo.24123228",
 ];
 const imageAlt = {
   cs: "DIO/ODI – AI visibility, entity resolution a znalostní infrastruktura",
@@ -342,10 +344,10 @@ const requiredExternalLinks = new Map([
     "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/",
     "https://arxiv.org/abs/2610.37407",
   ]],
-  ["/odi/", ["https://vocab.danielberanek.cz/mappings/", "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/", "https://arxiv.org/abs/2610.37407", "https://doi.org/10.5281/zenodo.24056601", "https://vocab.danielberanek.cz/semantic-change-feed/", "https://vocab.danielberanek.cz/semantic-change-feed/schema.json"]],
-  ["/en/ontology-of-digital-identity/", ["https://vocab.danielberanek.cz/mappings/", "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/", "https://arxiv.org/abs/2610.37407", "https://doi.org/10.5281/zenodo.24056601", "https://vocab.danielberanek.cz/semantic-change-feed/", "https://vocab.danielberanek.cz/semantic-change-feed/schema.json"]],
-  ["/dukazy/", ["https://vocab.danielberanek.cz/mappings/", "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/", "https://arxiv.org/abs/2610.37407", "https://doi.org/10.5281/zenodo.24056601", "https://vocab.danielberanek.cz/semantic-change-feed/"]],
-  ["/en/evidence/", ["https://vocab.danielberanek.cz/mappings/", "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/", "https://arxiv.org/abs/2610.37407", "https://doi.org/10.5281/zenodo.24056601", "https://vocab.danielberanek.cz/semantic-change-feed/"]],
+  ["/odi/", ["https://vocab.danielberanek.cz/mappings/", "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/", "https://arxiv.org/abs/2610.37407", "https://doi.org/10.5281/zenodo.24085589", "https://vocab.danielberanek.cz/semantic-change-feed/", "https://vocab.danielberanek.cz/semantic-change-feed/schema.json"]],
+  ["/en/ontology-of-digital-identity/", ["https://vocab.danielberanek.cz/mappings/", "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/", "https://arxiv.org/abs/2610.37407", "https://doi.org/10.5281/zenodo.24085589", "https://vocab.danielberanek.cz/semantic-change-feed/", "https://vocab.danielberanek.cz/semantic-change-feed/schema.json"]],
+  ["/dukazy/", ["https://vocab.danielberanek.cz/mappings/", "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/", "https://arxiv.org/abs/2610.37407", "https://doi.org/10.5281/zenodo.24085589",  "https://mcp.danielberanek.cz/mcp", "https://github.com/dan-beranek/dio-odi-mcp", "https://doi.org/10.5281/zenodo.24123229", "https://doi.org/10.5281/zenodo.24123228", "https://vocab.danielberanek.cz/semantic-change-feed/"]],
+  ["/en/evidence/", ["https://vocab.danielberanek.cz/mappings/", "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/", "https://arxiv.org/abs/2610.37407", "https://doi.org/10.5281/zenodo.24085589",  "https://mcp.danielberanek.cz/mcp", "https://github.com/dan-beranek/dio-odi-mcp", "https://doi.org/10.5281/zenodo.24123229", "https://doi.org/10.5281/zenodo.24123228", "https://vocab.danielberanek.cz/semantic-change-feed/"]],
 ]);
 
 for (const [path, requiredLinks] of requiredExternalLinks) {

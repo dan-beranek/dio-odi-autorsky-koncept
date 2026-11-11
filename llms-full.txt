@@ -11,7 +11,7 @@ Author website: https://danielberanek.cz/
 Live Czech manifest and changelog: https://danielberanek.cz/manifest-dio/
 Canonical multilingual archival edition: https://doi.org/10.5281/zenodo.21610934
 Canonical reference vocabulary: https://vocab.danielberanek.cz/dio-odi/
-Current archived Reference Model v0.8.0: https://doi.org/10.5281/zenodo.24056601
+Current archived Reference Model v0.9.0: https://doi.org/10.5281/zenodo.24085589
 Reference Model source repository: https://github.com/dan-beranek/dio-odi-reference-model/
 Semantic Change Feed: https://vocab.danielberanek.cz/semantic-change-feed/
 SCF event registry (JSON): https://vocab.danielberanek.cz/semantic-change-feed/events.json
@@ -65,7 +65,7 @@ Identity Collapse is a phenomenon-level outcome outside the taxonomy. Semantic V
 
 ## Machine-readable reference layer
 
-Reference Vocabulary v0.2.1 and the archived Reference Model v0.8.0 provide stable term identifiers, definitions, relations and provenance under the canonical namespace. The vocabulary is SKOS-first and distributed in Turtle and JSON-LD. The Reference Model integrates the append-only Semantic Change Feed v0.1.0 (JSON Schema v0.2.0; 44 documented events through 7 November 2026); SCF is a component of the Reference Model, not a separately DOI-identified work. Derived Application Mappings connect DIO/ODI concepts with external technical domains while remaining outside the canonical vocabulary. Each mapping has a human-readable frontend, Markdown, JSON-LD and Turtle RDF; qualified assertions distinguish source conditions, target concepts and non-deterministic relation types.
+Reference Vocabulary v0.2.2 and the archived Reference Model v0.9.0 provide stable term identifiers, definitions, relations and provenance under the canonical namespace. The vocabulary is SKOS-first and distributed in Turtle and JSON-LD. The archived Reference Model integrates Semantic Change Feed snapshot v0.1.1 (JSON Schema v0.2.0; 45 documented events through 9 November 2026); the live feed is v0.1.4 with 50 events; SCF is a component of the Reference Model, not a separately DOI-identified work. Derived Application Mappings connect DIO/ODI concepts with external technical domains while remaining outside the canonical vocabulary. Each mapping has a human-readable frontend, Markdown, JSON-LD and Turtle RDF; qualified assertions distinguish source conditions, target concepts and non-deterministic relation types.
 
 ## Three value branches
 
@@ -87,11 +87,15 @@ Focus: interdisciplinary research, ontologies, knowledge products, institutional
 Page: https://dan-beranek.github.io/dio-odi-autorsky-koncept/odi/
 English page: https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/ontology-of-digital-identity/
 
+## Agent-facing MCP distribution
+
+DIO/ODI MCP v0.1.1 is a public, stateless, read-only Model Context Protocol server exposing a bounded snapshot of the DIO/ODI Reference Model and selected derived Agentic ER and Policy-as-Code mappings. It is a diagnostic and integration-reference interface, not an MVDIO Supervisor or authorization service. Version DOI: https://doi.org/10.5281/zenodo.24123229. Concept DOI: https://doi.org/10.5281/zenodo.24123228. Endpoint: https://mcp.danielberanek.cz/mcp. Source: https://github.com/dan-beranek/dio-odi-mcp.
+
 ## Evidence status
 
 DIO/ODI has a public theoretical, diagnostic and machine-readable reference architecture, and is now developing concrete application designs:
 
-1. Published foundations: the manifesto, conceptual papers, MVDIO, the Reconstruction Failure Modes taxonomy, Reference Vocabulary v0.2.1, the archived Reference Model v0.8.0 and the integrated Semantic Change Feed.
+1. Published foundations: the manifesto, conceptual papers, MVDIO, the Reconstruction Failure Modes taxonomy, Reference Vocabulary v0.2.2, the archived Reference Model v0.9.0 and the integrated Semantic Change Feed.
 2. Application design: the arXiv paper *Constraining the Commit Boundary* proposes a semantic guardrail for Agentic ER. It is one concrete application direction, not a commitment to make Agentic ER the exclusive focus of DIO/ODI. The Commit-Boundary × Policy-as-Code mapping relates the design to OPA/Rego and Cedar.
 3. Next steps: implementation, integration, pilots and further application directions. The practical value and transferability of particular implementations remain to be tested.
 
@@ -107,8 +111,9 @@ English evidence page: https://dan-beranek.github.io/dio-odi-autorsky-koncept/en
 3. Daniel Beránek. “The Crisis of Entity Resolution in Heterogeneous AI Environments: Data, Financial, and Semantic Dimensions.” https://doi.org/10.2139/ssrn.7396398
 4. Daniel Beránek. “Minimum Viable Digital Identity Optimization (DIO).” https://dx.doi.org/10.2139/ssrn.7590979
 5. Daniel Beránek. “From Entity Resolution Anomalies to Reconstruction Failure Modes: A Taxonomic Note Following Minimum Viable Digital Identity Optimization (DIO).” https://doi.org/10.5281/zenodo.23269323
-6. Daniel Beránek. “DIO/ODI Reference Model v0.8.0.” https://doi.org/10.5281/zenodo.24056601
+6. Daniel Beránek. “DIO/ODI Reference Model v0.9.0.” https://doi.org/10.5281/zenodo.24085589
 7. Daniel Beránek. “Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution.” arXiv:2610.37407. https://arxiv.org/abs/2610.37407
+8. Daniel Beránek. “DIO/ODI MCP: A Read-only Model Context Protocol Server for the DIO/ODI Reference Model and Agentic Entity Resolution Guardrail Mappings” (Version 0.1.1). Zenodo. https://doi.org/10.5281/zenodo.24123229. Concept DOI: https://doi.org/10.5281/zenodo.24123228
 
 ## Author
 
