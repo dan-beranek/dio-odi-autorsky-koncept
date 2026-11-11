@@ -13,7 +13,7 @@
 - Live Czech manifest and changelog: https://danielberanek.cz/manifest-dio/
 - Canonical multilingual archival edition: https://doi.org/10.5281/zenodo.21610934
 - Canonical reference vocabulary: https://vocab.danielberanek.cz/dio-odi/
-- Current archived Reference Model v0.8.0: https://doi.org/10.5281/zenodo.24056601
+- Current archived Reference Model v0.9.0: https://doi.org/10.5281/zenodo.24085589
 - Reference Model source repository: https://github.com/dan-beranek/dio-odi-reference-model/
 - Semantic Change Feed: https://vocab.danielberanek.cz/semantic-change-feed/
 - SCF event registry (JSON): https://vocab.danielberanek.cz/semantic-change-feed/events.json
@@ -48,8 +48,13 @@
 - [The Crisis of Entity Resolution in Heterogeneous AI Environments](https://doi.org/10.2139/ssrn.7396398)
 - [Minimum Viable Digital Identity Optimization (DIO)](https://dx.doi.org/10.2139/ssrn.7590979)
 - [From Entity Resolution Anomalies to Reconstruction Failure Modes: A Taxonomic Note Following MVDIO](https://doi.org/10.5281/zenodo.23269323)
-- [DIO/ODI Reference Model v0.8.0](https://doi.org/10.5281/zenodo.24056601)
+- [DIO/ODI Reference Model v0.9.0](https://doi.org/10.5281/zenodo.24085589)
 - [Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution](https://arxiv.org/abs/2610.37407)
+- [DIO/ODI MCP v0.1.1 — read-only Model Context Protocol server](https://doi.org/10.5281/zenodo.24123229)
+  - Concept DOI (all versions): https://doi.org/10.5281/zenodo.24123228
+  - Public endpoint: https://mcp.danielberanek.cz/mcp
+  - Source repository: https://github.com/dan-beranek/dio-odi-mcp
+  - Scope: stateless, read-only reference and diagnostic interface; not an authorization service or MVDIO Supervisor
 
 ## Reference architecture
 
@@ -57,7 +62,7 @@
 - Reconstruction Failure Modes are organized into referential, semantic-coherence, temporal and contextual-adequacy families.
 - Identity Collapse is a phenomenon-level outcome outside the failure hierarchy.
 - Semantic Vulnerability and Semantic Robustness describe a risk/robustness property, not an additional failure mode.
-- Reference Vocabulary v0.2.1 is published under the canonical DIO/ODI namespace in SKOS-first Turtle and JSON-LD serializations. The current archived Reference Model is v0.8.0 and integrates Semantic Change Feed v0.1.0 (JSON Schema v0.2.0; 44 documented events through 7 November 2026). SCF is an append-only component of the Reference Model, not a separate DOI-identified work.
+- Reference Vocabulary v0.2.2 is published under the canonical DIO/ODI namespace in SKOS-first Turtle and JSON-LD serializations. The current archived Reference Model is v0.9.0 and contains Semantic Change Feed snapshot v0.1.1 (JSON Schema v0.2.0; 45 documented events through 9 November 2026). The live SCF is v0.1.4 with 50 events. SCF is an append-only component of the Reference Model, not a separate DOI-identified work.
 - Three separate Application Mappings connect DIO/ODI concepts with RAG, Heterogeneous Entity Matching and Policy-as-Code authorization. They remain outside the canonical vocabulary.
 - The arXiv paper presents one possible application direction: a proposed semantic guardrail for Agentic ER. It does not define the future scope of DIO/ODI as a whole.
 - Separate Application Mappings connect DIO/ODI concepts with a RAG pipeline, the Heterogeneous Entity Matching taxonomy, and Policy-as-Code authorization without modifying the canonical vocabulary.
