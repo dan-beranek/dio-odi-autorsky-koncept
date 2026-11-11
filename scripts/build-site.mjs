@@ -205,7 +205,7 @@ function structuredData(page, lang) {
       "https://doi.org/10.2139/ssrn.7396398",
       "https://dx.doi.org/10.2139/ssrn.7590979",
       "https://doi.org/10.5281/zenodo.23269323",
-      "https://doi.org/10.5281/zenodo.24056601",
+      "https://doi.org/10.5281/zenodo.24085589",
       "https://vocab.danielberanek.cz/semantic-change-feed/",
       "https://arxiv.org/abs/2610.37407",
       "https://doi.org/10.5281/zenodo.24123229",
