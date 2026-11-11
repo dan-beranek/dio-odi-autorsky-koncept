@@ -208,6 +208,8 @@ function structuredData(page, lang) {
       "https://doi.org/10.5281/zenodo.24056601",
       "https://vocab.danielberanek.cz/semantic-change-feed/",
       "https://arxiv.org/abs/2610.37407",
+      "https://doi.org/10.5281/zenodo.24123229",
+      "https://doi.org/10.5281/zenodo.24123228",
     ],
   };
   if (!isHome) {
