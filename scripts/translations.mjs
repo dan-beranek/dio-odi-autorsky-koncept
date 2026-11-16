@@ -793,6 +793,7 @@ export const translations = {
     "Agent Skill · 16. 11. 2026": "Agent Skill · 16 November 2026",
     "Publikovaný design-time Skill připravuje přezkoumatelný plán identity-changing operace. Neprovádí produkční mutace ani je neautorizuje.": "The published design-time Skill prepares a reviewable plan for an identity-changing operation. It does not execute or authorize production mutations.",
     "Od diagnostiky k produktu a pilotu.": "From diagnosis to product and pilot.",
+    "Planner na Agensi →": "Planner on Agensi →",
     "Paper na arXiv popisuje návrh sémantického jističe pro Agentic ER. Na něj navazuje publikovaný Agentic Entity Resolution Guardrail Planner: design-time Skill, který připravuje přezkoumatelný engineering plán před případnou implementací. Neprovádí mutace ani neautorizuje produkční zápisy.": "The arXiv paper describes a proposed semantic guardrail for Agentic ER. It is now complemented by the published Agentic Entity Resolution Guardrail Planner: a design-time Skill that prepares a reviewable engineering plan before any implementation. It does not execute mutations or authorize production writes.",
     "Agentic ER je jeden z možných aplikačních směrů, ne jediné zaměření DIO/ODI. Dalším krokem je implementace, pilot a ověření v konkrétním systému.": "Agentic ER is one possible application direction, not the sole focus of DIO/ODI. The next step is implementation, a pilot and evaluation in a specific system.",
     "Od teorie k": "From theory to",
