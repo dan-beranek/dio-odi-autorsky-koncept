@@ -53,6 +53,12 @@ Po aktivaci GitHub Pages bude web dostupný na:
 10. [Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution](https://arxiv.org/abs/2610.37407)
 11. [DIO/ODI MCP v0.1.1 — read-only Model Context Protocol server](https://doi.org/10.5281/zenodo.24123229) (Concept DOI: https://doi.org/10.5281/zenodo.24123228)\n12. [Živý český manifest a changelog](https://danielberanek.cz/manifest-dio/)
 
+## Publikovaný Agentic ER produkt
+
+Agentic Entity Resolution Guardrail Planner je publikovaný design-time Agent Skill pro přípravu přezkoumatelného engineering plánu identity-changing operací. Neprovádí produkční mutace ani je neautorizuje.
+
+[Otevřít Agentic Entity Resolution Guardrail Planner na Agensi](https://www.agensi.io/r/DANIELBERANEK?to=/skills/agentic-entity-resolution-guardrail-planner)
+
 ## Lokální spuštění
 
 Web nemá externí závislosti. Po obsahové úpravě lze z kořene repozitáře znovu vygenerovat statické HTML a spustit kontrolu:
