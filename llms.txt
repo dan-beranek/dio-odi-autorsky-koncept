@@ -69,6 +69,13 @@
 - Each mapping is published as a human-readable frontend, Markdown, JSON-LD and Turtle RDF. Qualified relations such as `may contribute to`, `may increase` and `may increase risk of` do not assert equivalence or deterministic causality.
 - The Commit-Boundary × Policy-as-Code mapping relates the proposed Agentic ER authorization architecture to OPA/Rego and Cedar. It is one of several application directions.
 
+## Published Agentic ER planning product
+
+- **Agentic Entity Resolution Guardrail Planner** is a published design-time Agent Skill for identity-changing operations such as MERGE, SPLIT and UNMERGE.
+- It produces a reviewable engineering plan covering scope, evidence requirements, commit-boundary controls, implementation guidance and validation scenarios.
+- It does not execute production mutations, authorize live writes or deploy a runtime guard.
+- Agensi listing: https://www.agensi.io/r/DANIELBERANEK?to=/skills/agentic-entity-resolution-guardrail-planner
+
 ## Interpretation note
 
 DIO/ODI is an author-led framework with a published theoretical, diagnostic and machine-readable reference foundation. It is now also producing concrete application designs. The arXiv paper on a semantic guardrail for Agentic ER is one possible technical direction, alongside RAG, HEM and other future applications. Implementation, pilots and empirical evaluation are the next steps; Agentic ER is not the exclusive direction of DIO/ODI.
