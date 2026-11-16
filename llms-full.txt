@@ -91,6 +91,10 @@ English page: https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/ontology
 
 DIO/ODI MCP v0.1.1 is a public, stateless, read-only Model Context Protocol server exposing a bounded snapshot of the DIO/ODI Reference Model and selected derived Agentic ER and Policy-as-Code mappings. It is a diagnostic and integration-reference interface, not an MVDIO Supervisor or authorization service. Version DOI: https://doi.org/10.5281/zenodo.24123229. Concept DOI: https://doi.org/10.5281/zenodo.24123228. Endpoint: https://mcp.danielberanek.cz/mcp. Source: https://github.com/dan-beranek/dio-odi-mcp.
 
+## Published Agentic ER planning product
+
+Agentic Entity Resolution Guardrail Planner is a published design-time Agent Skill. It turns an AI-proposed identity-changing operation into reviewable engineering documents and a machine-readable plan. It does not execute mutations, authorize production writes or deploy a runtime guard. The product is available on Agensi: https://www.agensi.io/r/DANIELBERANEK?to=/skills/agentic-entity-resolution-guardrail-planner.
+
 ## Evidence status
 
 DIO/ODI has a public theoretical, diagnostic and machine-readable reference architecture, and is now developing concrete application designs:
