@@ -21,7 +21,7 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: "22"
-      - name: Generate English pages
+      - name: Generate localized pages and canonical metadata
         run: node scripts/build-site.mjs
       - name: Validate localized pages and metadata
         run: node scripts/validate-site.mjs
