@@ -1,4 +1,5 @@
 import { access, readFile, stat } from "node:fs/promises";
+import { createHash } from "node:crypto";
 import { constants } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -25,6 +26,13 @@ const imageAlt = {
   cs: "DIO/ODI – AI visibility, entity resolution a znalostní infrastruktura",
   en: "DIO/ODI – AI visibility, entity resolution and knowledge infrastructure",
 };
+
+const artifactMetadata = JSON.parse(await readFile(join(root, "metadata/artifact-metadata.json"), "utf8"));
+const keywordManifest = JSON.parse(await readFile(join(root, artifactMetadata.site.metadata_output), "utf8"));
+const resolvedRegistryText = await readFile(join(root, keywordManifest.keyword_registry.resolved_snapshot_path), "utf8");
+const resolvedKeywordRegistry = JSON.parse(resolvedRegistryText);
+const pageArtifactsByKey = new Map((keywordManifest.artifacts ?? []).map((artifact) => [artifact.page_key, artifact]));
+const keywordRegistrySha256 = createHash("sha256").update(resolvedRegistryText).digest("hex");
 
 const pairs = [
   {
@@ -250,13 +258,18 @@ for (const pair of pairs) {
     expect(scope, one(titleTags, scope, "title"), title, "title");
 
     const meta = metas(html);
+    const pageArtifact = pageArtifactsByKey.get(pair.key);
+    if (!pageArtifact) fail(scope, "missing resolved keyword artifact profile");
+    const expectedKeywords = pageArtifact?.keywords ?? [];
+    expect(scope, one(meta.filter((item) => item.name === "keywords").map((item) => item.content), scope, "meta keywords"), expectedKeywords.join(", "), "meta keywords");
+    expect(scope, one(meta.filter((item) => item.name === "dio-odi:keyword-profile").map((item) => item.content), scope, "keyword profile meta"), pageArtifact?.keyword_profile_id, "keyword profile ID");
+    expect(scope, one(meta.filter((item) => item.name === "dio-odi:keyword-registry-version").map((item) => item.content), scope, "keyword registry version meta"), keywordManifest.keyword_registry.registry_version, "keyword registry version");
     const descriptionValues = meta.filter((item) => item.name === "description").map((item) => item.content);
     const actualDescription = one(descriptionValues, scope, "meta description");
     expect(scope, actualDescription, description, "description");
     if (descriptions.has(actualDescription)) fail(scope, "description is not unique");
     descriptions.add(actualDescription);
     if (meta.some((item) => item.name === "title")) fail(scope, "redundant meta name=title found");
-    if (meta.some((item) => item.name === "keywords")) fail(scope, "meta keywords found");
     expect(scope, one(meta.filter((item) => item.name === "robots").map((item) => item.content), scope, "robots meta"), robots, "robots meta");
 
     const link = links(html);
@@ -295,6 +308,7 @@ for (const pair of pairs) {
         expect(scope, data.url, url, "JSON-LD url");
         expect(scope, data.name, title, "JSON-LD name");
         expect(scope, data.inLanguage, lang === "cs" ? "cs-CZ" : "en", "JSON-LD inLanguage");
+        expect(scope, JSON.stringify(data.keywords), JSON.stringify(expectedKeywords), "JSON-LD keywords");
         const person = data.author ?? data.creator;
         expect(scope, person?.["@type"], "Person", "JSON-LD author type");
         expect(scope, person?.name, "Daniel Beránek", "JSON-LD author name");
@@ -359,6 +373,64 @@ for (const [path, requiredLinks] of requiredExternalLinks) {
 }
 
 const expectedUrls = pairs.flatMap((pair) => [pair.cs, pair.en]).map((entry) => `${siteUrl}${entry[1]}`);
+if (keywordManifest.schema_version !== "1.0.0") fail("keyword manifest", "unsupported schema version");
+if (keywordManifest.keyword_registry.status !== "canonical-approved") fail("keyword manifest", "keyword registry is not canonical-approved");
+expect("keyword manifest", keywordManifest.keyword_registry.registry_version, resolvedKeywordRegistry.registry_version, "registry version");
+expect("keyword manifest", keywordManifest.keyword_registry.sha256, keywordRegistrySha256, "registry SHA-256");
+if (keywordManifest.artifacts?.length !== pairs.length) fail("keyword manifest", `expected ${pairs.length} logical page profiles`);
+if (pageArtifactsByKey.size !== pairs.length) fail("keyword manifest", "logical page profile keys are not unique or complete");
+
+const canonicalChunkOrder = resolvedKeywordRegistry.export_policy?.chunk_order ?? [];
+const canonicalChunks = resolvedKeywordRegistry.chunks ?? {};
+for (const pair of pairs) {
+  const artifact = pageArtifactsByKey.get(pair.key);
+  const configuredArtifact = artifactMetadata.artifacts.find((item) => item.page_key === pair.key);
+  if (!artifact || !configuredArtifact) {
+    fail("keyword manifest", `missing profile mapping for ${pair.key}`);
+    continue;
+  }
+  expect(pair.key, artifact.id, configuredArtifact.id, "artifact ID");
+  expect(pair.key, artifact.keyword_profile_id, configuredArtifact.keyword_profile_id, "profile ID");
+  expect(pair.key, JSON.stringify(artifact.urls), JSON.stringify(configuredArtifact.urls), "localized URLs");
+  const profile = resolvedKeywordRegistry.surface_profiles?.[artifact.keyword_profile_id];
+  if (!profile || profile.status !== "canonical-approved") {
+    fail(pair.key, "referenced canonical surface profile is missing or unapproved");
+    continue;
+  }
+  if (profile.surface?.repository !== "dan-beranek/dio-odi-autorsky-koncept" || profile.surface?.page_key !== pair.key) {
+    fail(pair.key, "canonical surface identity does not match the page");
+  }
+  const calculated = [];
+  const chunks = {};
+  const seen = new Set();
+  for (const chunkName of canonicalChunkOrder) {
+    const sourceTerms = canonicalChunks[chunkName]?.terms ?? [];
+    const selection = profile.chunks?.[chunkName];
+    let selected;
+    if (selection === "all") selected = sourceTerms;
+    else if (selection === "none") selected = [];
+    else if (Array.isArray(selection)) selected = selection;
+    else {
+      fail(pair.key, `invalid canonical selector for ${chunkName}`);
+      selected = [];
+    }
+    chunks[chunkName] = selected;
+    for (const term of selected) {
+      const folded = term.toLowerCase();
+      if (!seen.has(folded)) { seen.add(folded); calculated.push(term); }
+    }
+  }
+  expect(pair.key, JSON.stringify(artifact.keywords), JSON.stringify(calculated), "resolved canonical keywords");
+  expect(pair.key, JSON.stringify(artifact.keyword_chunks), JSON.stringify(chunks), "resolved keyword chunks");
+  const c0 = new Set(canonicalChunks.C0_identity_invariant?.terms ?? []);
+  const requiredRationales = new Set(calculated.filter((term) => !c0.has(term)));
+  const rationales = artifact.keyword_rationales ?? {};
+  if (Object.keys(rationales).length !== requiredRationales.size
+    || [...requiredRationales].some((term) => !rationales[term]?.trim())
+    || Object.keys(rationales).some((term) => !requiredRationales.has(term))) {
+    fail(pair.key, "rationale coverage differs from the resolved non-C0 keyword set");
+  }
+}
 const sitemap = await readFile(join(root, "sitemap.xml"), "utf8");
 const sitemapLocs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
 expect("sitemap.xml", sitemapLocs.length, 14, "canonical URL count");

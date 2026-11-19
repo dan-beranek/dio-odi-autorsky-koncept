@@ -1,0 +1,1354 @@
+{
+  "registry_version": "2.8.0",
+  "status": "canonical-approved",
+  "approved_on": "2026-11-19",
+  "purpose": "Canonical ordered keyword grammar for the DIO/ODI corpus and its derived public surfaces. It stabilizes lexical identity, preserves conceptual structure, and provides deterministic keyword projections for publications, product artefacts and page-level frontends.",
+  "principles": [
+    "Keywords are an ordered metadata grammar, not an unordered bag of tags.",
+    "Chunk order is invariant across the corpus and its approved derived artefact profiles.",
+    "The identity invariant C0 is always exported in full and always appears first.",
+    "C1 is a global candidate vocabulary of reconstruction environments; each object explicitly selects only the environments substantively relevant to that object.",
+    "Within master chunks, selected terms retain the same relative order across works.",
+    "K6 is exported as a complete ordered block or not exported at all.",
+    "Work-specific positioning terms occupy C2 and may vary by work or artefact.",
+    "Aliases support recognition but are not exported by default.",
+    "Keyword assignment must not retroactively project concepts into an object that the object does not substantively carry.",
+    "Exportable metadata surfaces preserve the complete resolved keyword sequence for the relevant object profile whenever the target format supports it; do not create manually curated parallel subsets."
+  ],
+  "export_policy": {
+    "approved": true,
+    "chunk_order": [
+      "C0_identity_invariant",
+      "C1_reconstruction_environments",
+      "C2_work_positioning",
+      "C3_reconstruction_mechanics",
+      "C4_k6",
+      "C5_failures_robustness",
+      "C6_machine_readable_representation"
+    ],
+    "flattening_rule": "Concatenate active chunks in chunk_order; preserve term order inside each chunk; omit inactive terms; deduplicate case-insensitively without reordering.",
+    "aliases_are_for_reconstruction_not_export": true,
+    "complete_sequence_for_exportable_surfaces": true,
+    "projection_rule": "For a supported metadata surface, resolve and export the complete ordered keyword sequence for the relevant object profile without manual curation. C0 is always complete; C1 is an explicit ordered selection from the global environment candidate pool. Apply a reduced projection only when a verified target-format constraint requires it, and document that deterministic projection separately.",
+    "c1_selection": "Each profile must explicitly list only the C1 reconstruction environments substantively relevant to its object. The literal selector 'all' is not permitted for C1; use an explicit ordered array, including an empty array where none applies."
+  },
+  "chunks": {
+    "C0_identity_invariant": {
+      "order": 0,
+      "label": "Identity invariant",
+      "scope": "global",
+      "terms": [
+        "Digital Identity Optimization",
+        "DIO",
+        "Ontology of Digital Identity",
+        "ODI",
+        "digital identity",
+        "identity reconstruction"
+      ]
+    },
+    "C1_reconstruction_environments": {
+      "order": 1,
+      "label": "Reconstruction environments",
+      "scope": "global-candidate-pool",
+      "terms": [
+        "artificial intelligence",
+        "search engines",
+        "knowledge graphs",
+        "human observers"
+      ]
+    },
+    "C2_work_positioning": {
+      "order": 2,
+      "label": "Work positioning",
+      "scope": "work-specific",
+      "terms": []
+    },
+    "C3_reconstruction_mechanics": {
+      "order": 3,
+      "label": "Reconstruction mechanics",
+      "scope": "selective-master-order",
+      "terms": [
+        "semantic field",
+        "distributed representational state",
+        "observation domain",
+        "observer",
+        "reconstruction mechanism",
+        "identity-preserving constraints",
+        "identity-preserving variation",
+        "referential continuity",
+        "semantic coherence"
+      ]
+    },
+    "C4_k6": {
+      "order": 4,
+      "label": "K6 Semantic Connectome",
+      "scope": "all-or-nothing",
+      "terms": [
+        "K6 Semantic Connectome",
+        "Entity",
+        "Representation",
+        "Interpretation",
+        "Trust",
+        "Relationship",
+        "Reconstruction"
+      ]
+    },
+    "C5_failures_robustness": {
+      "order": 5,
+      "label": "Reconstruction failures and robustness",
+      "scope": "selective-master-order",
+      "terms": [
+        "entity resolution",
+        "Reconstruction Failure Modes",
+        "Referential Reconstruction Failures",
+        "Entity Substitution",
+        "Merge Failure",
+        "Split Failure",
+        "Entity Omission",
+        "Semantic Coherence Failures",
+        "Semantic Fragmentation",
+        "Temporal Reconstruction Failures",
+        "Temporal Discontinuity",
+        "Temporal Misalignment",
+        "Contextual Adequacy Failures",
+        "Contextual Displacement",
+        "Identity Collapse",
+        "Semantic Vulnerability",
+        "Semantic Robustness",
+        "Reconstruction Capture"
+      ]
+    },
+    "C6_machine_readable_representation": {
+      "order": 6,
+      "label": "Machine-readable and formal representation",
+      "scope": "selective-master-order",
+      "terms": [
+        "SKOS",
+        "RDF",
+        "JSON-LD",
+        "semantic web",
+        "linked data",
+        "knowledge representation",
+        "semantic interoperability",
+        "provenance",
+        "stable concept URIs"
+      ]
+    }
+  },
+  "aliases": [
+    {
+      "canonical": "Digital Identity Optimization",
+      "values": [
+        "digital identity optimization",
+        "Digital Identity Optimisation"
+      ],
+      "export": false
+    },
+    {
+      "canonical": "Ontology of Digital Identity",
+      "values": [
+        "ontology of digital identity"
+      ],
+      "export": false
+    },
+    {
+      "canonical": "identity reconstruction",
+      "values": [
+        "Identity Reconstruction"
+      ],
+      "export": false
+    },
+    {
+      "canonical": "agentic entity resolution",
+      "values": [
+        "Agentic Entity Resolution"
+      ],
+      "export": false
+    }
+  ],
+  "work_profiles": {
+    "manifest-v1": {
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": [
+          "artificial intelligence",
+          "search engines",
+          "knowledge graphs",
+          "human observers"
+        ],
+        "C2_work_positioning": [],
+        "C3_reconstruction_mechanics": [
+          "semantic coherence"
+        ],
+        "C4_k6": "none",
+        "C5_failures_robustness": [],
+        "C6_machine_readable_representation": []
+      },
+      "resolved_keywords": [
+        "Digital Identity Optimization",
+        "DIO",
+        "Ontology of Digital Identity",
+        "ODI",
+        "digital identity",
+        "identity reconstruction",
+        "artificial intelligence",
+        "search engines",
+        "knowledge graphs",
+        "human observers",
+        "semantic coherence"
+      ],
+      "term_rationales": {
+        "artificial intelligence": "The object addresses machine-mediated identity reconstruction through AI systems or agents.",
+        "search engines": "The object explicitly addresses entity discovery, representation or reconstruction in search engines.",
+        "knowledge graphs": "The object explicitly addresses identity representation or reconstruction in knowledge graphs, not merely an arbitrary graph-shaped data structure.",
+        "human observers": "The object explicitly addresses human interpretation or reconstruction of digital identity."
+      }
+    },
+    "manifest-v2-web": {
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": [
+          "artificial intelligence",
+          "search engines",
+          "knowledge graphs",
+          "human observers"
+        ],
+        "C2_work_positioning": [],
+        "C3_reconstruction_mechanics": [
+          "semantic field",
+          "semantic coherence"
+        ],
+        "C4_k6": "all",
+        "C5_failures_robustness": [
+          "Semantic Vulnerability",
+          "Semantic Robustness"
+        ],
+        "C6_machine_readable_representation": []
+      },
+      "resolved_keywords": [
+        "Digital Identity Optimization",
+        "DIO",
+        "Ontology of Digital Identity",
+        "ODI",
+        "digital identity",
+        "identity reconstruction",
+        "artificial intelligence",
+        "search engines",
+        "knowledge graphs",
+        "human observers",
+        "semantic field",
+        "semantic coherence",
+        "K6 Semantic Connectome",
+        "Entity",
+        "Representation",
+        "Interpretation",
+        "Trust",
+        "Relationship",
+        "Reconstruction",
+        "Semantic Vulnerability",
+        "Semantic Robustness"
+      ],
+      "term_rationales": {
+        "artificial intelligence": "The object addresses machine-mediated identity reconstruction through AI systems or agents.",
+        "search engines": "The object explicitly addresses entity discovery, representation or reconstruction in search engines.",
+        "knowledge graphs": "The object explicitly addresses identity representation or reconstruction in knowledge graphs, not merely an arbitrary graph-shaped data structure.",
+        "human observers": "The object explicitly addresses human interpretation or reconstruction of digital identity."
+      }
+    },
+    "dio-conceptual-framework": {
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": [
+          "artificial intelligence",
+          "search engines",
+          "knowledge graphs",
+          "human observers"
+        ],
+        "C2_work_positioning": [
+          "entity-based visibility",
+          "AI-mediated search"
+        ],
+        "C3_reconstruction_mechanics": [
+          "semantic coherence"
+        ],
+        "C4_k6": "none",
+        "C5_failures_robustness": [
+          "entity resolution"
+        ],
+        "C6_machine_readable_representation": []
+      },
+      "resolved_keywords": [
+        "Digital Identity Optimization",
+        "DIO",
+        "Ontology of Digital Identity",
+        "ODI",
+        "digital identity",
+        "identity reconstruction",
+        "artificial intelligence",
+        "search engines",
+        "knowledge graphs",
+        "human observers",
+        "entity-based visibility",
+        "AI-mediated search",
+        "semantic coherence",
+        "entity resolution"
+      ],
+      "term_rationales": {
+        "artificial intelligence": "The object addresses machine-mediated identity reconstruction through AI systems or agents.",
+        "search engines": "The object explicitly addresses entity discovery, representation or reconstruction in search engines.",
+        "knowledge graphs": "The object explicitly addresses identity representation or reconstruction in knowledge graphs, not merely an arbitrary graph-shaped data structure.",
+        "human observers": "The object explicitly addresses human interpretation or reconstruction of digital identity."
+      }
+    },
+    "crisis-entity-resolution": {
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": [
+          "artificial intelligence"
+        ],
+        "C2_work_positioning": [
+          "heterogeneous AI environments",
+          "data heterogeneity",
+          "semantic heterogeneity"
+        ],
+        "C3_reconstruction_mechanics": [
+          "semantic coherence"
+        ],
+        "C4_k6": "none",
+        "C5_failures_robustness": [
+          "entity resolution",
+          "Semantic Fragmentation",
+          "Temporal Discontinuity",
+          "Identity Collapse",
+          "Semantic Vulnerability"
+        ],
+        "C6_machine_readable_representation": []
+      },
+      "resolved_keywords": [
+        "Digital Identity Optimization",
+        "DIO",
+        "Ontology of Digital Identity",
+        "ODI",
+        "digital identity",
+        "identity reconstruction",
+        "artificial intelligence",
+        "heterogeneous AI environments",
+        "data heterogeneity",
+        "semantic heterogeneity",
+        "semantic coherence",
+        "entity resolution",
+        "Semantic Fragmentation",
+        "Temporal Discontinuity",
+        "Identity Collapse",
+        "Semantic Vulnerability"
+      ],
+      "term_rationales": {
+        "artificial intelligence": "The work is explicitly scoped to heterogeneous AI environments and analyzes failures in RAG and agentic systems; it does not establish search engines, knowledge graphs or human observers as separate reconstruction environments."
+      }
+    },
+    "mvdio": {
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": [
+          "artificial intelligence",
+          "search engines",
+          "knowledge graphs",
+          "human observers"
+        ],
+        "C2_work_positioning": [
+          "Minimum Viable DIO",
+          "adversarial reduction",
+          "semantic field dynamics"
+        ],
+        "C3_reconstruction_mechanics": "all",
+        "C4_k6": "all",
+        "C5_failures_robustness": [
+          "entity resolution",
+          "Merge Failure",
+          "Split Failure",
+          "Semantic Fragmentation",
+          "Temporal Discontinuity",
+          "Temporal Misalignment",
+          "Contextual Displacement",
+          "Identity Collapse",
+          "Semantic Vulnerability",
+          "Semantic Robustness",
+          "Reconstruction Capture"
+        ],
+        "C6_machine_readable_representation": []
+      },
+      "resolved_keywords": [
+        "Digital Identity Optimization",
+        "DIO",
+        "Ontology of Digital Identity",
+        "ODI",
+        "digital identity",
+        "identity reconstruction",
+        "artificial intelligence",
+        "search engines",
+        "knowledge graphs",
+        "human observers",
+        "Minimum Viable DIO",
+        "adversarial reduction",
+        "semantic field dynamics",
+        "semantic field",
+        "distributed representational state",
+        "observation domain",
+        "observer",
+        "reconstruction mechanism",
+        "identity-preserving constraints",
+        "identity-preserving variation",
+        "referential continuity",
+        "semantic coherence",
+        "K6 Semantic Connectome",
+        "Entity",
+        "Representation",
+        "Interpretation",
+        "Trust",
+        "Relationship",
+        "Reconstruction",
+        "entity resolution",
+        "Merge Failure",
+        "Split Failure",
+        "Semantic Fragmentation",
+        "Temporal Discontinuity",
+        "Temporal Misalignment",
+        "Contextual Displacement",
+        "Identity Collapse",
+        "Semantic Vulnerability",
+        "Semantic Robustness",
+        "Reconstruction Capture"
+      ],
+      "term_rationales": {
+        "artificial intelligence": "The object addresses machine-mediated identity reconstruction through AI systems or agents.",
+        "search engines": "The object explicitly addresses entity discovery, representation or reconstruction in search engines.",
+        "knowledge graphs": "The object explicitly addresses identity representation or reconstruction in knowledge graphs, not merely an arbitrary graph-shaped data structure.",
+        "human observers": "The object explicitly addresses human interpretation or reconstruction of digital identity."
+      }
+    },
+    "taxonomic-note": {
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": [
+          "artificial intelligence",
+          "search engines",
+          "knowledge graphs",
+          "human observers"
+        ],
+        "C2_work_positioning": [
+          "entity resolution anomalies"
+        ],
+        "C3_reconstruction_mechanics": [
+          "identity-preserving constraints",
+          "referential continuity",
+          "semantic coherence"
+        ],
+        "C4_k6": "none",
+        "C5_failures_robustness": [
+          "entity resolution",
+          "Reconstruction Failure Modes",
+          "Referential Reconstruction Failures",
+          "Entity Substitution",
+          "Merge Failure",
+          "Split Failure",
+          "Entity Omission",
+          "Semantic Coherence Failures",
+          "Semantic Fragmentation",
+          "Temporal Reconstruction Failures",
+          "Temporal Discontinuity",
+          "Temporal Misalignment",
+          "Contextual Adequacy Failures",
+          "Contextual Displacement",
+          "Identity Collapse",
+          "Semantic Vulnerability",
+          "Semantic Robustness"
+        ],
+        "C6_machine_readable_representation": []
+      },
+      "resolved_keywords": [
+        "Digital Identity Optimization",
+        "DIO",
+        "Ontology of Digital Identity",
+        "ODI",
+        "digital identity",
+        "identity reconstruction",
+        "artificial intelligence",
+        "search engines",
+        "knowledge graphs",
+        "human observers",
+        "entity resolution anomalies",
+        "identity-preserving constraints",
+        "referential continuity",
+        "semantic coherence",
+        "entity resolution",
+        "Reconstruction Failure Modes",
+        "Referential Reconstruction Failures",
+        "Entity Substitution",
+        "Merge Failure",
+        "Split Failure",
+        "Entity Omission",
+        "Semantic Coherence Failures",
+        "Semantic Fragmentation",
+        "Temporal Reconstruction Failures",
+        "Temporal Discontinuity",
+        "Temporal Misalignment",
+        "Contextual Adequacy Failures",
+        "Contextual Displacement",
+        "Identity Collapse",
+        "Semantic Vulnerability",
+        "Semantic Robustness"
+      ],
+      "term_rationales": {
+        "artificial intelligence": "The object addresses machine-mediated identity reconstruction through AI systems or agents.",
+        "search engines": "The object explicitly addresses entity discovery, representation or reconstruction in search engines.",
+        "knowledge graphs": "The object explicitly addresses identity representation or reconstruction in knowledge graphs, not merely an arbitrary graph-shaped data structure.",
+        "human observers": "The object explicitly addresses human interpretation or reconstruction of digital identity."
+      }
+    },
+    "reference-model": {
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": [
+          "artificial intelligence",
+          "search engines",
+          "knowledge graphs",
+          "human observers"
+        ],
+        "C2_work_positioning": [
+          "Reference Vocabulary",
+          "Application Mapping",
+          "retrieval-augmented generation",
+          "RAG",
+          "iterative evidence acquisition",
+          "hypothesis-conditioned evidence acquisition",
+          "heterogeneous entity matching",
+          "HEM",
+          "agentic entity resolution",
+          "staging isolation",
+          "policy-as-code",
+          "commit-boundary authorization",
+          "authorization guardrail",
+          "Semantic Change Feed"
+        ],
+        "C3_reconstruction_mechanics": "all",
+        "C4_k6": "all",
+        "C5_failures_robustness": "all",
+        "C6_machine_readable_representation": "all"
+      },
+      "resolved_keywords": [
+        "Digital Identity Optimization",
+        "DIO",
+        "Ontology of Digital Identity",
+        "ODI",
+        "digital identity",
+        "identity reconstruction",
+        "artificial intelligence",
+        "search engines",
+        "knowledge graphs",
+        "human observers",
+        "Reference Vocabulary",
+        "Application Mapping",
+        "retrieval-augmented generation",
+        "RAG",
+        "iterative evidence acquisition",
+        "hypothesis-conditioned evidence acquisition",
+        "heterogeneous entity matching",
+        "HEM",
+        "agentic entity resolution",
+        "staging isolation",
+        "policy-as-code",
+        "commit-boundary authorization",
+        "authorization guardrail",
+        "Semantic Change Feed",
+        "semantic field",
+        "distributed representational state",
+        "observation domain",
+        "observer",
+        "reconstruction mechanism",
+        "identity-preserving constraints",
+        "identity-preserving variation",
+        "referential continuity",
+        "semantic coherence",
+        "K6 Semantic Connectome",
+        "Entity",
+        "Representation",
+        "Interpretation",
+        "Trust",
+        "Relationship",
+        "Reconstruction",
+        "entity resolution",
+        "Reconstruction Failure Modes",
+        "Referential Reconstruction Failures",
+        "Entity Substitution",
+        "Merge Failure",
+        "Split Failure",
+        "Entity Omission",
+        "Semantic Coherence Failures",
+        "Semantic Fragmentation",
+        "Temporal Reconstruction Failures",
+        "Temporal Discontinuity",
+        "Temporal Misalignment",
+        "Contextual Adequacy Failures",
+        "Contextual Displacement",
+        "Identity Collapse",
+        "Semantic Vulnerability",
+        "Semantic Robustness",
+        "Reconstruction Capture",
+        "SKOS",
+        "RDF",
+        "JSON-LD",
+        "semantic web",
+        "linked data",
+        "knowledge representation",
+        "semantic interoperability",
+        "provenance",
+        "stable concept URIs"
+      ],
+      "term_rationales": {
+        "artificial intelligence": "The object addresses machine-mediated identity reconstruction through AI systems or agents.",
+        "search engines": "The object explicitly addresses entity discovery, representation or reconstruction in search engines.",
+        "knowledge graphs": "The object explicitly addresses identity representation or reconstruction in knowledge graphs, not merely an arbitrary graph-shaped data structure.",
+        "human observers": "The object explicitly addresses human interpretation or reconstruction of digital identity."
+      }
+    },
+    "commit-boundary-paper": {
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": [
+          "artificial intelligence"
+        ],
+        "C2_work_positioning": [
+          "Agentic Entity Resolution",
+          "commit-boundary authorization",
+          "identity-changing mutations",
+          "claim-specific evidence promotion",
+          "authorization-eligible evidence"
+        ],
+        "C3_reconstruction_mechanics": [
+          "observation domain",
+          "identity-preserving constraints",
+          "referential continuity",
+          "semantic coherence"
+        ],
+        "C4_k6": "none",
+        "C5_failures_robustness": [
+          "entity resolution",
+          "Reconstruction Failure Modes",
+          "Referential Reconstruction Failures",
+          "Entity Substitution",
+          "Merge Failure",
+          "Split Failure",
+          "Entity Omission",
+          "Semantic Coherence Failures",
+          "Semantic Fragmentation",
+          "Temporal Reconstruction Failures",
+          "Temporal Discontinuity",
+          "Temporal Misalignment",
+          "Contextual Adequacy Failures",
+          "Contextual Displacement"
+        ],
+        "C6_machine_readable_representation": [
+          "provenance"
+        ]
+      },
+      "resolved_keywords": [
+        "Digital Identity Optimization",
+        "DIO",
+        "Ontology of Digital Identity",
+        "ODI",
+        "digital identity",
+        "identity reconstruction",
+        "artificial intelligence",
+        "Agentic Entity Resolution",
+        "commit-boundary authorization",
+        "identity-changing mutations",
+        "claim-specific evidence promotion",
+        "authorization-eligible evidence",
+        "observation domain",
+        "identity-preserving constraints",
+        "referential continuity",
+        "semantic coherence",
+        "entity resolution",
+        "Reconstruction Failure Modes",
+        "Referential Reconstruction Failures",
+        "Entity Substitution",
+        "Merge Failure",
+        "Split Failure",
+        "Entity Omission",
+        "Semantic Coherence Failures",
+        "Semantic Fragmentation",
+        "Temporal Reconstruction Failures",
+        "Temporal Discontinuity",
+        "Temporal Misalignment",
+        "Contextual Adequacy Failures",
+        "Contextual Displacement",
+        "provenance"
+      ],
+      "term_rationales": {
+        "artificial intelligence": "The paper's object is agentic entity resolution: AI agents plan operations, retrieve evidence and propose persistent identity-changing mutations. A graph mutation alone does not justify the separate knowledge-graphs environment."
+      }
+    },
+    "mcp-server": {
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": [
+          "artificial intelligence"
+        ],
+        "C2_work_positioning": [
+          "Model Context Protocol",
+          "read-only MCP server",
+          "Cloudflare Workers",
+          "Agentic Entity Resolution",
+          "commit-boundary authorization",
+          "Policy-as-Code integration"
+        ],
+        "C3_reconstruction_mechanics": "all",
+        "C4_k6": "all",
+        "C5_failures_robustness": "all",
+        "C6_machine_readable_representation": [
+          "knowledge representation",
+          "semantic interoperability",
+          "provenance",
+          "stable concept URIs"
+        ]
+      },
+      "resolved_keywords": [
+        "Digital Identity Optimization",
+        "DIO",
+        "Ontology of Digital Identity",
+        "ODI",
+        "digital identity",
+        "identity reconstruction",
+        "artificial intelligence",
+        "Model Context Protocol",
+        "read-only MCP server",
+        "Cloudflare Workers",
+        "Agentic Entity Resolution",
+        "commit-boundary authorization",
+        "Policy-as-Code integration",
+        "semantic field",
+        "distributed representational state",
+        "observation domain",
+        "observer",
+        "reconstruction mechanism",
+        "identity-preserving constraints",
+        "identity-preserving variation",
+        "referential continuity",
+        "semantic coherence",
+        "K6 Semantic Connectome",
+        "Entity",
+        "Representation",
+        "Interpretation",
+        "Trust",
+        "Relationship",
+        "Reconstruction",
+        "entity resolution",
+        "Reconstruction Failure Modes",
+        "Referential Reconstruction Failures",
+        "Entity Substitution",
+        "Merge Failure",
+        "Split Failure",
+        "Entity Omission",
+        "Semantic Coherence Failures",
+        "Semantic Fragmentation",
+        "Temporal Reconstruction Failures",
+        "Temporal Discontinuity",
+        "Temporal Misalignment",
+        "Contextual Adequacy Failures",
+        "Contextual Displacement",
+        "Identity Collapse",
+        "Semantic Vulnerability",
+        "Semantic Robustness",
+        "Reconstruction Capture",
+        "knowledge representation",
+        "semantic interoperability",
+        "provenance",
+        "stable concept URIs"
+      ],
+      "term_rationales": {
+        "artificial intelligence": "The MCP distribution is an agent-facing, read-only reference service; it does not itself reconstruct identity in search engines, knowledge graphs or human-observer environments."
+      }
+    }
+  },
+  "excluded_terms": [
+    {
+      "term": "digital entity",
+      "reason": "Avoids reifying a separate 'digital entity'; DIO distinguishes the entity from its digital identity and distributed representations."
+    },
+    {
+      "term": "machine-readable identity",
+      "reason": "Redundant with the intended DIO sense of digital identity."
+    },
+    {
+      "term": "machine interpretation",
+      "reason": "Replaced by explicit reconstruction environments and the canonical Interpretation dimension where relevant."
+    },
+    {
+      "term": "AI systems",
+      "reason": "Prefer the stable term 'artificial intelligence' in the environment chunk."
+    },
+    {
+      "term": "ontology engineering",
+      "reason": "Would overstate the formal ontological status of the current Reference Model."
+    },
+    {
+      "term": "identity graph",
+      "reason": "Would overstate the artifact as a graph formalism rather than describe its actual metadata/reference function."
+    },
+    {
+      "term": "semantic identity",
+      "reason": "Avoids introducing a new quasi-canonical term not required by the corpus."
+    },
+    {
+      "term": "entity reconstruction",
+      "reason": "Avoids competing with the canonical phrase 'identity reconstruction'."
+    }
+  ],
+  "surface_profiles": {
+    "agentic-er-planner-home": {
+      "status": "canonical-approved",
+      "scope": "derived-product-artifact",
+      "purpose": "Product-level semantic profile for the public overview of the design-time Agent Skill.",
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": [
+          "artificial intelligence"
+        ],
+        "C2_work_positioning": [
+          "Agentic Entity Resolution",
+          "commit-boundary authorization",
+          "identity-changing mutations",
+          "authorization-eligible evidence"
+        ],
+        "C3_reconstruction_mechanics": [
+          "identity-preserving constraints",
+          "referential continuity",
+          "semantic coherence"
+        ],
+        "C4_k6": "none",
+        "C5_failures_robustness": [
+          "entity resolution"
+        ],
+        "C6_machine_readable_representation": [
+          "provenance"
+        ]
+      },
+      "term_rationales": {
+        "artificial intelligence": "The page describes an AI-agent-proposed identity-changing entity-resolution workflow; it does not describe search-engine, knowledge-graph or human-observer reconstruction.",
+        "Agentic Entity Resolution": "The product is explicitly designed for agentic entity-resolution workflows.",
+        "commit-boundary authorization": "The product plans controls around the persistence boundary of proposed identity-changing operations.",
+        "identity-changing mutations": "Its declared scope includes MERGE, SPLIT, UNMERGE and supported identity-changing OTHER operations.",
+        "authorization-eligible evidence": "The product distinguishes an agent's proposed match from evidence and conditions eligible to support authorization.",
+        "identity-preserving constraints": "The planner designs controls intended to prevent unsupported or out-of-scope changes to persistent entity identity.",
+        "referential continuity": "The investigation includes identity-bearing relationships, affected references and downstream dependencies.",
+        "semantic coherence": "The planner examines entity context, contradictory claims and whether the proposed identity interpretation is coherent.",
+        "entity resolution": "Agentic entity resolution is the product's explicit technical domain.",
+        "provenance": "Evidence origin and provenance are explicit investigation dimensions and planning outputs."
+      }
+    },
+    "agentic-er-planner-methodology": {
+      "status": "canonical-approved",
+      "scope": "derived-product-artifact",
+      "purpose": "Research and methodology page connecting DIO/ODI foundations to the Planner's design-time approach.",
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": [
+          "artificial intelligence",
+          "search engines",
+          "knowledge graphs",
+          "human observers"
+        ],
+        "C2_work_positioning": [
+          "Agentic Entity Resolution",
+          "commit-boundary authorization",
+          "identity-changing mutations",
+          "authorization-eligible evidence"
+        ],
+        "C3_reconstruction_mechanics": [
+          "observation domain",
+          "identity-preserving constraints",
+          "referential continuity",
+          "semantic coherence"
+        ],
+        "C4_k6": "none",
+        "C5_failures_robustness": [
+          "entity resolution"
+        ],
+        "C6_machine_readable_representation": [
+          "provenance"
+        ]
+      },
+      "term_rationales": {
+        "artificial intelligence": "The page presents DIO/ODI as a general framework that includes machine-mediated reconstruction by AI systems.",
+        "search engines": "The page presents the DIO/ODI research foundation, including search-engine reconstruction and AI-mediated search.",
+        "knowledge graphs": "The page presents the DIO/ODI research foundation across semantic and graph-based identity representations.",
+        "human observers": "The page presents the DIO/ODI research foundation, which includes human interpretation and reconstruction.",
+        "Agentic Entity Resolution": "The page explains the research-to-planning application in agentic entity resolution.",
+        "commit-boundary authorization": "The page explicitly describes the design of the persistent-change boundary and the distinction between recommendation and authorization.",
+        "identity-changing mutations": "The page names MERGE, SPLIT, UNMERGE and supported identity-changing operations.",
+        "authorization-eligible evidence": "The workflow explicitly distinguishes provisional evidence from authorization-eligible evidence.",
+        "observation domain": "The methodology frames entity and domain context as a condition for interpreting the identity proposition.",
+        "identity-preserving constraints": "The page describes the constraints required before a persistent identity-changing operation can be committed.",
+        "referential continuity": "The page addresses identity persistence and the relationships involved in identity reconstruction.",
+        "semantic coherence": "The methodology treats identity, representation, interpretation and reconstruction as connected conditions.",
+        "entity resolution": "Agentic Entity Resolution is the applied domain to which the page connects the DIO/ODI research.",
+        "provenance": "The page explicitly treats provenance and source traceability as part of the evidence methodology."
+      }
+    },
+    "agentic-er-planner-demo": {
+      "status": "canonical-approved",
+      "scope": "derived-product-artifact",
+      "purpose": "Semantic profile for the published synthetic CRM MERGE case study and engineering handoff.",
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": [
+          "artificial intelligence"
+        ],
+        "C2_work_positioning": [
+          "Agentic Entity Resolution",
+          "commit-boundary authorization",
+          "identity-changing mutations",
+          "authorization-eligible evidence"
+        ],
+        "C3_reconstruction_mechanics": [
+          "identity-preserving constraints",
+          "referential continuity",
+          "semantic coherence"
+        ],
+        "C4_k6": "none",
+        "C5_failures_robustness": [
+          "entity resolution"
+        ],
+        "C6_machine_readable_representation": [
+          "provenance"
+        ]
+      },
+      "term_rationales": {
+        "artificial intelligence": "The page describes an AI-agent-proposed identity-changing entity-resolution workflow; it does not describe search-engine, knowledge-graph or human-observer reconstruction.",
+        "Agentic Entity Resolution": "The synthetic case starts from an AI agent's proposed CRM account MERGE.",
+        "commit-boundary authorization": "The plan specifies pre-persistence controls, commit conditions and HOLD requirements.",
+        "identity-changing mutations": "The example concerns a proposed persistent MERGE of two CRM account identities.",
+        "authorization-eligible evidence": "The evidence requirements distinguish verified evidence eligible to support authorization from unverified items and agent confidence.",
+        "identity-preserving constraints": "The parent/holding-company indication must be resolved before a potentially identity-collapsing MERGE can proceed.",
+        "referential continuity": "The proposed write set includes identity links, related records, history, audit and downstream references.",
+        "semantic coherence": "The example preserves the distinction between two entities that may be related but not identical.",
+        "entity resolution": "The synthetic CRM scenario is an entity-resolution case, not a generic CRUD example.",
+        "provenance": "The planning package records source provenance, evidence provenance and reference provenance."
+      }
+    },
+    "author-concept-home": {
+      "status": "canonical-approved",
+      "scope": "derived-public-webpage",
+      "purpose": "Bilingual top-level presentation of DIO/ODI as one author-led framework with market-visibility, entity-data and knowledge-infrastructure branches.",
+      "surface": {
+        "repository": "dan-beranek/dio-odi-autorsky-koncept",
+        "page_key": "home",
+        "urls": [
+          "https://dan-beranek.github.io/dio-odi-autorsky-koncept/",
+          "https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/"
+        ],
+        "locale_policy": "one semantic profile shared by equivalent Czech and English page mirrors"
+      },
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": [
+          "artificial intelligence",
+          "search engines",
+          "knowledge graphs",
+          "human observers"
+        ],
+        "C2_work_positioning": [
+          "entity-based visibility",
+          "AI-mediated search",
+          "knowledge infrastructure"
+        ],
+        "C3_reconstruction_mechanics": [
+          "distributed representational state",
+          "observation domain",
+          "semantic coherence"
+        ],
+        "C4_k6": "all",
+        "C5_failures_robustness": [
+          "entity resolution"
+        ],
+        "C6_machine_readable_representation": [
+          "knowledge representation",
+          "provenance"
+        ]
+      },
+      "term_rationales": {
+        "artificial intelligence": "The homepage explicitly presents AI systems as one of the environments in which digital identity is reconstructed.",
+        "search engines": "The homepage explicitly identifies search engines and their indexing and authority signals as a reconstruction environment.",
+        "knowledge graphs": "The homepage presents entity, attribute and relationship data and a distinct knowledge-infrastructure branch.",
+        "human observers": "The homepage explicitly includes people as interpreters of the same distributed identity.",
+        "entity-based visibility": "The central proposition replaces page-level visibility with the visibility and recognition of an entity.",
+        "AI-mediated search": "The DIO positioning explicitly addresses identity reconstruction in AI-mediated discovery and search.",
+        "knowledge infrastructure": "The ODI branch is presented as the theoretical and research layer for shared knowledge infrastructure.",
+        "distributed representational state": "The homepage describes identity as a distributed object assembled from traces, relationships and evidence rather than one profile or database row.",
+        "observation domain": "The homepage names people, search engines, AI systems and data systems as distinct observation environments.",
+        "semantic coherence": "The central objective is to keep representations of the same entity mutually compatible across systems.",
+        "K6 Semantic Connectome": "The homepage explicitly introduces the K6 Semantic Connectome as its six-dimensional model.",
+        "Entity": "Entity is explicitly named as the first K6 dimension on the homepage.",
+        "Representation": "Representation is explicitly named as a K6 dimension on the homepage.",
+        "Interpretation": "Interpretation is explicitly named as a K6 dimension on the homepage.",
+        "Trust": "Trust is explicitly named as a K6 dimension on the homepage.",
+        "Relationship": "Relationship is explicitly named as a K6 dimension on the homepage.",
+        "Reconstruction": "Reconstruction is explicitly named as a K6 dimension on the homepage.",
+        "entity resolution": "The homepage explicitly identifies entity resolution as a technical application branch.",
+        "knowledge representation": "The homepage presents entity, attribute and relationship structures as part of the knowledge-infrastructure direction.",
+        "provenance": "The homepage identifies evidence and provenance among the identity-bearing traces that systems use."
+      }
+    },
+    "author-concept-visibility": {
+      "status": "canonical-approved",
+      "scope": "derived-public-webpage",
+      "purpose": "DIO's market-visibility page, focused on entity recognition, attribution and coherent reconstruction across people, search engines and AI systems.",
+      "surface": {
+        "repository": "dan-beranek/dio-odi-autorsky-koncept",
+        "page_key": "visibility",
+        "urls": [
+          "https://dan-beranek.github.io/dio-odi-autorsky-koncept/dio-viditelnost/",
+          "https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/ai-visibility/"
+        ],
+        "locale_policy": "one semantic profile shared by equivalent Czech and English page mirrors"
+      },
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": [
+          "artificial intelligence",
+          "search engines",
+          "human observers"
+        ],
+        "C2_work_positioning": [
+          "entity-based visibility",
+          "AI-mediated search"
+        ],
+        "C3_reconstruction_mechanics": [
+          "distributed representational state",
+          "observation domain",
+          "observer",
+          "semantic coherence"
+        ],
+        "C4_k6": "none",
+        "C5_failures_robustness": [
+          "entity resolution",
+          "Reconstruction Failure Modes",
+          "Entity Substitution",
+          "Semantic Fragmentation",
+          "Temporal Discontinuity",
+          "Temporal Misalignment",
+          "Contextual Displacement"
+        ],
+        "C6_machine_readable_representation": [
+          "provenance"
+        ]
+      },
+      "term_rationales": {
+        "artificial intelligence": "The page explicitly defines visibility across AI systems and their reconstruction of entities.",
+        "search engines": "The page explicitly treats search engines as a primary environment for entity discovery and recognition.",
+        "human observers": "The page explicitly includes people as audiences and interpreters of entity identity.",
+        "entity-based visibility": "The page's central proposition is visibility of a reconstructed entity rather than a page, keyword or single model answer.",
+        "AI-mediated search": "The page directly discusses DIO in AI-mediated search and discovery.",
+        "distributed representational state": "The page explains why identity continuity must be maintained across separate profiles, publications and data traces.",
+        "observation domain": "The page differentiates people, search engines and AI as environments that reconstruct an entity.",
+        "observer": "The page explicitly distinguishes the interpretation performed by different observers and systems.",
+        "semantic coherence": "The page treats compatibility of intended and evidenced meanings across surfaces as a condition of reliable visibility.",
+        "entity resolution": "The page explicitly addresses correct identification and attribution of firms, people, products and projects.",
+        "Reconstruction Failure Modes": "The page presents a formal failure taxonomy for diagnosing breakdowns between identity-bearing surfaces.",
+        "Entity Substitution": "The page explicitly describes a name, alias or similar context resolving to the wrong referent.",
+        "Semantic Fragmentation": "The page explicitly describes mutually incompatible representations of one entity.",
+        "Temporal Discontinuity": "The page discusses outdated roles, products or strategies persisting after a documented change.",
+        "Temporal Misalignment": "The page describes reconstruction of the correct entity with an incorrect time state.",
+        "Contextual Displacement": "The page explicitly describes a contextually inadequate aspect dominating the reconstructed identity.",
+        "provenance": "The page addresses attribution of works, claims, roles and relationships to their correct origin."
+      }
+    },
+    "author-concept-entity-data": {
+      "status": "canonical-approved",
+      "scope": "derived-public-webpage",
+      "purpose": "DIO's technical application page for entity resolution, knowledge graphs, RAG and enterprise entity data, including reconstruction diagnosis and a proposed Agentic ER direction.",
+      "surface": {
+        "repository": "dan-beranek/dio-odi-autorsky-koncept",
+        "page_key": "entity",
+        "urls": [
+          "https://dan-beranek.github.io/dio-odi-autorsky-koncept/dio-ai-data/",
+          "https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/entity-resolution/"
+        ],
+        "locale_policy": "one semantic profile shared by equivalent Czech and English page mirrors"
+      },
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": [
+          "artificial intelligence",
+          "knowledge graphs"
+        ],
+        "C2_work_positioning": [
+          "Agentic Entity Resolution",
+          "RAG pipelines",
+          "enterprise entity data"
+        ],
+        "C3_reconstruction_mechanics": [
+          "observation domain",
+          "identity-preserving constraints",
+          "referential continuity",
+          "semantic coherence"
+        ],
+        "C4_k6": "none",
+        "C5_failures_robustness": [
+          "entity resolution",
+          "Reconstruction Failure Modes",
+          "Entity Substitution",
+          "Merge Failure",
+          "Split Failure",
+          "Semantic Fragmentation",
+          "Temporal Discontinuity",
+          "Contextual Displacement",
+          "Identity Collapse"
+        ],
+        "C6_machine_readable_representation": [
+          "knowledge representation",
+          "provenance"
+        ]
+      },
+      "term_rationales": {
+        "artificial intelligence": "The page explicitly covers AI and agentic workflows that interpret and resolve entity data.",
+        "knowledge graphs": "Knowledge graphs are a named target environment and audience for the technical branch.",
+        "Agentic Entity Resolution": "The page describes Agentic ER as one possible technical application direction and distinguishes its design-time planning product from runtime implementation.",
+        "RAG pipelines": "Retrieval-augmented generation is explicitly named as a target system context.",
+        "enterprise entity data": "The page explicitly addresses enterprise data teams, entity attributes, aliases, relations and source quality.",
+        "observation domain": "The page frames identity claims in their source, time and context before resolving an entity.",
+        "identity-preserving constraints": "The page addresses entity boundaries and the constraints needed to avoid unsupported merges or splits.",
+        "referential continuity": "The page analyzes aliases, relationships and entity boundaries whose changes can break reference continuity.",
+        "semantic coherence": "The page asks whether different systems can construct mutually compatible views of the same entity.",
+        "entity resolution": "Entity resolution is the page's explicit technical domain.",
+        "Reconstruction Failure Modes": "The page explains the multi-level taxonomy used to classify identity reconstruction anomalies.",
+        "Entity Substitution": "The page explicitly defines substitution as resolving a record to a different referent.",
+        "Merge Failure": "The page explicitly describes the erroneous merging of distinct entities.",
+        "Split Failure": "The page explicitly describes the erroneous separation of one entity into multiple nodes.",
+        "Semantic Fragmentation": "The page explicitly describes preserved reference with incompatible meanings across representations.",
+        "Temporal Discontinuity": "The page addresses identity claims that persist despite a documented temporal change.",
+        "Contextual Displacement": "The page covers reconstructions dominated by an aspect that is inadequate to the actual context.",
+        "Identity Collapse": "The page discusses the identity-level consequence of conflating distinct entities or losing their distinctions.",
+        "knowledge representation": "The page explicitly targets knowledge products and structured representations of entities, attributes and relations.",
+        "provenance": "Source provenance and traceability are explicit dimensions of the page's technical problem."
+      }
+    },
+    "author-concept-odi": {
+      "status": "canonical-approved",
+      "scope": "derived-public-webpage",
+      "purpose": "ODI's theoretical, terminological and research page, covering the epistemic conditions of digital identity and its connection to a machine-readable reference infrastructure.",
+      "surface": {
+        "repository": "dan-beranek/dio-odi-autorsky-koncept",
+        "page_key": "odi",
+        "urls": [
+          "https://dan-beranek.github.io/dio-odi-autorsky-koncept/odi/",
+          "https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/ontology-of-digital-identity/"
+        ],
+        "locale_policy": "one semantic profile shared by equivalent Czech and English page mirrors"
+      },
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": [
+          "artificial intelligence",
+          "knowledge graphs",
+          "human observers"
+        ],
+        "C2_work_positioning": [
+          "knowledge infrastructure",
+          "reference vocabulary",
+          "reference model"
+        ],
+        "C3_reconstruction_mechanics": [
+          "semantic field",
+          "observation domain",
+          "reconstruction mechanism",
+          "referential continuity",
+          "semantic coherence"
+        ],
+        "C4_k6": "all",
+        "C5_failures_robustness": [],
+        "C6_machine_readable_representation": [
+          "SKOS",
+          "RDF",
+          "JSON-LD",
+          "knowledge representation",
+          "semantic interoperability",
+          "provenance",
+          "stable concept URIs"
+        ]
+      },
+      "term_rationales": {
+        "artificial intelligence": "The page identifies AI research and AI systems as a relevant context for the study of digital identity.",
+        "knowledge graphs": "Knowledge graphs are explicitly named among the research and infrastructure domains addressed by ODI.",
+        "human observers": "The page describes different observers interpreting distributed traces under different rules.",
+        "knowledge infrastructure": "The page positions ODI as a theoretical and terminological basis for reusable knowledge infrastructure.",
+        "reference vocabulary": "The page links ODI to the canonical DIO/ODI Reference Vocabulary as a shared conceptual language.",
+        "reference model": "The page describes the Reference Model as a structured representation layer built around the vocabulary.",
+        "semantic field": "The page examines the semantic field in which claims and representations of identity are interpreted.",
+        "observation domain": "The page explicitly frames identity reconstruction through different observers and their available traces.",
+        "reconstruction mechanism": "The page studies the conditions under which identity can be interpreted and reconstructed.",
+        "referential continuity": "The page examines how entity distinctions and relationships remain identifiable across representations.",
+        "semantic coherence": "The page defines compatible interpretation and semantic integrity as central conditions of reconstruction.",
+        "K6 Semantic Connectome": "The page explicitly presents K6 as the shared six-dimensional semantic connectome.",
+        "Entity": "Entity is explicitly named as one of the six K6 dimensions.",
+        "Representation": "Representation is explicitly named as one of the six K6 dimensions.",
+        "Interpretation": "Interpretation is explicitly named as one of the six K6 dimensions.",
+        "Trust": "Trust is explicitly named as one of the six K6 dimensions.",
+        "Relationship": "Relationship is explicitly named as one of the six K6 dimensions.",
+        "Reconstruction": "Reconstruction is explicitly named as one of the six K6 dimensions.",
+        "SKOS": "The page links the canonical Reference Vocabulary, whose primary conceptual representation is SKOS.",
+        "RDF": "The Reference Model's machine-readable representations include RDF serializations.",
+        "JSON-LD": "The Reference Model exposes a JSON-LD representation as part of its machine-readable infrastructure.",
+        "knowledge representation": "The page focuses on the formal and conceptual representation of digital identity.",
+        "semantic interoperability": "The page presents a shared vocabulary and model intended to support compatible interpretation across systems.",
+        "provenance": "The page treats source traceability and the origin of identity claims as explicit conditions of reliable reconstruction.",
+        "stable concept URIs": "The canonical vocabulary uses stable concept identifiers to preserve referential identity across representations."
+      }
+    },
+    "author-concept-partnerships": {
+      "status": "canonical-approved",
+      "scope": "derived-public-webpage",
+      "purpose": "Partnership and investment page describing the three DIO/ODI value branches and concrete forms of collaboration without turning them into additional conceptual variants.",
+      "surface": {
+        "repository": "dan-beranek/dio-odi-autorsky-koncept",
+        "page_key": "partnerships",
+        "urls": [
+          "https://dan-beranek.github.io/dio-odi-autorsky-koncept/partnerstvi/",
+          "https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/partnerships/"
+        ],
+        "locale_policy": "one semantic profile shared by equivalent Czech and English page mirrors"
+      },
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": [
+          "artificial intelligence",
+          "search engines",
+          "knowledge graphs"
+        ],
+        "C2_work_positioning": [
+          "DIO/ODI partnerships",
+          "pilot projects",
+          "co-development",
+          "research partnerships",
+          "licensing",
+          "strategic investment"
+        ],
+        "C3_reconstruction_mechanics": [],
+        "C4_k6": "none",
+        "C5_failures_robustness": [],
+        "C6_machine_readable_representation": []
+      },
+      "term_rationales": {
+        "artificial intelligence": "The partnership page includes the AI and entity-data branch as one of the project's collaboration paths.",
+        "search engines": "The market-visibility branch explicitly includes search-engine discovery and recognition.",
+        "knowledge graphs": "The knowledge-infrastructure branch explicitly targets ontologies and knowledge-graph work.",
+        "DIO/ODI partnerships": "The page is specifically an invitation to enter a defined partnership around one of the DIO/ODI value branches.",
+        "pilot projects": "A bounded pilot is explicitly listed as a concrete form of collaboration and external evaluation.",
+        "co-development": "Joint development is explicitly described as a path for translating an established problem into a repeatable method, model or integration.",
+        "research partnerships": "The page explicitly offers research partnerships for formalizing questions, variables, protocols and domain adaptations.",
+        "licensing": "Licensing is explicitly identified as one possible form of use and collaboration.",
+        "strategic investment": "The page explicitly presents strategic or capital participation as a possible collaboration path."
+      }
+    },
+    "author-concept-evidence": {
+      "status": "canonical-approved",
+      "scope": "derived-public-webpage",
+      "purpose": "Development and evidence page connecting the DIO/ODI research corpus, canonical reference infrastructure and explicitly bounded Agentic ER application proposals.",
+      "surface": {
+        "repository": "dan-beranek/dio-odi-autorsky-koncept",
+        "page_key": "evidence",
+        "urls": [
+          "https://dan-beranek.github.io/dio-odi-autorsky-koncept/dukazy/",
+          "https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/evidence/"
+        ],
+        "locale_policy": "one semantic profile shared by equivalent Czech and English page mirrors"
+      },
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": [
+          "artificial intelligence",
+          "search engines",
+          "knowledge graphs"
+        ],
+        "C2_work_positioning": [
+          "DIO/ODI research corpus",
+          "Agentic Entity Resolution",
+          "design-time planning",
+          "reference infrastructure"
+        ],
+        "C3_reconstruction_mechanics": [
+          "identity-preserving constraints",
+          "referential continuity",
+          "semantic coherence"
+        ],
+        "C4_k6": "none",
+        "C5_failures_robustness": [
+          "entity resolution",
+          "Reconstruction Failure Modes",
+          "Semantic Fragmentation",
+          "Semantic Vulnerability",
+          "Semantic Robustness"
+        ],
+        "C6_machine_readable_representation": [
+          "SKOS",
+          "RDF",
+          "JSON-LD",
+          "provenance"
+        ]
+      },
+      "term_rationales": {
+        "artificial intelligence": "The page describes AI-mediated reconstruction as a central context for the research and application corpus.",
+        "search engines": "The research lineage includes the DIO framework for entity-based visibility in AI-mediated search and search engines.",
+        "knowledge graphs": "The page documents the Reference Vocabulary, Reference Model and application mappings for knowledge-oriented systems.",
+        "DIO/ODI research corpus": "The page explicitly presents the development and publication lineage of the DIO/ODI corpus.",
+        "Agentic Entity Resolution": "Agentic ER is presented as one possible application direction with a distinct architecture proposal and design-time product.",
+        "design-time planning": "The page describes the published Planner as a design-time tool that prepares an engineering plan rather than executing mutations.",
+        "reference infrastructure": "The page documents the Reference Vocabulary, Reference Model and Semantic Change Feed as a machine-readable foundation.",
+        "identity-preserving constraints": "The Agentic ER proposal is described as a guardrail around identity-changing operations and their commit conditions.",
+        "referential continuity": "The page connects the research corpus to preservation of identity references across representations and persistent changes.",
+        "semantic coherence": "The page describes the diagnostic and reference layers as mechanisms for maintaining coherent identity interpretation.",
+        "entity resolution": "Entity resolution is an explicit application and research domain across the documented corpus.",
+        "Reconstruction Failure Modes": "The page explicitly lists the Reconstruction Failure Modes taxonomy as a published research component.",
+        "Semantic Fragmentation": "The published taxonomy and its development line explicitly include Semantic Fragmentation.",
+        "Semantic Vulnerability": "The page presents the DIO/ODI diagnostic and robustness research line, including Semantic Vulnerability.",
+        "Semantic Robustness": "The page documents the robustness-oriented side of the DIO/ODI research line.",
+        "SKOS": "The Reference Vocabulary is explicitly described as SKOS-first.",
+        "RDF": "The Reference Model exposes RDF/Turtle representations in its machine-readable infrastructure.",
+        "JSON-LD": "The Reference Model and application mappings include JSON-LD representations.",
+        "provenance": "The page emphasizes traceable research lineage, source relationships and provenance across artifacts."
+      }
+    },
+    "author-concept-author": {
+      "status": "canonical-approved",
+      "scope": "derived-public-webpage",
+      "purpose": "Author page establishing the provenance, authorship and author-led development of the DIO/ODI concepts without treating the biography as a separate research publication.",
+      "surface": {
+        "repository": "dan-beranek/dio-odi-autorsky-koncept",
+        "page_key": "author",
+        "urls": [
+          "https://dan-beranek.github.io/dio-odi-autorsky-koncept/autor/",
+          "https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/author/"
+        ],
+        "locale_policy": "one semantic profile shared by equivalent Czech and English page mirrors"
+      },
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": [],
+        "C2_work_positioning": [
+          "DIO/ODI authorship",
+          "author-led research",
+          "research provenance"
+        ],
+        "C3_reconstruction_mechanics": [],
+        "C4_k6": "none",
+        "C5_failures_robustness": [],
+        "C6_machine_readable_representation": []
+      },
+      "term_rationales": {
+        "DIO/ODI authorship": "The page explicitly identifies Daniel Beránek as the author of Digital Identity Optimization and Ontology of Digital Identity.",
+        "author-led research": "The page states that the conceptual, strategic, research and communication layers are led by one named author rather than an anonymous team.",
+        "research provenance": "The page documents the genealogy from professional practice through articulation, manifesto, research formalization and reference infrastructure."
+      }
+    }
+  }
+}

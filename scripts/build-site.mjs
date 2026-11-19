@@ -1,4 +1,5 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { createHash } from "node:crypto";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { exposedAttributeTranslations, translations } from "./translations.mjs";
@@ -13,6 +14,107 @@ const imageAlt = {
   en: "DIO/ODI – AI visibility, entity resolution and knowledge infrastructure",
 };
 const robots = "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1";
+
+const artifactMetadataPath = join(projectRoot, "metadata/artifact-metadata.json");
+const artifactMetadata = JSON.parse(await readFile(artifactMetadataPath, "utf8"));
+const registrySource = artifactMetadata.registry_source;
+
+async function loadKeywordRegistry() {
+  const url = `https://raw.githubusercontent.com/${registrySource.repository}/${registrySource.ref}/${registrySource.file}`;
+  try {
+    const response = await fetch(url, { headers: { accept: "application/json" } });
+    if (!response.ok) throw new Error("HTTP " + response.status);
+    return { text: await response.text(), fetched_from: url, url };
+  } catch (error) {
+    const snapshotPath = join(projectRoot, registrySource.snapshot_path);
+    try {
+      return { text: await readFile(snapshotPath, "utf8"), fetched_from: registrySource.snapshot_path, url };
+    } catch {
+      throw new Error("Unable to fetch the canonical keyword registry and no committed snapshot is available: " + error.message);
+    }
+  }
+}
+
+function parseVersion(value) {
+  const match = /^(\d+)\.(\d+)\.(\d+)$/.exec(value ?? "");
+  if (!match) throw new Error("Invalid semantic version in canonical keyword registry: " + value);
+  return match.slice(1).map(Number);
+}
+
+function compareVersions(left, right) {
+  for (let index = 0; index < 3; index += 1) {
+    if (left[index] !== right[index]) return left[index] - right[index];
+  }
+  return 0;
+}
+
+function resolveCanonicalProfile(profileId, profile, keywordRegistry) {
+  if (!profile || profile.status !== "canonical-approved") throw new Error("Missing or unapproved canonical keyword profile: " + profileId);
+  const chunkOrder = keywordRegistry.export_policy?.chunk_order;
+  if (!Array.isArray(chunkOrder) || chunkOrder.length !== 7) throw new Error("Canonical keyword chunk order is missing or incomplete.");
+  const selections = profile.chunks ?? {};
+  if (selections.C0_identity_invariant !== "all") throw new Error(profileId + ": C0 must be exported in full.");
+  if (!Array.isArray(selections.C1_reconstruction_environments)) throw new Error(profileId + ": C1 must be an explicit ordered selection.");
+  if (selections.C4_k6 !== "all" && selections.C4_k6 !== "none") throw new Error(profileId + ": K6 must be complete or absent.");
+
+  const resolved = [];
+  const resolvedChunks = {};
+  const seen = new Set();
+  for (const chunkName of chunkOrder) {
+    const sourceTerms = keywordRegistry.chunks?.[chunkName]?.terms;
+    if (!Array.isArray(sourceTerms)) throw new Error("Canonical chunk is missing terms: " + chunkName);
+    if (!Object.hasOwn(selections, chunkName)) throw new Error(profileId + ": missing selector for " + chunkName);
+    const selected = selections[chunkName];
+    let terms;
+    if (selected === "all") terms = sourceTerms;
+    else if (selected === "none") terms = [];
+    else if (Array.isArray(selected)) {
+      terms = selected;
+      if (chunkName !== "C2_work_positioning") {
+        const positions = terms.map((term) => sourceTerms.indexOf(term));
+        if (positions.some((position) => position < 0)
+          || positions.some((position, index) => index > 0 && positions[index - 1] >= position)) {
+          throw new Error(profileId + ": " + chunkName + " must be a unique subsequence of the canonical chunk order.");
+        }
+      } else if (new Set(terms.map((term) => term.toLowerCase())).size !== terms.length) {
+        throw new Error(profileId + ": duplicate C2 terms are not permitted.");
+      }
+    } else {
+      throw new Error(profileId + ": invalid selector for " + chunkName);
+    }
+    resolvedChunks[chunkName] = terms;
+    for (const term of terms) {
+      const folded = term.toLowerCase();
+      if (!seen.has(folded)) { seen.add(folded); resolved.push(term); }
+    }
+  }
+
+  if (profile.resolved_keywords !== undefined) throw new Error(profileId + ": derived page profiles must resolve from chunk selectors, not store a duplicate keyword list.");
+  const c0 = new Set(keywordRegistry.chunks.C0_identity_invariant.terms);
+  const requiredRationales = new Set(resolved.filter((term) => !c0.has(term)));
+  const rationales = profile.term_rationales ?? {};
+  if (Object.keys(rationales).length !== requiredRationales.size
+    || [...requiredRationales].some((term) => !rationales[term]?.trim())
+    || Object.keys(rationales).some((term) => !requiredRationales.has(term))) {
+    throw new Error(profileId + ": every selected non-C0 term must have exactly one rationale.");
+  }
+  return { profile, keywords: resolved, chunks: resolvedChunks };
+}
+
+const registryResource = await loadKeywordRegistry();
+const keywordRegistryText = registryResource.text;
+const keywordRegistrySha256 = createHash("sha256").update(keywordRegistryText).digest("hex");
+const keywordRegistry = JSON.parse(keywordRegistryText);
+const registryVersion = parseVersion(keywordRegistry.registry_version);
+const minimumRegistryVersion = parseVersion(registrySource.minimum_registry_version);
+if (keywordRegistry.status !== registrySource.status_required
+  || registryVersion[0] !== registrySource.compatible_major
+  || compareVersions(registryVersion, minimumRegistryVersion) < 0) {
+  throw new Error("Expected canonical-approved keyword registry >= " + registrySource.minimum_registry_version
+    + " within compatible major " + registrySource.compatible_major
+    + "; received " + keywordRegistry.registry_version + " (" + keywordRegistry.status + ").");
+}
+
 
 const pages = [
   {
@@ -129,6 +231,45 @@ const pages = [
   },
 ];
 
+const artifacts = artifactMetadata.artifacts;
+if (!Array.isArray(artifacts) || artifacts.length !== pages.length) {
+  throw new Error("Expected exactly one canonical keyword profile mapping for each logical page.");
+}
+const artifactsByPageKey = new Map();
+const resolvedArtifacts = [];
+for (const artifact of artifacts) {
+  if (!artifact.id || !artifact.page_key || !artifact.keyword_profile_id || !Array.isArray(artifact.urls) || artifact.urls.length !== 2) {
+    throw new Error("Each page artefact needs an ID, page_key, keyword_profile_id and two localized URLs.");
+  }
+  if (artifactsByPageKey.has(artifact.page_key)) throw new Error("Duplicate artifact page_key: " + artifact.page_key);
+  const page = pages.find((candidate) => candidate.key === artifact.page_key);
+  if (!page) throw new Error("Unknown page_key in artifact metadata: " + artifact.page_key);
+  const expectedUrls = [`${siteUrl}${page.csPath}`, `${siteUrl}${page.enPath}`];
+  if (JSON.stringify(artifact.urls) !== JSON.stringify(expectedUrls)) throw new Error(artifact.id + ": localized URLs do not match the page generator.");
+  const projection = resolveCanonicalProfile(artifact.keyword_profile_id, keywordRegistry.surface_profiles?.[artifact.keyword_profile_id], keywordRegistry);
+  const surface = projection.profile.surface ?? {};
+  if (surface.repository !== "dan-beranek/dio-odi-autorsky-koncept"
+    || surface.page_key !== artifact.page_key
+    || JSON.stringify(surface.urls) !== JSON.stringify(artifact.urls)) {
+    throw new Error(artifact.id + ": canonical registry surface identity does not match the local page mapping.");
+  }
+  artifactsByPageKey.set(artifact.page_key, { ...artifact, projection });
+  resolvedArtifacts.push({
+    ...artifact,
+    status: projection.profile.status,
+    scope: projection.profile.scope,
+    purpose: projection.profile.purpose,
+    keyword_chunks: projection.chunks,
+    keywords: projection.keywords,
+    keyword_rationales: projection.profile.term_rationales,
+    pages: [
+      { path: page.csFile, url: expectedUrls[0], in_language: "cs-CZ" },
+      { path: page.enFile, url: expectedUrls[1], in_language: "en" },
+    ],
+  });
+}
+if (artifactsByPageKey.size !== pages.length) throw new Error("A page is missing its canonical surface profile.");
+
 const navItems = {
   cs: [
     ["visibility", "DIO pro viditelnost"],
@@ -163,6 +304,8 @@ function canonical(page, lang) {
 
 function structuredData(page, lang) {
   const isHome = page.key === "home";
+  const keywordProjection = artifactsByPageKey.get(page.key)?.projection;
+  if (!keywordProjection) throw new Error("Missing resolved keyword profile for " + page.key);
   const url = canonical(page, lang);
   const title = page[`${lang}Title`];
   const description = page[`${lang}Description`];
@@ -179,6 +322,7 @@ function structuredData(page, lang) {
     url,
     name: title,
     description,
+    keywords: keywordProjection.keywords,
     inLanguage: lang === "cs" ? "cs-CZ" : "en",
     [isHome ? "creator" : "author"]: person,
     about: [
@@ -238,6 +382,9 @@ function head(page, lang) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${escapeHtml(title)}</title>
   <meta name="description" content="${escapeHtml(description)}">
+  <meta name="keywords" content="${escapeHtml(artifactsByPageKey.get(page.key).projection.keywords.join(", "))}">
+  <meta name="dio-odi:keyword-profile" content="${escapeHtml(artifactsByPageKey.get(page.key).keyword_profile_id)}">
+  <meta name="dio-odi:keyword-registry-version" content="${escapeHtml(keywordRegistry.registry_version)}">
   <meta name="robots" content="${robots}">
   <meta name="theme-color" content="#080b12">
   <link rel="canonical" href="${url}">
@@ -490,10 +637,36 @@ for (const page of pages) {
   const main = source.match(/<main\b[\s\S]*?<\/main>/)?.[0];
   if (!main) throw new Error(`Missing <main> in ${page.csFile}`);
 
+  const csOutput = document(page, "cs", main);
+  await writeFile(join(projectRoot, page.csFile), csOutput);
+
   const enOutput = document(page, "en", translateMain(main, page));
   const enTarget = join(projectRoot, page.enFile);
   await mkdir(dirname(enTarget), { recursive: true });
   await writeFile(enTarget, enOutput);
 }
 
-console.log(`Generated ${pages.length * 2} localized HTML pages.`);
+const resolvedMetadata = {
+  schema_version: "1.0.0",
+  site: artifactMetadata.site,
+  author: artifactMetadata.author,
+  keyword_registry: {
+    repository: registrySource.repository,
+    file: registrySource.file,
+    ref: registrySource.ref,
+    registry_version: keywordRegistry.registry_version,
+    status: keywordRegistry.status,
+    sha256: keywordRegistrySha256,
+    fetched_from: registryResource.fetched_from,
+    canonical_discovery: registrySource.registry_discovery,
+    resolved_snapshot_path: "assets/data/keyword-registry.resolved.json",
+  },
+  artifacts: resolvedArtifacts,
+};
+const metadataOutput = join(projectRoot, artifactMetadata.site.metadata_output);
+const resolvedRegistryPath = join(projectRoot, "assets/data/keyword-registry.resolved.json");
+await mkdir(dirname(metadataOutput), { recursive: true });
+await writeFile(resolvedRegistryPath, keywordRegistryText);
+await writeFile(metadataOutput, JSON.stringify(resolvedMetadata, null, 2) + "\n");
+
+console.log(`Generated ${pages.length * 2} localized HTML pages using canonical keyword registry v${keywordRegistry.registry_version} (${resolvedArtifacts.length} page profiles).`);
