@@ -659,11 +659,14 @@ const resolvedMetadata = {
     sha256: keywordRegistrySha256,
     fetched_from: registryResource.fetched_from,
     canonical_discovery: registrySource.registry_discovery,
+    resolved_snapshot_path: "assets/data/keyword-registry.resolved.json",
   },
   artifacts: resolvedArtifacts,
 };
 const metadataOutput = join(projectRoot, artifactMetadata.site.metadata_output);
+const resolvedRegistryPath = join(projectRoot, "assets/data/keyword-registry.resolved.json");
 await mkdir(dirname(metadataOutput), { recursive: true });
+await writeFile(resolvedRegistryPath, keywordRegistryText);
 await writeFile(metadataOutput, JSON.stringify(resolvedMetadata, null, 2) + "\n");
 
 console.log(`Generated ${pages.length * 2} localized HTML pages using canonical keyword registry v${keywordRegistry.registry_version} (${resolvedArtifacts.length} page profiles).`);
