@@ -59,6 +59,8 @@ jobs:
             "assets/site.css"
             "assets/site.js"
             "assets/dio-odi-social-v1.png"
+            "assets/data/resolved-artifact-metadata.json"
+            "assets/data/keyword-registry.resolved.json"
             "favicon.svg"
             "sitemap.xml"
             "llms.txt"
