@@ -334,7 +334,6 @@ function structuredData(page, lang) {
     "@id": personId,
     name: "Daniel Beránek",
     url: profileUrl,
-    mainEntityOfPage: { "@id": profilePageId },
     sameAs: ["https://orcid.org/0009-0004-0050-0264"]
   };
   const website = {
@@ -351,7 +350,7 @@ function structuredData(page, lang) {
     about: [{ "@id": dioId }, { "@id": odiId }]
   };
   const pageNode = {
-    "@type": isAuthorProfile ? "AboutPage" : "WebPage",
+    "@type": isAuthorProfile ? "ProfilePage" : "WebPage",
     "@id": pageId,
     url,
     name: title,
