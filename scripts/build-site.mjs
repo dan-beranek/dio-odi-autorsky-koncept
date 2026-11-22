@@ -303,70 +303,79 @@ function canonical(page, lang) {
 }
 
 function structuredData(page, lang) {
-  const isHome = page.key === "home";
   const keywordProjection = artifactsByPageKey.get(page.key)?.projection;
   if (!keywordProjection) throw new Error("Missing resolved keyword profile for " + page.key);
   const url = canonical(page, lang);
   const title = page[`${lang}Title`];
   const description = page[`${lang}Description`];
+  const isHome = page.key === "home";
+  const isAuthorProfile = page.key === "author";
+  const personId = "https://danielberanek.cz/#person";
+  const profileUrl = "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/";
+  const profilePageId = profileUrl + "#profilepage";
+  const websiteId = siteUrl + "#website";
+  const pageId = url + "#webpage";
+  const dioId = "https://vocab.danielberanek.cz/dio-odi/#DIO";
+  const odiId = "https://vocab.danielberanek.cz/dio-odi/#ODI";
   const person = {
     "@type": "Person",
-    "@id": "https://danielberanek.cz/#person",
+    "@id": personId,
     name: "Daniel Beránek",
-    url: "https://danielberanek.cz/",
+    url: profileUrl,
+    mainEntityOfPage: { "@id": profilePageId },
+    sameAs: ["https://orcid.org/0009-0004-0050-0264"]
   };
-  const data = {
-    "@context": "https://schema.org",
-    "@type": isHome ? "WebSite" : "WebPage",
-    "@id": `${url}#${isHome ? "website" : "webpage"}`,
+  const website = {
+    "@type": "WebSite",
+    "@id": websiteId,
+    url: siteUrl,
+    name: "DIO/ODI",
+    description: lang === "cs"
+      ? "Autorský a výzkumný web představující Digital Identity Optimization a Ontology of Digital Identity."
+      : "Author-led research and concept website presenting Digital Identity Optimization and the Ontology of Digital Identity.",
+    inLanguage: ["cs-CZ", "en"],
+    creator: { "@id": personId },
+    publisher: { "@id": personId },
+    about: [{ "@id": dioId }, { "@id": odiId }]
+  };
+  const pageNode = {
+    "@type": isAuthorProfile ? "ProfilePage" : "WebPage",
+    "@id": pageId,
     url,
     name: title,
     description,
     keywords: keywordProjection.keywords,
     inLanguage: lang === "cs" ? "cs-CZ" : "en",
-    [isHome ? "creator" : "author"]: person,
-    about: [
-      {
-        "@type": "DefinedTerm",
-        name: "Digital Identity Optimization",
-        alternateName: "DIO",
-        description: lang === "cs"
-          ? "Aplikovaný rámec pro AI visibility, entity resolution a optimalizaci entity napříč lidskými a strojovými systémy."
-          : "An applied framework for AI visibility, entity resolution and entity optimization across human and machine systems.",
-      },
-      {
-        "@type": "DefinedTerm",
-        name: "Ontology of Digital Identity",
-        alternateName: "ODI",
-        description: lang === "cs"
-          ? "Teoretická, výzkumná a ontologická vrstva zaměřená na rekonstrukci digitální identity."
-          : "A theoretical, research and ontological layer focused on the reconstruction of digital identity.",
-      },
-    ],
-    citation: [
-      "https://doi.org/10.5281/zenodo.21610934",
-      "https://doi.org/10.2139/ssrn.7247578",
-      "https://doi.org/10.2139/ssrn.7396398",
-      "https://dx.doi.org/10.2139/ssrn.7590979",
-      "https://doi.org/10.5281/zenodo.23269323",
-      "https://doi.org/10.5281/zenodo.24085589",
-      "https://vocab.danielberanek.cz/semantic-change-feed/",
-      "https://arxiv.org/abs/2610.37407",
-      "https://doi.org/10.5281/zenodo.24123229",
-      "https://doi.org/10.5281/zenodo.24123228",
-    ],
+    isPartOf: { "@id": websiteId },
+    author: { "@id": personId },
+    about: [{ "@id": dioId }, { "@id": odiId }],
+    citation: citations.map((citation) => ({ "@id": citation }))
   };
-  if (!isHome) {
-    data.isPartOf = {
-      "@type": "WebSite",
-      "@id": `${siteUrl}#website`,
-      url: siteUrl,
-      name: lang === "cs" ? "DIO/ODI – autorský koncept Daniela Beránka" : "DIO/ODI – an author-led concept by Daniel Beránek",
-    };
+  const graph = [website, person, pageNode];
+  if (isAuthorProfile) {
+    pageNode.mainEntity = { "@id": personId };
   }
-  return JSON.stringify(data, null, 2).replaceAll("<", "\\u003c");
+  if (isHome) {
+    const frameworkId = siteUrl + "#framework";
+    pageNode.mainEntity = { "@id": frameworkId };
+    graph.push({
+      "@type": "CreativeWork",
+      "@id": frameworkId,
+      name: "Digital Identity Optimization and Ontology of Digital Identity",
+      description: lang === "cs"
+        ? "Autorský konceptuální a výzkumný rámec DIO/ODI pro digitální identitu, její reprezentaci a rekonstrukci napříč lidskými a strojovými systémy."
+        : "An author-led conceptual and research framework for digital identity, its representation and reconstruction across human and machine systems.",
+      author: { "@id": personId },
+      mainEntityOfPage: { "@id": pageId },
+      about: [{ "@id": dioId }, { "@id": odiId }],
+      citation: citations.map((citation) => ({ "@id": citation }))
+    });
+  }
+  return JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": graph
+  }, null, 2).replaceAll("<", "\\u003c");
 }
-
 function head(page, lang) {
   const title = page[`${lang}Title`];
   const description = page[`${lang}Description`];
