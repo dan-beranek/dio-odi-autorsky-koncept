@@ -305,14 +305,34 @@ for (const pair of pairs) {
     if (json) {
       try {
         const data = JSON.parse(json);
-        expect(scope, data.url, url, "JSON-LD url");
-        expect(scope, data.name, title, "JSON-LD name");
-        expect(scope, data.inLanguage, lang === "cs" ? "cs-CZ" : "en", "JSON-LD inLanguage");
-        expect(scope, JSON.stringify(data.keywords), JSON.stringify(expectedKeywords), "JSON-LD keywords");
-        const person = data.author ?? data.creator;
+        const graph = data["@graph"];
+        if (!Array.isArray(graph)) throw new Error("Expected a JSON-LD @graph");
+        const nodes = graph.filter((node) => node && node["@id"]);
+        if (nodes.length !== graph.length) throw new Error("Every JSON-LD graph node must have an @id");
+        const byId = new Map(nodes.map((node) => [node["@id"], node]));
+        if (byId.size !== nodes.length) throw new Error("Duplicate JSON-LD @id");
+        const pageNode = byId.get(url + "#webpage");
+        const website = byId.get(siteUrl + "#website");
+        const person = byId.get("https://danielberanek.cz/#person");
+        expect(scope, pageNode?.url, url, "JSON-LD page url");
+        expect(scope, pageNode?.name, title, "JSON-LD page name");
+        expect(scope, pageNode?.inLanguage, lang === "cs" ? "cs-CZ" : "en", "JSON-LD page inLanguage");
+        expect(scope, JSON.stringify(pageNode?.keywords), JSON.stringify(expectedKeywords), "JSON-LD page keywords");
         expect(scope, person?.["@type"], "Person", "JSON-LD author type");
         expect(scope, person?.name, "Daniel Beránek", "JSON-LD author name");
-        expect(scope, JSON.stringify(data.citation), JSON.stringify(citations), "JSON-LD citations");
+        expect(scope, person?.url, "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/", "JSON-LD canonical author URL");
+        expect(scope, person?.mainEntityOfPage?.["@id"], "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/#profilepage", "JSON-LD Person mainEntityOfPage");
+        expect(scope, pageNode?.isPartOf?.["@id"], website?.["@id"], "JSON-LD page → WebSite");
+        const pageCitations = (pageNode?.citation ?? []).map((item) => item["@id"]);
+        expect(scope, JSON.stringify(pageCitations), JSON.stringify(citations), "JSON-LD citations");
+        if (page.key === "author") {
+          expect(scope, pageNode?.["@type"], "ProfilePage", "JSON-LD author page type");
+          expect(scope, pageNode?.mainEntity?.["@id"], person?.["@id"], "JSON-LD ProfilePage mainEntity");
+        } else if (page.key === "home") {
+          expect(scope, pageNode?.mainEntity?.["@id"], siteUrl + "#framework", "JSON-LD homepage mainEntity");
+          const framework = byId.get(siteUrl + "#framework");
+          expect(scope, framework?.mainEntityOfPage?.["@id"], pageNode?.["@id"], "JSON-LD framework mainEntityOfPage");
+        }
         if (JSON.stringify(data).includes('"Organization"')) fail(scope, "DIO/ODI must not be represented as an Organization");
       } catch (error) {
         fail(scope, `invalid JSON-LD: ${error.message}`);
