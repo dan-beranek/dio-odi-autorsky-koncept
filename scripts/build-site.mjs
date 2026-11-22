@@ -310,6 +310,18 @@ function structuredData(page, lang) {
   const description = page[`${lang}Description`];
   const isHome = page.key === "home";
   const isAuthorProfile = page.key === "author";
+  const citations = [
+    "https://doi.org/10.5281/zenodo.21610934",
+    "https://doi.org/10.2139/ssrn.7247578",
+    "https://doi.org/10.2139/ssrn.7396398",
+    "https://dx.doi.org/10.2139/ssrn.7590979",
+    "https://doi.org/10.5281/zenodo.23269323",
+    "https://doi.org/10.5281/zenodo.24085589",
+    "https://vocab.danielberanek.cz/semantic-change-feed/",
+    "https://arxiv.org/abs/2610.37407",
+    "https://doi.org/10.5281/zenodo.24123229",
+    "https://doi.org/10.5281/zenodo.24123228"
+  ];
   const personId = "https://danielberanek.cz/#person";
   const profileUrl = "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/";
   const profilePageId = profileUrl + "#profilepage";
@@ -339,7 +351,7 @@ function structuredData(page, lang) {
     about: [{ "@id": dioId }, { "@id": odiId }]
   };
   const pageNode = {
-    "@type": isAuthorProfile ? "ProfilePage" : "WebPage",
+    "@type": isAuthorProfile ? "AboutPage" : "WebPage",
     "@id": pageId,
     url,
     name: title,
