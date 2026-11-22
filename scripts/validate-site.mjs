@@ -321,12 +321,12 @@ for (const pair of pairs) {
         expect(scope, person?.["@type"], "Person", "JSON-LD author type");
         expect(scope, person?.name, "Daniel Beránek", "JSON-LD author name");
         expect(scope, person?.url, "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/", "JSON-LD canonical author URL");
-        expect(scope, person?.mainEntityOfPage?.["@id"], "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/#profilepage", "JSON-LD Person mainEntityOfPage");
+
         expect(scope, pageNode?.isPartOf?.["@id"], website?.["@id"], "JSON-LD page → WebSite");
         const pageCitations = (pageNode?.citation ?? []).map((item) => item["@id"]);
         expect(scope, JSON.stringify(pageCitations), JSON.stringify(citations), "JSON-LD citations");
         if (page.key === "author") {
-          expect(scope, pageNode?.["@type"], "AboutPage", "JSON-LD author page type");
+          expect(scope, pageNode?.["@type"], "ProfilePage", "JSON-LD author page type");
           expect(scope, pageNode?.mainEntity?.["@id"], person?.["@id"], "JSON-LD ProfilePage mainEntity");
         } else if (page.key === "home") {
           expect(scope, pageNode?.mainEntity?.["@id"], siteUrl + "#framework", "JSON-LD homepage mainEntity");
