@@ -24,6 +24,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+      - name: Verify pinned Entity Registry snapshot
+        run: node scripts/verify-entity-registry.mjs
       - name: Build bilingual pages
         run: |
           node scripts/build-site.mjs
@@ -60,6 +62,8 @@ jobs:
             "assets/site.js"
             "assets/dio-odi-social-v1.png"
             "assets/data/resolved-artifact-metadata.json"
+            "metadata/entity-registry.snapshot.json"
+            "metadata/entity-registry.lock.json"
             "assets/data/keyword-registry.resolved.json"
             "favicon.svg"
             "sitemap.xml"
