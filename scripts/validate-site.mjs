@@ -403,7 +403,8 @@ for (const [path, requiredLinks] of requiredExternalLinks) {
 }
 
 const expectedUrls = pairs.flatMap((pair) => [pair.cs, pair.en]).map((entry) => `${siteUrl}${entry[1]}`);
-if (keywordManifest.schema_version !== "1.0.0") fail("keyword manifest", "unsupported schema version");
+if (keywordManifest.schema_version !== "1.1.0") fail("keyword manifest", "unsupported schema version");
+if (keywordManifest.entity_registry?.version !== entityRegistry.registry_version || keywordManifest.entity_registry?.commit !== entityRegistryLock.registry_commit) fail("keyword manifest", "Entity Registry provenance is missing or inconsistent with the pinned snapshot");
 if (keywordManifest.keyword_registry.status !== "canonical-approved") fail("keyword manifest", "keyword registry is not canonical-approved");
 expect("keyword manifest", keywordManifest.keyword_registry.registry_version, resolvedKeywordRegistry.registry_version, "registry version");
 expect("keyword manifest", keywordManifest.keyword_registry.sha256, keywordRegistrySha256, "registry SHA-256");
