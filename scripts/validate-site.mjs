@@ -325,10 +325,10 @@ for (const pair of pairs) {
         expect(scope, pageNode?.isPartOf?.["@id"], website?.["@id"], "JSON-LD page → WebSite");
         const pageCitations = (pageNode?.citation ?? []).map((item) => item["@id"]);
         expect(scope, JSON.stringify(pageCitations), JSON.stringify(citations), "JSON-LD citations");
-        if (page.key === "author") {
+        if (pair.key === "author") {
           expect(scope, pageNode?.["@type"], "ProfilePage", "JSON-LD author page type");
           expect(scope, pageNode?.mainEntity?.["@id"], person?.["@id"], "JSON-LD ProfilePage mainEntity");
-        } else if (page.key === "home") {
+        } else if (pair.key === "home") {
           expect(scope, pageNode?.mainEntity?.["@id"], siteUrl + "#framework", "JSON-LD homepage mainEntity");
           const framework = byId.get(siteUrl + "#framework");
           expect(scope, framework?.mainEntityOfPage?.["@id"], pageNode?.["@id"], "JSON-LD framework mainEntityOfPage");
