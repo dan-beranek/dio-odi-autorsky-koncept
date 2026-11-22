@@ -534,10 +534,6 @@ code { overflow-wrap: anywhere; font-size: 0.9em; }
 /* DIO Web Design System v0.1.1 — typography pilot */
 :root { --muted: var(--dio-color-text-secondary); }
 body { color: var(--dio-color-text); }
-body p, body li, body dd, body td { color: inherit; }
-.section-dark, .section-dark p, .section-dark li, .section-blue, .section-blue p, .section-blue li,
-.site-footer, .site-footer p, .site-footer li { color: var(--dio-color-text-inverse); }
-.section-dark .lead { color: #c6cdd9; }
 .meta, .status-label, .route-id, .footer-label, .language-switch, .comparison th,
 .entry-card .num, .step::before { font-size: max(0.8125rem, 13px); }
 .main-nav a { font-size: max(0.8125rem, 13px); }
