@@ -21,6 +21,8 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: "22"
+      - name: Verify pinned Entity Registry snapshot
+        run: node scripts/verify-entity-registry.mjs
       - name: Generate localized pages and canonical metadata
         run: node scripts/build-site.mjs
       - name: Validate localized pages and metadata

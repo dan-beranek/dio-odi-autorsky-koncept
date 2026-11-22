@@ -28,6 +28,16 @@ const imageAlt = {
 };
 
 const artifactMetadata = JSON.parse(await readFile(join(root, "metadata/artifact-metadata.json"), "utf8"));
+const entityRegistryLock = JSON.parse(await readFile(join(root, "metadata/entity-registry.lock.json"), "utf8"));
+const entityRegistry = JSON.parse(await readFile(join(root, entityRegistryLock.snapshot_path), "utf8"));
+if (entityRegistry.status !== "canonical-approved" || entityRegistry.registry_version !== entityRegistryLock.registry_version) {
+  throw new Error("Pinned Entity Registry is missing or inconsistent.");
+}
+const personIdentity = entityRegistry.entities.find((entity) => entity.key === "person-daniel-beranek");
+const frameworkIdentity = entityRegistry.entities.find((entity) => entity.key === "framework-dio-odi-author-led");
+if (!personIdentity || !frameworkIdentity || frameworkIdentity.url !== siteUrl || frameworkIdentity["@id"] !== siteUrl + "#framework") {
+  throw new Error("Required canonical author/framework identities are missing or inconsistent.");
+}
 const keywordManifest = JSON.parse(await readFile(join(root, artifactMetadata.site.metadata_output), "utf8"));
 const resolvedRegistryText = await readFile(join(root, keywordManifest.keyword_registry.resolved_snapshot_path), "utf8");
 const resolvedKeywordRegistry = JSON.parse(resolvedRegistryText);
@@ -319,8 +329,8 @@ for (const pair of pairs) {
         expect(scope, pageNode?.inLanguage, lang === "cs" ? "cs-CZ" : "en", "JSON-LD page inLanguage");
         expect(scope, JSON.stringify(pageNode?.keywords), JSON.stringify(expectedKeywords), "JSON-LD page keywords");
         expect(scope, person?.["@type"], "Person", "JSON-LD author type");
-        expect(scope, person?.name, "Daniel Beránek", "JSON-LD author name");
-        expect(scope, person?.url, "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/", "JSON-LD canonical author URL");
+        expect(scope, person?.name, personIdentity.name, "JSON-LD author name from Entity Registry");
+        expect(scope, person?.url, personIdentity.url, "JSON-LD canonical author URL from Entity Registry");
 
         expect(scope, pageNode?.isPartOf?.["@id"], website?.["@id"], "JSON-LD page → WebSite");
         const pageCitations = (pageNode?.citation ?? []).map((item) => item["@id"]);
@@ -393,7 +403,8 @@ for (const [path, requiredLinks] of requiredExternalLinks) {
 }
 
 const expectedUrls = pairs.flatMap((pair) => [pair.cs, pair.en]).map((entry) => `${siteUrl}${entry[1]}`);
-if (keywordManifest.schema_version !== "1.0.0") fail("keyword manifest", "unsupported schema version");
+if (keywordManifest.schema_version !== "1.1.0") fail("keyword manifest", "unsupported schema version");
+if (keywordManifest.entity_registry?.version !== entityRegistry.registry_version || keywordManifest.entity_registry?.commit !== entityRegistryLock.registry_commit) fail("keyword manifest", "Entity Registry provenance is missing or inconsistent with the pinned snapshot");
 if (keywordManifest.keyword_registry.status !== "canonical-approved") fail("keyword manifest", "keyword registry is not canonical-approved");
 expect("keyword manifest", keywordManifest.keyword_registry.registry_version, resolvedKeywordRegistry.registry_version, "registry version");
 expect("keyword manifest", keywordManifest.keyword_registry.sha256, keywordRegistrySha256, "registry SHA-256");
