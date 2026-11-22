@@ -1,0 +1,25 @@
+/* DIO Web Design System — vendored foundation
+ * Version: 0.1.1 | Local CSS only; no runtime imports or external requests.
+ */
+:root {
+  --dio-color-ink: #080b12; --dio-color-ink-soft: #121722;
+  --dio-color-paper: #f7f8fb; --dio-color-white: #ffffff;
+  --dio-color-muted: #626a79; --dio-color-muted-inverse: #aab2c2;
+  --dio-color-border: #d9dde6; --dio-color-border-inverse: #2a3140;
+  --dio-color-accent: #154cff; --dio-color-accent-strong: #0c35bd;
+  --dio-color-accent-soft: #e9efff; --dio-color-accent-light: #8eabff;
+  --dio-color-text: #000000; --dio-color-text-inverse: #ffffff;
+  --dio-color-text-secondary: #626a79;
+  --dio-font-sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --dio-font-serif: Georgia, "Times New Roman", serif;
+  --dio-font-size-body: 1rem; --dio-font-size-reading: 0.9375rem;
+  --dio-font-size-compact: 0.875rem; --dio-font-size-meta: 0.8125rem;
+  --dio-font-size-micro: 0.75rem; --dio-line-height-body: 1.65;
+  --dio-line-height-compact: 1.5; --dio-reading-measure: 68ch;
+  --dio-space-1: 0.25rem; --dio-space-2: 0.5rem; --dio-space-3: 0.75rem;
+  --dio-space-4: 1rem; --dio-space-5: 1.5rem; --dio-space-6: 2rem;
+  --dio-space-7: 3rem; --dio-space-8: 4rem;
+  --dio-radius-sm: 0.25rem; --dio-radius: 0.35rem; --dio-radius-lg: 0.55rem;
+  --dio-shadow-soft: 0 18px 60px rgba(8, 11, 18, 0.08);
+  --dio-content-max: 1280px;
+}

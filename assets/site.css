@@ -1,3 +1,4 @@
+@import url("design-system/dio-core.css");
 :root {
   --ink: #080b12;
   --ink-2: #121722;
@@ -527,4 +528,17 @@ code { overflow-wrap: anywhere; font-size: 0.9em; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
   .reveal { opacity: 1; transform: none; }
+}
+
+
+/* DIO Web Design System v0.1.1 — typography pilot */
+:root { --muted: var(--dio-color-text-secondary); }
+body { color: var(--dio-color-text); }
+.meta, .status-label, .route-id, .footer-label, .language-switch, .comparison th,
+.entry-card .num, .step::before { font-size: max(0.8125rem, 13px); }
+.main-nav a { font-size: max(0.8125rem, 13px); }
+.entry-card p, .proof-item span, .footer-bottom { font-size: max(0.875rem, 14px); }
+.small { font-size: 0.9375rem; }
+@media (max-width: 760px) {
+  .main-nav a, .language-switch { font-size: 0.8125rem; }
 }
