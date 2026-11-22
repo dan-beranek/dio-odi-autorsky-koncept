@@ -17,6 +17,42 @@ const robots = "index,follow,max-image-preview:large,max-snippet:-1,max-video-pr
 
 const artifactMetadataPath = join(projectRoot, "metadata/artifact-metadata.json");
 const artifactMetadata = JSON.parse(await readFile(artifactMetadataPath, "utf8"));
+const entityRegistryLock = JSON.parse(await readFile(join(projectRoot, "metadata/entity-registry.lock.json"), "utf8"));
+const entityRegistry = JSON.parse(await readFile(join(projectRoot, entityRegistryLock.snapshot_path), "utf8"));
+if (entityRegistry.status !== "canonical-approved" ||
+    entityRegistry.registry_version !== entityRegistryLock.registry_version ||
+    !/^[0-9a-f]{40}$/.test(entityRegistryLock.registry_commit ?? "")) {
+  throw new Error("The pinned Entity Registry is missing, unapproved, or inconsistent with its lock.");
+}
+const entityByKey = new Map(entityRegistry.entities.map((entity) => [entity.key, entity]));
+function requireEntity(key) {
+  const entity = entityByKey.get(key);
+  if (!entity || entity.status !== "active") throw new Error("Missing active Entity Registry record: " + key);
+  return entity;
+}
+const personIdentity = requireEntity("person-daniel-beranek");
+const frameworkIdentity = requireEntity("framework-dio-odi-author-led");
+const referenceModelIdentity = requireEntity("project-dio-odi-reference-model");
+const vocabularyIdentity = requireEntity("vocabulary-dio-odi-reference");
+if (frameworkIdentity.url !== siteUrl || frameworkIdentity["@id"] !== siteUrl + "#framework") {
+  throw new Error("Author-led framework identity diverges from the pinned Entity Registry.");
+}
+if (referenceModelIdentity.url !== "https://vocab.danielberanek.cz/" ||
+    vocabularyIdentity.url !== "https://vocab.danielberanek.cz/dio-odi/") {
+  throw new Error("Canonical DIO/ODI reference resources diverge from the pinned Entity Registry.");
+}
+if (artifactMetadata.author.id !== personIdentity["@id"] ||
+    artifactMetadata.author.name !== personIdentity.name ||
+    artifactMetadata.author.url !== personIdentity.url ||
+    JSON.stringify(artifactMetadata.author.same_as) !== JSON.stringify(personIdentity.sameAs ?? [])) {
+  throw new Error("Author metadata diverges from the pinned Entity Registry.");
+}
+artifactMetadata.author = {
+  id: personIdentity["@id"],
+  name: personIdentity.name,
+  url: personIdentity.url,
+  same_as: personIdentity.sameAs ?? []
+};
 const registrySource = artifactMetadata.registry_source;
 
 async function loadKeywordRegistry() {
@@ -322,8 +358,8 @@ function structuredData(page, lang) {
     "https://doi.org/10.5281/zenodo.24123229",
     "https://doi.org/10.5281/zenodo.24123228"
   ];
-  const personId = "https://danielberanek.cz/#person";
-  const profileUrl = "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/";
+  const personId = personIdentity["@id"];
+  const profileUrl = personIdentity.url;
   const profilePageId = profileUrl + "#profilepage";
   const websiteId = siteUrl + "#website";
   const pageId = url + "#webpage";
@@ -332,9 +368,9 @@ function structuredData(page, lang) {
   const person = {
     "@type": "Person",
     "@id": personId,
-    name: "Daniel Beránek",
+    name: personIdentity.name,
     url: profileUrl,
-    sameAs: ["https://orcid.org/0009-0004-0050-0264"]
+    sameAs: personIdentity.sameAs ?? []
   };
   const website = {
     "@type": "WebSite",
@@ -367,12 +403,13 @@ function structuredData(page, lang) {
     pageNode.mainEntity = { "@id": personId };
   }
   if (isHome) {
-    const frameworkId = siteUrl + "#framework";
+    const frameworkId = frameworkIdentity["@id"];
     pageNode.mainEntity = { "@id": frameworkId };
     graph.push({
       "@type": "CreativeWork",
       "@id": frameworkId,
-      name: "Digital Identity Optimization and Ontology of Digital Identity",
+      name: frameworkIdentity.name,
+      url: frameworkIdentity.url,
       description: lang === "cs"
         ? "Autorský konceptuální a výzkumný rámec DIO/ODI pro digitální identitu, její reprezentaci a rekonstrukci napříč lidskými a strojovými systémy."
         : "An author-led conceptual and research framework for digital identity, its representation and reconstruction across human and machine systems.",
@@ -667,9 +704,16 @@ for (const page of pages) {
 }
 
 const resolvedMetadata = {
-  schema_version: "1.0.0",
+  schema_version: "1.1.0",
   site: artifactMetadata.site,
   author: artifactMetadata.author,
+  entity_registry: {
+    repository: entityRegistryLock.registry_repository,
+    version: entityRegistry.registry_version,
+    commit: entityRegistryLock.registry_commit,
+    snapshot_path: entityRegistryLock.snapshot_path,
+    source_url: "https://raw.githubusercontent.com/" + entityRegistryLock.registry_repository + "/" + entityRegistryLock.registry_commit + "/" + entityRegistryLock.source_path
+  },
   keyword_registry: {
     repository: registrySource.repository,
     file: registrySource.file,
