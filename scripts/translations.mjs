@@ -133,6 +133,8 @@ export const translations = {
     "Agentic ER: od návrhu k plánovacímu nástroji": "Agentic ER: from architecture to planning tool",
     "Paper na arXiv představuje návrh sémantického jističe pro Agentic ER. Navazuje na něj nyní publikovaný Agentic Entity Resolution Guardrail Planner — design-time Skill, který vytváří přezkoumatelný engineering plán. Neprovádí mutace ani neautorizuje produkční zápisy.": "The arXiv paper proposes a semantic guardrail for Agentic ER. It is now accompanied by the published Agentic Entity Resolution Guardrail Planner, a design-time Skill that produces a reviewable engineering plan. It does not execute mutations or authorize production writes.",
     "Otevřít Planner na Agensi →": "Open the Planner on Agensi →",
+    "Produktový web Planneru (EN) →": "Planner product website (EN) →",
+    "Research Genealogy · zdrojově propojený registr →": "Research Genealogy · source-linked registry →",
     "Produktový web (EN) →": "Product website (English) →",
     "Od diagnostiky k technické architektuře": "From diagnosis to technical architecture",
     "Paper na arXiv představuje návrh sémantického jističe pro Agentic ER — jeden z možných směrů aplikace DIO/ODI. Dalším krokem je implementace a pilotní ověření.": "The arXiv paper presents a proposed semantic guardrail for Agentic ER—one possible direction for applying DIO/ODI. The next step is implementation and a pilot.",
