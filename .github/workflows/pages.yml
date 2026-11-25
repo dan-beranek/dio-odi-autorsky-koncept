@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
   pages: write
   id-token: write
 
@@ -36,6 +37,23 @@ jobs:
         with:
           name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
           path: .
+      - name: Wait for the Pages artifact to become visible to the Actions API
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EXPECTED_ARTIFACT: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
+        run: |
+          set -euo pipefail
+          for attempt in {1..12}; do
+            artifact_id="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}/artifacts" --jq ".artifacts[] | select(.name == \\"${EXPECTED_ARTIFACT}\\" and .expired == false) | .id" | head -n 1)"
+            if [[ -n "${artifact_id}" ]]; then
+              echo "Pages artifact ${EXPECTED_ARTIFACT} is visible (ID ${artifact_id})."
+              exit 0
+            fi
+            echo "Pages artifact not visible yet (attempt ${attempt}/12)."
+            sleep 5
+          done
+          echo "Pages artifact ${EXPECTED_ARTIFACT} did not become visible to the Actions API."
+          exit 1
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
