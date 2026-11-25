@@ -44,7 +44,7 @@ jobs:
         run: |
           set -euo pipefail
           for attempt in {1..12}; do
-            artifact_id="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}/artifacts" --jq ".artifacts[] | select(.name == \\"${EXPECTED_ARTIFACT}\\" and .expired == false) | .id" | head -n 1)"
+            artifact_id="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}/artifacts" --jq '.artifacts[] | select(.name == env.EXPECTED_ARTIFACT and .expired == false) | .id' | head -n 1)"
             if [[ -n "${artifact_id}" ]]; then
               echo "Pages artifact ${EXPECTED_ARTIFACT} is visible (ID ${artifact_id})."
               exit 0
