@@ -939,6 +939,12 @@ export const translations = {
     "Sémantický konektom, minimální analytický model MVDIO, taxonomie Reconstruction Failure Modes a rozlišení aplikační DIO od teoretické ODI.": "The Semantic Connectome, the MVDIO minimal analytical model, the Reconstruction Failure Modes taxonomy and the distinction between applied DIO and theoretical ODI.",
     "Reference Vocabulary v0.2.1, Reference Model v0.8.0, integrovaný Semantic Change Feed, kanonický namespace a strojově čitelné serializace.": "Reference Vocabulary v0.2.1, Reference Model v0.8.0, the integrated Semantic Change Feed, the canonical namespace and machine-readable serializations.",
     "Definice, hranice a vztahy DIO/ODI, sémantický konektom a navazující pojmová vrstva.": "DIO/ODI definitions, boundaries and relationships, the Semantic Connectome and the related conceptual layer.",
+    "Podrobnou rekonstrukci profesních, intelektuálních a metodologických zdrojů nabízí": "A detailed reconstruction of the professional, intellectual and methodological sources is provided by",
+    "; související výzkumné objekty, procesy a jejich provenienci eviduje": "; related research objects, processes and their provenance are recorded in",
+    "Reference Vocabulary v0.2.2, archivní Reference Model v0.9.0 se snapshotem Semantic Change Feed v0.1.1 a samostatně aktualizovaný živý feed v0.1.14. Kanonický namespace a strojově čitelné serializace zpřístupňují pojmy, vztahy a provenienci.": "Reference Vocabulary v0.2.2, the archived Reference Model v0.9.0 with its Semantic Change Feed snapshot v0.1.1, and the separately updated live feed v0.1.14. The canonical namespace and machine-readable serializations expose concepts, relationships and provenance.",
+    "Archivní vydání integruje Reference Vocabulary v0.2.2 a historický Semantic Change Feed snapshot v0.1.1. Živý SCF se vyvíjí samostatně.": "The archived release integrates Reference Vocabulary v0.2.2 and the historical Semantic Change Feed snapshot v0.1.1. The live SCF is maintained separately.",
+    "Přejít na Reference Model": "Open the Reference Model",
+    "Ověřit archivní vydání": "Review the archived release",
     "Aktuální konceptuální rozpracování DIO/ODI, publikační návaznosti a sémantického konektomu.": "The current conceptual development of DIO/ODI, its publication trail and the Semantic Connectome.",
     "Archivní vydání integruje Reference Vocabulary v0.2.1 a Semantic Change Feed v0.1.0.": "The archived release integrates Reference Vocabulary v0.2.1 and Semantic Change Feed v0.1.0."
   },
