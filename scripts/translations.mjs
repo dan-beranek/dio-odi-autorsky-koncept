@@ -659,6 +659,12 @@ export const translations = {
     "sémantický konektom, Reference Vocabulary v0.2.1, Reference Model v0.8.0 a integrovaný Semantic Change Feed.": "the Semantic Connectome, Reference Vocabulary v0.2.1, Reference Model v0.8.0 and the integrated Semantic Change Feed.",
   },
   evidence: {
+    "Pro genezi a provenienci výzkumných objektů navazuje": "For the origins and provenance of research objects, see",
+    "a její interpretační vrstva": "and its interpretive layer",
+    "Jeden konkrétní aplikační směr: návrh sémantického jističe, který kontroluje podmínky pro trvalé změny identity v Agentic ER. Mapování formalizuje jeho vnitřní konceptuální a funkční vztahy.": "One specific application direction: a proposed semantic guardrail that checks the conditions for persistent identity changes in Agentic ER. The mapping formalizes the architecture's internal conceptual and functional relations.",
+    "Agentic Entity Resolution Guardrail Planner · produktový web": "Agentic Entity Resolution Guardrail Planner · product website",
+    "Čtyři aplikační mapování": "Four application mappings",
+    "RAG × DIO propojuje diagnostiku s retrieval pipeline; HEM × DIO zkoumá dopady heterogenity vstupů; Commit-Boundary × Policy-as-Code vztahuje autorizační architekturu pro Agentic ER k OPA/Rego a Cedar; Agentic ER architecture mapping formalizuje vztahy navržené architektury.": "RAG × DIO connects diagnostics to a retrieval pipeline; HEM × DIO examines the effects of heterogeneous inputs; Commit-Boundary × Policy-as-Code relates the Agentic ER authorization architecture to OPA/Rego and Cedar; the Agentic ER architecture mapping formalizes the proposed architecture's relations.",
     "Důkazy · publikace · validační agenda": "Evidence · publications · validation agenda",
     "Zdrojová stopa existuje.": "The source trail exists.",
     "Koncept je artikulovaný.": "The framework is articulated.",
