@@ -356,6 +356,7 @@ h3 {
 .step::before { content: "0" counter(step); color: var(--blue); font-size: 0.78rem; font-weight: 850; letter-spacing: 0.1em; }
 .step strong { font-size: 1.12rem; }
 .step p { margin: 0; color: var(--muted); }
+.step p + p { grid-column: 3; }
 .section-dark .steps, .section-dark .step { border-color: var(--line-dark); }
 .section-dark .step p { color: var(--muted-dark); }
 
@@ -512,6 +513,7 @@ code { overflow-wrap: anywhere; font-size: 0.9em; }
   .step { grid-template-columns: 2.3rem 1fr; gap: 0.9rem; }
   .research-timeline .step { grid-template-columns: 2.3rem 1fr; }
   .step p { grid-column: 2; }
+  .step p + p { grid-column: 2; }
   .proof-strip { grid-template-columns: 1fr; }
   .proof-item, .proof-item + .proof-item { padding: 1.3rem 0; border-right: 0; border-top: 1px solid var(--line-dark); }
   .proof-item:first-child { border-top: 0; }
