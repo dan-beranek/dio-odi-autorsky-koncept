@@ -390,6 +390,19 @@ h3 {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
+.registry-note {
+  display: grid;
+  grid-template-columns: minmax(12rem,0.65fr) minmax(0,1.35fr);
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  margin-top: 1.6rem;
+  padding-top: 1.35rem;
+  border-top: 1px solid var(--line);
+}
+.registry-note p { color: var(--muted); }
+.registry-note .source-links { margin: 0; }
+.section-dark .registry-note { border-color: var(--line-dark); }
+.section-dark .registry-note p { color: var(--muted-dark); }
 .taxonomy-note h3 { margin-top: 0.5rem; }
 .taxonomy-note p { color: var(--muted); }
 .section-dark .taxonomy-note { border-color: var(--line-dark); }
@@ -478,7 +491,7 @@ code { overflow-wrap: anywhere; font-size: 0.9em; }
   .mobile-nav a { padding: 0.95rem 0.3rem; border-bottom: 1px solid var(--line); font-weight: 720; text-decoration: none; }
   .shell { width: min(calc(100% - 2rem), var(--max)); }
   .hero { min-height: auto; background: none; }
-  .hero-grid, .section-head, .mechanism, .k6-layout, .page-hero-grid, .split, .cta-block, .taxonomy-note { grid-template-columns: 1fr; }
+  .hero-grid, .section-head, .mechanism, .k6-layout, .page-hero-grid, .split, .cta-block, .taxonomy-note, .registry-note { grid-template-columns: 1fr; }
   .hero-grid { gap: 3rem; }
   .entry-stack { margin-top: 0.5rem; }
   .grid-3, .status-grid { grid-template-columns: 1fr; }
