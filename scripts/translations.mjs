@@ -1012,3 +1012,44 @@ export const translations = {
     "Archivní vydání integruje Reference Vocabulary v0.2.1 a Semantic Change Feed v0.1.0.": "The archived release integrates Reference Vocabulary v0.2.1 and Semantic Change Feed v0.1.0."
   },
 };
+
+
+// Explicit page-level translations for the corpus-wide machine-readable evidence block.
+// Kept as post-initialization assignments so the generated page index sees the new keys.
+Object.assign(translations.home, {
+  "Strojově čitelná vrstva napříč korpusem": "Machine-readable across the corpus",
+  "Od kanonické terminologie po agentní rozhraní.": "From canonical terminology to agent-facing access.",
+  "DIO/ODI má strojově čitelnou vrstvu na mnoha úrovních výzkumného a aplikačního korpusu — od kanonických pojmů a sémantických vztahů přes aplikační mapování a provenienci až po verzovaná metadata, discovery manifesty a agentní rozhraní.": "DIO/ODI has a machine-readable layer across multiple levels of its research and application corpus — from canonical concepts and semantic relations to application mappings, provenance, versioned metadata, discovery manifests and agent-facing interfaces.",
+  "Reference Vocabulary obsahuje 40 SKOS konceptů se stabilními identifikátory. Čtyři aplikační mapování rozvíjejí jejich využití; Agentic ER architecture mapping zahrnuje 120 lokálních architektonických konceptů a 206 kvalifikovaných vztahových tvrzení.": "The Reference Vocabulary contains 40 SKOS concepts with stable identifiers. Four application mappings extend their use; the Agentic ER architecture mapping contains 120 local architectural concepts and 206 qualified relation assertions.",
+  "Strukturovaná data a dokumentace:": "Structured data and documentation:",
+  "Dotazování a vizualizace:": "Querying and visualization:",
+  "Discovery a agentní integrace:": "Discovery and agent integration:",
+  "Formáty externích registrů:": "External registry formats:",
+  "Semantic Farm nabízí JSON, YAML, Turtle, JSON-LD a N3; BARTOC zpřístupňuje záznamy také v JSKOS/JSON, N-Triples a RDF/XML.": "Semantic Farm offers JSON, YAML, Turtle, JSON-LD and N3; BARTOC also exposes records as JSKOS/JSON, N-Triples and RDF/XML.",
+  "AI kontextové soubory:": "AI context files:",
+  "Otevřít kanonický Reference Vocabulary — podstránku s přímými odkazy na strojově čitelné soubory ↗": "Open the canonical Reference Vocabulary — the page with direct links to machine-readable files ↗",
+  "Externí registry a katalogy": "External registries and catalogues",
+  "Reference Vocabulary v0.2.2 má čtyři samostatné veřejné záznamy v externích registrech a katalozích.": "Reference Vocabulary v0.2.2 has four separate public records in external registries and catalogues.",
+  "BARTOC · terminologický katalog": "BARTOC · terminology catalogue",
+  "FAIRsharing · záznam #9470": "FAIRsharing · record #9470"
+});
+
+Object.assign(translations.evidence, {
+  "Strojově čitelná vrstva napříč korpusem": "Machine-readable across the corpus",
+  "Od kanonické terminologie po agentní rozhraní.": "From canonical terminology to agent-facing access.",
+  "DIO/ODI má strojově čitelnou vrstvu na mnoha úrovních výzkumného a aplikačního korpusu — od kanonických pojmů a sémantických vztahů přes aplikační mapování a provenienci až po verzovaná metadata, discovery manifesty a agentní rozhraní.": "DIO/ODI has a machine-readable layer across multiple levels of its research and application corpus — from canonical concepts and semantic relations to application mappings, provenance, versioned metadata, discovery manifests and agent-facing interfaces.",
+  "Rozsah a struktura": "Scope and structure",
+  "40 kanonických pojmů, čtyři aplikační mapování.": "40 canonical concepts, four application mappings.",
+  "Reference Vocabulary v0.2.2 obsahuje 40 kanonických SKOS konceptů se stabilními identifikátory. Agentic ER architecture mapping zahrnuje 120 lokálních architektonických konceptů a 206 kvalifikovaných vztahových tvrzení. Veřejné MCP rozhraní zpřístupňuje vybranou referenční vrstvu prostřednictvím 10 read-only nástrojů.": "Reference Vocabulary v0.2.2 contains 40 canonical SKOS concepts with stable identifiers. The Agentic ER architecture mapping contains 120 local architectural concepts and 206 qualified relation assertions. The public MCP interface exposes selected reference material through 10 read-only tools.",
+  "Strukturovaná data a dokumentace:": "Structured data and documentation:",
+  "Dotazování a vizualizace:": "Querying and visualization:",
+  "Discovery a agentní integrace:": "Discovery and agent integration:",
+  "Formáty externích registrů:": "External registry formats:",
+  "Semantic Farm nabízí JSON, YAML, Turtle, JSON-LD a N3; BARTOC zpřístupňuje záznamy také v JSKOS/JSON, N-Triples a RDF/XML.": "Semantic Farm offers JSON, YAML, Turtle, JSON-LD and N3; BARTOC also exposes records as JSKOS/JSON, N-Triples and RDF/XML.",
+  "AI kontextové soubory:": "AI context files:",
+  "Otevřít kanonický Reference Vocabulary — podstránku s přímými odkazy na strojově čitelné soubory ↗": "Open the canonical Reference Vocabulary — the page with direct links to machine-readable files ↗",
+  "Externí registry a katalogy": "External registries and catalogues",
+  "Reference Vocabulary v0.2.2 má čtyři samostatné veřejné záznamy v externích registrech a katalozích.": "Reference Vocabulary v0.2.2 has four separate public records in external registries and catalogues.",
+  "BARTOC · terminologický katalog": "BARTOC · terminology catalogue",
+  "FAIRsharing · záznam #9470": "FAIRsharing · record #9470"
+});
