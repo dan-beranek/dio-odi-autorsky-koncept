@@ -644,6 +644,10 @@ function translateMarkup(main, page, textIndex, attributeIndex, missing) {
   return output;
 }
 
+function rebaseLegacyProjectLinks(markup) {
+  return markup.replace(/(\b(?:href|src|poster|action)\s*=\s*["'])\/dio-odi-autorsky-koncept\//giu, "$1/");
+}
+
 function translateMain(main, page) {
   const pageTranslations = translations[page.key];
   if (!pageTranslations) throw new Error(`Missing translations for ${page.key}`);
@@ -656,8 +660,7 @@ function translateMain(main, page) {
     throw new Error(`Missing English localization:\n${missing.map((item) => `- ${item}`).join("\n")}`);
   }
 
-  return translated
-    .replaceAll(sourceProjectPath, projectPath)
+  return rebaseLegacyProjectLinks(translated)
     .replaceAll(`${projectPath}partnerstvi/`, `${projectPath}en/partnerships/`)
     .replaceAll(`${projectPath}dio-viditelnost/`, `${projectPath}en/ai-visibility/`)
     .replaceAll(`${projectPath}dio-ai-data/`, `${projectPath}en/entity-resolution/`)
@@ -705,7 +708,7 @@ for (const page of pages) {
   const main = source.match(/<main\b[\s\S]*?<\/main>/)?.[0];
   if (!main) throw new Error(`Missing <main> in ${page.csFile}`);
 
-  const csMain = main.replaceAll(sourceProjectPath, projectPath);
+  const csMain = rebaseLegacyProjectLinks(main);
   const csOutput = document(page, "cs", csMain);
   await writeFile(join(projectRoot, page.csFile), csOutput);
 
