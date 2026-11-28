@@ -1052,21 +1052,17 @@ export const translations = {
 // Explicit page-level translations for the corpus-wide machine-readable evidence block.
 // Kept as post-initialization assignments so the generated page index sees the new keys.
 Object.assign(translations.home, {
-  "Strojově čitelná vrstva napříč korpusem": "Machine-readable across the corpus",
-  "Od kanonické terminologie po agentní rozhraní.": "From canonical terminology to agent-facing access.",
-  "DIO/ODI má strojově čitelnou vrstvu na mnoha úrovních výzkumného a aplikačního korpusu — od kanonických pojmů a sémantických vztahů přes aplikační mapování a provenienci až po verzovaná metadata, discovery manifesty a agentní rozhraní.": "DIO/ODI has a machine-readable layer across multiple levels of its research and application corpus — from canonical concepts and semantic relations to application mappings, provenance, versioned metadata, discovery manifests and agent-facing interfaces.",
-  "Reference Vocabulary obsahuje 40 SKOS konceptů se stabilními identifikátory. Čtyři aplikační mapování rozvíjejí jejich využití; Agentic ER architecture mapping zahrnuje 120 lokálních architektonických konceptů a 206 kvalifikovaných vztahových tvrzení.": "The Reference Vocabulary contains 40 SKOS concepts with stable identifiers. Four application mappings extend their use; the Agentic ER architecture mapping contains 120 local architectural concepts and 206 qualified relation assertions.",
-  "Strukturovaná data a dokumentace:": "Structured data and documentation:",
-  "Dotazování a vizualizace:": "Querying and visualization:",
-  "Discovery a agentní integrace:": "Discovery and agent integration:",
-  "Formáty externích registrů:": "External registry formats:",
-  "Semantic Farm nabízí JSON, YAML, Turtle, JSON-LD a N3; BARTOC zpřístupňuje záznamy také v JSKOS/JSON, N-Triples a RDF/XML.": "Semantic Farm offers JSON, YAML, Turtle, JSON-LD and N3; BARTOC also exposes records as JSKOS/JSON, N-Triples and RDF/XML.",
-  "AI kontextové soubory:": "AI context files:",
-  "Otevřít kanonický Reference Vocabulary — podstránku s přímými odkazy na strojově čitelné soubory ↗": "Open the canonical Reference Vocabulary — the page with direct links to machine-readable files ↗",
-  "Externí registry a katalogy": "External registries and catalogues",
-  "Reference Vocabulary v0.2.2 má čtyři samostatné veřejné záznamy v externích registrech a katalozích.": "Reference Vocabulary v0.2.2 has four separate public records in external registries and catalogues.",
-  "BARTOC · terminologický katalog": "BARTOC · terminology catalogue",
-  "FAIRsharing · záznam #9470": "FAIRsharing · record #9470"
+  "Strojově čitelná vrstva napříč korpusem": "Machine-readable layer across the corpus",
+  "Model DIO/ODI je připraven pro přímé strojové i AI zpracování.": "The DIO/ODI model is ready for direct machine and AI processing.",
+  "Referenční pojmy a vztahy jsou publikovány jako SKOS/RDF a JSON-LD; metadata v DCAT 3, validační schémata, dotazovací artefakty a discovery manifesty zpřístupňují další části korpusu. Automatické systémy tak získávají přímo čitelnou strukturu, stabilní identifikátory a explicitní sémantické vazby. Stejnou referenční vrstvu zpřístupňuje veřejné read-only MCP rozhraní, které umožňuje její zapojení do AI nástrojů i navazujících datových workflow.": "Reference concepts and relationships are published as SKOS/RDF and JSON-LD; DCAT 3 metadata, validation schemas, query artefacts and discovery manifests expose further parts of the corpus. This gives automated systems directly processable structure, stable identifiers and explicit semantic links. The same reference layer is available through a public read-only MCP interface, enabling its use in AI tools and downstream data workflows.",
+  "Otevřít Reference Vocabulary a přímé odkazy na jednotlivé strojově čitelné soubory →": "Open the Reference Vocabulary and direct links to individual machine-readable files →",
+  "Diseminace DIO/ODI do vědeckého diskurzu": "DIO/ODI dissemination into scientific discourse",
+  "DIO/ODI vstupuje do odborných katalogů, registrů a výzkumných infrastruktur.": "DIO/ODI is entering specialist catalogues, registries and research infrastructures.",
+  "Referenční slovník DIO/ODI se šíří za hranice vlastního publikačního korpusu. FAIRsharing jej eviduje jako terminologický artefakt, propojuje jej s výzkumnou publikací a uvádí jeho přístup přes webové rozhraní, SKOS/RDF, JSON-LD i read-only MCP. Záznam současně odkazuje na BARTOC, BioRegistry a Semantic Farm. DIO/ODI tak získává další vstupní body do prostředí, v němž se vědecké zdroje popisují, propojují, vyhledávají a strojově zpracovávají.": "The DIO/ODI Reference Vocabulary is moving beyond the project's own publication corpus. FAIRsharing records it as a terminology artefact, links it to a research publication, and lists access through a web interface, SKOS/RDF, JSON-LD and read-only MCP. The record also cross-references BARTOC, BioRegistry and Semantic Farm. This gives DIO/ODI additional entry points into infrastructures where research resources are described, connected, discovered and processed by machines.",
+  "BARTOC": "BARTOC",
+  "FAIRsharing": "FAIRsharing",
+  "BioRegistry": "BioRegistry",
+  "Semantic Farm": "Semantic Farm"
 });
 
 Object.assign(translations.evidence, {
