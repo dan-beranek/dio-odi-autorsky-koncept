@@ -451,6 +451,7 @@ function head(page, lang) {
   <link rel="alternate" hreflang="en" href="${enUrl}">
   <link rel="alternate" hreflang="x-default" href="${csUrl}">
   <link rel="alternate" type="text/plain" href="${siteUrl}llms.txt" title="LLM context">
+  <link rel="ard" href="https://vocab.danielberanek.cz/.well-known/ard.json">
   <link rel="icon" href="${projectPath}favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="${projectPath}assets/site.css">
   <meta property="og:type" content="website">
