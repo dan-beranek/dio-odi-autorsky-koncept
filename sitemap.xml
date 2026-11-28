@@ -1,87 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://dan-beranek.github.io/dio-odi-autorsky-koncept/</loc>
-    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/" />
+    <loc>https://concept.danielberanek.cz/</loc>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://concept.danielberanek.cz/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://concept.danielberanek.cz/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://concept.danielberanek.cz/" />
   </url>
   <url>
-    <loc>https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/</loc>
-    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/" />
+    <loc>https://concept.danielberanek.cz/en/</loc>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://concept.danielberanek.cz/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://concept.danielberanek.cz/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://concept.danielberanek.cz/" />
   </url>
   <url>
-    <loc>https://dan-beranek.github.io/dio-odi-autorsky-koncept/dio-viditelnost/</loc>
-    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/dio-viditelnost/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/ai-visibility/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/dio-viditelnost/" />
+    <loc>https://concept.danielberanek.cz/dio-viditelnost/</loc>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://concept.danielberanek.cz/dio-viditelnost/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://concept.danielberanek.cz/en/ai-visibility/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://concept.danielberanek.cz/dio-viditelnost/" />
   </url>
   <url>
-    <loc>https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/ai-visibility/</loc>
-    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/dio-viditelnost/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/ai-visibility/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/dio-viditelnost/" />
+    <loc>https://concept.danielberanek.cz/en/ai-visibility/</loc>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://concept.danielberanek.cz/dio-viditelnost/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://concept.danielberanek.cz/en/ai-visibility/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://concept.danielberanek.cz/dio-viditelnost/" />
   </url>
   <url>
-    <loc>https://dan-beranek.github.io/dio-odi-autorsky-koncept/dio-ai-data/</loc>
-    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/dio-ai-data/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/entity-resolution/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/dio-ai-data/" />
+    <loc>https://concept.danielberanek.cz/dio-ai-data/</loc>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://concept.danielberanek.cz/dio-ai-data/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://concept.danielberanek.cz/en/entity-resolution/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://concept.danielberanek.cz/dio-ai-data/" />
   </url>
   <url>
-    <loc>https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/entity-resolution/</loc>
-    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/dio-ai-data/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/entity-resolution/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/dio-ai-data/" />
+    <loc>https://concept.danielberanek.cz/en/entity-resolution/</loc>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://concept.danielberanek.cz/dio-ai-data/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://concept.danielberanek.cz/en/entity-resolution/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://concept.danielberanek.cz/dio-ai-data/" />
   </url>
   <url>
-    <loc>https://dan-beranek.github.io/dio-odi-autorsky-koncept/odi/</loc>
-    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/odi/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/ontology-of-digital-identity/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/odi/" />
+    <loc>https://concept.danielberanek.cz/odi/</loc>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://concept.danielberanek.cz/odi/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://concept.danielberanek.cz/en/ontology-of-digital-identity/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://concept.danielberanek.cz/odi/" />
   </url>
   <url>
-    <loc>https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/ontology-of-digital-identity/</loc>
-    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/odi/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/ontology-of-digital-identity/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/odi/" />
+    <loc>https://concept.danielberanek.cz/en/ontology-of-digital-identity/</loc>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://concept.danielberanek.cz/odi/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://concept.danielberanek.cz/en/ontology-of-digital-identity/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://concept.danielberanek.cz/odi/" />
   </url>
   <url>
-    <loc>https://dan-beranek.github.io/dio-odi-autorsky-koncept/partnerstvi/</loc>
-    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/partnerstvi/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/partnerships/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/partnerstvi/" />
+    <loc>https://concept.danielberanek.cz/partnerstvi/</loc>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://concept.danielberanek.cz/partnerstvi/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://concept.danielberanek.cz/en/partnerships/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://concept.danielberanek.cz/partnerstvi/" />
   </url>
   <url>
-    <loc>https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/partnerships/</loc>
-    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/partnerstvi/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/partnerships/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/partnerstvi/" />
+    <loc>https://concept.danielberanek.cz/en/partnerships/</loc>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://concept.danielberanek.cz/partnerstvi/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://concept.danielberanek.cz/en/partnerships/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://concept.danielberanek.cz/partnerstvi/" />
   </url>
   <url>
-    <loc>https://dan-beranek.github.io/dio-odi-autorsky-koncept/dukazy/</loc>
-    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/dukazy/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/evidence/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/dukazy/" />
+    <loc>https://concept.danielberanek.cz/dukazy/</loc>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://concept.danielberanek.cz/dukazy/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://concept.danielberanek.cz/en/evidence/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://concept.danielberanek.cz/dukazy/" />
   </url>
   <url>
-    <loc>https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/evidence/</loc>
-    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/dukazy/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/evidence/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/dukazy/" />
+    <loc>https://concept.danielberanek.cz/en/evidence/</loc>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://concept.danielberanek.cz/dukazy/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://concept.danielberanek.cz/en/evidence/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://concept.danielberanek.cz/dukazy/" />
   </url>
   <url>
-    <loc>https://dan-beranek.github.io/dio-odi-autorsky-koncept/autor/</loc>
-    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/autor/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/author/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/autor/" />
+    <loc>https://concept.danielberanek.cz/autor/</loc>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://concept.danielberanek.cz/autor/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://concept.danielberanek.cz/en/author/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://concept.danielberanek.cz/autor/" />
   </url>
   <url>
-    <loc>https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/author/</loc>
-    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/autor/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/author/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://dan-beranek.github.io/dio-odi-autorsky-koncept/autor/" />
+    <loc>https://concept.danielberanek.cz/en/author/</loc>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://concept.danielberanek.cz/autor/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://concept.danielberanek.cz/en/author/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://concept.danielberanek.cz/autor/" />
   </url>
 </urlset>
