@@ -674,8 +674,15 @@ function translateMain(main, page) {
     .replace('href="#geneze"', 'href="#origins"');
 }
 
+function stripHeadingTerminalPeriods(markup) {
+  return markup.replace(/(<h[1-6]\\b[^>]*>)([\\s\\S]*?)(<\\/h[1-6]\\s*>)/giu, (match, opening, content, closing) => {
+    const normalized = content.replace(/\\.(?=(?:\\s*<\\/[^>]+>)*\\s*$)/u, "");
+    return opening + normalized + closing;
+  });
+}
+
 function document(page, lang, main) {
-  return `<!doctype html>
+  const html = `<!doctype html>
 <html lang="${lang}">
 ${head(page, lang)}
 <body>
@@ -687,6 +694,7 @@ ${head(page, lang)}
 </body>
 </html>
 `;
+  return stripHeadingTerminalPeriods(html);
 }
 
 for (const page of pages) {
