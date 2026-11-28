@@ -52,7 +52,7 @@ button { color: inherit; }
   top: 0;
   z-index: 50;
   border-bottom: 1px solid rgba(217, 221, 230, 0.84);
-  background: rgba(238, 241, 246, 0.96);
+  background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(18px);
 }
 .header-inner {
@@ -75,7 +75,7 @@ button { color: inherit; }
   white-space: nowrap;
 }
 .brand-mark { width: 2.05rem; height: 2.05rem; }
-.brand-mark circle { fill: var(--paper); stroke: var(--ink); stroke-width: 1.6; }
+.brand-mark circle { fill: var(--white); stroke: var(--ink); stroke-width: 1.6; }
 .brand-mark line { stroke: var(--blue); stroke-width: 1.6; }
 .brand-mark .core { fill: var(--blue); stroke: var(--blue); }
 .main-nav { display: flex; align-items: center; gap: 1.2rem; }
@@ -159,7 +159,7 @@ button { color: inherit; }
 .section-tight { padding: clamp(3.2rem, 6vw, 5.5rem) 0; }
 .section-dark { background: var(--ink); color: var(--white); }
 .section-blue { background: var(--blue); color: var(--white); }
-.section-white { background: var(--white); }
+.section-white { background: var(--paper); }
 .rule-top { border-top: 1px solid var(--line); }
 .section-dark .rule-top { border-color: var(--line-dark); }
 
@@ -221,8 +221,8 @@ h3 {
   display: flex;
   align-items: center;
   padding: clamp(2.8rem, 6vw, 5.5rem) 0;
-  background:
-    linear-gradient(to right, transparent calc(50% - 0.5px), rgba(217,221,230,0.58) 50%, transparent calc(50% + 0.5px));
+  background-color: var(--white);
+  background-image: linear-gradient(to right, transparent calc(50% - 0.5px), rgba(217,221,230,0.58) 50%, transparent calc(50% + 0.5px));
 }
 .hero-grid {
   display: grid;
@@ -456,6 +456,7 @@ h3 {
   border-left: 3px solid var(--blue);
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(1.12rem, 1.55vw, 1.35rem);
+  font-weight: 620;
   line-height: 1.48;
 }
 .registry-note .source-links { margin: 0; }
@@ -561,7 +562,7 @@ code { overflow-wrap: anywhere; font-size: 0.9em; }
     overflow: auto;
     padding: 0.5rem 1rem 1.2rem;
     border-bottom: 1px solid var(--line);
-    background: var(--paper);
+    background: var(--white);
     transform: translateY(-130%);
     opacity: 0;
     visibility: hidden;
@@ -570,7 +571,7 @@ code { overflow-wrap: anywhere; font-size: 0.9em; }
   .mobile-nav.is-open { transform: none; opacity: 1; visibility: visible; }
   .mobile-nav a { padding: 0.95rem 0.3rem; border-bottom: 1px solid var(--line); font-weight: 720; text-decoration: none; }
   .shell { width: min(calc(100% - 2rem), var(--max)); }
-  .hero { min-height: auto; background: none; }
+  .hero { min-height: auto; background-color: var(--white); background-image: none; }
   .hero-grid, .section-head, .mechanism, .k6-layout, .page-hero-grid, .split, .cta-block, .taxonomy-note, .registry-note { grid-template-columns: 1fr; }
   .hero-grid { gap: 3rem; }
   .entry-stack { margin-top: 0.5rem; }
