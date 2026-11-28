@@ -7,8 +7,8 @@
 - Author: Daniel Beránek
 - Project names: Digital Identity Optimization (DIO); Ontology of Digital Identity (ODI)
 - Languages: Czech (`cs-CZ`) and English (`en`); Czech is the default
-- Website: https://dan-beranek.github.io/dio-odi-autorsky-koncept/
-- English overview: https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/
+- Website: https://concept.danielberanek.cz/
+- English overview: https://concept.danielberanek.cz/en/
 - Author website: https://danielberanek.cz/
 - Live Czech manifest and changelog: https://danielberanek.cz/manifest-dio/
 - Canonical multilingual archival edition: https://doi.org/10.5281/zenodo.21610934
@@ -23,23 +23,23 @@
 
 ## Core pages
 
-- [DIO/ODI overview](https://dan-beranek.github.io/dio-odi-autorsky-koncept/): common mechanism, Semantic Connectome and three value branches.
-- [DIO for visibility](https://dan-beranek.github.io/dio-odi-autorsky-koncept/dio-viditelnost/): entities fragmented across websites, profiles, publications, search and AI.
-- [DIO for AI and entity data](https://dan-beranek.github.io/dio-odi-autorsky-koncept/dio-ai-data/): entity resolution, knowledge graphs, provenance and entity-data quality.
-- [ODI](https://dan-beranek.github.io/dio-odi-autorsky-koncept/odi/): theoretical, research and knowledge-infrastructure layer.
-- [Development and evidence](https://dan-beranek.github.io/dio-odi-autorsky-koncept/dukazy/): the path from DIO/ODI theory and reference infrastructure to concrete application designs.
-- [Partnership](https://dan-beranek.github.io/dio-odi-autorsky-koncept/partnerstvi/): pilots, joint development, research and licensing paths.
-- [Author](https://dan-beranek.github.io/dio-odi-autorsky-koncept/autor/): Daniel Beránek, concept genealogy and authorship.
+- [DIO/ODI overview](https://concept.danielberanek.cz/): common mechanism, Semantic Connectome and three value branches.
+- [DIO for visibility](https://concept.danielberanek.cz/dio-viditelnost/): entities fragmented across websites, profiles, publications, search and AI.
+- [DIO for AI and entity data](https://concept.danielberanek.cz/dio-ai-data/): entity resolution, knowledge graphs, provenance and entity-data quality.
+- [ODI](https://concept.danielberanek.cz/odi/): theoretical, research and knowledge-infrastructure layer.
+- [Development and evidence](https://concept.danielberanek.cz/dukazy/): the path from DIO/ODI theory and reference infrastructure to concrete application designs.
+- [Partnership](https://concept.danielberanek.cz/partnerstvi/): pilots, joint development, research and licensing paths.
+- [Author](https://concept.danielberanek.cz/autor/): Daniel Beránek, concept genealogy and authorship.
 
 ## English pages
 
-- [DIO/ODI overview](https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/)
-- [DIO for AI visibility](https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/ai-visibility/)
-- [DIO for entity resolution](https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/entity-resolution/)
-- [ODI for knowledge infrastructure](https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/ontology-of-digital-identity/)
-- [Development and evidence](https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/evidence/)
-- [Partnerships and licensing](https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/partnerships/)
-- [Author](https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/author/)
+- [DIO/ODI overview](https://concept.danielberanek.cz/en/)
+- [DIO for AI visibility](https://concept.danielberanek.cz/en/ai-visibility/)
+- [DIO for entity resolution](https://concept.danielberanek.cz/en/entity-resolution/)
+- [ODI for knowledge infrastructure](https://concept.danielberanek.cz/en/ontology-of-digital-identity/)
+- [Development and evidence](https://concept.danielberanek.cz/en/evidence/)
+- [Partnerships and licensing](https://concept.danielberanek.cz/en/partnerships/)
+- [Author](https://concept.danielberanek.cz/en/author/)
 
 ## Primary publications
 
@@ -80,4 +80,4 @@
 
 DIO/ODI is an author-led framework with a published theoretical, diagnostic and machine-readable reference foundation. It is now also producing concrete application designs. The arXiv paper on a semantic guardrail for Agentic ER is one possible technical direction, alongside RAG, HEM and other future applications. Implementation, pilots and empirical evaluation are the next steps; Agentic ER is not the exclusive direction of DIO/ODI.
 
-For a more detailed machine-readable description, read [llms-full.txt](https://dan-beranek.github.io/dio-odi-autorsky-koncept/llms-full.txt).
+For a more detailed machine-readable description, read [llms-full.txt](https://concept.danielberanek.cz/llms-full.txt).
