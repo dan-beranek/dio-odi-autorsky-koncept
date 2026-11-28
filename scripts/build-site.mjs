@@ -740,7 +740,7 @@ function gitModifiedDate(relativePath) {
 
 function latestDate(values) {
   const valid = values.filter((value) => /^\d{4}-\d{2}-\d{2}$/.test(value));
-  if (valid.length !== values.length) throw new Error("Sitemap lastmod inputs must be valid ISO calendar dates.");
+  if (valid.length !== values.length) throw new Error("Sitemap lastmod inputs must be valid ISO calendar dates: " + JSON.stringify(values));
   for (const value of valid) {
     const parsed = new Date(value + "T00:00:00Z");
     if (Number.isNaN(parsed.getTime()) || parsed.toISOString().slice(0, 10) !== value) {
@@ -768,7 +768,9 @@ async function generateSitemap() {
     "metadata/entity-registry.snapshot.json",
     "metadata/keyword-registry.snapshot.json",
   ];
-  const approvedOn = keywordRegistry.approved_on ?? gitModifiedDate("metadata/keyword-registry.snapshot.json");
+  const approvedOn = /^\\d{4}-\\d{2}-\\d{2}$/.test(keywordRegistry.approved_on ?? "")
+    ? keywordRegistry.approved_on
+    : gitModifiedDate("metadata/keyword-registry.snapshot.json");
   const records = [];
 
   for (const page of pages) {
