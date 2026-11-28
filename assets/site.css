@@ -382,6 +382,14 @@ h3 {
 .dissemination-link span { color: var(--blue); font-size: 1.05rem; }
 .dissemination-link:hover,
 .dissemination-link:focus-visible { background: #f1f3f7; }
+.section-dark .dissemination-grid .dissemination-link {
+  background: var(--white);
+  color: var(--ink);
+}
+.section-dark .dissemination-grid .dissemination-link:hover,
+.section-dark .dissemination-grid .dissemination-link:focus-visible {
+  background: #f1f3f7;
+}
 
 .steps { counter-reset: step; border-top: 1px solid var(--line); }
 .step {
