@@ -260,6 +260,20 @@ for (const pair of pairs) {
     const scope = `/${path}`;
     const fullPath = join(root, file);
     const html = await readFile(fullPath, "utf8");
+    const sectionBands = [...html.matchAll(/<section\\b([^>]*)>/giu)]
+      .map((match) => {
+        const className = match[1].match(/\\bclass="([^"]*)"/u)?.[1] ?? "";
+        if (!className.split(/\\s+/u).includes("section")) return null;
+        if (className.split(/\\s+/u).includes("section-dark")) return "dark";
+        if (className.split(/\\s+/u).includes("section-blue")) return "blue";
+        return "paper";
+      })
+      .filter(Boolean);
+    for (let index = 1; index < sectionBands.length; index += 1) {
+      if (sectionBands[index] === sectionBands[index - 1]) {
+        fail(`/${path}`, `adjacent content sections share the "${sectionBands[index]}" background`);
+      }
+    }
     const url = `${siteUrl}${path}`;
     publicFiles.set(`${projectPath}${path}`, fullPath);
 
