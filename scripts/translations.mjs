@@ -1084,3 +1084,20 @@ Object.assign(translations.evidence, {
   "BARTOC · terminologický katalog": "BARTOC · terminology catalogue",
   "FAIRsharing · záznam #9470": "FAIRsharing · record #9470"
 });
+
+Object.assign(translations.evidence, {
+  "Akademická metadata a registry": "Academic metadata and registries",
+  "Referenční slovník má vlastní záznamy mimo publikační korpus.": "The Reference Vocabulary has its own records beyond the publication corpus.",
+  "FAIRsharing eviduje DIO/ODI Reference Vocabulary jako terminologický artefakt (Terminology artefact) a propojuje záznam s výzkumnou publikací „Constraining the Commit Boundary“. Popisuje přístupy přes webové rozhraní, SKOS/RDF (Turtle), JSON-LD a read-only MCP. Jeho křížové odkazy dále uvádějí BARTOC, BioRegistry a Semantic Farm.": "FAIRsharing records the DIO/ODI Reference Vocabulary as a terminology artefact and links it to the research publication “Constraining the Commit Boundary”. It lists access through a web interface, SKOS/RDF (Turtle), JSON-LD and read-only MCP. Its cross-references also name BARTOC, BioRegistry and Semantic Farm.",
+  "Číst propojenou publikaci ↗": "Read the linked publication ↗",
+  "Externí záznamy Reference Vocabulary": "External Reference Vocabulary records",
+  "FAIRsharing · ID 9470": "FAIRsharing · ID 9470",
+  "Strojově čitelná vrstva": "Machine-readable layer",
+  "Referenční vrstva je připravena pro strojové a agentní zpracování.": "The reference layer is ready for machine and agent processing.",
+  "Reference Vocabulary v0.2.2 publikuje 40 SKOS konceptů se stabilními identifikátory. Čtyři aplikační mapování převádějí společný základ do odlišných technických kontextů; Agentic ER architecture mapping obsahuje 120 lokálních architektonických konceptů a 206 kvalifikovaných vztahových tvrzení. Reference Model propojuje slovník s aplikačními mapováními a verzovaným Semantic Change Feed. Veřejné read-only MCP rozhraní zpřístupňuje vybranou referenční vrstvu prostřednictvím deseti nástrojů.": "Reference Vocabulary v0.2.2 publishes 40 SKOS concepts with stable identifiers. Four application mappings project the shared foundation into distinct technical contexts; the Agentic ER architecture mapping contains 120 local architectural concepts and 206 qualified relation assertions. The Reference Model connects the vocabulary to the application mappings and the versioned Semantic Change Feed. The public read-only MCP interface exposes selected reference material through ten tools.",
+  "Formální reprezentace a přístup": "Formal representation and access",
+  "Otevřít Reference Vocabulary a přímé odkazy na jednotlivé strojově čitelné soubory →": "Open the Reference Vocabulary and direct links to individual machine-readable files →",
+  "Kvalifikovaná vztahová tvrzení": "Qualified relation assertions",
+  "Tvrzení v Markdown, JSON-LD a Turtle RDF rozlišují zdrojovou podmínku, cílový pojem a typ vztahu. Formulace „may contribute to“ nebo „may increase“ vyjadřují možnost či zranitelnost, nikoli ekvivalenci nebo deterministickou kauzalitu.": "Assertions in Markdown, JSON-LD and Turtle RDF distinguish source conditions, target concepts and relation types. Phrases such as “may contribute to” or “may increase” express possibility or susceptibility, not equivalence or deterministic causality.",
+  "Otevřít zdrojový repozitář ↗": "Open the source repository ↗"
+});
