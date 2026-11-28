@@ -947,6 +947,7 @@ export const translations = {
     "Otevřít Reference Vocabulary a přímé odkazy na jednotlivé strojově čitelné soubory →": "Open the Reference Vocabulary and direct links to its machine-readable files →",
     "Veřejné registry a katalogy": "Public registries and catalogues",
     "Kanonické Reference Vocabulary v0.2.2 má samostatné veřejné záznamy ve čtyřech registrech a katalozích.": "The canonical Reference Vocabulary v0.2.2 has separate public records in four registries and catalogues.",
+    "Reference Vocabulary v0.2.2 má samostatné veřejné záznamy ve čtyřech registrech a katalozích.": "Reference Vocabulary v0.2.2 has separate public records in four registries and catalogues.",
   },
   author: {
     "Autor · geneze · IP": "Author · origins · IP",
