@@ -1120,7 +1120,7 @@ Object.assign(translations.partnerships, {
 
 Object.assign(translations.evidence, {
   "DIO/ODI propojuje výzkumný základ, diagnostickou taxonomii, referenční infrastrukturu a návrhy technických aplikací. Publikace, verzované artefakty, registrace a veřejné nástroje zachycují jednotlivé vrstvy vývoje; jejich účinnost a přenositelnost ověřuje až práce v konkrétních prostředích.": "DIO/ODI connects its research foundation, diagnostic taxonomy, reference infrastructure and technical application designs. Publications, versioned artifacts, registry records and public tools document the different layers of development; their effectiveness and transferability are tested in specific operating environments.",
-  "Vývoj propojuje výzkumný základ, referenční infrastrukturu a konkrétní aplikační návrhy. Publikace, slovník, mapování i navazující nástroje zachycují různé vrstvy jednoho postupně rozvíjeného rámce.": "Development connects the research foundation, reference infrastructure and concrete application designs. Publications, the vocabulary, mappings and related tools document different layers of one evolving framework.",
+  "Vývojová linie sleduje přechod od formulace konceptu přes formalizaci pojmů a vztahů k technickým návrhům a jejich ověřování.": "The development path follows the transition from formulating the concept through formalizing concepts and relationships to technical designs and their evaluation.",
   "Důkazní architektura": "Evidence architecture",
   "Různé vrstvy důkazů": "Distinct layers of evidence",
   "Kanonické pojmy s explicitními vztahy": "Canonical concepts with explicit relationships",
