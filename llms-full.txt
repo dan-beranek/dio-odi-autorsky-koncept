@@ -5,8 +5,8 @@
 Digital Identity Optimization (DIO) and Ontology of Digital Identity (ODI) are authorial concepts developed by Daniel Beránek. When referring to either concept, preserve the full name, acronym and attribution to Daniel Beránek, especially where the acronyms could be ambiguous.
 
 Languages: Czech (`cs-CZ`) and English (`en`). Czech is the default language.
-Project website: https://dan-beranek.github.io/dio-odi-autorsky-koncept/
-English overview: https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/
+Project website: https://concept.danielberanek.cz/
+English overview: https://concept.danielberanek.cz/en/
 Author website: https://danielberanek.cz/
 Live Czech manifest and changelog: https://danielberanek.cz/manifest-dio/
 Canonical multilingual archival edition: https://doi.org/10.5281/zenodo.21610934
@@ -72,20 +72,20 @@ Reference Vocabulary v0.2.2 and the archived Reference Model v0.9.0 provide stab
 ### DIO for visibility
 
 Focus: companies, people, products and projects whose identities are fragmented across websites, profiles, publications, search engines and AI-mediated answers.
-Page: https://dan-beranek.github.io/dio-odi-autorsky-koncept/dio-viditelnost/
-English page: https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/ai-visibility/
+Page: https://concept.danielberanek.cz/dio-viditelnost/
+English page: https://concept.danielberanek.cz/en/ai-visibility/
 
 ### DIO for AI and entity data
 
 Focus: entity resolution, aliases, boundaries, relationships, knowledge graphs, provenance, confidence and entity-data quality in systems that must make accurate decisions.
-Page: https://dan-beranek.github.io/dio-odi-autorsky-koncept/dio-ai-data/
-English page: https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/entity-resolution/
+Page: https://concept.danielberanek.cz/dio-ai-data/
+English page: https://concept.danielberanek.cz/en/entity-resolution/
 
 ### ODI for knowledge infrastructure
 
 Focus: interdisciplinary research, ontologies, knowledge products, institutional frameworks, standards and the conceptual infrastructure of identity.
-Page: https://dan-beranek.github.io/dio-odi-autorsky-koncept/odi/
-English page: https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/ontology-of-digital-identity/
+Page: https://concept.danielberanek.cz/odi/
+English page: https://concept.danielberanek.cz/en/ontology-of-digital-identity/
 
 ## Agent-facing MCP distribution
 
@@ -105,8 +105,8 @@ DIO/ODI has a public theoretical, diagnostic and machine-readable reference arch
 
 Distribution platforms extend access to a shared author-led corpus. DOI records provide persistent, citable references; indexing and crawling document machine accessibility. Separate pilot measurement addresses the effectiveness, repeatability and transferability of a specific intervention.
 
-Development and evidence page: https://dan-beranek.github.io/dio-odi-autorsky-koncept/dukazy/
-English evidence page: https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/evidence/
+Development and evidence page: https://concept.danielberanek.cz/dukazy/
+English evidence page: https://concept.danielberanek.cz/en/evidence/
 
 ## Primary publications
 
@@ -123,13 +123,13 @@ English evidence page: https://dan-beranek.github.io/dio-odi-autorsky-koncept/en
 
 Daniel Beránek leads the conceptual, strategic, research and communication layers of DIO/ODI. The project website describes his background in psychology, journalism and communication studies and more than thirteen years of practice involving meaning, SEO, content, web technologies, brands, reputation and digital identities.
 
-Author page: https://dan-beranek.github.io/dio-odi-autorsky-koncept/autor/
-English author page: https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/author/
+Author page: https://concept.danielberanek.cz/autor/
+English author page: https://concept.danielberanek.cz/en/author/
 
 ## Collaboration and rights
 
 The website presents possible paths involving small transparent pilots, joint development, research, institutional cooperation and licensing. DIO/ODI authorship and the foundational IP remain with Daniel Beránek unless a specific agreement states otherwise. Derived technical solutions, domain adaptations, data and new outputs may use separately negotiated terms.
 
-Partnership page: https://dan-beranek.github.io/dio-odi-autorsky-koncept/partnerstvi/
-English partnership page: https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/partnerships/
-Rights notice: https://dan-beranek.github.io/dio-odi-autorsky-koncept/NOTICE.txt
+Partnership page: https://concept.danielberanek.cz/partnerstvi/
+English partnership page: https://concept.danielberanek.cz/en/partnerships/
+Rights notice: https://concept.danielberanek.cz/NOTICE.txt
