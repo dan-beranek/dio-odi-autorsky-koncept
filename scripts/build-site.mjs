@@ -768,7 +768,7 @@ async function generateSitemap() {
     "metadata/entity-registry.snapshot.json",
     "metadata/keyword-registry.snapshot.json",
   ];
-  const approvedOn = keywordRegistry.approved_on;
+  const approvedOn = keywordRegistry.approved_on ?? gitModifiedDate("metadata/keyword-registry.snapshot.json");
   const records = [];
 
   for (const page of pages) {
