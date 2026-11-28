@@ -1101,3 +1101,35 @@ Object.assign(translations.evidence, {
   "Tvrzení v Markdown, JSON-LD a Turtle RDF rozlišují zdrojovou podmínku, cílový pojem a typ vztahu. Formulace „may contribute to“ nebo „may increase“ vyjadřují možnost či zranitelnost, nikoli ekvivalenci nebo deterministickou kauzalitu.": "Assertions in Markdown, JSON-LD and Turtle RDF distinguish source conditions, target concepts and relation types. Phrases such as “may contribute to” or “may increase” express possibility or susceptibility, not equivalence or deterministic causality.",
   "Otevřít zdrojový repozitář ↗": "Open the source repository ↗"
 });
+// Copy refinements: product naming, evidence-page hierarchy and section headings.
+Object.assign(translations.home, {
+  "Na paper o Agentic ER navazuje Agentic Entity Resolution Guardrail Planner, který prověřuje provenienci, konflikty, autorizaci a hranice commitů a připravuje přezkoumatelný engineering plán. Má vlastní produktový web a veřejnou distribuci; referenční vrstvu současně zpřístupňuje read-only MCP rozhraní s deseti nástroji.": "The Agentic Entity Resolution Guardrail Planner builds on the Agentic ER paper. It checks provenance, conflicts, authorization and commit boundaries, and prepares a reviewable engineering plan. It has its own product website and public distribution; the reference layer is also exposed through a read-only MCP interface with ten tools.",
+  "Autor rozšiřuje referenční model, připravuje strojově čitelné vrstvy a převádí vybrané části do integračních a produktových nástrojů. Partnerství naváže na již existující základ a posune jej do dalších oborů a prostředí.": "The author is expanding the reference model, preparing machine-readable layers and translating selected parts into integration and product tools. A partnership will build on this existing foundation and extend it into additional disciplines and environments."
+});
+
+Object.assign(translations.entity, {
+  "DIO přenáší práci s digitální identitou do prostředí entity resolution, knowledge graphů, RAG, enterprise dat a znalostních produktů. Referenční a diagnostická vrstva už má podobu publikovaných artefaktů i konkrétních aplikačních mapování.": "DIO brings digital-identity work into entity resolution, knowledge graphs, RAG, enterprise data and knowledge products. Its reference and diagnostic layers are already expressed in published artifacts and concrete application mappings.",
+  "Vedle koncepční architektury je publikován také Agentic Entity Resolution Guardrail Planner, který převádí návrh identity-changing operace do přezkoumatelného engineering plánu. Jde o jednu konkrétní produktovou aplikaci, nikoli jediné určení DIO/ODI.": "Alongside the conceptual architecture, the Agentic Entity Resolution Guardrail Planner has also been published. It turns a proposed identity-changing operation into a reviewable engineering plan. This is one specific product application, not the sole direction of DIO/ODI.",
+  "Plánovací nástroj pro identity-changing operace, evidenci požadavků, commit-boundary kontroly a validační scénáře.": "A planning tool for identity-changing operations, evidence requirements, commit-boundary controls and validation scenarios.",
+  "Vedle technických a výzkumných pilotů je nyní dostupný AER Guardrail Planner, který připravuje přezkoumatelný engineering plán pro identity-changing operace. Dashboard, API a automatizovaný monitoring zůstávají možnými dalšími produktovými formami po ověření opakovatelného problému a stabilní rozhodovací logiky.": "Alongside technical and research pilots, the AER Guardrail Planner is now available to prepare reviewable engineering plans for identity-changing operations. Dashboards, APIs and automated monitoring remain possible product forms to explore after a repeatable problem and stable decision logic have been validated."
+});
+
+Object.assign(translations.partnerships, {
+  "Agentic Entity Resolution Guardrail Planner je plánovací nástroj pro identity-changing operace, evidenci požadavků, kontroly commit-boundary a validační scénáře.": "Agentic Entity Resolution Guardrail Planner is a planning tool for identity-changing operations, evidence requirements, commit-boundary controls and validation scenarios."
+});
+
+Object.assign(translations.evidence, {
+  "DIO/ODI propojuje výzkumný základ, diagnostickou taxonomii, referenční infrastrukturu a návrhy technických aplikací. Publikace, verzované artefakty, registrace a veřejné nástroje zachycují jednotlivé vrstvy vývoje; jejich účinnost a přenositelnost ověřuje až práce v konkrétních prostředích.": "DIO/ODI connects its research foundation, diagnostic taxonomy, reference infrastructure and technical application designs. Publications, versioned artifacts, registry records and public tools document the different layers of development; their effectiveness and transferability are tested in specific operating environments.",
+  "Vývoj propojuje výzkumný základ, referenční infrastrukturu a konkrétní aplikační návrhy. Publikace, slovník, mapování i navazující nástroje zachycují různé vrstvy jednoho postupně rozvíjeného rámce.": "Development connects the research foundation, reference infrastructure and concrete application designs. Publications, the vocabulary, mappings and related tools document different layers of one evolving framework.",
+  "Důkazní architektura": "Evidence architecture",
+  "Různé vrstvy důkazů": "Distinct layers of evidence",
+  "Kanonické pojmy s explicitními vztahy": "Canonical concepts with explicit relationships",
+  "Diseminace DIO/ODI do vědeckého diskurzu": "DIO/ODI dissemination into scientific discourse",
+  "Referenční vrstva připravená pro agentní zpracování": "Reference layer for agentic processing",
+  "Další důkaz: transparentní a rozhodovací": "Next evidence: transparent and decision-oriented",
+  "Převádí návrh identity-changing operace do přezkoumatelného engineering plánu a prověřuje provenienci, konflikty, autorizaci i hranice commitů.": "It turns a proposed identity-changing operation into a reviewable engineering plan and checks provenance, conflicts, authorization and commit boundaries.",
+  "Produktové zveřejnění · 16. 11. 2026": "Product release · 16 November 2026",
+  "Publikovaný Planner připravuje přezkoumatelný plán identity-changing operace.": "The published Planner prepares a reviewable plan for an identity-changing operation.",
+  "AER Guardrail Planner · produktový web": "AER Guardrail Planner · product website",
+  "Paper na arXiv popisuje návrh sémantického jističe pro Agentic ER. Navazuje na něj AER Guardrail Planner, který připravuje přezkoumatelný engineering plán před implementací.": "The arXiv paper describes a proposed semantic guardrail for Agentic ER. The AER Guardrail Planner follows it with a reviewable engineering plan ahead of implementation."
+});
