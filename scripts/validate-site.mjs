@@ -6,8 +6,8 @@ import { fileURLToPath } from "node:url";
 import { exposedAttributeTranslations, translations } from "./translations.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-const siteUrl = "https://dan-beranek.github.io/dio-odi-autorsky-koncept/";
-const projectPath = "/dio-odi-autorsky-koncept/";
+const siteUrl = "https://concept.danielberanek.cz/";
+const projectPath = "/";
 const imageUrl = `${siteUrl}assets/dio-odi-social-v1.png`;
 const robots = "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1";
 const citations = [
@@ -35,8 +35,9 @@ if (entityRegistry.status !== "canonical-approved" || entityRegistry.registry_ve
 }
 const personIdentity = entityRegistry.entities.find((entity) => entity.key === "person-daniel-beranek");
 const frameworkIdentity = entityRegistry.entities.find((entity) => entity.key === "framework-dio-odi-author-led");
-if (!personIdentity || !frameworkIdentity || frameworkIdentity.url !== siteUrl || frameworkIdentity["@id"] !== siteUrl + "#framework") {
-  throw new Error("Required canonical author/framework identities are missing or inconsistent.");
+const frameworkLegacyUrl = "https://dan-beranek.github.io/dio-odi-autorsky-koncept/";
+if (!personIdentity || !frameworkIdentity || frameworkIdentity.url !== frameworkLegacyUrl || frameworkIdentity["@id"] !== frameworkLegacyUrl + "#framework") {
+  throw new Error("Required author/framework identities are missing or inconsistent.");
 }
 const keywordManifest = JSON.parse(await readFile(join(root, artifactMetadata.site.metadata_output), "utf8"));
 const resolvedRegistryText = await readFile(join(root, keywordManifest.keyword_registry.resolved_snapshot_path), "utf8");
@@ -353,8 +354,9 @@ for (const pair of pairs) {
           expect(scope, pageNode?.["@type"], "ProfilePage", "JSON-LD author page type");
           expect(scope, pageNode?.mainEntity?.["@id"], person?.["@id"], "JSON-LD ProfilePage mainEntity");
         } else if (pair.key === "home") {
-          expect(scope, pageNode?.mainEntity?.["@id"], siteUrl + "#framework", "JSON-LD homepage mainEntity");
-          const framework = byId.get(siteUrl + "#framework");
+          expect(scope, pageNode?.mainEntity?.["@id"], frameworkIdentity["@id"], "JSON-LD homepage mainEntity");
+          const framework = byId.get(frameworkIdentity["@id"]);
+          expect(scope, framework?.url, siteUrl, "JSON-LD framework canonical landing URL");
           expect(scope, framework?.mainEntityOfPage?.["@id"], pageNode?.["@id"], "JSON-LD framework mainEntityOfPage");
         }
         if (JSON.stringify(data).includes('"Organization"')) fail(scope, "DIO/ODI must not be represented as an Organization");
