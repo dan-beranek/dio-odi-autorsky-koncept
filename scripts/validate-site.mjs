@@ -304,6 +304,7 @@ for (const pair of pairs) {
     expect(scope, alternates["cs-CZ"], csUrl, "cs-CZ hreflang");
     expect(scope, alternates.en, enUrl, "en hreflang");
     expect(scope, alternates["x-default"], csUrl, "x-default hreflang");
+    expect(scope, one(link.filter((item) => item.rel === "ard").map((item) => item.href), scope, "ARD link"), "https://vocab.danielberanek.cz/.well-known/ard.json", "ARD manifest link");
 
     const byProperty = Object.fromEntries(meta.filter((item) => item.property).map((item) => [item.property, item.content]));
     const byName = Object.fromEntries(meta.filter((item) => item.name).map((item) => [item.name, item.content]));
@@ -507,6 +508,7 @@ const robotsText = await readFile(join(root, "robots.txt"), "utf8");
 if (!robotsText.includes("User-agent: *")) fail("robots.txt", "missing wildcard user agent");
 if (!robotsText.includes("Allow: /")) fail("robots.txt", "missing allow rule");
 if (!robotsText.includes(`Sitemap: ${siteUrl}sitemap.xml`)) fail("robots.txt", "missing canonical sitemap URL");
+if (!robotsText.includes(`Agentmap: https://vocab.danielberanek.cz/.well-known/ard.json`)) fail("robots.txt", "missing canonical ARD Agentmap directive");
 
 if (failures.length) {
   console.error(`Validation failed with ${failures.length} issue(s):\n\n${failures.map((item) => `- ${item}`).join("\n")}`);
