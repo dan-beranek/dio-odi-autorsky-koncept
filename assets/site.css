@@ -81,7 +81,7 @@ button { color: inherit; }
 .main-nav { display: flex; align-items: center; gap: 1.2rem; }
 .main-nav a {
   position: relative;
-  color: #3c4350;
+  color: var(--dio-color-text);
   text-decoration: none;
   font-size: 0.84rem;
   font-weight: 690;
@@ -205,11 +205,11 @@ h3 {
 .lead {
   margin: 1.6rem 0 0;
   max-width: 760px;
-  color: #333b49;
+  color: var(--dio-color-text);
   font-size: clamp(1.12rem, 2vw, 1.38rem);
   line-height: 1.55;
 }
-.section-dark .lead { color: #c6cdd9; }
+.section-dark .lead { color: var(--dio-color-text-inverse); }
 .small { font-size: 0.91rem; color: var(--muted); }
 .section-dark .small { color: var(--muted-dark); }
 .meta { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.11em; text-transform: uppercase; }
@@ -489,7 +489,7 @@ code { overflow-wrap: anywhere; font-size: 0.9em; }
 .page-hero aside { border-top: 2px solid var(--blue); padding-top: 1.2rem; }
 .page-hero aside p { margin: 0; color: var(--muted); font-size: 1.08rem; }
 .page-hero .route-id { display: block; margin-bottom: 2.1rem; color: var(--blue); font-size: 0.74rem; font-weight: 850; letter-spacing: 0.12em; text-transform: uppercase; }
-.page-intro { margin-top: 1.8rem; max-width: 780px; font-size: clamp(1.18rem,2vw,1.45rem); color: #303846; }
+.page-intro { margin-top: 1.8rem; max-width: 780px; font-size: clamp(1.18rem,2vw,1.45rem); color: var(--dio-color-text); }
 
 .comparison { width: 100%; border-collapse: collapse; font-size: 0.94rem; }
 .comparison th, .comparison td { border-bottom: 1px solid var(--line); padding: 1rem; text-align: left; vertical-align: top; }
@@ -499,7 +499,7 @@ code { overflow-wrap: anywhere; font-size: 0.9em; }
 
 .cta-block { display: grid; grid-template-columns: minmax(0,1.15fr) minmax(18rem,0.85fr); gap: clamp(2rem,7vw,8rem); align-items: end; }
 .cta-block h2 { max-width: 16ch; }
-.cta-block p { color: #d9e0ec; }
+.cta-block p { color: var(--dio-color-text-inverse); }
 .cta-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.6rem; }
 
 .site-footer { background: #05070b; color: var(--white); }
@@ -508,7 +508,7 @@ code { overflow-wrap: anywhere; font-size: 0.9em; }
 .footer-main p { max-width: 48ch; color: var(--muted-dark); }
 .footer-links { margin: 0; padding: 0; list-style: none; }
 .footer-links li + li { margin-top: 0.65rem; }
-.footer-links a { color: #dce2ec; text-underline-offset: 0.2rem; }
+.footer-links a { color: var(--dio-color-text-inverse); text-underline-offset: 0.2rem; }
 .footer-label { margin: 0 0 1rem; color: #8792a6; font-size: 0.72rem; font-weight: 850; letter-spacing: 0.1em; text-transform: uppercase; }
 .footer-bottom { display: flex; justify-content: space-between; gap: 1rem; padding: 1.1rem 0 1.6rem; border-top: 1px solid #252b36; color: #8e98a9; font-size: 0.82rem; }
 
@@ -605,7 +605,7 @@ code { overflow-wrap: anywhere; font-size: 0.9em; }
 
 
 /* DIO Web Design System v0.1.1 — typography pilot */
-:root { --muted: var(--dio-color-text-secondary); }
+:root { --muted: var(--dio-color-text); --muted-dark: var(--dio-color-text-inverse); }
 body { color: var(--dio-color-text); }
 .meta, .status-label, .route-id, .footer-label, .language-switch, .comparison th,
 .entry-card .num, .step::before { font-size: max(0.8125rem, 13px); }
