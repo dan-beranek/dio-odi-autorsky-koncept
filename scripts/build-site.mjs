@@ -675,8 +675,8 @@ function translateMain(main, page) {
 }
 
 function stripHeadingTerminalPeriods(markup) {
-  return markup.replace(/(<h[1-6]\\b[^>]*>)([\\s\\S]*?)(<\\/h[1-6]\\s*>)/giu, (match, opening, content, closing) => {
-    const normalized = content.replace(/\\.(?=(?:\\s*<\\/[^>]+>)*\\s*$)/u, "");
+  return markup.replace(/(<h[1-6]\b[^>]*>)([\s\S]*?)(<\/h[1-6]\s*>)/giu, (match, opening, content, closing) => {
+    const normalized = content.replace(/\.(?=(?:\s*<\/[^>]+>)*\s*$)/u, "");
     return opening + normalized + closing;
   });
 }
