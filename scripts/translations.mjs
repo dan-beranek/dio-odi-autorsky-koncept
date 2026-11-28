@@ -1083,14 +1083,13 @@ Object.assign(translations.evidence, {
   "Reference Vocabulary v0.2.2 má čtyři samostatné veřejné záznamy v externích registrech a katalozích.": "Reference Vocabulary v0.2.2 has four separate public records in external registries and catalogues.",
   "BARTOC · terminologický katalog": "BARTOC · terminology catalogue",
   "FAIRsharing · záznam #9470": "FAIRsharing · record #9470"
-
+});
 
 Object.assign(translations.evidence, {
   "Akademická metadata a registry": "Academic metadata and registries",
   "Referenční slovník má vlastní záznamy mimo publikační korpus.": "The Reference Vocabulary has its own records beyond the publication corpus.",
-  "FAIRsharing eviduje DIO/ODI Reference Vocabulary jako terminologický artefakt (Terminology artefact) a propojuje záznam s výzkumnou publikací": "FAIRsharing records the DIO/ODI Reference Vocabulary as a terminology artefact and links the record to the research publication",
-  "Constraining the Commit Boundary ↗": "Constraining the Commit Boundary ↗",
-  ". Popisuje přístupy přes webové rozhraní, SKOS/RDF (Turtle), JSON-LD a read-only MCP. Jeho křížové odkazy dále uvádějí BARTOC, BioRegistry a Semantic Farm.": ". It describes access through a web interface, SKOS/RDF (Turtle), JSON-LD and read-only MCP. Its cross-references also list BARTOC, BioRegistry and Semantic Farm.",
+  "FAIRsharing eviduje DIO/ODI Reference Vocabulary jako terminologický artefakt (Terminology artefact) a propojuje záznam s výzkumnou publikací „Constraining the Commit Boundary“. Popisuje přístupy přes webové rozhraní, SKOS/RDF (Turtle), JSON-LD a read-only MCP. Jeho křížové odkazy dále uvádějí BARTOC, BioRegistry a Semantic Farm.": "FAIRsharing records the DIO/ODI Reference Vocabulary as a terminology artefact and links it to the research publication “Constraining the Commit Boundary”. It lists access through a web interface, SKOS/RDF (Turtle), JSON-LD and read-only MCP. Its cross-references also name BARTOC, BioRegistry and Semantic Farm.",
+  "Číst propojenou publikaci ↗": "Read the linked publication ↗",
   "Externí záznamy Reference Vocabulary": "External Reference Vocabulary records",
   "FAIRsharing · ID 9470": "FAIRsharing · ID 9470",
   "Strojově čitelná vrstva": "Machine-readable layer",
@@ -1101,4 +1100,4 @@ Object.assign(translations.evidence, {
   "Kvalifikovaná vztahová tvrzení": "Qualified relation assertions",
   "Tvrzení v Markdown, JSON-LD a Turtle RDF rozlišují zdrojovou podmínku, cílový pojem a typ vztahu. Formulace „may contribute to“ nebo „may increase“ vyjadřují možnost či zranitelnost, nikoli ekvivalenci nebo deterministickou kauzalitu.": "Assertions in Markdown, JSON-LD and Turtle RDF distinguish source conditions, target concepts and relation types. Phrases such as “may contribute to” or “may increase” express possibility or susceptibility, not equivalence or deterministic causality.",
   "Otevřít zdrojový repozitář ↗": "Open the source repository ↗"
-});});
+});
