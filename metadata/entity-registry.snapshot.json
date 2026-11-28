@@ -2,10 +2,10 @@
   "$schema": "./schemas/entity-registry.schema.json",
   "registry_id": "https://github.com/dan-beranek/dio-odi-entity-registry",
   "schema_version": "1.0.0",
-  "registry_version": "0.1.0",
+  "registry_version": "0.1.1",
   "status": "canonical-approved",
   "created": "2026-11-22",
-  "updated": "2026-11-22",
+  "updated": "2026-11-28",
   "scope": "Shared identity records for public entities reused across Daniel Beránek's web, research and software projects.",
   "authority_boundaries": {
     "entity_identity": "This registry is authoritative only for the stable @id, declared type, preferred name, canonical URL, verified sameAs identifiers and provenance fields explicitly recorded for each entity.",
@@ -173,7 +173,7 @@
         "https://schema.org/CreativeWork"
       ],
       "name": "DIO/ODI author-led framework",
-      "url": "https://dan-beranek.github.io/dio-odi-autorsky-koncept/",
+      "url": "https://concept.danielberanek.cz/",
       "status": "active",
       "source_records": [
         {
