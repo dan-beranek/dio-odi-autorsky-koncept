@@ -657,13 +657,14 @@ function translateMain(main, page) {
   }
 
   return translated
-    .replaceAll(`${projectPath}en/partnerships/`, `${projectPath}en/partnerships/`)
-    .replaceAll(`${projectPath}en/ai-visibility/`, `${projectPath}en/ai-visibility/`)
-    .replaceAll(`${projectPath}en/entity-resolution/`, `${projectPath}en/entity-resolution/`)
-    .replaceAll(`${projectPath}en/evidence/`, `${projectPath}en/evidence/`)
-    .replaceAll(`${projectPath}en/author/`, `${projectPath}en/author/`)
-    .replaceAll(`${projectPath}en/ontology-of-digital-identity/`, `${projectPath}en/ontology-of-digital-identity/`)
-    .replaceAll(`href="${sourceProjectPath}"`, `href="${projectPath}en/"`)
+    .replaceAll(sourceProjectPath, projectPath)
+    .replaceAll(`${projectPath}partnerstvi/`, `${projectPath}en/partnerships/`)
+    .replaceAll(`${projectPath}dio-viditelnost/`, `${projectPath}en/ai-visibility/`)
+    .replaceAll(`${projectPath}dio-ai-data/`, `${projectPath}en/entity-resolution/`)
+    .replaceAll(`${projectPath}dukazy/`, `${projectPath}en/evidence/`)
+    .replaceAll(`${projectPath}autor/`, `${projectPath}en/author/`)
+    .replaceAll(`${projectPath}odi/`, `${projectPath}en/ontology-of-digital-identity/`)
+    .replaceAll(`href="${projectPath}"`, `href="${projectPath}en/"`)
     .replace('id="intervence"', 'id="intervention"')
     .replace('href="#intervence"', 'href="#intervention"')
     .replace('id="otazky"', 'id="questions"')
