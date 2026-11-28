@@ -609,7 +609,7 @@ function translateMarkup(main, page, textIndex, attributeIndex, missing) {
 
   while (cursor < main.length) {
     if (rawTextElement) {
-      const closing = new RegExp(`</${rawTextElement}\\s*>`, "iu").exec(main.slice(cursor));
+      const closing = new RegExp(`</${rawTextElement}\s*>`, "iu").exec(main.slice(cursor));
       if (!closing) {
         output += main.slice(cursor);
         break;
@@ -739,7 +739,7 @@ function gitModifiedDate(relativePath) {
 }
 
 function latestDate(values) {
-  const valid = values.filter((value) => /^\\d{4}-\\d{2}-\\d{2}$/.test(value));
+  const valid = values.filter((value) => /^\d{4}-\d{2}-\d{2}$/.test(value));
   if (valid.length !== values.length) throw new Error("Sitemap lastmod inputs must be valid ISO calendar dates.");
   for (const value of valid) {
     const parsed = new Date(value + "T00:00:00Z");
@@ -751,13 +751,12 @@ function latestDate(values) {
 }
 
 async function generateSitemap() {
-  const sitemapPath = join(projectRoot, "sitemap.xml");
   const existingText = await readFile(sitemapPath, "utf8");
   const existingLastmod = new Map();
-  for (const match of existingText.matchAll(/<url>([\\s\\S]*?)<\\/url>/g)) {
+  for (const match of existingText.matchAll(/<url>([\s\\S]*?)<\/url>/g)) {
     const block = match[1];
-    const location = block.match(/<loc>([^<]+)<\\/loc>/)?.[1];
-    const lastmod = block.match(/<lastmod>([^<]+)<\\/lastmod>/)?.[1];
+    const location = block.match(/<loc>([^<]+)<\/loc>/)?.[1];
+    const lastmod = block.match(/<lastmod>([^<]+)<\/lastmod>/)?.[1];
     if (location && lastmod) existingLastmod.set(location, lastmod);
   }
 
@@ -778,13 +777,13 @@ async function generateSitemap() {
     const csDate = latestDate([
       ...pageSources.map(gitModifiedDate),
       approvedOn,
-      existingLastmod.get(csUrl) ?? "0000-01-01",
+      ...(existingLastmod.has(csUrl) ? [existingLastmod.get(csUrl)] : []),
     ]);
     const enDate = latestDate([
       ...pageSources.map(gitModifiedDate),
       "scripts/translations.mjs",
       approvedOn,
-      existingLastmod.get(enUrl) ?? "0000-01-01",
+      ...(existingLastmod.has(enUrl) ? [existingLastmod.get(enUrl)] : []),
     ]);
     const alternates = [
       { lang: "cs-CZ", url: csUrl },
@@ -803,8 +802,8 @@ async function generateSitemap() {
       `    <xhtml:link rel="alternate" hreflang="${item.lang}" href="${item.url}" />`
     ),
     "  </url>",
-  ].join("\\n")).join("\\n");
-  return `<?xml version="1.0" encoding="UTF-8"?>\\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\\n${body}\\n</urlset>\\n`;
+  ].join("\n")).join("\n");
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${body}\n</urlset>\n`;
 }
 
 await writeFile(join(projectRoot, "sitemap.xml"), await generateSitemap());
