@@ -5,8 +5,9 @@ import { fileURLToPath } from "node:url";
 import { exposedAttributeTranslations, translations } from "./translations.mjs";
 
 const projectRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
-const origin = "https://dan-beranek.github.io";
-const projectPath = "/dio-odi-autorsky-koncept/";
+const origin = "https://concept.danielberanek.cz";
+const projectPath = "/";
+const sourceProjectPath = "/dio-odi-autorsky-koncept/";
 const siteUrl = `${origin}${projectPath}`;
 const imageUrl = `${siteUrl}assets/dio-odi-social-v1.png`;
 const imageAlt = {
@@ -34,8 +35,9 @@ const personIdentity = requireEntity("person-daniel-beranek");
 const frameworkIdentity = requireEntity("framework-dio-odi-author-led");
 const referenceModelIdentity = requireEntity("project-dio-odi-reference-model");
 const vocabularyIdentity = requireEntity("vocabulary-dio-odi-reference");
-if (frameworkIdentity.url !== siteUrl || frameworkIdentity["@id"] !== siteUrl + "#framework") {
-  throw new Error("Author-led framework identity diverges from the pinned Entity Registry.");
+const frameworkLegacyUrl = "https://dan-beranek.github.io/dio-odi-autorsky-koncept/";
+if (frameworkIdentity.url !== frameworkLegacyUrl || frameworkIdentity["@id"] !== frameworkLegacyUrl + "#framework") {
+  throw new Error("The established author-led framework identifier diverges from the pinned Entity Registry.");
 }
 if (referenceModelIdentity.url !== "https://vocab.danielberanek.cz/" ||
     vocabularyIdentity.url !== "https://vocab.danielberanek.cz/dio-odi/") {
@@ -409,7 +411,7 @@ function structuredData(page, lang) {
       "@type": "CreativeWork",
       "@id": frameworkId,
       name: frameworkIdentity.name,
-      url: frameworkIdentity.url,
+      url: siteUrl,
       description: lang === "cs"
         ? "Autorský konceptuální a výzkumný rámec DIO/ODI pro digitální identitu, její reprezentaci a rekonstrukci napříč lidskými a strojovými systémy."
         : "An author-led conceptual and research framework for digital identity, its representation and reconstruction across human and machine systems.",
@@ -642,6 +644,10 @@ function translateMarkup(main, page, textIndex, attributeIndex, missing) {
   return output;
 }
 
+function rebaseLegacyProjectLinks(markup) {
+  return markup.replace(/(\b(?:href|src|poster|action)\s*=\s*["'])\/dio-odi-autorsky-koncept\//giu, "$1/");
+}
+
 function translateMain(main, page) {
   const pageTranslations = translations[page.key];
   if (!pageTranslations) throw new Error(`Missing translations for ${page.key}`);
@@ -654,7 +660,7 @@ function translateMain(main, page) {
     throw new Error(`Missing English localization:\n${missing.map((item) => `- ${item}`).join("\n")}`);
   }
 
-  return translated
+  return rebaseLegacyProjectLinks(translated)
     .replaceAll(`${projectPath}partnerstvi/`, `${projectPath}en/partnerships/`)
     .replaceAll(`${projectPath}dio-viditelnost/`, `${projectPath}en/ai-visibility/`)
     .replaceAll(`${projectPath}dio-ai-data/`, `${projectPath}en/entity-resolution/`)
@@ -702,7 +708,8 @@ for (const page of pages) {
   const main = source.match(/<main\b[\s\S]*?<\/main>/)?.[0];
   if (!main) throw new Error(`Missing <main> in ${page.csFile}`);
 
-  const csOutput = document(page, "cs", main);
+  const csMain = rebaseLegacyProjectLinks(main);
+  const csOutput = document(page, "cs", csMain);
   await writeFile(join(projectRoot, page.csFile), csOutput);
 
   const enOutput = document(page, "en", translateMain(main, page));

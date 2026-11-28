@@ -21,7 +21,7 @@ The current archived Reference Model release is v0.9.0. It integrates the SKOS-f
 
 Po aktivaci GitHub Pages bude web dostupný na:
 
-<https://dan-beranek.github.io/dio-odi-autorsky-koncept/>
+<https://concept.danielberanek.cz/>
 
 ## Obsah
 
@@ -76,7 +76,7 @@ python3 -m http.server 8000
 
 Poté otevřete:
 
-<http://localhost:8000/dio-odi-autorsky-koncept/>
+<http://localhost:8000/>
 
 ## Publikování
 

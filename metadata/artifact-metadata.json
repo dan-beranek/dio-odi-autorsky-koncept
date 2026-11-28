@@ -12,8 +12,8 @@
     "policy": "Fetch the canonical registry during the build. Accept approved compatible 2.x releases at or above 2.8.0; fall back to the committed 2.8.0 snapshot when the canonical source cannot be fetched. Stop on malformed or incompatible registry versions."
   },
   "site": {
-    "id": "https://dan-beranek.github.io/dio-odi-autorsky-koncept/#website",
-    "url": "https://dan-beranek.github.io/dio-odi-autorsky-koncept/",
+    "id": "https://concept.danielberanek.cz/#website",
+    "url": "https://concept.danielberanek.cz/",
     "name": "DIO/ODI – author-led concept by Daniel Beránek",
     "in_language": [
       "cs-CZ",
@@ -40,8 +40,8 @@
       "page_key": "home",
       "keyword_profile_id": "author-concept-home",
       "urls": [
-        "https://dan-beranek.github.io/dio-odi-autorsky-koncept/",
-        "https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/"
+        "https://concept.danielberanek.cz/",
+        "https://concept.danielberanek.cz/en/"
       ],
       "artifact_role": "Bilingual top-level presentation of DIO/ODI as one author-led framework with three distinct value branches."
     },
@@ -50,8 +50,8 @@
       "page_key": "visibility",
       "keyword_profile_id": "author-concept-visibility",
       "urls": [
-        "https://dan-beranek.github.io/dio-odi-autorsky-koncept/dio-viditelnost/",
-        "https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/ai-visibility/"
+        "https://concept.danielberanek.cz/dio-viditelnost/",
+        "https://concept.danielberanek.cz/en/ai-visibility/"
       ],
       "artifact_role": "DIO market-visibility branch, focused on entity recognition, attribution and coherent reconstruction."
     },
@@ -60,8 +60,8 @@
       "page_key": "entity",
       "keyword_profile_id": "author-concept-entity-data",
       "urls": [
-        "https://dan-beranek.github.io/dio-odi-autorsky-koncept/dio-ai-data/",
-        "https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/entity-resolution/"
+        "https://concept.danielberanek.cz/dio-ai-data/",
+        "https://concept.danielberanek.cz/en/entity-resolution/"
       ],
       "artifact_role": "DIO technical application branch for entity resolution, knowledge graphs, RAG and enterprise entity data."
     },
@@ -70,8 +70,8 @@
       "page_key": "odi",
       "keyword_profile_id": "author-concept-odi",
       "urls": [
-        "https://dan-beranek.github.io/dio-odi-autorsky-koncept/odi/",
-        "https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/ontology-of-digital-identity/"
+        "https://concept.danielberanek.cz/odi/",
+        "https://concept.danielberanek.cz/en/ontology-of-digital-identity/"
       ],
       "artifact_role": "ODI theoretical, terminological and research branch and its connection to machine-readable reference infrastructure."
     },
@@ -80,8 +80,8 @@
       "page_key": "partnerships",
       "keyword_profile_id": "author-concept-partnerships",
       "urls": [
-        "https://dan-beranek.github.io/dio-odi-autorsky-koncept/partnerstvi/",
-        "https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/partnerships/"
+        "https://concept.danielberanek.cz/partnerstvi/",
+        "https://concept.danielberanek.cz/en/partnerships/"
       ],
       "artifact_role": "Partnership and investment pathways across the DIO/ODI value branches."
     },
@@ -90,8 +90,8 @@
       "page_key": "evidence",
       "keyword_profile_id": "author-concept-evidence",
       "urls": [
-        "https://dan-beranek.github.io/dio-odi-autorsky-koncept/dukazy/",
-        "https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/evidence/"
+        "https://concept.danielberanek.cz/dukazy/",
+        "https://concept.danielberanek.cz/en/evidence/"
       ],
       "artifact_role": "Research development, reference infrastructure and bounded application proposals."
     },
@@ -100,8 +100,8 @@
       "page_key": "author",
       "keyword_profile_id": "author-concept-author",
       "urls": [
-        "https://dan-beranek.github.io/dio-odi-autorsky-koncept/autor/",
-        "https://dan-beranek.github.io/dio-odi-autorsky-koncept/en/author/"
+        "https://concept.danielberanek.cz/autor/",
+        "https://concept.danielberanek.cz/en/author/"
       ],
       "artifact_role": "Authorship, provenance and author-led development of DIO/ODI."
     }
