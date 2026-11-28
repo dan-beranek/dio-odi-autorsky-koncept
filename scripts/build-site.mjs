@@ -7,6 +7,7 @@ import { exposedAttributeTranslations, translations } from "./translations.mjs";
 const projectRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
 const origin = "https://concept.danielberanek.cz";
 const projectPath = "/";
+const sourceProjectPath = "/dio-odi-autorsky-koncept/";
 const siteUrl = `${origin}${projectPath}`;
 const imageUrl = `${siteUrl}assets/dio-odi-social-v1.png`;
 const imageAlt = {
@@ -656,13 +657,13 @@ function translateMain(main, page) {
   }
 
   return translated
-    .replaceAll(`${projectPath}partnerstvi/`, `${projectPath}en/partnerships/`)
-    .replaceAll(`${projectPath}dio-viditelnost/`, `${projectPath}en/ai-visibility/`)
-    .replaceAll(`${projectPath}dio-ai-data/`, `${projectPath}en/entity-resolution/`)
-    .replaceAll(`${projectPath}dukazy/`, `${projectPath}en/evidence/`)
-    .replaceAll(`${projectPath}autor/`, `${projectPath}en/author/`)
-    .replaceAll(`${projectPath}odi/`, `${projectPath}en/ontology-of-digital-identity/`)
-    .replaceAll(`href="${projectPath}"`, `href="${projectPath}en/"`)
+    .replaceAll(`${projectPath}en/partnerships/`, `${projectPath}en/partnerships/`)
+    .replaceAll(`${projectPath}en/ai-visibility/`, `${projectPath}en/ai-visibility/`)
+    .replaceAll(`${projectPath}en/entity-resolution/`, `${projectPath}en/entity-resolution/`)
+    .replaceAll(`${projectPath}en/evidence/`, `${projectPath}en/evidence/`)
+    .replaceAll(`${projectPath}en/author/`, `${projectPath}en/author/`)
+    .replaceAll(`${projectPath}en/ontology-of-digital-identity/`, `${projectPath}en/ontology-of-digital-identity/`)
+    .replaceAll(`href="${sourceProjectPath}"`, `href="${projectPath}en/"`)
     .replace('id="intervence"', 'id="intervention"')
     .replace('href="#intervence"', 'href="#intervention"')
     .replace('id="otazky"', 'id="questions"')
@@ -703,7 +704,8 @@ for (const page of pages) {
   const main = source.match(/<main\b[\s\S]*?<\/main>/)?.[0];
   if (!main) throw new Error(`Missing <main> in ${page.csFile}`);
 
-  const csOutput = document(page, "cs", main);
+  const csMain = main.replaceAll(sourceProjectPath, projectPath);
+  const csOutput = document(page, "cs", csMain);
   await writeFile(join(projectRoot, page.csFile), csOutput);
 
   const enOutput = document(page, "en", translateMain(main, page));
