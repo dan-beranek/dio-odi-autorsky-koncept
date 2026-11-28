@@ -784,7 +784,7 @@ async function generateSitemap() {
     ]);
     const enDate = latestDate([
       ...pageSources.map(gitModifiedDate),
-      "scripts/translations.mjs",
+      gitModifiedDate("scripts/translations.mjs"),
       approvedOn,
       ...(existingLastmod.has(enUrl) ? [existingLastmod.get(enUrl)] : []),
     ]);
