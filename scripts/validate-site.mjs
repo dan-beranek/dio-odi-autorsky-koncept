@@ -260,12 +260,12 @@ for (const pair of pairs) {
     const scope = `/${path}`;
     const fullPath = join(root, file);
     const html = await readFile(fullPath, "utf8");
-    const sectionBands = [...html.matchAll(/<section\\b([^>]*)>/giu)]
+    const sectionBands = [...html.matchAll(/<section\b([^>]*)>/giu)]
       .map((match) => {
-        const className = match[1].match(/\\bclass="([^"]*)"/u)?.[1] ?? "";
-        if (!className.split(/\\s+/u).includes("section")) return null;
-        if (className.split(/\\s+/u).includes("section-dark")) return "dark";
-        if (className.split(/\\s+/u).includes("section-blue")) return "blue";
+        const className = match[1].match(/\bclass="([^"]*)"/u)?.[1] ?? "";
+        if (!className.split(/\s+/u).includes("section")) return null;
+        if (className.split(/\s+/u).includes("section-dark")) return "dark";
+        if (className.split(/\s+/u).includes("section-blue")) return "blue";
         return "paper";
       })
       .filter(Boolean);
