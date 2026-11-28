@@ -1,5 +1,6 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
+import { execFileSync } from "node:child_process";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { exposedAttributeTranslations, translations } from "./translations.mjs";
@@ -35,9 +36,9 @@ const personIdentity = requireEntity("person-daniel-beranek");
 const frameworkIdentity = requireEntity("framework-dio-odi-author-led");
 const referenceModelIdentity = requireEntity("project-dio-odi-reference-model");
 const vocabularyIdentity = requireEntity("vocabulary-dio-odi-reference");
-const frameworkLegacyUrl = "https://dan-beranek.github.io/dio-odi-autorsky-koncept/";
-if (frameworkIdentity.url !== frameworkLegacyUrl || frameworkIdentity["@id"] !== frameworkLegacyUrl + "#framework") {
-  throw new Error("The established author-led framework identifier diverges from the pinned Entity Registry.");
+const frameworkStableId = "https://dan-beranek.github.io/dio-odi-autorsky-koncept/#framework";
+if (frameworkIdentity.url !== siteUrl || frameworkIdentity["@id"] !== frameworkStableId) {
+  throw new Error("The canonical framework URL or its preserved stable @id diverges from the pinned Entity Registry.");
 }
 if (referenceModelIdentity.url !== "https://vocab.danielberanek.cz/" ||
     vocabularyIdentity.url !== "https://vocab.danielberanek.cz/dio-odi/") {
@@ -608,7 +609,7 @@ function translateMarkup(main, page, textIndex, attributeIndex, missing) {
 
   while (cursor < main.length) {
     if (rawTextElement) {
-      const closing = new RegExp(`</${rawTextElement}\\s*>`, "iu").exec(main.slice(cursor));
+      const closing = new RegExp(`</${rawTextElement}\s*>`, "iu").exec(main.slice(cursor));
       if (!closing) {
         output += main.slice(cursor);
         break;
@@ -718,6 +719,97 @@ for (const page of pages) {
   await mkdir(dirname(enTarget), { recursive: true });
   await writeFile(enTarget, enOutput);
 }
+
+
+function gitModifiedDate(relativePath) {
+  let committedAt;
+  try {
+    committedAt = execFileSync(
+      "git",
+      ["log", "-1", "--format=%cI", "--", relativePath],
+      { cwd: projectRoot, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] }
+    ).trim();
+  } catch (error) {
+    throw new Error("Unable to read Git history for sitemap lastmod (" + relativePath + "): " + error.message);
+  }
+  if (!committedAt) throw new Error("No Git commit found for sitemap source: " + relativePath);
+  const parsed = new Date(committedAt);
+  if (Number.isNaN(parsed.getTime())) throw new Error("Invalid Git timestamp for sitemap source: " + relativePath);
+  return parsed.toISOString().slice(0, 10);
+}
+
+function latestDate(values) {
+  const valid = values.filter((value) => /^\d{4}-\d{2}-\d{2}$/.test(value));
+  if (valid.length !== values.length) throw new Error("Sitemap lastmod inputs must be valid ISO calendar dates: " + JSON.stringify(values));
+  for (const value of valid) {
+    const parsed = new Date(value + "T00:00:00Z");
+    if (Number.isNaN(parsed.getTime()) || parsed.toISOString().slice(0, 10) !== value) {
+      throw new Error("Invalid ISO calendar date in sitemap lastmod input: " + value);
+    }
+  }
+  return valid.sort().at(-1);
+}
+
+async function generateSitemap() {
+  const sitemapPath = join(projectRoot, "sitemap.xml");
+  const existingText = await readFile(sitemapPath, "utf8");
+  const existingLastmod = new Map();
+  for (const match of existingText.matchAll(/<url>([\s\S]*?)<\/url>/g)) {
+    const block = match[1];
+    const location = block.match(/<loc>([^<]+)<\/loc>/)?.[1];
+    const lastmod = block.match(/<lastmod>([^<]+)<\/lastmod>/)?.[1];
+    if (location && lastmod) existingLastmod.set(location, lastmod);
+  }
+
+  const sharedSources = [
+    "scripts/build-site.mjs",
+    "metadata/artifact-metadata.json",
+    "metadata/entity-registry.lock.json",
+    "metadata/entity-registry.snapshot.json",
+    "metadata/keyword-registry.snapshot.json",
+  ];
+  const approvedOn = /^\\d{4}-\\d{2}-\\d{2}$/.test(keywordRegistry.approved_on ?? "")
+    ? keywordRegistry.approved_on
+    : gitModifiedDate("metadata/keyword-registry.snapshot.json");
+  const records = [];
+
+  for (const page of pages) {
+    const csUrl = canonical(page, "cs");
+    const enUrl = canonical(page, "en");
+    const pageSources = [page.csFile, ...sharedSources];
+    const csDate = latestDate([
+      ...pageSources.map(gitModifiedDate),
+      approvedOn,
+      ...(existingLastmod.has(csUrl) ? [existingLastmod.get(csUrl)] : []),
+    ]);
+    const enDate = latestDate([
+      ...pageSources.map(gitModifiedDate),
+      gitModifiedDate("scripts/translations.mjs"),
+      approvedOn,
+      ...(existingLastmod.has(enUrl) ? [existingLastmod.get(enUrl)] : []),
+    ]);
+    const alternates = [
+      { lang: "cs-CZ", url: csUrl },
+      { lang: "en", url: enUrl },
+      { lang: "x-default", url: csUrl },
+    ];
+    records.push({ url: csUrl, lastmod: csDate, alternates });
+    records.push({ url: enUrl, lastmod: enDate, alternates });
+  }
+
+  const body = records.map((record) => [
+    "  <url>",
+    `    <loc>${record.url}</loc>`,
+    `    <lastmod>${record.lastmod}</lastmod>`,
+    ...record.alternates.map((item) =>
+      `    <xhtml:link rel="alternate" hreflang="${item.lang}" href="${item.url}" />`
+    ),
+    "  </url>",
+  ].join("\n")).join("\n");
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${body}\n</urlset>\n`;
+}
+
+await writeFile(join(projectRoot, "sitemap.xml"), await generateSitemap());
 
 const resolvedMetadata = {
   schema_version: "1.1.0",

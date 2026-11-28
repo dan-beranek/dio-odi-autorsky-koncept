@@ -25,6 +25,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
       - name: Verify pinned Entity Registry snapshot
         run: node scripts/verify-entity-registry.mjs
       - name: Build bilingual pages
