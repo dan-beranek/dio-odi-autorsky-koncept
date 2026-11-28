@@ -489,12 +489,12 @@ for (const pair of pairs) {
   const enUrl = `${siteUrl}${pair.en[1]}`;
   for (const url of [csUrl, enUrl]) {
     const escapedUrl = url.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    const block = sitemap.match(new RegExp(`<url>\\s*<loc>${escapedUrl}<\\/loc>([\\s\\S]*?)<\\/url>`))?.[1] ?? "";
+    const block = sitemap.match(new RegExp(`<url>\\s*<loc>${escapedUrl}<\/loc>([\\s\\S]*?)<\/url>`))?.[1] ?? "";
     if (!block.includes(`hreflang="cs-CZ" href="${csUrl}"`)) fail("sitemap.xml", `${url} missing cs-CZ alternate`);
     if (!block.includes(`hreflang="en" href="${enUrl}"`)) fail("sitemap.xml", `${url} missing en alternate`);
     if (!block.includes(`hreflang="x-default" href="${csUrl}"`)) fail("sitemap.xml", `${url} missing x-default alternate`);
-    const lastmod = block.match(/<lastmod>([^<]+)<\\/lastmod>/)?.[1];
-    if (!lastmod || !/^\\d{4}-\\d{2}-\\d{2}$/.test(lastmod)) fail("sitemap.xml", `${url} missing ISO lastmod date`);
+    const lastmod = block.match(/<lastmod>([^<]+)<\/lastmod>/)?.[1];
+    if (!lastmod || !/^\d{4}-\d{2}-\d{2}$/.test(lastmod)) fail("sitemap.xml", `${url} missing ISO lastmod date`);
     const parsedLastmod = new Date(`${lastmod}T00:00:00Z`);
     if (Number.isNaN(parsedLastmod.getTime()) || parsedLastmod.toISOString().slice(0, 10) !== lastmod) fail("sitemap.xml", `${url} has invalid lastmod date`);
     if (lastmod > new Date().toISOString().slice(0, 10)) fail("sitemap.xml", `${url} has a future lastmod date`);
