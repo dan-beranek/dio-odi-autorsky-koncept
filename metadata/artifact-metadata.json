@@ -9,7 +9,7 @@
     "status_required": "canonical-approved",
     "snapshot_path": "metadata/keyword-registry.snapshot.json",
     "registry_discovery": "https://vocab.danielberanek.cz/metadata/README.md",
-    "policy": "Fetch the canonical registry during the build. Accept approved compatible 2.x releases at or above 2.8.0; fall back to the committed 2.8.0 snapshot when the canonical source cannot be fetched. Stop on malformed or incompatible registry versions."
+    "policy": "Fetch the canonical registry during the build. Accept approved compatible 2.x releases at or above 2.8.0; fall back to the currently committed, versioned registry snapshot when the canonical source cannot be fetched. Stop on malformed or incompatible registry versions."
   },
   "site": {
     "id": "https://concept.danielberanek.cz/#website",
