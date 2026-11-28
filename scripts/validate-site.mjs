@@ -264,9 +264,9 @@ for (const pair of pairs) {
       .map((match) => {
         const className = match[1].match(/\bclass="([^"]*)"/u)?.[1] ?? "";
         if (!className.split(/\s+/u).includes("section")) return null;
+        if (className.split(/\s+/u).includes("section-blue")) return null;
         if (className.split(/\s+/u).includes("section-dark")) return "dark";
-        if (className.split(/\s+/u).includes("section-blue")) return "blue";
-        return "paper";
+        return "light";
       })
       .filter(Boolean);
     for (let index = 1; index < sectionBands.length; index += 1) {
