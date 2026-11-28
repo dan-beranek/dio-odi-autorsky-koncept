@@ -751,9 +751,10 @@ function latestDate(values) {
 }
 
 async function generateSitemap() {
+  const sitemapPath = join(projectRoot, "sitemap.xml");
   const existingText = await readFile(sitemapPath, "utf8");
   const existingLastmod = new Map();
-  for (const match of existingText.matchAll(/<url>([\s\\S]*?)<\/url>/g)) {
+  for (const match of existingText.matchAll(/<url>([\s\S]*?)<\/url>/g)) {
     const block = match[1];
     const location = block.match(/<loc>([^<]+)<\/loc>/)?.[1];
     const lastmod = block.match(/<lastmod>([^<]+)<\/lastmod>/)?.[1];
