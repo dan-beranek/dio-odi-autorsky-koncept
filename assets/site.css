@@ -2,7 +2,7 @@
 :root {
   --ink: #080b12;
   --ink-2: #121722;
-  --paper: #f7f8fb;
+  --paper: #eef1f6;
   --white: #ffffff;
   --muted: #626a79;
   --muted-dark: #aab2c2;
@@ -52,7 +52,7 @@ button { color: inherit; }
   top: 0;
   z-index: 50;
   border-bottom: 1px solid rgba(217, 221, 230, 0.84);
-  background: rgba(247, 248, 251, 0.94);
+  background: rgba(238, 241, 246, 0.96);
   backdrop-filter: blur(18px);
 }
 .header-inner {
@@ -461,6 +461,28 @@ h3 {
 .registry-note .source-links { margin: 0; }
 .section-dark .registry-note { border-color: var(--line-dark); }
 .section-dark .registry-note p { color: var(--muted-dark); }
+
+.registry-evidence {
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.45fr) minmax(0, 1.55fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line-dark);
+}
+.registry-evidence .meta { color: var(--muted-dark); }
+.registry-evidence .source-links { margin: 0; gap: clamp(1rem, 2.4vw, 2rem); }
+.registry-evidence .source-links a { color: var(--white); }
+.qualified-assertions {
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--line-dark);
+}
+.qualified-assertions .meta { color: var(--muted-dark); }
+.qualified-assertions p + p { margin-top: 0.85rem; }
+
+@media (max-width: 900px) {
+  .registry-evidence { grid-template-columns: 1fr; }
+}
 .taxonomy-note h3 { margin-top: 0.5rem; }
 .taxonomy-note p { color: var(--muted); }
 .section-dark .taxonomy-note { border-color: var(--line-dark); }
@@ -483,7 +505,7 @@ code { overflow-wrap: anywhere; font-size: 0.9em; }
 .proof-item strong { display: block; font-family: Georgia, serif; font-size: 2.35rem; font-weight: 400; color: var(--white); }
 .proof-item span { display: block; margin-top: 0.35rem; color: var(--muted-dark); font-size: 0.86rem; }
 
-.page-hero { padding: clamp(4.4rem, 9vw, 8rem) 0 clamp(3.8rem, 7vw, 6.2rem); border-bottom: 1px solid var(--line); }
+.page-hero { padding: clamp(4.4rem, 9vw, 8rem) 0 clamp(3.8rem, 7vw, 6.2rem); border-bottom: 1px solid var(--line); background: var(--white); }
 .page-hero-grid { display: grid; grid-template-columns: minmax(0,1.3fr) minmax(19rem,0.7fr); gap: clamp(2.5rem,7vw,8rem); align-items: end; }
 .page-hero h1 { max-width: 14ch; font-size: clamp(3.2rem,6.7vw,6.6rem); }
 .page-hero aside { border-top: 2px solid var(--blue); padding-top: 1.2rem; }
